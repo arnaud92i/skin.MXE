@@ -1,6 +1,7 @@
 1.0.0
-- beta release
+- release
 1.0.2
 - fix icon
-
+1.0.3
+- new icon
 
