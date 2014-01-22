@@ -1,0 +1,105 @@
+<window id="29">
+	<defaultcontrol always="true">52</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+             <include>CommonContent</include>
+        <include>CommonStage</include>
+                                    <include></include>
+			<control type="image">
+				<description>Panel</description>
+				<include>FullscreenDimensions</include>
+				<texture>panel/console settings.png</texture>
+			</control>
+		<include>-</include>
+	<control type="label">
+                 <posx>750</posx>
+                 <posy>300</posy>
+                 <width>600</width>
+                 <height>60</height>
+                 <label>Sign in or Signout</label>
+                 <font>Font-Condensed-S50-B</font>
+                 <textcolor>darkgrey2</textcolor>
+                 <align></align>
+                 <aligny>center</aligny>
+                 <textoffsetx>20</textoffsetx>
+        </control>
+	<control type="label">
+                 <posx>820</posx>
+                 <posy>350</posy>
+                 <width>382</width>
+                 <height>60</height>
+                 <label>choose your profile</label>
+                 <font>Font-Condensed-S30-B</font>
+                 <textcolor>darkgrey2</textcolor>
+                 <align></align>
+                 <aligny>center</aligny>
+                 <textoffsetx>20</textoffsetx>
+        </control>
+		<control type="list" id="52">
+		<posx>0</posx>
+		<posy>300</posy>
+		<width>1920</width>
+		<height>700</height>
+		<focusposition>0</focusposition>
+		<preloaditems>2</preloaditems>
+		<scrolltime tween="cubic" easing="out">600</scrolltime>
+		<viewtype>list</viewtype>
+		<onright>-</onright>
+		<onleft>-</onleft>
+                <onup></onup>
+                <ondown></ondown>
+		<orientation>horizontal</orientation>
+		<itemlayout width="500" height="500">
+				<control type="label">
+                 			<posx>950</posx>
+                 			<posy>300</posy>
+                 			<width>382</width>
+                 			<height>60</height>
+                 			<label>$INFO[ListItem.Label]</label>
+                 			<font>font13_title</font>
+                 			<textcolor>darkgrey2</textcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>  			
+                 			<textoffsetx>20</textoffsetx>
+        			</control>
+		</itemlayout>
+		<focusedlayout width="500" height="500">
+				<control type="label">
+                 			<posx>950</posx>
+                 			<posy>300</posy>
+                 			<width>382</width>
+                 			<height>60</height>
+                 			<label>$INFO[ListItem.Label]</label>
+                 			<font>font13_title</font>
+                 			<textcolor>darkgrey2</textcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>  
+                 			<textoffsetx>20</textoffsetx>
+					<animation type="Focus">
+                                        	<effect type="slide" start="0,0" end="0,-70" time="300" tween="sine" easing="out" />
+                                    	</animation>
+        			</control>
+				<control type="image">
+                                        <posx>900</posx>
+                                        <posy>200</posy>
+                                        <width>100</width>
+                                        <height>100</height>  
+                                         <texture fallback="Master user.png">special://skin/system/D400040/gamertag/pictures/$INFO[System.ProfileName].png</texture>
+					<animation type="Focus">
+                                        	<effect type="zoom" start="100" end="110" time="300" tween="sine" easing="inout" center="auto" />
+                                        	<effect type="slide" start="0,0" end="0,-70" time="300" tween="sine" easing="out" />
+                                    	</animation>
+                                    	<animation type="Unfocus">
+                                        	<effect type="zoom" start="110" end="100" time="300" tween="sine" easing="out" center="auto" />
+                                        	<effect type="slide" start="0,0" end="0,-80" time="400" tween="sine" easing="out" />
+						<effect type="slide" start="0,-80" end="0,80" time="400" tween="sine" easing="out" />
+                                    	</animation>
+                                </control>
+		</focusedlayout>
+			
+		</control>
+        <include>LoginScreen Buttons</include>
+		<include>FadeBackground</include>
+	</controls>
+</window>

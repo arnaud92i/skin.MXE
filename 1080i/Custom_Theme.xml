@@ -1,0 +1,5 @@
+<window type="window" id="1920">
+    <allowoverlay>yes</allowoverlay>
+    <onload>Skin.SetFile(Theme,.jpg,special://skin/system/0200020/) </onload>
+
+</window>

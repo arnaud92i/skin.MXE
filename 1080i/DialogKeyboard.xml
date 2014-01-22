@@ -1,0 +1,9 @@
+<window id="103">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<onload condition="!Window.IsVisible(home)">SetFocus(65)</onload>
+	<controls>
+		<include condition="Window.IsVisible(home)">bing search</include>
+		<include condition="!Window.IsVisible(home)">keyboard</include>
+		<include>DialogKeyboard.xml</include>
+	</controls>
+</window>

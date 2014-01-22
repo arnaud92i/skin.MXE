@@ -1,0 +1,485 @@
+<window id="1090">
+    <defaultcontrol always="true">88</defaultcontrol>
+   <allowoverlay>yes</allowoverlay>
+    <controls>
+	<include>CommonContent</include> 
+	<include>CommonStage</include>
+            <include>a and b</include>
+		<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>600</width>
+					<height>1080</height>
+			<texture fallback="colors/black.png">$INFO[Skin.String(GamerColor)]</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+					<posx>600</posx>
+					<posy>0</posy>
+					<width>1400</width>
+					<height>1080</height>
+			<texture>colors/white10%.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+
+                        <control type="label">
+                            <posx>115</posx>
+                            <posy>110</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>My Friends</label>
+                            <font>Font-Condensed-S50</font>
+                            <visible></visible>
+                        </control>
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>55</width>
+                        <height>55</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
+
+		    <control type="image">
+                         <posx>140</posx>
+                        <posy>350</posy>
+                        <width>350</width>
+                        <height>60</height>
+                        <texture>colors/white.png</texture>
+        </control>
+                                <control type="textbox">
+                                    <posx>150</posx>
+                                    <posy>360</posy>
+                                    <width>200</width>
+                                    <height>35</height>
+                                    <font>font12_title</font>
+                                    <label>Search by gamertag</label>
+                                    <textcolor>darkgrey</textcolor>
+                                </control>
+
+            <control type="button" id="88">
+                <description>-</description>
+                        <onleft>9000</onleft>
+                    	<onright>9000</onright>
+                    	<onup>9000</onup>
+                <height>60</height>
+                <align>left</align>
+                <aligny>top</aligny>
+                <font></font>
+                <onclick>Skin.Setstring(name)</onclick>
+                <textwidth>352</textwidth>
+                <textoffsetx>20</textoffsetx>
+                <textoffsety>4</textoffsety>
+                <textcolor>grey</textcolor>
+                <focusedcolor>darkgrey</focusedcolor>
+                <disabledcolor>-</disabledcolor>
+                <shadowcolor>-</shadowcolor>
+                <texturefocus></texturefocus>
+                <texturenofocus>-</texturenofocus>
+
+            </control>
+					<control type="image">
+						<posx>115</posx>
+						<posy>325</posy>
+						<width>400</width>
+						<height>110</height>
+						<texture border="40">icon/tile-fo.png</texture>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+						<aspectratio>stretch</aspectratio>
+                <visible>Control.HasFocus(88)</visible>
+					</control>
+
+
+
+
+	<!-- Backgrounds -->
+            <include>HomeControlList</include>
+
+        <!-- Main Group -->
+
+        <control type="grouplist" id="40">
+            <posx>-210</posx>
+            <posy>180</posy>
+            <width>2320</width>
+            <height>780</height>
+            <scrolltime tween="cubic" easing="inout">700</scrolltime>
+            <orientation>horizontal</orientation>
+            <itemgap>-400</itemgap>
+
+
+
+            <!--Gamer Profile-->
+            <control type="group" id="600">
+                <width>2300</width>
+                <height>780</height>
+                <control type="button" id="525">
+                    <onleft></onleft>
+                    <onleft></onleft>
+                    <onright>Control.Move(20,1)</onright>
+                    <onright>425</onright>
+                    <onclick>SetFocus(9000)</onclick>
+                    <ondown>9000</ondown>
+                </control>
+                <control type="group" id="650">
+                    <posx>350</posx>
+                    <posy>0</posy>
+
+
+		    <control type="image">
+                        <posx>0</posx>
+                        <posy>40</posy>
+                        <width>990</width>
+                        <height>560</height>
+                        <texture>colors/white.</texture>
+                        <aspectratio align="center">stretch</aspectratio>
+                    </control>
+
+
+
+
+
+
+
+
+	<control type="panel" id="9000">
+                <description>Fav list</description>
+                        <posx>400</posx>
+                        <posy></posy>
+                        <width>1500</width>
+                        <height>1000</height>
+                        <onleft>9000</onleft>
+                    	<onright>9000</onright>
+                    	<onup>88</onup>
+                    <ondown>88</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                       <defaultcontrol>1</defaultcontrol>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="650" height="250">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>170</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/white.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>35</posx>
+                                    <posy>85</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+			<control type="image">
+				<posx>200</posx>
+				<posy>210</posy>
+				<width>350</width>
+				<height>6</height>
+				<texture>osd/media-guide/line.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>darkgrey</colordiffuse>
+			</control>
+                                <control type="textbox">
+                                    <posx>200</posx>
+                                    <posy>50</posy>
+                                    <width>200</width>
+                                    <height>35</height>
+                                    <font>font24_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>darkgrey</textcolor>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="650" height="250">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>170</height>
+                                    <aspectratio>stretch</aspectratio>
+                                       <texture>colors/silver.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>35</posx>
+                                    <posy>85</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+			<control type="image">
+				<posx>200</posx>
+				<posy>210</posy>
+				<width>350</width>
+				<height>6</height>
+				<texture>osd/media-guide/line.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>darkgrey</colordiffuse>
+			</control>
+                                <control type="textbox">
+                                    <posx>200</posx>
+                                    <posy>50</posy>
+                                    <width>200</width>
+                                    <height>35</height>
+                                    <font>font24_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>darkgrey</textcolor>
+                                </control>
+                            </control>
+                        </focusedlayout>
+                        <content>
+                            <item id="1">
+                              <onclick>Skin.Setstring(Friend1)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                                <label>$INFO[Skin.string(Friend1)]</label>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend1)].png</icon>
+                            </item>
+                            <item id="2">
+                                <onclick>Skin.Setstring(Friend2)</onclick>
+                                <label>$INFO[Skin.string(Friend2)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend2)].png</icon>
+                            </item>
+			    <item id="3">
+                                <onclick>Skin.Setstring(Friend3)</onclick>
+                                <label>$INFO[Skin.string(Friend3)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend3)].png</icon>
+
+                            </item>
+			    <item id="4">
+                                <onclick>Skin.Setstring(Friend4)</onclick>
+                                <label>$INFO[Skin.string(Friend4)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend4)].png</icon>
+                            </item>	
+                            <item id="5">
+                                <onclick>Skin.Setstring(Friend5)</onclick>
+                                <label>$INFO[Skin.string(Friend5)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend5)].png</icon>
+                            </item>
+                            <item id="6">
+                                <onclick>Skin.Setstring(Friend6)</onclick>
+                                <label>$INFO[Skin.string(Friend6)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend6)].png</icon>
+                            </item>
+			    <item id="7">
+                                <label>$INFO[Skin.string(Friend7)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend7)].png</icon>
+                                <onclick>Skin.Setstring(Friend7)</onclick>
+                            </item>
+			    <item id="8">
+                                <label>$INFO[Skin.string(Friend8)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend8)].png</icon>
+                                <onclick>Skin.Setstring(Friend8)</onclick>
+                            </item>
+			    <item id="9">
+                                <label>$INFO[Skin.string(Friend9)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend9)].png</icon>
+                                <onclick>Skin.Setstring(Friend9)</onclick>
+                            </item>	
+                            <item id="10">
+                              <onclick>Skin.Setstring(Friend10)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                                <label>$INFO[Skin.string(Friend10)]</label>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend10)].png</icon>
+                            </item>
+                            <item id="11">
+                                <label>$INFO[Skin.string(Friend11)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend11)].png</icon>
+                                <onclick>Skin.Setstring(Friend11)</onclick>
+                            </item>
+			    <item id="12">
+                                <label>$INFO[Skin.string(Friend12)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend12)].png</icon>
+                                <onclick>Skin.Setstring(Friend12)</onclick>
+                            </item>
+			    <item id="13">
+                                <label>$INFO[Skin.string(Friend13)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend13)].png</icon>
+                                <onclick>Skin.Setstring(Friend13)</onclick>
+                            </item>	
+                            <item id="14">
+                                <label>$INFO[Skin.string(Friend14)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend14)].png</icon>
+                                <onclick>Skin.Setstring(Friend14)</onclick>
+                            </item>
+                            <item id="15">
+                                <label>$INFO[Skin.string(Friend15)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend15)].png</icon>
+                                <onclick>Skin.Setstring(Friend15)</onclick>
+                            </item>
+			    <item id="16">
+                                <label>$INFO[Skin.string(Friend16)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend16)].png</icon>
+                                <onclick>Skin.Setstring(Friend16)</onclick>
+                            </item>
+			    <item id="17">
+                                <label>$INFO[Skin.string(Friend17)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend17)].png</icon>
+                                <onclick>Skin.Setstring(Friend17)</onclick>
+                            </item>
+			    <item id="18">
+                                <label>$INFO[Skin.string(Friend18)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend18)].png</icon>
+                                <onclick>Skin.Setstring(Friend18)</onclick>
+                            </item>							
+		</content>
+	</control>
+ </control>
+</control>
+ </control>
+
+
+
+
+<control type="group">
+        <control type="GroupList">
+            <description>Button labels</description>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="300" />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="sine" easing="out" delay="300" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Conditional" condition="!Window.IsActive(3020) + !Window.IsActive(3021) + !Window.IsActive(3022)">
+                <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,209,1720,1" end="100,150,1720,60" tween="sine" easing="out" time="200" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsActive(3020) | Window.IsActive(3021) | Window.IsActive(3022)">
+                <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
+            </animation>
+            <posx>150</posx>
+            <posy>250</posy>
+            <width>1720</width>
+            <height>60</height>
+            <orientation>horizontal</orientation>
+            <itemgap>80</itemgap>
+            <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(2)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(4)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+            </control>
+        </control>
+
+<control type="GroupList">
+            <description>Button labels</description>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="300" />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="sine" easing="out" delay="300" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Conditional" condition="!Window.IsActive(3020) + !Window.IsActive(3021) + !Window.IsActive(3022)">
+                <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,209,1720,1" end="100,150,1720,60" tween="sine" easing="out" time="200" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsActive(3020) | Window.IsActive(3021) | Window.IsActive(3022)">
+                <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
+            </animation>
+            <posx>150</posx>
+            <posy>250</posy>
+            <width>1720</width>
+            <height>60</height>
+            <orientation>horizontal</orientation>
+            <itemgap>65</itemgap>
+            <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+            </control>
+            </control>
+        </control>
+    </controls>
+</window>

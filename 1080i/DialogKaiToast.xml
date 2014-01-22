@@ -1,0 +1,117 @@
+<window id="107">
+	<zorder>100</zorder>
+	<controls>
+		<onfocus>PlayMedia(special://skin/sounds/Notify.wav)</onfocus>
+	<control type="group">
+			<posy>950</posy>
+
+
+			<control type="image">
+				<posx>750</posx>
+				<posy>10</posy>
+				<width>460</width>
+				<height>100</height>
+				<texture>colors/white.png</texture>
+				<animation effect="zoom" start="0" end="100" time="300" tween="sine" easing="out"  center="800,50" delay="1100" condition="true">WindowOpen</animation>
+				<animation effect="zoom" start="100" end="0" time="300" tween="sine" easing="in"  center="800,50" delay="200" condition="true">WindowClose</animation>
+			</control>
+		<control type="group">
+			<posy>20</posy>
+			<control type="label" id="401">
+				<description>Line 1</description>
+				<posx>1055r</posx>
+				<posy>10</posy>
+				<width>300</width>
+				<height>20</height>
+				<font>font13_title</font>
+				<textcolor>green</textcolor>
+				<align>left</align>
+				<aligny>-</aligny>
+				<animation effect="zoom" start="0" end="100" time="300" tween="sine" easing="out"  center="800,50" delay="1500" condition="true">WindowOpen</animation>
+				<animation effect="zoom" start="100" end="0" time="300" tween="sine" easing="in"  center="800,50" delay="200" condition="true">WindowClose</animation>
+			</control>
+			<control type="label" id="402">
+				<description>Line 2</description>
+				<posx>1055r</posx>
+				<posy>40</posy>
+				<width>300</width>
+				<height>20</height>
+				<font>font13_title</font>
+				<textcolor>green</textcolor>
+				<align>left</align>
+				<aligny>-</aligny>
+				<animation effect="zoom" start="0" end="100" time="300" tween="sine" easing="out"  center="800,50" delay="1500" condition="true">WindowOpen</animation>
+				<animation effect="zoom" start="100" end="0" time="300" tween="sine" easing="in"  center="800,50" delay="200" condition="true">WindowClose</animation>
+			</control>
+
+
+
+			<control type="group">
+			<posx>375</posx>
+			<control type="image" id="400">
+					<description>Icon</description>
+					<posx>375</posx>
+					<posy>-10</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio>stretch</aspectratio>
+					<visible></visible>
+					<texture>overlays/notification/info.png</texture>
+				<animation effect="slide" start="130" end="0" time="450" tween="sine" easing="out"  center="auto" delay="200" condition="true">WindowOpen</animation>
+				<animation effect="slide" start="0" end="130" time="450" tween="sine" easing="out"  center="auto" delay="1000" condition="true">WindowClose</animation>
+			</control>
+			<control type="image" id="401">
+					<description>Icon</description>
+					<posx>375</posx>
+					<posy>-10</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio>stretch</aspectratio>
+					<visible>false</visible>
+					<texture>overlays/notification/info2.png</texture>
+				<animation effect="slide" start="130" end="0" time="450" tween="sine" easing="out"  center="auto" delay="200" condition="true">WindowOpen</animation>
+				<animation effect="slide" start="0" end="130" time="450" tween="sine" easing="out"  center="auto" delay="1000" condition="true">WindowClose</animation>
+			</control>
+				<control type="image" id="403">
+					<description>Info</description>
+					<posx>375</posx>
+					<posy>-10</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio>stretch</aspectratio>
+					<visible>false</visible>
+					<texture>overlays/notification/GameIcon.png</texture>
+				<animation effect="slide" start="130" end="0" time="450" tween="sine" easing="out"  center="auto" delay="200" condition="true">WindowOpen</animation>
+				<animation effect="slide" start="0" end="130" time="450" tween="sine" easing="out"  center="auto" delay="1000" condition="true">WindowClose</animation>
+			</control>
+				<control type="image" id="404">
+					<description>Warning</description>
+					<posx>375</posx>
+					<posy>-10</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio>stretch</aspectratio>
+					<visible>false</visible>
+					<texture>overlays/notification/warning.png</texture>
+				<animation effect="slide" start="130" end="0" time="450" tween="sine" easing="out"  center="auto" delay="200" condition="true">WindowOpen</animation>
+				<animation effect="slide" start="0" end="130" time="450" tween="sine" easing="out"  center="auto" delay="1000" condition="true">WindowClose</animation>
+			</control>
+				<control type="image" id="405">
+					<description>Error</description>
+					<posx>375</posx>
+					<posy>-10</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio>stretch</aspectratio>
+					<visible>false</visible>
+					<texture>overlays/notification/error.png</texture>
+				<animation effect="slide" start="130" end="0" time="450" tween="sine" easing="out"  center="auto" delay="200" condition="true">WindowOpen</animation>
+				<animation effect="slide" start="0" end="130" time="450" tween="sine" easing="out"  center="auto" delay="1000" condition="true">WindowClose</animation>
+			</control>
+				</control>
+
+		</control>
+	</control>
+		
+	</controls>
+</window>

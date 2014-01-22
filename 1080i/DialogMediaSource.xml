@@ -1,0 +1,235 @@
+<window id="129">
+    <defaultcontrol always="true">9004</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <controls>
+        <control type="group">
+            <include>KeyboardAnimations</include>
+            <include>OptionsShutdownAnimation</include>
+            <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(filebrowser)</visible>
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>panel/console settings.png</texture>
+            </control>
+            <control type="label" id="2">
+                <description>Heading</description>
+                <posx>750</posx>
+                <posy>190</posy>
+                <width>974</width>
+                    <height>250</height>
+                <font>Font-Condensed-S30-B</font>
+                <label>$LOCALIZE[20333]</label>
+                <textcolor>white</textcolor>
+                <align></align>
+            </control>
+            <control type="group" id="9002">
+                <control type="label">
+                    <description>Path label</description>
+                    <posx>700</posx>
+                    <posy>200</posy>
+                    <width>600</width>
+                    <height>100</height>
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <label>Add the paths or[CR]browse your's hard drive.</label>
+                    <textcolor>black</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <font>Font-Condensed-S30-B</font>
+                </control>
+                <control type="list" id="10">
+                    <posx>525</posx>
+                    <posy>500</posy>
+                    <width>691</width>
+                    <height>180</height>
+                    <onup>9003</onup>
+                    <onleft></onleft>
+                    <onright>60</onright>
+                    <ondown></ondown>
+                    <pagecontrol>60</pagecontrol>
+                    <scrolltime>0</scrolltime>
+                    <itemlayout height="60">
+                        <control type="label">
+                            <posx>20</posx>
+                            <width>597</width>
+                            <height>9</height>
+                            <aligny>top</aligny>
+                            <textoffsety>4</textoffsety>
+                            <info></info>
+                            <textcolor>FF585858</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                        <control type="image">
+                            <posx>617</posx>
+                            <width>74</width>
+                            <height>60</height>
+                            <texture>dialogs/mediasource/keyboard-nf.png</texture>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="60">
+                        <control type="image">
+                            <width>530</width>
+                            <height>60</height>
+                            <texture border="2">colors/patter.png</texture>
+                            <visible>Control.HasFocus(10)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>617</posx>
+                            <width>74</width>
+                            <height>60</height>
+                            <texture>dialogs/mediasource/keyboard-fo.png</texture>
+                            <visible>Control.HasFocus(10)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>20</posx>
+                            <width>597</width>
+                            <height>60</height>
+                            <aligny>top</aligny>
+                            <textoffsety>4</textoffsety>
+                            <info></info>
+                            <textcolor>white</textcolor>
+                            <scroll>false</scroll>
+                            <visible>Control.HasFocus(10)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>617</posx>
+                            <width>74</width>
+                            <height>60</height>
+                            <texture>dialogs/mediasource/keyboard-nf.png</texture>
+                            <visible>!Control.HasFocus(10)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>20</posx>
+                            <width>597</width>
+                            <height>60</height>
+                            <aligny>top</aligny>
+                            <textoffsety>4</textoffsety>
+                            <info></info>
+                            <textcolor>FF585858</textcolor>
+                            <selectedcolor>MenuBlue</selectedcolor>
+                            <scroll>false</scroll>
+                            <visible>!Control.HasFocus(10)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
+                
+                <control type="image" id="61">
+                    <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+                    <visible>Control.HasFocus(60)</visible>
+                </control>
+                <control type="image" id="61">
+                    <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="0" delay="1000">Hidden</animation>
+                    <visible>!Control.HasFocus(60) + [Container(10).Scrolling | Container(10).OnScrollNext | Container(10).OnScrollPrevious]</visible>
+                </control>
+                <control type="scrollbar" id="60">
+                    <posx>1156</posx>
+                    <posy>416</posy>
+                    <width>11</width>
+                    <height>174</height>
+                    <texturesliderbackground>-</texturesliderbackground>
+                    <texturesliderbar border="0,6,0,6">dialogs/content/scrollbar-fo.png</texturesliderbar>
+                    <texturesliderbarfocus border="0,6,0,6">dialogs/content/scrollbar-fo.png</texturesliderbarfocus>
+                    <textureslidernib>-</textureslidernib>
+                    <textureslidernibfocus>-</textureslidernibfocus>
+                    <onleft>10</onleft>
+                    <onright>9004</onright>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(61)">Conditional</animation>
+                </control>
+
+                <control type="group" id="9004">
+                    <posx>490</posx>
+                        <posy>0</posy>
+                    <control type="button" id="11">
+                        <description>Browse</description>
+                        <posy>370</posy>
+                        <label>$LOCALIZE[1024]</label>
+                        <texturefocus border="20">colors/patter.png</texturefocus>
+                        <texturenofocus></texturenofocus>
+                        <colordiffuse></colordiffuse>
+                        <textcolor>FF585858</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <disabledcolor>FF585858</disabledcolor>
+                        <shadowcolor>20FFFFFF</shadowcolor>
+                        <align>left</align>
+                        <aligny>top</aligny>
+                        <font>Font-Condensed-S31</font>
+                        <textoffsetx>60</textoffsetx>
+                        <textoffsety>7</textoffsety>
+                        <width>257</width>
+                        <height>60</height> 
+                        <onup></onup>
+                        <onleft></onleft>
+                        <onright></onright>
+                        <ondown>9001</ondown>
+                        <animation effect="fade" start="100" end="50" time="0" condition="!Control.IsEnabled(11)" reversible="false">Conditional</animation>
+                    </control>
+                </control>
+            </control>
+
+
+
+                <control type="label">
+                    <description>Path label</description>
+                    <posx>1000</posx>
+                    <posy>350</posy>
+                    <width>600</width>
+                    <height>100</height>
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <label>Browse your hard[CR]drive, find what you're looking for...</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <font>Font-Condensed-S30</font>
+  <visible>Control.HasFocus(11)</visible>
+                </control>
+
+                <control type="label">
+                    <description>Path label</description>
+                    <posx>1000</posx>
+                    <posy>350</posy>
+                    <width>600</width>
+                    <height>100</height>
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <label>Cancel all[CR]go to home menu...</label>
+                    <textcolor>white</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <font>Font-Condensed-S30</font>
+  <visible>Control.HasFocus(19)</visible>
+                </control>
+
+
+            <control type="group" id="9001">
+                <posx>475</posx>
+                <posy>800</posy>
+                <control type="button" id="18">
+                    <description>Select</description>
+                    <label>$LOCALIZE[42000]</label>
+                    <texturefocus>buttons/select-fo.png</texturefocus>
+                    <texturenofocus>buttons/select-nf.png</texturenofocus>
+                    <include>DialogButtonDimensions</include>
+                    <onleft>19</onleft>
+                    <onright>19</onright>
+                    <onup>9002</onup>
+                    <ondown>9002</ondown>
+                    <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(18)">Conditional</animation>
+                </control>
+                <control type="button" id="19">
+                    <posx>200</posx>
+                    <description>Cancel</description>
+                    <label>$LOCALIZE[42001]</label>
+                    <texturefocus>buttons/cancel-fo.png</texturefocus>
+                    <texturenofocus>buttons/cancel-nf.png</texturenofocus>
+                    <include>DialogButtonDimensions</include>
+                    <onleft>18</onleft>
+                    <onright>18</onright>
+                    <onup>9002</onup>
+                    <ondown>9002</ondown>
+                    <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(19)">Conditional</animation>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

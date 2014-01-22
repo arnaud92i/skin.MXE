@@ -1,0 +1,710 @@
+<window id="71">
+    <defaultcontrol always="true">40</defaultcontrol>
+   <allowoverlay>yes</allowoverlay>
+    <controls>
+	<include>CommonContent</include> 
+	<include>CommonStage</include>
+            <include>a and b</include>
+	<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>-</texture>
+			<aspectratio>stretch</aspectratio>
+	</control>
+                        <control type="label">
+                            <posx>100</posx>
+                            <posy>100</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>Music&Library</label>
+                            <font>Font-Condensed-S50-B</font>
+                            <visible></visible>
+                        </control>
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>55</width>
+                        <height>55</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
+	<!-- Backgrounds -->
+            <include>HomeControlList</include>
+
+        <!-- Main Group -->
+        <control type="grouplist" id="40">
+            <posx>-210</posx>
+            <posy>180</posy>
+            <width>2320</width>
+            <height>780</height>
+            <scrolltime tween="cubic" easing="inout">700</scrolltime>
+            <orientation>horizontal</orientation>
+            <itemgap>-400</itemgap>
+
+
+
+
+            <!--Music-->
+            <control type="group" id="600">
+                <width>2320</width>
+                <height>780</height>
+                <control type="button" id="525">
+                    <onleft></onleft>
+                    <onleft></onleft>
+                    <onright>Control.Move(20,1)</onright>
+                    <onright>425</onright>
+                    <onclick>SetFocus(9000)</onclick>
+                    <ondown>9000</ondown>
+                </control>
+                <control type="group" id="650">
+                    <posx>870</posx>
+                    <posy>100</posy>
+		<animation type="WindowOpen">
+                        <effect type="zoom"  end="90" time="0" tween="sine" easing="inout" center="auto" />
+                	<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+               		<effect type="slide" start="0,75" end="0,0" time="350" tween="cubic" easing="out" />
+                </animation>
+	        <animation type="WindowClose">
+			<effect type="zoom"  end="80" time="0" tween="sine" easing="inout" center="auto" />
+                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                	<effect type="slide" start="0,0" end="0,75" time="300" tween="sine" easing="out" />
+                </animation>
+		<animation type="Conditional" condition="Control.HasFocus(1234)">
+                	<effect type="slide" start="0" end="-1800" time="600" tween="sine" easing="out" />
+                </animation>
+	<control type="panel" id="9000">
+                <description>Fav list</description>
+                        <posx>250</posx>
+                        <posy></posy>
+                        <width>750</width>
+                        <height>820</height>
+                        <onleft>5022</onleft>
+                    	<onright></onright>
+                    	<onup>525</onup>
+                    	<ondown></ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <preloaditems>4</preloaditems>
+<defaultcontrol>9</defaultcontrol>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="215" height="215">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>195</width>
+                                    <height>195</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/patter.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>200</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>white</textcolor>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="215" height="215">
+			 <control type="group">
+				<posx>105</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="102" end="105" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>105</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>195</width>
+                                    <height>195</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/patter.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+
+		               <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>195</width>
+                                    <height>195</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/glass.png</texture>
+			     </control>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>200</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>white</textcolor>
+                                </control>
+                            </control>
+                        </focusedlayout>
+                        <content>
+
+								<item id="1">
+									<description>Now Playing</description>
+									<label>Now playing</label>
+									<thumb>$VAR[NowPlaying_Image]</thumb>
+									<onclick>ActivateWindow(visualisation)</onclick>
+									<visible>Player.HasMedia + Player.HasAudio</visible>
+								</item>
+
+								<item id="2">
+									<description>Recently Added</description>
+									<label>Recent added</label>
+									<thumb>hub/hub_recentlyadded_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
+								</item>
+								
+								<item id="3">
+									<description>Recently Played</description>
+									<label>Last played</label>
+									<thumb>hub/hub_recentlyadded_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,RecentlyPlayedAlbums,return)</onclick>
+								</item>
+								
+								<item id="4">
+									<description>Artists</description>
+									<label>Artists</label>
+									<thumb>hub/hub_actors_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+								</item>
+								
+								<item id="5">
+									<description>Albums</description>
+									<label>Albums</label>
+									<thumb>hub/hub_albums_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
+								</item>
+								
+								<item id="6">
+									<description>Songs</description>
+									<label>Songs</label>
+									<thumb>hub/hub_songs_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
+								</item>
+								
+								<item id="7">
+									<description>Genres</description>
+									<label>Genres</label>
+									<thumb>hub/hub_genres_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Genres,return)</onclick>
+								</item>
+								
+								<item id="8">
+									<description>Years</description>
+									<label>Years</label>
+									<thumb>hub/hub_years_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Years,return)</onclick>
+								</item>
+								
+								<item id="9">
+									<description>Top100</description>
+									<label>Top100</label>
+									<thumb>hub/hub_top100_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Top100,return)</onclick>
+								</item>
+								
+								<item id="10">
+									<description>Playlists</description>
+									<label>Playlists</label>
+									<thumb>hub/hub_playlists_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,special://musicplaylists/,return)</onclick>
+								</item>
+								
+								<item id="11">
+									<description>Addons</description>
+									<label>Addons</label>
+									<thumb>hub/hub_addons_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,addons://sources/audio/,return)</onclick>
+								</item>
+                        </content>
+                    </control>
+                    <control type="group" id="502">
+                        <description>Spotlight (random items)</description>
+                        <posx>-635</posx>
+                        <posy>50</posy>
+			<animation type="Conditional" condition="ControlGroup(502).HasFocus">
+                        <effect type="zoom" start="100" end="105" delay="0" time="250" tween="cubic" easing="inout" center="500,600" />
+                    </animation>
+
+                        <control type="wraplist" id="5022">
+                            <posx></posx>
+                            <posy></posy>
+                                    <width>950</width>
+                                    <height>625</height>
+                            <onup>525</onup>
+                           <ondown>9000</ondown>
+                             <onright></onright>
+                            <onclick>-</onclick>
+                            <viewtype label="List">List</viewtype>
+                            <scrolltime tween="cubic" easing="out">800</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>1</preloaditems>
+                            <itemlayout width="950" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>950</width>
+                                    <height>625</height>
+                                    <aspectratio>stretch</aspectratio>
+                                   <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="950" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>950</width>
+                                    <height>625</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </focusedlayout>
+                            <content>
+							<item id="1">
+                                                                         <property name="NavItem">item1.png</property>
+								<onclick>$INFO[Window(home).Property(RandomAlbum.1.Play)]</onclick>
+								<thumb>$INFO[Window(home).Property(RandomAlbum.1.Thumb)]</thumb>
+								<label>$INFO[Window(home).Property(RandomAlbum.1.Title)]</label>
+								<label2>$INFO[Window(home).Property(RandomAlbum.1.Artist)]</label2>
+
+							</item>
+							<item id="2">
+                                                                         <property name="NavItem">item2.png</property>
+								<onclick>$INFO[Window(home).Property(RandomAlbum.2.Play)]</onclick>
+								<thumb>$INFO[Window(home).Property(RandomAlbum.2.Thumb)]</thumb>
+								<label>$INFO[Window(home).Property(RandomAlbum.2.Title)]</label>
+								<label2>$INFO[Window(home).Property(RandomAlbum.2.Artist)]</label2>
+
+							</item>
+							<item id="3">
+                                                                         <property name="NavItem">item3.png</property>
+								<onclick>$INFO[Window(home).Property(RandomAlbum.3.Play)]</onclick>
+								<thumb>$INFO[Window(home).Property(RandomAlbum.3.Thumb)]</thumb>
+								<label>$INFO[Window(home).Property(RandomAlbum.3.Title)]</label>
+								<label2>$INFO[Window(home).Property(RandomAlbum.3.Artist)]</label2>
+
+							</item>	
+                            </content>
+                        </control>
+                         </control>
+                        <control type="image">
+                        <posx>-630</posx>
+                        <posy>55</posy>
+                            <width>138</width>
+                            <height>12</height>
+                            <texture>$INFO[Container(5022).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        </control>
+
+ </control>
+
+ </control>
+
+
+
+
+
+
+
+
+
+
+            <!--Genres-->
+            <control type="group" id="400">
+                <width>2300</width>
+                <height>780</height>
+                <control type="button" id="425">
+                    <onleft>Control.Move(20,-1)</onleft>
+                    <onleft>525</onleft>
+                    <onright></onright>
+                    <onright></onright>
+                    <onclick>SetFocus(9001)</onclick>
+                    <onup>ActivateWindow()</onup>
+                    <ondown>9001</ondown>
+                </control>
+                <control type="group" id="450">
+                    <posx>870</posx>
+                    <posy>100</posy>
+		<animation type="WindowOpen">
+                        <effect type="zoom"  end="90" time="0" tween="sine" easing="inout" center="auto" />
+                	<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+               		<effect type="slide" start="0,75" end="0,0" time="350" tween="cubic" easing="out" />
+                </animation>
+	        <animation type="WindowClose">
+			<effect type="zoom"  end="80" time="0" tween="sine" easing="inout" center="auto" />
+                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                	<effect type="slide" start="0,0" end="0,75" time="300" tween="sine" easing="out" />
+                </animation>
+		<animation type="Conditional" condition="Control.HasFocus(1234)">
+                	<effect type="slide" start="0" end="-1800" time="600" tween="sine" easing="out" />
+                </animation>
+	<control type="panel" id="9001">
+                <description>Fav list</description>
+                        <posx>250</posx>
+                        <posy></posy>
+                        <width>1000</width>
+                        <height>820</height>
+                        <onleft>2022</onleft>
+                    	<onright></onright>
+                    	<onup>425</onup>
+                    	<ondown></ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <preloaditems>4</preloaditems>
+<defaultcontrol>9</defaultcontrol>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="215" height="215">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>195</width>
+                                    <height>195</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/patter.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>200</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>white</textcolor>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="215" height="215">
+			 <control type="group">
+				<posx>105</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="102" end="105" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>105</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>195</width>
+                                    <height>195</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/patter.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+
+		               <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>195</width>
+                                    <height>195</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/glass.png</texture>
+			     </control>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>200</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>white</textcolor>
+                                </control>
+                            </control>
+                        </focusedlayout>
+                        <content>
+
+								<item id="1">
+									<description>Playlists</description>
+									<label>Playlists</label>
+									<thumb>hub/hub_playlists_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,special://musicplaylists/,return)</onclick>
+								</item>
+								<item id="2">
+									<description>Recently Added</description>
+									<label>Recent added</label>
+									<thumb>hub/hub_recentlyadded_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
+								</item>													
+								<item id="3">
+									<description>Artists</description>
+									<label>Artists</label>
+									<thumb>hub/hub_actors_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+								</item>							
+								<item id="4">
+									<description>Albums</description>
+									<label>Albums</label>
+									<thumb>hub/hub_albums_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
+								</item>							
+								<item id="5">
+									<description>Songs</description>
+									<label>Songs</label>
+									<thumb>hub/hub_songs_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
+								</item>								
+								<item id="6">
+									<description>Genres</description>
+									<label>Genres</label>
+									<thumb>hub/hub_genres_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Genres,return)</onclick>
+								</item>
+								
+								<item id="7">
+									<description>Years</description>
+									<label>Years</label>
+									<thumb>hub/hub_years_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Years,return)</onclick>
+								</item>								
+								<item id="8">
+									<description>Top100</description>
+									<label>Top100</label>
+									<thumb>hub/hub_top100_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,Top100,return)</onclick>
+								</item>								
+								<item id="9">
+									<description>Addons</description>
+									<label>Addons</label>
+									<thumb>hub/hub_addons_small.png</thumb>
+									<onclick>ActivateWindow(MusicLibrary,addons://sources/audio/,return)</onclick>
+								</item>								
+
+				</content>
+
+			</control>
+                    <control type="group" id="503">
+                        <description>Spotlight (random items)</description>
+                        <posx>-635</posx>
+                        <posy>50</posy>
+			<animation type="Conditional" condition="ControlGroup(503).HasFocus">
+                        <effect type="zoom" start="100" end="105" delay="0" time="250" tween="cubic" easing="inout" center="500,600" />
+                    </animation>
+
+                        <control type="wraplist" id="2022">
+                            <posx></posx>
+                            <posy></posy>
+                                    <width>950</width>
+                                    <height>625</height>
+                            <onup>425</onup>
+                           <ondown>9001</ondown>
+                             <onright></onright>
+                            <onclick>-</onclick>
+                            <viewtype label="List">List</viewtype>
+                            <scrolltime tween="cubic" easing="out">800</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>1</preloaditems>
+                            <itemlayout width="950" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>950</width>
+                                    <height>625</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="950" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>950</width>
+                                    <height>625</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </focusedlayout>
+                            <content>
+							<item id="1">
+                                                                         <property name="NavItem">item1.png</property>
+								<onclick>$INFO[Window(home).Property(RandomAlbum.1.Play)]</onclick>
+								<thumb>$INFO[Window(home).Property(RandomAlbum.1.Thumb)]</thumb>
+								<label>$INFO[Window(home).Property(RandomAlbum.1.Title)]</label>
+								<label2>$INFO[Window(home).Property(RandomAlbum.1.Artist)]</label2>
+
+							</item>
+							<item id="2">
+                                                                         <property name="NavItem">item2.png</property>
+								<onclick>$INFO[Window(home).Property(RandomAlbum.2.Play)]</onclick>
+								<thumb>$INFO[Window(home).Property(RandomAlbum.2.Thumb)]</thumb>
+								<label>$INFO[Window(home).Property(RandomAlbum.2.Title)]</label>
+								<label2>$INFO[Window(home).Property(RandomAlbum.2.Artist)]</label2>
+
+							</item>
+							<item id="3">
+                                                                         <property name="NavItem">item3.png</property>
+								<onclick>$INFO[Window(home).Property(RandomAlbum.3.Play)]</onclick>
+								<thumb>$INFO[Window(home).Property(RandomAlbum.3.Thumb)]</thumb>
+								<label>$INFO[Window(home).Property(RandomAlbum.3.Title)]</label>
+								<label2>$INFO[Window(home).Property(RandomAlbum.3.Artist)]</label2>
+
+							</item>	
+                            </content>
+                        </control>
+                         </control>
+                        <control type="image">
+                        <posx>-630</posx>
+                        <posy>55</posy>
+                            <width>138</width>
+                            <height>12</height>
+                            <texture>$INFO[Container(5022).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        </control>
+
+ </control>
+</control>
+ </control>
+<control type="group">
+
+        <control type="GroupList">
+            <description>Button labels</description>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="300" />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="sine" easing="out" delay="300" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Conditional" condition="!Window.IsActive(3020) + !Window.IsActive(3021) + !Window.IsActive(3022)">
+                <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,209,1720,1" end="100,150,1720,60" tween="sine" easing="out" time="200" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsActive(3020) | Window.IsActive(3021) | Window.IsActive(3022)">
+                <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
+            </animation>
+            <posx>150</posx>
+            <posy>250</posy>
+            <width>1720</width>
+            <height>60</height>
+            <orientation>horizontal</orientation>
+            <itemgap>80</itemgap>
+            <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label>Music</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(2)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label>Genres</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(4)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+            </control>
+        </control>
+
+<control type="GroupList">
+            <description>Button labels</description>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="300" />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="sine" easing="out" delay="300" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Conditional" condition="!Window.IsActive(3020) + !Window.IsActive(3021) + !Window.IsActive(3022)">
+                <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,209,1720,1" end="100,150,1720,60" tween="sine" easing="out" time="200" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsActive(3020) | Window.IsActive(3021) | Window.IsActive(3022)">
+                <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
+            </animation>
+            <posx>150</posx>
+            <posy>250</posy>
+            <width>1720</width>
+            <height>60</height>
+            <orientation>horizontal</orientation>
+            <itemgap>65</itemgap>
+            <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label>Music</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label>Genres</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+            </control>
+            </control>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,345 @@
+<window id="2001">
+    <defaultcontrol always="true">9333</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+	<controls>
+                  <include>CommonStage</include>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>panel/white.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control> 
+        <!-- Advanced Launcher Game Info -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out" />
+                <effect type="zoom" start="335,125,1440,810" end="0,0,1920,1080" time="400" delay="300" tween="cubic" easing="out" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+                <effect type="zoom" start="0,0,1920,1080" end="335,125,1440,810" time="300" tween="cubic" easing="out" />
+            </animation>
+            <visible>[Container.Content(artists) + !IsEmpty(ListItem.Artist)] | [Container.Content(albums) + !IsEmpty(ListItem.Album)]</visible>
+
+            <!-- Title Label -->            
+            <control type="label">
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                <posx>520</posx>
+                <posy>210</posy>
+                <width>1684</width>
+                <label>$INFO[ListItem.Artist]</label>
+                <font>Font-Condensed-S40-B</font>
+                <textcolor>orange</textcolor>
+                <align>-</align>
+                <scroll>false</scroll>
+            </control>
+           <control type="grouplist">
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                <animation type="Conditional" condition="Control.HasFocus(1110)">
+                    <effect type="slide" start="0" end="510" time="400" delay="0" tween="sine" easing="inout" />
+                </animation>
+                <posx>520</posx>
+                <posy>150</posy>
+                <width>600</width>
+                <orientation>horizontal</orientation>
+                <itemgap>20</itemgap>
+                <!-- Info Label -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1684</width>
+                    <label>Album Info:</label>
+                    <font>Font-Condensed-S38-B</font>
+                    <textcolor>darkgrey2</textcolor>
+                    <align></align>
+                    <scroll>false</scroll>
+                    <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9334) | Control.HasFocus(1110)">Conditional</animation>
+                </control>
+                </control>
+		<control type="image">
+                  <posx>800</posx>
+                   <posy>150</posy>
+                  <width>520</width>
+                 <height>430</height>
+                 <align>-</align>
+		<aspectratio>stretch</aspectratio>
+                  <texture>$INFO[ListItem.Thumb]</texture>
+                  </control>
+                <!-- Info -->
+                <control type="grouplist">
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+                    <posx>500</posx>
+                    <posy>610</posy>
+                    <width>1050</width>
+                    <height>700</height>
+                    <orientation>vertical</orientation>
+                    <control type="group">
+                        <width>950</width>
+                        <height>35</height>
+                        <!-- Song -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                            <font>Font-Condensed-S30-B</font>
+                            <align>left</align>
+                            <label>[B]$INFO[ListItem.Title][/B]</label>
+                            <textcolor>green</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <width>950</width>
+                        <height>35</height>
+                        <!-- Artist -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                            <font>Font-Condensed-S30-B</font>
+                            <align>left</align>
+                            <label>$LOCALIZE[557]: [COLOR=red]$INFO[ListItem.Artist][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <width>950</width>
+                        <height>35</height>
+                        <!-- Premiered -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                            <font>Font-Condensed-S30-B</font>
+                            <align>left</align>
+                            <label>$LOCALIZE[558]: [COLOR=red]$INFO[ListItem.Album][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <width>950</width>
+                        <height>35</height>
+                        <visible>!IsEmpty(ListItem.Year)</visible>
+                        <!-- Studio -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                           <font>Font-Condensed-S30-B</font>
+                            <align>left</align>
+                            <label>$LOCALIZE[562]: [COLOR=red]$INFO[ListItem.Year][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <width>950</width>
+                        <height>35</height>
+                        <visible>!IsEmpty(ListItem.Genre)</visible>
+                        <!-- Genre -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                            <font>Font-Condensed-S30-B</font>
+                            <align>left</align>
+                            <label>$LOCALIZE[515]: [COLOR=red]$INFO[ListItem.Genre][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                </control>           
+                <!-- Plot -->
+                <control type="group">
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+                    <posx>793</posx>
+                    <posy>645</posy>
+                    <width>600</width>
+                    <height>340</height>
+                    <control type="textbox">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>600</width>
+                        <height>340</height>
+                        <label>$INFO[ListItem.Plot]</label>
+                        <textcolor>darkgrey2</textcolor>
+                        <align>justify</align>
+                        <font>Font-Condensed-S26-B</font>
+                        <scroll>false</scroll>
+                        <scrollout>false</scrollout>
+                        <autoscroll time="1500" delay="10000" repeat="10000" />
+                    </control>
+                    </control>
+		<control type="label">
+					<description>Rating Title</description>
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>150</width>
+					<height>25</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<textcolor>blue</textcolor>
+					<label></label>
+				</control>
+				<control type="group">
+					<posx>500</posx>
+					<posy>870</posy>
+					<control type="image">
+						<description>Rating value</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>150</width>
+						<height>32</height>
+						<aspectratio>-</aspectratio>
+                                                      <texture>rating/$INFO[ListItem.StarRating]</texture>
+					</control>
+					<control type="button" id="14">
+						<description>Decrease Rating</description>
+						<posx>160</posx>
+						<posy>-10</posy>
+						<width>50</width>
+						<height>50</height>
+                                                          <include>Rating value</include>
+						<onclick>DecreaseRating</onclick>
+						<texturenofocus>spinctrl/scroll-down-2.png</texturenofocus>
+						<texturefocus>spinctrl/scroll-down-focus-2.png</texturefocus>
+						<onleft>15</onleft>
+						<onright>15</onright>
+						<ondown>SendClick(10)</ondown>
+						<onup>SendClick(10)</onup>
+					</control>
+					<control type="button" id="15">
+						<description>Increase Rating</description>
+						<posx>213</posx>
+						<posy>-10</posy>
+						<width>50</width>
+						<height>50</height>
+                                                           <include>Rating value</include>
+						<onclick>IncreaseRating</onclick>
+						<texturenofocus>spinctrl/scroll-up-2.png</texturenofocus>
+						<texturefocus>spinctrl/scroll-up-focus-2.png</texturefocus>
+						<onleft>14</onleft>
+						<onright>14</onright>
+						<ondown>SendClick()</ondown>
+						<onup>SendClick()</onup>
+					</control>
+				</control>
+				<control type="grouplist" id="9000">
+					<posx>210</posx>
+					<posy>660</posy>
+					<width>1030</width>
+					<height>40</height>
+					<itemgap>2</itemgap>
+					<align>center</align>
+					<orientation>horizontal</orientation>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>50</onup>
+					<ondown>49</ondown>
+					<control type="button" id="5">
+						<description>Cast/Review</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>206</label>
+					</control>
+					<control type="button" id="6">
+						<description>Refresh</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>184</label>
+					</control>
+					<control type="button" id="10">
+						<description>Get Thumb</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>13405</label>
+					</control>
+					<control type="button" id="12">
+						<description>Get Fanart</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label></label>
+					</control>
+				</control>
+        <control type="panel" id="9333">
+                        <posx>475</posx>
+                        <posy>200</posy>
+                        <width>500</width>
+                        <height>620</height>
+			<onright>1243</onright>
+			<onleft>1243</onleft>
+                        <onup>-</onup>
+                        <ondown>-</ondown>
+                        <scrolltime>500</scrolltime>
+			<animation type="Focus">
+                                    </animation>
+                        <itemlayout width="280" height="50">
+                                    <control type="label">
+                                        <posx>24</posx>
+                                        <posy>100</posy>
+                                        <width>382</width>
+                                        <height>60</height>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font-Condensed-S37</font>
+                                        <textcolor>darkgrey2</textcolor>
+                                        <align>left</align>
+                                        <aligny>center</aligny>
+                                        <textoffsetx>20</textoffsetx>
+                                    </control>
+                        </itemlayout>
+                        <focusedlayout width="280" height="100">
+                                    <control type="label">
+                                        <posx>24</posx>
+                                        <posy>100</posy>
+                                        <width>382</width>
+                                        <height>60</height>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font-Condensed-S37</font>
+                                        <textcolor>orange</textcolor>
+                                        <align>left</align>
+                                        <aligny>center</aligny>
+                                        <textoffsetx>20</textoffsetx>
+                                    </control>
+				<control type="image">
+                                    <posx>10</posx>
+                                    <posy>90</posy>
+                                    <width>220</width>
+                                    <height>80</height>
+                                    <texture border="40"></texture>
+                                     <colordiffuse></colordiffuse>
+                                </control>	
+                        </focusedlayout>
+                        <content>
+                            <item id="0">
+                            <label>Cast/Review</label>
+                            <onclick>SendClick(5)</onclick>
+                        </item>
+                        <item id="1">
+                            <label>Refresh</label>
+                           <onclick>SendClick(6)</onclick>
+                        </item>
+                        <item id="2">
+                            <label>Get Cover</label>
+                            <onclick>SendClick(10)</onclick>
+                        </item>
+                        <item id="3">
+                            <label>Rating</label>
+                            <onclick>setfocus(15)</onclick>
+                        </item>
+                        <item id="4">
+                            <label>Get Fanart</label>
+                            <onclick>SendClick(12)</onclick>
+                        </item>
+                        </content>
+                    </control>
+       <include>-</include>           
+        </control>                        
+        <include>FadeBackgroundMovieInfo</include>
+    </controls>
+</window>

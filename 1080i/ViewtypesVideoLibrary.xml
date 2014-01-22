@@ -1,0 +1,284 @@
+﻿<includes>
+<!-- ========= -->
+<!-- List (51) -->
+<!-- ========= -->
+    <include name="Viewtype-List">
+	
+	<control type="image">
+		<description>image</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1920</width>
+		<height>1080</height>
+		<texture>panel/stage.png</texture>
+		<aspectratio>stretch</aspectratio>
+	</control>
+
+                        <control type="label">
+                            <posx>100</posx>
+                            <posy>110</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>Box Video</label>
+                            <font>Font-Condensed-S50</font>
+                        </control>
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>55</width>
+                        <height>55</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
+	<control type="label">
+                 <posx>1760</posx>
+                 <posy>205</posy>
+                 <width>500</width>
+                 <height>0</height>
+                 <label>$INFO[Container(51).Position] & $INFO[Container(51).NumItems]</label>
+                 <font>Font-Condensed-S25-B</font>
+                 <textcolor>eewhite</textcolor>
+                 <align></align>
+		 <visible>!Window.IsActive(1122)</visible>
+        </control>
+	
+        <control type="group">
+            <control type="list" id="51">
+                        <description>GM list</description>
+                        <posx>-10</posx>
+                        <posy>290</posy>
+                        <width>2000</width>
+                        <height>1000</height>
+                        <onleft>51</onleft>
+                    	<onright>51</onright>
+                    	<onup>ActivateWindow(2003)</onup>
+                    	<ondown>9111</ondown>
+                        <viewtype label="List">List</viewtype>
+                         <scrolltime tween="cubic" easing="inout">700</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <preloaditems>2</preloaditems>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="410" height="670">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>21</posx>
+                                    <posy>40</posy>
+                                    <width>400</width>
+                                    <height>620</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/white.png</texture>
+                                </control>
+				<control type="image">
+                                    <posx>340</posx>
+                                    <posy>580</posy>
+                                    <width>50</width>
+                                    <height>50</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/video.png</texture>
+				    <colordiffuse>midgrey</colordiffuse>
+				    <visible>Container.Content(Movies) | Container.Content(Videofile)</visible>
+                                </control>
+				<control type="image">
+                                    <posx>340</posx>
+                                    <posy>580</posy>
+                                    <width>50</width>
+                                    <height>50</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/livetv.png</texture>
+				    <colordiffuse>midgrey</colordiffuse>
+				    <visible>Container.Content(TVShows) | Container.Content(Episodes)</visible>
+                                </control>
+                                <control type="image">
+                                    <posx>30</posx>
+                                    <posy>49</posy>
+                                    <width>380</width>
+                                    <height>450</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+				<control type="image">			<!-- listItem.Pin -->
+                                    <posx>340</posx>
+                                    <posy>50</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>icon/pin.png</texture>
+                                    <visible>Window.IsVisible(favourites)</visible>
+				</control>
+				<control type="image">			<!-- listItem.overlayWatched -->
+                                    <posx>310</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>overlays/OverlayWatched/watched.png</texture>
+				<visible>Substring(ListItem.Overlay,Watched.png) + Substring(ListItem.Overlay,watched.png)</visible>
+				</control>
+				<control type="image">			<!-- listItem.overlayunwatched -->
+                                    <posx>310</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>overlays/OverlayUnWatched/unwatched.png</texture>
+				<visible>Substring(ListItem.Overlay,Watched.png) + !Substring(ListItem.Overlay,Unwatched.png)</visible>
+			     </control>
+				<control type="image">			<!-- listItem.Resumable -->
+                                    <posx>310</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>overlays/OverlayUnWatched/Resumable.png</texture>
+                                    <visible>ListItem.IsResumable</visible>
+			     </control>
+			       <control type="label">			<!-- listItem.year -->
+				<posx>28</posx>
+				<posy>540</posy>
+				<width>200</width>
+				<height>102</height>
+				<font>Font-Condensed-S25-B</font>
+				<label>$INFO[ListItem.Year, ]</label>
+                                    <textcolor>orange</textcolor>
+				</control>	
+				<control type="image">			<!-- listItem.starRating -->
+				<posx>28</posx>
+				<posy>610</posy>
+				<width>135</width>
+				<height>35</height>
+				<texture>$INFO[ListItem.StarRating,rating/]</texture>
+				</control>
+                                <control type="textbox">
+                                    <posx>35</posx>
+                                    <posy>500</posy>
+                                    <width>350</width>
+                                    <height>100</height>
+                                    <font>font13_title</font>
+                                    <label>$INFO[ListItem.Label][CR]$INFO[ListItem.Studio][CR]</label>
+                                    <textcolor>darkgray</textcolor>
+				    <onclick>ActivateWindow(1122)</onclick>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="410" height="670">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>21</posx>
+                                    <posy>40</posy>
+                                    <width>400</width>
+                                    <height>620</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/grey85%.png</texture>
+                                </control>
+				<control type="image">
+                                    <posx>340</posx>
+                                    <posy>580</posy>
+                                    <width>50</width>
+                                    <height>50</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/video.png</texture>
+				    <colordiffuse>white</colordiffuse>
+				    <visible>Container.Content(Movies) | Container.Content(Video)</visible>
+                                </control>
+				<control type="image">
+                                    <posx>340</posx>
+                                    <posy>580</posy>
+                                    <width>50</width>
+                                    <height>50</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/livetv.png</texture>
+				    <colordiffuse>white</colordiffuse>
+				    <visible>Container.Content(TVShows) | Container.Content(Episodes)</visible>
+                                </control>
+                                <control type="image">
+                                    <posx>30</posx>
+                                    <posy>49</posy>
+                                    <width>380</width>
+                                    <height>450</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+				<control type="image">			<!-- listItem.Pin -->
+                                    <posx>340</posx>
+                                    <posy>50</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>icon/pin.png</texture>
+                                    <visible>Window.IsVisible(favourites)</visible>
+				</control>
+				<control type="image">			<!-- listItem.overlayWatched -->
+                                    <posx>310</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>overlays/OverlayWatched/watched.png</texture>
+				<visible>Substring(ListItem.Overlay,Watched.png) + Substring(ListItem.Overlay,watched.png)</visible>
+				</control>
+				<control type="image">			<!-- listItem.overlayunwatched -->
+                                    <posx>310</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>overlays/OverlayUnWatched/unwatched.png</texture>
+				<visible>Substring(ListItem.Overlay,Watched.png) + !Substring(ListItem.Overlay,Unwatched.png)</visible>
+			     </control>
+				<control type="image">			<!-- listItem.Resumable -->
+                                    <posx>310</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+				<texture>overlays/OverlayUnWatched/Resumable.png</texture>
+                                    <visible>ListItem.IsResumable</visible>
+			     </control>
+			       <control type="label">			<!-- listItem.year -->
+				<posx>28</posx>
+				<posy>540</posy>
+				<width>200</width>
+				<height>102</height>
+				<font>Font-Condensed-S25-B</font>
+				<label>$INFO[ListItem.Year, ]</label>
+                                    <textcolor>orange</textcolor>
+				</control>	
+				<control type="image">			<!-- listItem.starRating -->
+				<posx>28</posx>
+				<posy>610</posy>
+				<width>135</width>
+				<height>35</height>
+				<texture>$INFO[ListItem.StarRating,rating/]</texture>
+				</control>
+		               <control type="image">
+                                    <posx>30</posx>
+                                    <posy>49</posy>
+                                    <width>380</width>
+                                    <height>450</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/glass.png</texture>
+			     </control>
+                                <control type="textbox">
+                                    <posx>35</posx>
+                                    <posy>500</posy>
+                                    <width>350</width>
+                                    <height>100</height>
+                                    <font>font13_title</font>
+                                    <label>$INFO[ListItem.Label][CR]$INFO[ListItem.Studio][CR]</label>
+                                    <textcolor>white</textcolor>
+				    <onclick>ActivateWindow(1122)</onclick>
+                                </control>
+                            </control>
+                        </focusedlayout>
+                    </control>
+	</control>
+            <include>Hub_Movies Buttons</include>
+    </include>
+</includes>

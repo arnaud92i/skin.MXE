@@ -1,0 +1,196 @@
+
+
+<includes>
+    <include name="patterboxcontrol">
+	<itemlayout width="290" height="225">
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>210</width>
+				<height>210</height>                    				                                                                              
+                                    <texture>colors/patter.</texture>        
+                        </control>
+                <control type="image">
+			<posx>90</posx>
+			<posy>90</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<aspectratio>stertch</aspectratio>
+                </control>
+                <control type="label">
+			<posx>60</posx>
+			<posy>175</posy>
+			<width>283</width>
+			<height>60</height>
+			<label>$INFO[ListItem.Label]</label>
+			<font>font13_title</font>
+			<textcolor>white</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+                </control>
+        </itemlayout>
+        <focusedlayout width="290" height="290">
+        	<control type="group">
+			<animation type="Focus">
+                        <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
+                    </animation>
+			<control type="image">
+                        	<posx>24</posx>
+                        	<posy>-16</posy>
+                        	<width>270</width>
+                        	<height>270</height>
+                          <aspectratio>stretch</aspectratio>
+                        	<texture>icon/patter-shadow-x.</texture>
+                        		</control>
+					<control type="image">
+                       		    		<posx>-40</posx>
+                       		    		<posy>24</posy>
+                       		    		<width>300</width>
+                       		    		<height>187</height>
+                                                      <aspectratio>stretch</aspectratio>
+                       		    		<texture>icon/patter-shadow-y.</texture>
+				<animation type="Focus">
+                        		<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" center="auto" />
+                        	</animation>
+                        	<animation type="Unfocus">
+                            		<effect type="fade" start="100" end="100" time="50" tween="sine" easing="out" center="auto" />
+                        	</animation>
+                        </control>
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>210</width>
+				<height>210</height>
+				<texture>colors/patter.</texture>
+                        </control>
+                <control type="image">
+			<posx>90</posx>
+			<posy>90</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<aspectratio>stertch</aspectratio>
+                </control>
+			<control type="label">
+				<posx>60</posx>
+				<posy>175</posy>
+				<width>283</width>
+				<height>60</height>
+				<label>$INFO[ListItem.Label]</label>
+				<font>font13_title</font>
+				<textcolor>white</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+                        <control type="image">
+                        	<posx>5</posx>
+               	        	<posy>5</posy>
+        	        	<width>248</width>
+        	        	<height>248</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+                        </control>
+	</focusedlayout>	
+    </include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <include name="pattercolors">
+	<itemlayout width="290" height="225">
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>210</width>
+				<height>210</height>                    				                                                                              
+                                    <texture>colors/patter.png</texture>        
+                        </control>
+                <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>210</width>
+				<height>210</height> 
+			<texture>$INFO[ListItem.Icon]</texture>
+			<aspectratio>scale</aspectratio>
+                </control>
+
+        </itemlayout>
+        <focusedlayout width="290" height="290">
+        	<control type="group">
+			<animation type="Focus">
+                        <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
+                    </animation>
+			<control type="image">
+                        	<posx>24</posx>
+                        	<posy>-16</posy>
+                        	<width>270</width>
+                        	<height>270</height>
+                          <aspectratio>stretch</aspectratio>
+                        	<texture>icon/patter-shadow-x.</texture>
+                        		</control>
+					<control type="image">
+                       		    		<posx>-40</posx>
+                       		    		<posy>24</posy>
+                       		    		<width>300</width>
+                       		    		<height>187</height>
+                                                      <aspectratio>stretch</aspectratio>
+                       		    		<texture>icon/patter-shadow-y.</texture>
+				<animation type="Focus">
+                        		<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" center="auto" />
+                        	</animation>
+                        	<animation type="Unfocus">
+                            		<effect type="fade" start="100" end="100" time="50" tween="sine" easing="out" center="auto" />
+                        	</animation>
+                        </control>
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>210</width>
+				<height>210</height>                    				                                                                              
+                                    <texture>colors/patter.png</texture>        
+                        </control>
+                <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>210</width>
+				<height>210</height> 
+			<texture>$INFO[ListItem.Icon]</texture>
+			<aspectratio>scale</aspectratio>
+                </control>
+
+                        <control type="image">
+                        	<posx>11</posx>
+               	        	<posy>15</posy>
+        	        	<width>245</width>
+        	        	<height>245</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        	<texture>icon/tile-fo.png</texture>
+				<animation type="Focus">		       
+					<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" center="auto" />
+				</animation>
+				<animation type="Unfocus">
+    					<effect type="fade" start="100" end="100" time="50" tween="sine" easing="out" center="auto" />
+				</animation>
+                        	</control>
+                        </control>
+	</focusedlayout>	
+    </include>
+		
+
+    </includes>
+</window>

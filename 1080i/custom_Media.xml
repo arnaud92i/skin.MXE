@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="1115" type="dialog">
+    <defaultcontrol>40</defaultcontrol>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
+    <onload condition="!IsEmpty(Window(home).Property(FeaturedSetup))">ActivateWindow(1128)</onload>
+    <onload condition="ControlGroup(5000).HasFocus">AlarmClock(Tile,Control.Move(5002,1),00:04,silent,loop)</onload>
+    <onload condition="ControlGroup(5000).HasFocus">AlarmClock(TileTwo,Control.Move(5003,1),00:07,silent,loop)</onload>
+    <onload condition="ControlGroup(6000).HasFocus">AlarmClock(Tile,Control.Move(6002,1),00:04,silent,loop)</onload>
+    <onload condition="ControlGroup(6000).HasFocus">AlarmClock(TileTwo,Control.Move(6003,1),00:07,silent,loop)</onload>
+    <onload condition="ControlGroup(7000).HasFocus">AlarmClock(Tile,Control.Move(7002,1),00:04,silent,loop)</onload>
+    <onload condition="ControlGroup(8000).HasFocus">AlarmClock(Tile,Control.Move(8002,1),00:04,silent,loop)</onload>
+    <onload condition="ControlGroup(9000).HasFocus">AlarmClock(Tile,Control.Move(9002,1),00:04,silent,loop)</onload>
+    <onload condition="Window.Previous(home)">SetFocus(5012)</onload>
+    <onunload>ClearProperty(InfoDialog,1115)</onunload>
+    <onload>SetFocus(9000)</onload>
+    <onunload>CancelAlarm(Tile,true)</onunload>
+    <onunload>CancelAlarm(TileTwo,true)</onunload>
+    <onload>SetProperty(DisableWidgets,true,home)</onload>
+    <onunload>ClearProperty(DisableWidgets,home)</onunload>
+    <onunload>ClearProperty(FeaturedSetup,home)</onunload>
+    <onunload condition="Window.IsActive(1147)">Action(PreviousMenu)</onunload>
+    <coordinates>
+        <posx>0</posx>
+        <posy>0</posy>
+        <system>1</system>
+    </coordinates>
+    <controls>
+
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>windows/common/bingbackground.jpg</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+                        <control type="label">
+                            <posx>100</posx>
+                            <posy>100</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label> Xbox Video</label>
+                            <font>Font-Condensed-S50-B</font>
+                        </control>
+		    <control type="image">
+                         <posx>330</posx>
+                        <posy>85</posy>
+                        <width>120</width>
+                        <height>100</height>
+                        <texture>icon/xbox.png</texture>
+
+                    </control>
+        <!-- Main Group -->
+        <control type="grouplist" id="40">
+            <posx>-265</posx>
+            <posy>205</posy>
+            <width>2325</width>
+            <height>780</height>
+            <animation effect="slide" end="0,300" time="0" condition="Window.IsActive(1147)">Conditional</animation>
+            <scrolltime tween="cubic" easing="inout">500</scrolltime>
+            <orientation>horizontal</orientation>
+            <itemgap>-1060</itemgap>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="150" end="100" center="960,540" time="960" tween="cubic" />
+                <effect type="fade" end="100" time="960" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="240" />
+                <effect type="fade" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+            </animation>
+            <!-- Movies -->
+            <control type="group" id="6000">
+                <width>2325</width>
+                <height>825</height>
+                <animation type="Conditional" condition="SubString(Window(1115).Property(InfoDialog),60)" reversible="false">
+                    <effect type="rotatey" center="960" end="-90" time="440" tween="cubic" easing="in" />
+                    <effect type="slide" end="0,-45" time="440" />
+                    <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="440" />
+                    <effect type="fade" start="100" end="0" time="0" delay="440" />
+                    <effect type="rotatey" center="960" start="90" end="0" time="440" delay="440" tween="cubic" />
+                </animation>
+                <animation type="Conditional" condition="!SubString(Window(1115).Property(InfoDialog),60)" reversible="false">
+                    <effect type="rotatey" center="960" end="90" time="0" tween="cubic" easing="in" delay="440" />
+                    <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="440" />
+                    <effect type="fade" end="100" time="320" delay="440" />
+                    <effect type="rotatey" center="960" start="-90" end="0" time="440" delay="440" tween="cubic" />
+                    <effect type="slide" start="0,-45" end="0,0" delay="440" time="440" />
+                </animation>
+                <animation type="Conditional" condition="![ControlGroup(6000).HasFocus | Control.HasFocus(6012) | SubString(Window(1115).Property(InfoDialog),60)]">
+                    <effect type="fade" start="100" end="80" time="400" tween="cubic" easing="inout" />
+                    <effect type="fade" start="100" end="70" time="400" tween="cubic" easing="inout" center="auto" />
+                </animation>
+                <control type="button" id="6012">
+                    <include>HiddenObject</include>
+                    <onup>Dialog.Close(1115)</onup>
+                    <ondown>6001</ondown>
+                    <onright>7012</onright>
+                    <onleft>5012</onleft>
+                    <ondown>6001</ondown>
+                    <onfocus>AlarmClock(Tile,Control.Move(6002,1),00:04,silent,loop)</onfocus>
+                    <onfocus>AlarmClock(TileTwo,Control.Move(6003,1),00:07,silent,loop)</onfocus>
+                    <onclick>Action(Close)</onclick>
+                    <onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+                </control>
+                <control type="group">
+                    <posx>450</posx>
+                    <include>FeaturedPanel</include>
+                    <control type="group" id="6001">
+                        <posx>31</posx>
+                        <posy>31</posy>
+                        <control type="button" id="6010">
+                            <include>HiddenObject</include>
+                            <onup>6012</onup>
+                            <onleft>5011</onleft>
+                            <onright>AlarmClock(Tile,Control.Move(6002,1),00:04,silent,loop)</onright>
+                            <onright>6011</onright>
+                            <ondown>Control.Move(6002,1)</ondown>
+                            <onclick>SetProperty(InfoDialog,6002,1115)</onclick>
+                            <onclick>SetFocus(5005)</onclick>
+                            <onfocus>CancelAlarm(Tile,true)</onfocus>
+                        </control>
+                        <control type="wraplist" id="6002">
+                            <width>694</width>
+                            <height>550</height>
+                            <onleft>SetFocus(6002)</onleft>
+                            <onright>5000</onright>
+                            <onup>5000</onup>
+                            <ondown>Control.Move(6003,1)</ondown>
+                            <orientation>horizontal</orientation>
+                            <pagecontrol>60</pagecontrol>
+                            <focusposition>0</focusposition>
+                            <scrolltime tween="quadratic">800</scrolltime>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout width="894" height="550">
+                                <control type="image">
+                                    <width>694</width>
+                                    <height>450</height>
+                                    <aspectratio align="center">scale</aspectratio>
+                                    <texture background="true">DefaultTVShows.png</texture>
+                                    <animation effect="fade" time="480">Focus</animation>
+                                    <info>ListItem.ActualIcon</info>
+                                </control>
+                                <control type="image">
+                                    <posy>510</posy>
+                                    <width>894</width>
+                                    <height>40</height>
+                                    <texture>common/bgcolor.png</texture>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="894" height="550">
+                                <control type="image">
+                                    <width>694</width>
+                                    <height>450</height>
+                                    <aspectratio align="center">scale</aspectratio>
+                                    <texture background="true">DefaultTVShows.png</texture>
+                                    <animation effect="fade" time="480">Focus</animation>
+                                    <info>ListItem.ActualIcon</info>
+                                </control>
+                                <control type="image">
+                                    <posy>510</posy>
+                                    <width>894</width>
+                                    <height>40</height>
+                                    <texture>common/bgcolor.png</texture>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                </control>
+                            </focusedlayout>
+                            <content>
+				<item id="1">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item1.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/5f5db28d-2edd-432c-bcf6-112822161064?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="2">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item2.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/241fac46-4e40-460b-b781-61dbffdcb748?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="3">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item3.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/6196aebb-4acc-4eb2-adeb-56b4f4c7e8fb?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="4">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item4.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/2ba0eff0-a7ae-4253-b339-1b504f390fe8?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="5">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item5.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/cdf8c3b5-2567-4ae0-9e08-bb9ff74abc12?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+                            </content>
+                        </control>
+                        <control type="label">
+                            <posy>-40</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label> Featured Video</label>
+                            <font>Font-Condensed-S30-B</font>
+                        </control>
+                        <control type="image">
+                            <posx>546</posx>
+                            <posy>425</posy>
+                            <width>138</width>
+                            <height>12</height>
+                            <texture>$INFO[Container(6002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <posx>935</posx>
+                        <posy>31</posy>
+                        <control type="button" id="6011">
+                            <include>HiddenObject</include>
+                            <onup>6012</onup>
+                            <onleft>AlarmClock(TileTwo,Control.Move(6003,1),00:07,silent,loop)</onleft>
+                            <onleft>6010</onleft>
+                            <onright>AlarmClock(Tile,Control.Move(7002,1),00:04,silent,loop)</onright>
+                            <onright>7010</onright>
+                            <ondown>Control.Move(6003,1)</ondown>
+                            <onclick>SetProperty(InfoDialog,6003,1115)</onclick>
+                            <onclick>SetFocus(5005)</onclick>
+                            <onfocus>CancelAlarm(TileTwo,true)</onfocus>
+                        </control>
+		    <control type="image">
+                         <posx>-200</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/18fa552b-1df8-4fd1-90c0-bb85ce46d017?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>-40</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/7ceaf7a6-14ef-4249-8a7f-4f518fef9538?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>120</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/5a29efed-5759-4a00-bcaa-1ab535febbf5?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>120</posx>
+                        <posy>230</posy>
+                        <width>150</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/82b3a580-9510-431a-ad70-2d204f10f633?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>120</posx>
+                        <posy>460</posy>
+                        <width>150</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/f2e2247a-93ea-4941-b551-89f1c75e5026?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>-200</posx>
+                        <posy>230</posy>
+                        <width>310</width>
+                        <height>215</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/5b355428-9a5e-40de-aaea-8eebd16c79f2?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>-200</posx>
+                        <posy>460</posy>
+                        <width>310</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/cdf8c3b5-2567-4ae0-9e08-bb9ff74abc12?width=420&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>-905</posx>
+                        <posy>460</posy>
+                        <width>200</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/2ba0eff0-a7ae-4253-b339-1b504f390fe8?width=420&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>-695</posx>
+                        <posy>460</posy>
+                        <width>485</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/5f5db28d-2edd-432c-bcf6-112822161064?width=420&resize=true</texture>
+
+                    </control>
+                        <control type="label">
+                            <posy>510</posy>
+                            <width>272</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[Container(6003).ListItem.Label]</label>
+                            <font>Font_Reg15</font>
+                        </control>
+                        <control type="image">
+                            <posx>272</posx>
+                            <posy>525</posy>
+                            <width>84</width>
+                            <height>12</height>
+                            <texture>$INFO[Container(6003).ListItem.Property(NavItem),featured/panel_right/]</texture>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <posx>26</posx>
+                        <posy>26</posy>
+                        <width>904</width>
+                        <height>560</height>
+                        <texture border="6">views/addonwall_select.png</texture>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <include>Animation_VisibleChange200</include>
+                        <visible>Control.HasFocus(6010)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>930</posx>
+                        <posy>26</posy>
+                        <width>376</width>
+                        <height>560</height>
+                        <texture border="6">views/addonwall_select.png</texture>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <include>Animation_VisibleChange200</include>
+                        <visible>Control.HasFocus(6011)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>21</posx>
+                        <posy>21</posy>
+                        <width>1290</width>
+                        <height>570</height>
+                        <texture>featured/panel_featured_overlabuttons/y.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
+                </control>
+            </control>
+            <!-- TV Shows -->
+            <control type="group" id="7000">
+                <width>2325</width>
+                <height>825</height>
+                <animation type="Conditional" condition="SubString(Window(1115).Property(InfoDialog),70)" reversible="false">
+                    <effect type="rotatey" center="960" end="-90" time="440" tween="cubic" easing="in" />
+                    <effect type="slide" end="0,-45" time="440" />
+                    <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="440" />
+                    <effect type="fade" start="100" end="0" time="0" delay="440" />
+                    <effect type="rotatey" center="960" start="90" end="0" time="440" delay="440" tween="cubic" />
+                </animation>
+                <animation type="Conditional" condition="!SubString(Window(1115).Property(InfoDialog),70)" reversible="false">
+                    <effect type="rotatey" center="960" end="90" time="0" tween="cubic" easing="in" delay="440" />
+                    <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="440" />
+                    <effect type="fade" end="100" time="320" delay="440" />
+                    <effect type="rotatey" center="960" start="-90" end="0" time="440" delay="440" tween="cubic" />
+                    <effect type="slide" start="0,-45" end="0,0" delay="440" time="440" />
+                </animation>
+                <animation type="Conditional" condition="![ControlGroup(7000).HasFocus | Control.HasFocus(7012) | SubString(Window(1115).Property(InfoDialog),70)]">
+                    <effect type="fade" start="100" end="80" time="400" tween="cubic" easing="inout" />
+                    <effect type="fade" start="100" end="70" time="400" tween="cubic" easing="inout" center="auto" />
+                </animation>
+                <control type="button" id="7012">
+                    <include>HiddenObject</include>
+                    <onup>Dialog.Close(1115)</onup>
+                    <ondown>7001</ondown>
+                    <onright>8012</onright>
+                    <onleft>6012</onleft>
+                    <ondown>7001</ondown>
+                    <onclick>Action(Close)</onclick>
+                    <onclick>ActivateWindow(videos,tvshowtitles,return)</onclick>
+                    <onfocus>AlarmClock(Tile,Control.Move(7002,1),00:04,silent,loop)</onfocus>
+                    <onfocus>CancelAlarm(TileTwo,true)</onfocus>
+                </control>
+                <control type="group">
+                    <posx>650</posx>
+                    <include>FeaturedPanel</include>
+                    <control type="group" id="7001">
+                        <posx>31</posx>
+                        <posy>31</posy>
+                        <control type="button" id="7010">
+                            <include>HiddenObject</include>
+                            <onup>7012</onup>
+                            <onleft>6011</onleft>
+                            <onright>AlarmClock(Tile,Control.Move(7002,1),00:04,silent,loop)</onright>
+                            <onright>7003</onright>
+                            <ondown>Control.Move(7002,1)</ondown>
+                            <onclick>SetProperty(InfoDialog,7002,1115)</onclick>
+                            <onclick>SetFocus(5005)</onclick>
+                            <onfocus>CancelAlarm(Tile,true)</onfocus>
+                        </control>
+                        <control type="wraplist" id="7002">
+                            <width>894</width>
+                            <height>550</height>
+                            <onleft>SetFocus(7002)</onleft>
+                            <onright>5000</onright>
+                            <onup>5000</onup>
+                            <ondown>Control.Move(7003,1)</ondown>
+                            <orientation>horizontal</orientation>
+                            <pagecontrol>60</pagecontrol>
+                            <focusposition>0</focusposition>
+                            <scrolltime tween="quadratic">800</scrolltime>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout width="894" height="550">
+                                <control type="image">
+                                    <width>894</width>
+                                    <height>450</height>
+                                    <aspectratio align="center">scale</aspectratio>
+                                    <texture background="true">DefaultTVShows.png</texture>
+                                    <animation effect="fade" time="480">Focus</animation>
+                                    <info>ListItem.ActualIcon</info>
+                                </control>
+                                <control type="image">
+                                    <posy>510</posy>
+                                    <width>894</width>
+                                    <height>40</height>
+                                    <texture>common/bgcolor.png</texture>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="894" height="550">
+                                <control type="image">
+                                    <width>894</width>
+                                    <height>450</height>
+                                    <aspectratio align="center">scale</aspectratio>
+                                    <texture background="true">DefaultTVShows.png</texture>
+                                    <animation effect="fade" time="480">Focus</animation>
+                                    <info>ListItem.ActualIcon</info>
+                                </control>
+                                <control type="image">
+                                    <posy>510</posy>
+                                    <width>894</width>
+                                    <height>40</height>
+                                    <texture>common/bgcolor.png</texture>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                </control>
+                            </focusedlayout>
+                            <content>
+				<item id="1">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item1.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/f44e5a63-0dcc-498e-ab50-db7cda283578?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="2">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item2.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/d931b46d-8363-4b08-8886-6500308f4059?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="3">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item3.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/10156a64-9c9c-42bb-ba83-22778ebe98d3?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="4">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item4.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/13e48640-563e-41d8-8aa9-84b8ffb83c56?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="5">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item5.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/0b38962d-602a-4004-8398-5b3ccad62d27?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+                            </content>
+                        </control>
+                        <control type="label">
+                            <posy>-40</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>TV Shows</label>
+                            <font>Font-Condensed-S30-B</font>
+                        </control>
+                        <control type="image">
+                            <posx>746</posx>
+                            <posy>425</posy>
+                            <width>138</width>
+                            <height>12</height>
+                            <texture>$INFO[Container(7002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        </control>
+                    </control>
+		    <control type="image">
+                         <posx>30</posx>
+                        <posy>490</posy>
+                        <width>180</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/0f8f6d0d-485e-4a1a-90b6-ae6443b5b8d9?width=181&resize=true</texture>
+                    </control>
+		    <control type="image">
+                         <posx>220</posx>
+                        <posy>490</posy>
+                        <width>180</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/8f995991-8af4-416f-8bd4-62716f69ff1c?width=181&resize=true</texture>
+                    </control>
+		    <control type="image">
+                         <posx>410</posx>
+                        <posy>490</posy>
+                        <width>180</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/10955f3a-74cc-4446-8447-55005ad66c2c?width=181&resize=true</texture>
+                    </control>
+		    <control type="image">
+                         <posx>600</posx>
+                        <posy>490</posy>
+                        <width>320</width>
+                        <height>220</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/388da6ad-8e68-4c4a-a685-c2fa6a8605ca?width=181&resize=true</texture>
+
+                    </control>
+                    <control type="group">
+                        <posx>935</posx>
+                        <posy>31</posy>
+                        <control type="list" id="7003">
+                            <posx>-5</posx>
+                            <posy>-5</posy>
+                            <width>380</width>
+                            <height>693</height>
+                            <onup>7012</onup>
+                            <onleft>7010</onleft>
+                            <onright>AlarmClock(Tile,Control.Move(8002,1),00:04,silent,loop)</onright>
+                            <onright>8001</onright>
+                            <orientation>vertical</orientation>
+                            <pagecontrol>60</pagecontrol>
+                            <focusposition>0</focusposition>
+                            <scrolltime tween="quadratic">200</scrolltime>
+                            <visible>IsEmpty(Window(Home).Property(NextAired.1.Label))</visible>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout width="366" height="137">
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <aspectratio aligny="center">scale</aspectratio>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <bordersize>5</bordersize>
+                                </control>
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <colordiffuse>60FFFFFF</colordiffuse>
+                                </control>
+                                <control type="group">
+                                    <posy>5</posy>
+                                    <animation effect="fade" end="80" start="100" time="0" condition="true">Conditional</animation>
+                                    <control type="label">
+                                        <posy>5</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posy>40</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posy>75</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="366" height="140">
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <aspectratio aligny="center">scale</aspectratio>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <bordersize>5</bordersize>
+                                </control>
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <colordiffuse>60FFFFFF</colordiffuse>
+                                </control>
+                                <control type="group">
+                                    <posy>5</posy>
+                                    <animation effect="fade" end="80" start="100" time="0" condition="!Control.HasFocus(7003)">Conditional</animation>
+                                    <control type="label">
+                                        <posy>5</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                        <scroll>true</scroll>
+                                    </control>
+                                    <control type="label">
+                                        <posy>40</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                        <scroll>true</scroll>
+                                    </control>
+                                    <control type="label">
+                                        <posy>75</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                </control>
+                                <control type="image">
+                                    <posy>-5</posy>
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture>common/blank.png</texture>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                    <bordertexture border="5">views/addonwall_select.png</bordertexture>
+                                    <bordersize>5</bordersize>
+                                    <visible>Control.HasFocus(7003)</visible>
+                                </control>
+                            </focusedlayout>
+                            <content>
+				<item id="1">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/bce5a6ae-12d3-4bdb-a125-a8e8c3866486?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="2">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/72914e49-1fd9-4daa-b81e-db761f1429dd?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="3">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/1127dacc-252d-4576-904f-831282f4997e?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="4">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/397b4e64-7e62-4aa9-92ab-18942e4bfed3?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="5">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/4e1b5a08-b03b-4f56-8503-d76587135ddc?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="6">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/bf94e566-3829-4b34-a618-0944aa681974?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                    </item>
+				<item id="7">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/30d3cc33-72fc-472b-9922-84a76a7aba02?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="8">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/ef1fda9b-0970-48fb-9bea-2664647338f5?width=200&height=200&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+                            </content>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <posx>26</posx>
+                        <posy>26</posy>
+                        <width>904</width>
+                        <height>560</height>
+                        <texture border="6">views/addonwall_select.png</texture>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <include>Animation_VisibleChange200</include>
+                        <visible>Control.HasFocus(7010)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>21</posx>
+                        <posy>21</posy>
+                        <width>1290</width>
+                        <height>570</height>
+                        <texture>featured/panel_featured_overlabuttons/y.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
+                </control>
+            </control>
+            <!-- Albums -->
+            <control type="group" id="8000">
+                <width>2325</width>
+                <height>825</height>
+                <animation type="Conditional" condition="SubString(Window(1115).Property(InfoDialog),80)" reversible="false">
+                    <effect type="rotatey" center="960" end="-90" time="440" tween="cubic" easing="in" />
+                    <effect type="slide" end="0,-45" time="440" />
+                    <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="440" />
+                    <effect type="fade" start="100" end="0" time="0" delay="440" />
+                    <effect type="rotatey" center="960" start="90" end="0" time="440" delay="440" tween="cubic" />
+                </animation>
+                <animation type="Conditional" condition="!SubString(Window(1115).Property(InfoDialog),80)" reversible="false">
+                    <effect type="rotatey" center="960" end="90" time="0" tween="cubic" easing="in" delay="440" />
+                    <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="440" />
+                    <effect type="fade" end="100" time="320" delay="440" />
+                    <effect type="rotatey" center="960" start="-90" end="0" time="440" delay="440" tween="cubic" />
+                    <effect type="slide" start="0,-45" end="0,0" delay="440" time="440" />
+                </animation>
+                <animation type="Conditional" condition="![ControlGroup(8000).HasFocus | Control.HasFocus(8012) | SubString(Window(1115).Property(InfoDialog),80)]">
+                    <effect type="fade" start="100" end="80" time="400" tween="cubic" easing="inout" />
+                    <effect type="fade" start="100" end="70" time="400" tween="cubic" easing="inout" center="1160,412" />
+                </animation>
+                <control type="button" id="8012">
+                    <include>HiddenObject</include>
+                    <onup>Dialog.Close(1115)</onup>
+                    <ondown>8001</ondown>
+                    <onright>9012</onright>
+                    <onleft>7012</onleft>
+                    <ondown>8001</ondown>
+                    <onclick>Action(Close)</onclick>
+                    <onclick>ActivateWindow(musiclibrary,Albums,return)</onclick>
+                    <onfocus>AlarmClock(Tile,Control.Move(8002,1),00:04,silent,loop)</onfocus>
+                </control>
+                <control type="group" id="8001">
+                    <posx>850</posx>
+                    <include>FeaturedPanel</include>
+                    <control type="group">
+                        <posx>31</posx>
+                        <posy>255</posy>
+                        <control type="button" id="8010">
+                            <include>HiddenObject</include>
+                            <onup>8012</onup>
+                            <onleft>7003</onleft>
+                            <onright>AlarmClock(Tile,Control.Move(8002,1),00:04,silent,loop)</onright>
+                            <onright>8003</onright>
+                            <ondown>Control.Move(8002,1)</ondown>
+                            <onclick>SetProperty(InfoDialog,8002,1115)</onclick>
+                            <onclick>SetFocus(5005)</onclick>
+                            <onfocus>CancelAlarm(Tile,true)</onfocus>
+                        </control>
+                        <control type="wraplist" id="8002">
+                            <width>550</width>
+                            <height>550</height>
+                            <onleft>SetFocus(8002)</onleft>
+                            <onright>5000</onright>
+                            <onup>5000</onup>
+                            <ondown>Control.Move(8003,1)</ondown>
+                            <orientation>horizontal</orientation>
+                            <pagecontrol>60</pagecontrol>
+                            <focusposition>0</focusposition>
+                            <scrolltime tween="quadratic">800</scrolltime>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout width="550" height="550">
+                                <control type="image">
+                                    <texture background="true" />
+                                    <width>550</width>
+                                    <height>460</height>
+                                    <aspectratio align="center">scale</aspectratio>
+                                    <animation effect="fade" time="480">Focus</animation>
+                                    <info>ListItem.Icon</info>
+                                </control>
+                                <control type="image">
+                                    <posy>510</posy>
+                                    <width>550</width>
+                                    <height>40</height>
+                                    <texture>common/bgcolor.png</texture>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="550" height="550">
+                                <control type="image">
+                                    <texture background="true" />
+                                    <width>550</width>
+                                    <height>460</height>
+                                    <aspectratio align="center">scale</aspectratio>
+                                    <animation effect="fade" time="480">Focus</animation>
+                                    <info>ListItem.Icon</info>
+                                </control>
+                                <control type="image">
+                                    <posy>510</posy>
+                                    <width>550</width>
+                                    <height>40</height>
+                                    <texture>common/bgcolor.png</texture>
+                                    <animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+                                </control>
+                            </focusedlayout>
+                            <content>
+				<item id="1">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item1.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/1e951192-2ba9-4179-9ae8-2b8d05ea1df6?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="2">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item2.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/5eda3fc1-3f91-4537-bf15-189c57143ca9?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="3">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item3.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/b7a1dcc0-7cbe-4474-a05d-8b3ad88d06a0?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="4">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item4.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/db28af6a-26fe-4eb1-8e58-e173bcad226f?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="5">
+                                    <onclick>-</onclick>
+                                    <property name="NavItem">item5.png</property>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/78ddaada-a629-4c5f-87d7-d01447b0fe11?width=420&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+                            </content>
+                        </control>
+                        <control type="label">
+                            <posy>-260</posy>
+                            <width>402</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>Movies</label>
+                            <font>Font-Condensed-S30-B</font>
+                        </control>
+                        <control type="image">
+                            <posx>402</posx>
+                            <posy>425</posy>
+                            <width>138</width>
+                            <height>12</height>
+                            <texture>$INFO[Container(8002).ListItem.Property(NavItem),featured/panel_mid/]</texture>
+                        </control>
+		    <control type="image">
+                         <posx>0</posx>
+                        <posy>-220</posy>
+                        <width>265</width>
+                        <height>210</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/363f5414-43e0-425d-9d0e-07b35ccfa29d?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>280</posx>
+                        <posy>-220</posy>
+                        <width>265</width>
+                        <height>210</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/14dc3c87-580c-461a-9f56-1f082e4c973e?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>760</posx>
+                        <posy>-220</posy>
+                        <width>420</width>
+                        <height>335</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/8dfee200-aa93-495e-8a89-fe0eb54191aa?width=181&resize=true</texture>
+
+                    </control>
+		    <control type="image">
+                         <posx>760</posx>
+                        <posy>125</posy>
+                        <width>420</width>
+                        <height>335</height>
+                        <texture>https://catalog-ssl.zune.net/v3.5/en-US/image/0e3d1253-a52a-49fc-9c93-cd89409ff154?width=181&resize=true</texture>
+
+                    </control>
+                    </control>
+                    <control type="group">
+                        <posx>591</posx>
+                        <posy>35</posy>
+                        <control type="list" id="8003">
+                            <posx>-5</posx>
+                            <posy>-5</posy>
+                            <width>724</width>
+                            <height>695</height>
+                            <onup>8012</onup>
+                            <onleft>8010</onleft>
+                            <onright>AlarmClock(Tile,Control.Move(9002,1),00:04,silent,loop)</onright>
+                            <onright>9001</onright>
+                            <orientation>vertical</orientation>
+                            <pagecontrol>60</pagecontrol>
+                            <focusposition>0</focusposition>
+                            <scrolltime tween="quadratic">200</scrolltime>
+                            <preloaditems>2</preloaditems>
+                            <itemlayout width="366" height="173">
+                                <control type="image">
+                                    <width>200</width>
+                                    <height>175</height>
+                                    <aspectratio aligny="center">scale</aspectratio>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <bordersize>5</bordersize>
+                                </control>
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <colordiffuse>60FFFFFF</colordiffuse>
+                                </control>
+                                <control type="group">
+                                    <posy>5</posy>
+                                    <animation effect="fade" end="80" start="100" time="0" condition="true">Conditional</animation>
+                                    <control type="label">
+                                        <posy>5</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posy>40</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                    <control type="label">
+                                        <posy>75</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="366" height="173">
+                                <control type="image">
+                                    <width>200</width>
+                                    <height>175</height>
+                                    <aspectratio aligny="center">scale</aspectratio>
+                                    <texture fallback="XBMC_Logo.png">$INFO[ListItem.Icon]</texture>
+                                    <bordersize>5</bordersize>
+                                </control>
+                                <control type="image">
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture fallback="XBMC_Logo.png">common/bgcolor.png</texture>
+                                    <colordiffuse>60FFFFFF</colordiffuse>
+                                </control>
+                                <control type="group">
+                                    <posy>5</posy>
+                                    <animation effect="fade" end="80" start="100" time="0" condition="!Control.HasFocus(7003)">Conditional</animation>
+                                    <control type="label">
+                                        <posy>5</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label2]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                        <scroll>true</scroll>
+                                    </control>
+                                    <control type="label">
+                                        <posy>40</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                        <scroll>true</scroll>
+                                    </control>
+                                    <control type="label">
+                                        <posy>75</posy>
+                                        <width>360</width>
+                                        <height>45</height>
+                                        <textoffsetx>15</textoffsetx>
+                                        <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
+                                        <font>Font_Reg15</font>
+                                        <textcolor>white2</textcolor>
+                                    </control>
+                                </control>
+                                <control type="image">
+                                    <posy>-5</posy>
+                                    <width>376</width>
+                                    <height>140</height>
+                                    <texture>common/blank.png</texture>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                    <bordertexture border="5">views/addonwall_select.png</bordertexture>
+                                    <bordersize>5</bordersize>
+                                    <visible>Control.HasFocus(7003)</visible>
+                                </control>
+                            </focusedlayout>
+                            <content>
+				<item id="1">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/b9f3777a-713a-41ef-a283-87b48c09cd73?width=181&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="2">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/461c1d64-05bc-4c1b-8c54-5923027cbe4d?width=181&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="3">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/67ab8b99-b78e-4307-8355-5791ab861871?width=150&height=225&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="4">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/9504ff94-9d95-4bd4-884e-6fbad7caa90f?width=150&height=225&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="5">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/b61e5d28-2e0c-44d7-9459-bea297b2a673?width=150&height=225&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="6">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/e7aa2727-9a2e-40fe-b9ff-91d7f630ecbc?width=150&height=225&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                    </item>
+				<item id="7">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/d97b8a90-8911-4a73-b680-75841caf8aea?width=150&height=225&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+				<item id="8">
+                                    <onclick>-</onclick>
+                                    <icon>https://catalog-ssl.zune.net/v3.5/en-US/image/b4803eb4-9c04-44c3-99a8-7edc491ad11d?width=150&height=225&resize=true</icon>
+                                    <label>-</label>
+				    <visible>System.InternetState</visible>
+                                </item>
+                            </content>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <posx>26</posx>
+                        <posy>26</posy>
+                        <width>560</width>
+                        <height>560</height>
+                        <texture border="6">views/addonwall_select.png</texture>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <include>Animation_VisibleChange200</include>
+                        <visible>Control.HasFocus(8010)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>21</posx>
+                        <posy>21</posy>
+                        <width>1290</width>
+                        <height>570</height>
+                        <texture>featured/panel_featured_overlabuttons/y.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
+                </control>
+            </control>
+        </control>
+        <control type="group">
+            <posx>315</posx>
+            <posy>105</posy>
+            <animation effect="slide" end="0,300" time="0" condition="Window.IsActive(1147)">Conditional</animation>
+            <animation type="Conditional" condition="!IsEmpty(Window(1115).Property(InfoDialog))" reversible="false">
+                <effect type="rotatey" center="960" end="-90" time="440" tween="cubic" easing="in" />
+                <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="440" />
+                <effect type="fade" end="100" time="0" delay="440" />
+                <effect type="rotatey" center="960" start="90" end="0" time="440" delay="440" tween="cubic" />
+                <effect type="slide" start="0,-45" end="0,0" delay="440" time="440" />
+            </animation>
+            <animation type="Conditional" condition="IsEmpty(Window(1115).Property(InfoDialog))" reversible="false">
+                <effect type="rotatey" center="960" end="90" time="440" tween="cubic" easing="in" />
+                <effect type="slide" end="0,-45" time="440" />
+                <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="440" />
+                <effect type="fade" start="100" end="0" time="0" delay="440" />
+                <effect type="rotatey" center="960" start="-90" end="0" time="0" delay="440" tween="cubic" />
+            </animation>
+            <include>FeaturedPanel</include>
+            <control type="image">
+                <posx>31</posx>
+                <posy>31</posy>
+                <width>550</width>
+                <height>550</height>
+                <aspectratio aligny="top" align="left">keep</aspectratio>
+                <texture fallback="XBMC_Logo.png">$VAR[FeaturedInfoDialogIconVar]</texture>
+                <fadetime>200</fadetime>
+            </control>
+            <control type="image">
+                <posx>731</posx>
+                <posy>75</posy>
+                <width>550</width>
+                <height>118</height>
+                <aspectratio aligny="top" align="right">keep</aspectratio>
+                <texture>$VAR[FeaturedInfoDialogLogoVar]</texture>
+                <fadetime>200</fadetime>
+            </control>
+            <control type="group">
+                <posx>396</posx>
+                <posy>31</posy>
+                <width>894</width>
+                <height>540</height>
+                <visible>[SubString(Window(1115).Property(InfoDialog),50) | SubString(Window(1115).Property(InfoDialog),60)]</visible>
+                <control type="label">
+                    <width>894</width>
+                    <height>45</height>
+                    <textoffsetx>30</textoffsetx>
+                    <label>$VAR[FeaturedInfoDialogLabel1Var]</label>
+                    <font>Font_Reg24_Caps</font>
+                </control>
+                <control type="label">
+                    <posy>45</posy>
+                    <width>894</width>
+                    <height>45</height>
+                    <textoffsetx>30</textoffsetx>
+                    <label>$VAR[FeaturedInfoDialogLabel2Var]</label>
+                    <font>Font_Reg19</font>
+                    <textcolor>grey2</textcolor>
+                    <scroll>true</scroll>
+                </control>
+                <control type="label">
+                    <posy>90</posy>
+                    <width>894</width>
+                    <height>45</height>
+                    <textoffsetx>30</textoffsetx>
+                    <label>$VAR[FeaturedInfoDialogLabel3Var]</label>
+                    <font>Font_Reg19</font>
+                    <scroll>true</scroll>
+                </control>
+                <control type="textbox">
+                    <posx>30</posx>
+                    <posy>225</posy>
+                    <width>834</width>
+                    <height>304</height>
+                    <label>$VAR[FeaturedInfoDialogPlotVar]</label>
+                    <font>Font_Reg19</font>
+                    <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                </control>
+            </control>
+            <control type="group">
+                <posx>586</posx>
+                <posy>31</posy>
+                <width>704</width>
+                <height>540</height>
+                <visible>![SubString(Window(1115).Property(InfoDialog),50) | SubString(Window(1115).Property(InfoDialog),60)]</visible>
+                <control type="label">
+                    <width>684</width>
+                    <height>45</height>
+                    <textoffsetx>30</textoffsetx>
+                    <label>$VAR[FeaturedInfoDialogLabel1Var]</label>
+                    <font>Font_Reg24_Caps</font>
+                </control>
+                <control type="label">
+                    <posy>45</posy>
+                    <width>684</width>
+                    <height>45</height>
+                    <textoffsetx>30</textoffsetx>
+                    <label>$VAR[FeaturedInfoDialogLabel2Var]</label>
+                    <font>Font_Reg19</font>
+                    <textcolor>grey2</textcolor>
+                    <scroll>true</scroll>
+                </control>
+                <control type="label">
+                    <posy>90</posy>
+                    <width>684</width>
+                    <height>45</height>
+                    <textoffsetx>30</textoffsetx>
+                    <label>$VAR[FeaturedInfoDialogLabel3Var]</label>
+                    <font>Font_Reg19</font>
+                    <scroll>true</scroll>
+                </control>
+                <control type="textbox">
+                    <posx>30</posx>
+                    <posy>225</posy>
+                    <width>674</width>
+                    <height>304</height>
+                    <label>$VAR[FeaturedInfoDialogPlotVar]</label>
+                    <font>Font_Reg19</font>
+                    <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                </control>
+            </control>
+            <control type="grouplist" id="5005">
+                <posx>426</posx>
+                <posy>194</posy>
+                <width>894</width>
+                <height>45</height>
+                <align>left</align>
+                <orientation>horizontal</orientation>
+                <onleft>190</onleft>
+                <onright>190</onright>
+                <onup>190</onup>
+                <ondown>190</ondown>
+                <onback>ClearProperty(InfoDialog,1115)</onback>
+                <onback>SetFocus(40)</onback>
+                <animation effect="slide" end="190" condition="![SubString(Window(1115).Property(InfoDialog),50) | SubString(Window(1115).Property(InfoDialog),60)]">Conditional</animation>
+                <control type="button" id="1">
+                    <label>$LOCALIZE[208]</label>
+                    <include>WidgetMenuLabel</include>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),5002)">$INFO[Container(5002).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),5003)">$INFO[Container(5003).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),6002)">$INFO[Container(6002).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),6003)">$INFO[Container(6003).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),7002)">$INFO[Container(7002).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),7003)">$INFO[Container(7003).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),8002)">$INFO[Container(8002).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),8003)">$INFO[Container(8003).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),9003)">$INFO[Container(9003).ListItem.Property(Path)]</onclick>
+                    <onclick>ClearProperty(InfoDialog,1115)</onclick>
+                    <onclick>SetFocus(40)</onclick>
+                    <onclick condition="Window.IsActive(home)">Action(Close)</onclick>
+                    <visible>!StringCompare(Window(1115).Property(InfoDialog),9002)</visible>
+                </control>
+                <control type="button" id="2">
+                    <label>$LOCALIZE[31066]</label>
+                    <include>WidgetMenuLabel</include>
+                    <onclick>ClearProperty(InfoDialog,1115)</onclick>
+                    <onclick>SetFocus(40)</onclick>
+                </control>
+                <control type="button" id="3">
+                    <label>$LOCALIZE[20410]</label>
+                    <include>WidgetMenuLabel</include>
+                    <onclick condition="Window.IsActive(home)">Action(Close)</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),6002)">PlayMedia($ESCINFO[Container(6002).ListItem.Property(Trailer)])</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),6003)">PlayMedia($ESCINFO[Container(6003).ListItem.Property(Trailer)])</onclick>
+                    <onclick>SetFocus(40)</onclick>
+                    <visible>
+ [StringCompare(Window(1115).Property(InfoDialog),6002) + !IsEmpty(Container(6002).ListItem.Property(Trailer))] | 
+ [StringCompare(Window(1115).Property(InfoDialog),6003) + !IsEmpty(Container(6003).ListItem.Property(Trailer))]
+ </visible>
+                </control>
+            </control>
+            <control type="image">
+                <posx>21</posx>
+                <posy>21</posy>
+                <width>1290</width>
+                <height>570</height>
+                <texture>featured/panel_featured_overlabuttons/y.png</texture>
+                <colordiffuse>$INFO[Skin.String(diffuse_color)]</colordiffuse>
+            </control>
+        </control>
+        <control type="group">
+            <include>Animation_HideBreadCrumbs</include>
+            <control type="image">
+                <width>1920</width>
+                <height>87</height>
+                <texture flipy="true">home/nav_back_shadow.png</texture>
+                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+            </control>
+            <control type="group">
+                <control type="grouplist">
+                    <posx>0</posx>
+                    <width>1920</width>
+                    <align>center</align>
+                    <itemgap>50</itemgap>
+                    <orientation>horizontal</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <control type="image">
+                        <posy>1</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>common/featured_icon.png</texture>
+                        <colordiffuse>$VAR[BreadCrumbsContentColorVar]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <label>$LOCALIZE[137]</label>
+                        <include>FeaturedTopLabel</include>
+                        <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(3012)">Conditional</animation>
+                        <animation effect="fade" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(3000).HasFocus">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <label>$LOCALIZE[31163]</label>
+                        <include>FeaturedTopLabel</include>
+                        <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(5012)">Conditional</animation>
+                        <animation effect="fade" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(5000).HasFocus">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <label>$LOCALIZE[31502]</label>
+                        <include>FeaturedTopLabel</include>
+                        <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(6012)">Conditional</animation>
+                        <animation effect="fade" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(6000).HasFocus">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <label>$LOCALIZE[31503]</label>
+                        <include>FeaturedTopLabel</include>
+                        <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(7012)">Conditional</animation>
+                        <animation effect="fade" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(7000).HasFocus">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <label>$LOCALIZE[132]</label>
+                        <include>FeaturedTopLabel</include>
+                        <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(8012)">Conditional</animation>
+                        <animation effect="fade" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(8000).HasFocus">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <label>$LOCALIZE[31501]</label>
+                        <include>FeaturedTopLabel</include>
+                        <animation effect="fade" start="100" end="50" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9012)">Conditional</animation>
+                        <animation effect="fade" start="100" end="120" time="240" center="auto" tween="cubic" easing="inout" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

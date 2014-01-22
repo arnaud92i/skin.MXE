@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.MXE" version="1.0.3" name="skin.MXE" provider-name="senna99">
+<addon id="skin.MXE" version="1.0.2" name="skin.MXE" provider-name="senna99">
 	<requires>
 	</requires>
 	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1.00" debugging="false">

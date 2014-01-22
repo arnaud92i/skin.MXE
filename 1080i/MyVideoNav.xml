@@ -1,0 +1,11 @@
+<window id="25">
+    <defaultcontrol always="true">51</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <views>51</views>
+    <controls>
+            <include>CommonItems</include>
+                 <include>Video-Library</include>
+            <include>FadeBackgroundInfo</include>
+            <include>FadeBackgroundTwo</include>
+    </controls>
+</window>

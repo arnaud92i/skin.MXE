@@ -1,0 +1,194 @@
+<window id="0">
+	
+	<defaultcontrol always="true">525</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+ <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=PremiereShows)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=AiringShows)</onload>
+
+
+
+<onload condition="Container(20).HasFocus(1)">Control.Move(20,1)</onload>
+<onload condition="Container(20).HasFocus(4)">Control.Move(20,-1)</onload>
+<onload condition="Container(20).HasFocus(5)">Control.Move(20,-2)</onload>
+<onload condition="Container(20).HasFocus(6)">Control.Move(20,-3)</onload>
+<onload condition="Container(20).HasFocus(7)">Control.Move(20,-4)</onload>
+
+<onunload condition="Container(20).HasFocus(1)">Control.Move(20,1)</onunload>
+<onunload condition="Container(20).HasFocus(4)">Control.Move(20,-1)</onunload>
+<onunload condition="Container(20).HasFocus(5)">Control.Move(20,-2)</onunload>
+<onunload condition="Container(20).HasFocus(6)">Control.Move(20,-3)</onunload>
+<onunload condition="Container(20).HasFocus(7)">Control.Move(20,-4)</onunload>
+
+    	<onload>Weather.Refresh</onload>
+	<onload>XBMC.RunScript(script.favourites)</onload>
+
+    <controls>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>colors/silver.</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	<!-- Backgrounds -->
+<include>Snap Buttons</include>
+	<include>BingContent</include>
+        <include>HomeProfileInfo</include>
+        <include>HomeControlList</include>
+        <include>HomeControlListLabels</include>
+        <include>HomeItems</include>
+        <!-- Common (now playing) info -->
+        <include>Common-Home-Info</include>
+
+<control type="group">
+
+        <control type="GroupList">
+            <description>Button labels</description>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="300" />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="sine" easing="out" delay="300" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Conditional" condition="!Window.IsActive(3020) + !Window.IsActive(3021) + !Window.IsActive(3022)">
+                <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,209,1720,1" end="100,150,1720,60" tween="sine" easing="out" time="200" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsActive(3020) | Window.IsActive(3021) | Window.IsActive(3022)">
+                <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
+            </animation>
+            <posx>110</posx>
+            <posy>150</posy>
+            <width>1720</width>
+            <height>60</height>
+            <orientation>horizontal</orientation>
+            <itemgap>40</itemgap>
+            <visible>!Control.HasFocus(9999)+!Control.HasFocus(441)+!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label>Pins</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(1)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(1)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label>Home</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(2)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label>Store</label>
+                <animation effect="fade" start="100" end="0" time="100" tween="cubic" easing="inout" condition="Container(20).HasFocus(4)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="100" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+                <visible>!Skin.HasSetting(HomeTVShows)</visible>
+            </control>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(5)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(5)">Conditional</animation>
+                <visible>!Skin.HasSetting(HomeMusic)</visible>
+            </control>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(6)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(6)">Conditional</animation>
+                <visible>!Skin.HasSetting(HomePrograms)</visible>
+            </control>
+            <control type="label">
+                <include>HomeLabel</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(7)">Conditional</animation>
+                <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(7)">Conditional</animation>
+            </control>
+        </control>
+
+<control type="GroupList">
+            <description>Button labels</description>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Visible">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="300" />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="sine" easing="out" delay="300" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+            </animation>
+            <animation type="Conditional" condition="!Window.IsActive(3020) + !Window.IsActive(3021) + !Window.IsActive(3022)">
+                <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,209,1720,1" end="100,150,1720,60" tween="sine" easing="out" time="200" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsActive(3020) | Window.IsActive(3021) | Window.IsActive(3022)">
+                <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
+                <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
+            </animation>
+            <posx>110</posx>
+            <posy>150</posy>
+            <width>1720</width>
+            <height>60</height>
+            <orientation>horizontal</orientation>
+            <itemgap>40</itemgap>
+            <visible>!Control.HasFocus(9999)+!Control.HasFocus(441)+!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label>Pins</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(1)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(1)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label>Home</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label>Store</label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(5)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(5)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(6)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(6)">Conditional</animation>
+            </control>
+            <control type="label">
+                <include>HomeLabel2</include>
+                <label></label>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(7)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(7)">Conditional</animation>
+            </control>
+        </control>
+</control>
+	<include>home buttons</include>
+	<include>FadeBackgroundInfo</include>
+        <include>FadeBackground</include>
+	</controls>
+</window>

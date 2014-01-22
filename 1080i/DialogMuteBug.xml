@@ -1,0 +1,19 @@
+<window id="113">
+    <defaultcontrol>-</defaultcontrol>
+    <zorder>5</zorder>
+    <controls>
+        <control type="group">
+            <visible>Window.IsActive(fullscreenvideo) | [Window.IsActive(musicosd) + Skin.HasSetting(OSDMusicAlt.Enabled)]</visible>
+
+            <control type="image">
+                <description>Cock image</description>
+                <posx>100r</posx>
+                <posy>8</posy>
+                <width>60</width>
+                <height>60</height>
+                <aspect>keep</aspect>
+                <texture>overlays/volume/muted-info.png</texture>
+            </control>
+        </control>
+    </controls>
+</window>

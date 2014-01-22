@@ -1,0 +1,176 @@
+<window type="buttonMenu" id="111">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <zorder>3</zorder>
+    <onload>Dialog.Close(contextmenu)</onload><onload>Dialog.Close(PlayerControls)</onload>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+    <controls>
+        <include>CommonStage</include>
+        <include>FadeBlackDefault</include>
+         <include>FadeBlackDefault</include>
+			<control type="image">
+				<description>Panel</description>
+				<include>FullscreenDimensions</include>
+				<texture>panel/console settings.png</texture>
+			</control>
+        <control type="label" id="1">
+		<description>heading label</description>
+		<posx>550</posx>
+		<posy>120</posy>
+		<width>500</width>
+		<align>left</align>
+		<font>Font-Condensed-S36-B</font>
+		<label>-</label>
+		<textcolor>eewhite</textcolor>
+	</control>
+	<control type="textbox" id="2">
+		<posx>550</posx>
+		<posy>200</posy>
+		<width>440</width>
+		<height>400</height>
+		<align>left</align>
+		<label>-</label>
+		<font>Font-Condensed-S34-B</font>
+		<textcolor>greyblue</textcolor>
+	</control>
+	<control type="label" id="3">
+		<description>dialog line 2</description>
+		<posx>400</posx>
+		<posy>400</posy>
+		<width>790</width>
+		<align>left</align>
+		<label>-</label>
+		<font>Font-Condensed-S34-B</font>
+               	<textcolor>greyblue</textcolor>					
+       </control>
+       <control type="label" id="4">
+		<description>dialog line 3</description>
+		<posx>400</posx>
+		<posy>450</posy>
+		<width>790</width>
+		<align>left</align>
+		<label>-</label>
+		<font>Font-Condensed-S34-B</font>
+		<textcolor>greyblue</textcolor>
+      </control>
+			<!-- Detail Info Label2 -->
+
+			<control type="textbox">
+				<posx>970</posx>
+				<posy>195</posy>
+				<width>600</width>
+				<height>400</height>
+				<font>font24_title</font>
+				<textcolor>black</textcolor>
+				<info>Container(9000).ListItem.Label2</info>
+
+			</control>
+      			<control type="list" id="9000">
+				<posx>400</posx>
+				<posy>194</posy>
+				<width>807</width>
+				<height>500</height>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<focuspostion>0</focuspostion>
+				<orientation>vertical</orientation>
+				<scrolltime>100</scrolltime>
+				<animation type="visible">
+                        		<effect type="fade" start="0" end="100" time="100" tween="sine" easing="inout" />
+                		</animation>
+				<animation type="hidden">
+                        		<effect type="fade" start="100" end="0" time="100" tween="sine" easing="inout" />
+                		</animation>
+				<itemlayout width="807" height="55">
+					<control type="image">
+						<posx>500</posx>
+						<posy>15</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<colordiffuse>darkgrey</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>65</posx>
+						<posy>0</posy>
+						<width>700</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>Font-Condensed-S34-B</font>
+						<textcolor>darkgrey</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="807" height="55">
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>35</width>
+						<height>25</height>
+						<texture>icon/arrownow.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="image">
+						<posx>500</posx>
+						<posy>15</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse>grey</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>65</posx>
+						<posy>0</posy>
+						<width>700</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>Font-Condensed-S34-B</font>
+						<textcolor>grey</textcolor>
+						<align>left</align>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Turn off console</label>
+                                   <label2>Turning off the console will also turn off[CR]all controllers</label2>
+				<onclick>XBMC.Powerdown()</onclick>
+				<visible>System.CanPowerDown</visible>
+						<icon>icon/console.png</icon>
+				<pulseonselect>no</pulseonselect>
+						<include>GuideDialogClose</include>
+					</item>	
+					<item id="1">
+						<label>Reboot console</label>
+						<onclick>XBMC.Reset()</onclick>
+						<icon>icon/console.png</icon>
+				<visible>System.CanReboot</visible>
+				<pulseonselect>no</pulseonselect>
+						<include>GuideDialogClose</include>
+					</item>
+					<item id="2">
+						<label>Xbox Hibernate</label>
+				<onclick>XBMC.Hibernate()</onclick>
+						<icon>icon/console.png</icon>
+				<visible>System.CanHibernate</visible>
+				<pulseonselect>no</pulseonselect>
+						<include>GuideDialogClose</include>
+					</item>
+		                      <item id="3">
+						<label>Xbox Exit</label>
+				<onclick>XBMC.Quit()</onclick>
+						<icon>icon/console.png</icon>
+				<visible>System.CanHibernate</visible>
+				<pulseonselect>no</pulseonselect>
+						<include>GuideDialogClose</include>
+					</item>
+				</content>
+			</control>
+        <include>FadeBackgroundMovieInfo</include>
+                    <include>-</include> 
+    </controls>
+</window>

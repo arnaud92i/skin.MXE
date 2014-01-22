@@ -1,0 +1,93 @@
+<window id="115">
+    <defaultcontrol>23</defaultcontrol>
+    <visible>Window.IsActive(fullscreenvideo) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)]</visible>
+    <controls>
+        <control type="group">
+            <include>NowPlayingFullscreen</include>
+            <visible>!Window.IsActive(sliderdialog)</visible>
+            <include>OSDWeatherClock</include>
+            <control type="group">
+                <visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsActive(videoosd)</visible>
+                <animation type="Visible" reversible="false">
+                    <effect type="fade" start="0" end="100" time="500" tween="sine" easing="out" />
+                    <effect type="zoom" start="110" end="100" time="500" center="960,540" tween="back" easing="out" />
+                </animation>
+                <animation type="Hidden" reversible="false">
+                    <effect type="zoom" start="100" end="90" time="800" center="960,540" tween="back" easing="inout" />
+                    <effect type="fade" start="100" end="0" time="500" tween="sine" easing="out" />
+                </animation>
+                <control type="group">
+                    <animation effect="slide" start="0,0" end="0,-890" time="400" tween="sine" easing="inout" condition="Skin.HasSetting(VideoOSD.OnTop)">Conditional</animation>
+                    
+                    <control type="group">
+                        <posx>850</posx>
+                        <posy>450</posy>
+                        <control type="progress" id="23">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>150</width>
+                            <height>150</height>
+                            <info>Player.CacheLevel</info>
+                            <texturebg>osd/fullscreen/sekbarPause.png</texturebg>
+                            <midtexture border="1">-</midtexture>
+                            <lefttexture>-</lefttexture>
+                            <righttexture>-</righttexture>
+                            <overlaytexture>-</overlaytexture>
+                          <visible>Player.Paused + ![Window.IsActive(videoosd) | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding]</visible>
+                            <animation effect="fade" end="40" time="0" condition="true">Conditional</animation>
+                        </control>
+                        <control type="progress" id="23">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>150</width>
+                            <height>150</height>
+                            <info>Player.Progress</info>
+                            <texturebg>osd/fullscreen/sekbarPause.png</texturebg>
+                            <midtexture border="1">-</midtexture>
+                            <lefttexture>-</lefttexture>
+                            <righttexture>-</righttexture>
+                            <overlaytexture>-</overlaytexture>
+                             <visible>Player.Paused + ![Window.IsActive(videoosd) | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding]</visible>
+                            <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+                        </control>
+                    </control>
+
+                    <control type="fadelabel">
+                        <description>Pause / finish time</description>
+                        <posx>480</posx>
+                        <posy>600</posy>
+                        <width>900</width>
+                        <height>100</height>
+                        <label>$LOCALIZE[112]</label>
+                        <label>Resume</label>
+                        <scroll>false</scroll>
+                        <scrollout>false</scrollout>
+                        <pauseatend>2500</pauseatend>
+                        <textcolor>green</textcolor>
+                        <font>Font-Condensed-S80-B</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <visible>Player.Paused + ![Window.IsActive(videoosd) | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding]</visible>
+                        <animation effect="fade" start="0" end="100" time="400" tween="sine" easing="inout">Visible</animation>
+                        <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout">Hidden</animation>
+                    </control>
+                    <control type="group">
+                        <visible>!Window.IsActive(videoosd) + [Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding]</visible>
+                        <animation effect="fade" start="0" end="100" time="400" tween="sine" easing="inout">Visible</animation>
+                        <animation effect="fade" start="100" end="0" time="0" >Hidden</animation>
+                        <control type="label">
+                            <posx>480</posx>
+                            <posy>600</posy>
+                            <width>900</width>
+                            <height>100</height>
+                            <label>$LOCALIZE[773] $INFO[Player.SeekOffset]</label>
+                            <textcolor>white</textcolor>
+                            <font>Font-Condensed-S80-B</font>
+                            <align>center</align>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

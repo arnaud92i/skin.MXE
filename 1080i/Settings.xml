@@ -1,0 +1,368 @@
+<window id="4">
+	<defaultcontrol always="true">222</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+
+		<control type="image">
+                        <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>55</width>
+                        <height>55</height>
+                        <texture>icon/xbox.png</texture>
+                 </control>	
+		<control type="image">
+                        <posx>95</posx>
+                        <posy>270</posy>
+                        <width>309</width>
+                        <height>70</height>
+                        <texture>colors/grey.png</texture>
+                 </control>	
+                        <control type="image">
+                        	<posx>80</posx>
+               	        	<posy>255</posy>
+        	        	<width>340</width>
+        	        	<height>105</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                <visible>Control.HasFocus(222)</visible>
+                        	</control>
+            <control type="image">
+                <posx>105</posx>
+                <posy>277</posy>
+                <width>60</width>
+                <height>60</height>
+	        <texture fallback="Master user.png">$INFO[Skin.String(XBoxLive.Gamer.Picture)]</texture>
+            </control>
+            <control type="button" id="222">
+				<onleft>8000</onleft>
+				<onright>8001</onright>
+				<onup>8000</onup>
+				<ondown>8000</ondown>
+                <posx>110</posx>
+                <posy>280</posy>
+                <width>352</width>
+                <height>60</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>font13_title</font>
+		<label>About me</label>
+                <textcolor>white</textcolor>
+                <textoffsety>10</textoffsety>
+                <visible></visible>
+            </control>
+<!-- Top Label -->
+		<control type="label">
+			<posx>100</posx>
+			<posy>90</posy>
+			<width>1000</width>
+			<height>65</height>
+			<font>Font-Condensed-S50</font>
+			<textcolor>ddwhite</textcolor>
+			<shadowcolor>55000000</shadowcolor>
+			<label>Box Settings</label>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
+				<effect type="zoom" start="100,120,1000,1" end="100,60,1000,65" tween="sine" easing="out" time="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
+				<effect type="zoom" start="100,60,1000,65" end="100,120,1000,1" tween="sine" easing="out" time="200" />
+			</animation>
+		</control>
+		<control type="group">
+			<include>FullscreenDimensions</include>
+			<include>CommonViewAnimations</include>
+			<include>OptionsShutdownAnimation</include>
+			<control type="image">
+				<description>Panel</description>
+				<include>FullscreenDimensions</include>
+				<texture>panel/console settings.</texture>
+			</control>
+						
+			<!-- Detail Info Label -->
+			<control type="textbox">
+				<posx>1200</posx>
+				<posy>259</posy>
+				<width>600</width>
+				<height>400</height>
+				<font>Font-Condensed-S29</font>
+				<textcolor>white</textcolor>
+				<info>Container(8000).ListItem.Label2</info>
+  <visible>Control.HasFocus(8000)</visible>
+			</control>
+			<!-- Detail Info Label -->
+			<control type="textbox">
+				<posx>1200</posx>
+				<posy>259</posy>
+				<width>600</width>
+				<height>400</height>
+				<font>Font-Condensed-S29</font>
+				<textcolor>white</textcolor>
+				<info>Container(8001).ListItem.Label2</info>
+<visible>Control.HasFocus(8001)</visible>
+			</control>
+			
+
+
+			<control type="panel" id="8001">
+				<posx>450</posx>
+				<posy>250</posy>
+				<width>650</width>
+				<height>650</height>
+				<onleft>8000</onleft>
+				<onright>8001</onright>
+				<onup>8001</onup>
+				<ondown>8001</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="210" height="210">
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>200</width>
+				<height>200</height>                    				                                                                              
+                                    <texture>colors/patter.png</texture>        
+                        </control>
+					<control type="image">
+						<posx>85</posx>
+						<posy>85</posy>
+						<width>60</width>
+						<height>60</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>30</posx>
+						<posy>170</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="210" height="210">
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>200</width>
+				<height>200</height>                    				                                                                              
+                                    <texture>colors/patter.png</texture>        
+                        </control>
+					<control type="image">
+						<posx>85</posx>
+						<posy>85</posy>
+						<width>60</width>
+						<height>60</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>30</posx>
+						<posy>170</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+                        <control type="image">
+                        	<posx>7</posx>
+               	        	<posy>5</posy>
+        	        	<width>236</width>
+        	        	<height>238</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Console Settings</label>
+						<label2>Welcome to a new generation[CR]of games and entertainment.</label2>
+						<onclick>ActivateWindow(appearancesettings,return)</onclick>
+						<thumb>-</thumb>
+						<icon>icon/console.png</icon>
+					</item>	
+					<item id="1">
+						<label>Initial Setup</label>
+						<label2>Start the original system setup.[CR]you can't run setup if[CR]console saftey is on</label2>
+						<onclick>ActivateWindow(1111,return)</onclick>
+						<icon>icon/Emoji_26A0_33.png</icon>
+					</item>
+					<item id="2">
+						<label>VideosSettings</label>
+						<label2>Settings console including.[CR]Library,Playback,File,Subtitles,DVDs</label2>
+						<onclick>ActivateWindow(VideosSettings,return)</onclick>
+						<icon>icon/video.png</icon>
+					</item>
+					<item id="3">
+						<label>LiveTv</label>
+						<label2>Settings console including.[CR]LiveTv on/off,Epg,Recording.</label2>
+						<onclick>ActivateWindow(PVRSettings,return)</onclick>
+						<icon>icon/livetv.png</icon>
+					</item>
+					<item id="4">
+						<label>MusicSettings</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(MusicSettings,return)</onclick>
+						<icon>icon/music.png</icon>
+					</item>
+					<item id="5">
+						<label>PicturesSettings</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
+						<icon>icon/foto.png</icon>
+					</item>
+					<item id="6">
+						<label>WeatherSettings</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(WeatherSettings,return)</onclick>
+						<icon>icon/weather.png</icon>
+					</item>
+					<item id="7">
+						<label>AddonBrowser</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(AddonBrowser,root,return)</onclick>
+						<icon>icon/shop.png</icon>
+					</item>
+					<item id="8">
+						<label>NetworkSettings</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(ServiceSettings,return)</onclick>
+						<icon>icon/signal.png</icon>
+					</item>
+				</content>
+			</control>
+			<control type="panel" id="8000">
+				<posx>70</posx>
+				<posy>325</posy>
+				<width>350</width>
+				<height>1000</height>
+				<onleft></onleft>
+				<onright>8001</onright>
+				<onup>222</onup>
+				<ondown>8000</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="259" height="80">
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>310</width>
+				<height>70</height>                    				                                                                              
+                                    <texture>colors/patter.png</texture>        
+                        </control>
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="259" height="80">
+                        <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>310</width>
+				<height>70</height>                    				                                                                              
+                                    <texture>colors/patter.png</texture>        
+                        </control>
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+                        <control type="image">
+                        	<posx>7</posx>
+               	        	<posy>6</posy>
+        	        	<width>340</width>
+        	        	<height>105</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Console Settings</label>
+						<label2>Welcome to a new generation[CR]of games and entertainment.</label2>
+						<onclick>ActivateWindow(appearancesettings,return)</onclick>
+						<thumb>-</thumb>
+						<icon>icon/console.png</icon>
+					</item>	
+					<item id="1">
+						<label>Initial Setup</label>
+						<label2>Start the original system setup.[CR]you can't run setup if[CR]console saftey is on</label2>
+						<onclick>ActivateWindow(1111,return)</onclick>
+						<icon>icon/Emoji_26A0_33.png</icon>
+					</item>
+					<item id="2">
+						<label>VideosSettings</label>
+						<label2>Settings console including.[CR]Library,Playback,File,Subtitles,DVDs</label2>
+						<onclick>ActivateWindow(VideosSettings,return)</onclick>
+						<icon>icon/video.png</icon>
+					</item>
+					<item id="3">
+						<label>LiveTv</label>
+						<label2>Settings console including.[CR]LiveTv on/off,Epg,Recording.</label2>
+						<onclick>ActivateWindow(PVRSettings,return)</onclick>
+						<icon>icon/livetv.png</icon>
+					</item>
+					<item id="4">
+						<label>MusicSettings</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(MusicSettings,return)</onclick>
+						<icon>icon/music.png</icon>
+					</item>
+					<item id="5">
+						<label>PicturesSettings</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
+						<icon>icon/foto.png</icon>
+					</item>
+				</content>
+			</control>
+		</control>
+		<include>a and b</include>
+		<include>FadeBackground</include>
+	</controls>
+</window>

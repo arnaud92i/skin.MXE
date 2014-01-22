@@ -1,0 +1,88 @@
+<window id="100">
+		<defaultcontrol always="true">10</defaultcontrol>
+		<include>OpenCloseAnimation</include>
+		<include>FadeBackground</include>
+		<controls>
+                 <include>CommonStage</include>
+            <control type="image">
+                <description>background image</description>
+                <posx>491</posx>
+                <posy>300</posy>
+                <width>470</width>
+                <height>625</height>
+                <texture>colors/grey85%.png</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+
+						<control type="label" id="1">
+								<description>heading label</description>
+								<posx>520</posx>
+								<posy>330</posy>
+								<width>450</width>
+								<align>left</align>
+								<font>Font-Condensed-S36-B</font>
+								<label></label>
+								<textcolor>white</textcolor>
+						</control>
+
+						<control type="label" id="3">
+								<description>dialog line 2</description>
+								<posx>520</posx>
+								<posy>400</posy>
+								<width>450</width>
+								<align>left</align>
+								<label></label>
+								<font>Font-Condensed-S34-B</font>
+               			 				<textcolor>white</textcolor>					
+            					</control>
+                <!-- Info Label -->
+                <control type="label">
+                    <posx>570</posx>
+                    <posy>480</posy>
+                    <width>300</width>
+                    <label>Removing this source, your[CR]will lost your's file...</label>
+                    <font>ForumBrowser-DejaVuSans.ttf</font>
+                    <textcolor>white</textcolor>
+                    <align></align>
+                    <scroll>false</scroll>
+                </control>
+
+						<control type="button" id="10">
+								<description>no button</description>
+								<posx>491</posx>
+								<posy>870</posy>
+								<width>470</width>
+								<height>56</height>
+								<label>106</label>
+								<font>Font-Condensed-S34-B</font>
+								<align>left</align>
+								<texturefocus>focus/images/right-focus.png</texturefocus>
+								<textcolor>greyblue</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<textoffsetx>20</textoffsetx>
+								<textoffsety>0</textoffsety>
+								<onup>11</onup>
+								<ondown>11</ondown>
+						</control>
+						<control type="button" id="11">
+								<description>yes button</description>
+								<posx>491</posx>
+								<posy>814</posy>
+								<width>470</width>
+								<height>56</height>
+								<label>107</label>
+								<font>Font-Condensed-S34-B</font>
+								<align>left</align>
+								<texturefocus>focus/images/right-focus.png</texturefocus>
+								<textcolor>greyblue</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<textoffsetx>20</textoffsetx>
+								<textoffsety>0</textoffsety>
+								<onup>10</onup>
+								<ondown>10</ondown>
+						</control>
+<!-- Debug Info -->
+<include>debug</include>
+<include>DialogYesNo.xml</include>
+		</controls>
+</window>

@@ -1,0 +1,123 @@
+<includes>
+
+<!-- ========= -->
+<!-- List (50) -->
+<!-- ========= -->
+    <include name="Viewtype-AddonList">
+<include>CommonStage</include>
+        <control type="group">
+		<posx>-140</posx>
+            <visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
+            <include>a and b</include>
+	</control>
+                        <control type="label">
+                            <posx>100</posx>
+                            <posy>110</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>Xbmc marketplace</label>
+                            <font>Font-Condensed-S50</font>
+                            <visible></visible>
+                        </control>
+
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>55</width>
+                        <height>55</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
+            <control type="panel" id="50">
+                        <posx>100</posx>
+                        <posy>350</posy>
+                        <width>1920</width>
+                        <height>700</height>
+                        <onleft>50</onleft>
+                        <onright>50</onright>
+                        <onup>-</onup>
+                        <ondown>-</ondown>
+                        <scrolltime>300</scrolltime>
+			<orientation>horizontal</orientation>
+                        <itemlayout width="252" height="289">
+                            <control type="group">
+				<posx>-16</posx>
+<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>240</width>
+                                    <height>250</height>
+                                    <texture border="1">colors/patter.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>240</width>
+                                    <height>210</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>24</posx>
+                                    <posy>230</posy>
+                                    <width>300</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>Font-Condensed-S20-B</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="252" height="289">
+                            <control type="group">
+				<posx>-16</posx>
+                                <control type="group">
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>240</width>
+                                    <height>250</height>
+                                    <texture border="1">colors/patter.png</texture>
+                                </control>
+                                    <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>240</width>
+                                    <height>210</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                    <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>240</width>
+                                    <height>250</height>
+                                    <texture border="1">icon/glass.png</texture>
+                                </control>
+                                    <control type="image">
+                                    <posx>34</posx>
+                                    <posy>285</posy>
+                                    <width>220</width>
+                                    <height>5</height>
+                                    <texture border="1">colors/white.png</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>24</posx>
+                                    <posy>230</posy>
+                                    <width>300</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>Font-Condensed-S20-B</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
+                                </control>
+                            </control>
+                        </focusedlayout>
+                    </control>
+    </include>
+</includes>

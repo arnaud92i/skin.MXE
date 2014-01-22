@@ -1,0 +1,13 @@
+<window id="126">
+    <defaultcontrol always="true">450</defaultcontrol>
+    <zorder>3</zorder>
+    <onload condition="Window.IsActive(networksetup)">SetProperty(ShowDialog,1,home)</onload>
+    <onload condition="Window.IsActive(networksetup)">SetProperty(ShowDialog,1)</onload>
+    <onunload>ClearProperty(ShowDialog,home)</onunload>
+    <onunload condition="Window.IsVisible(1920)">ActivateWindow(1080)</onunload>
+    <controls>
+        <include condition="Window.IsVisible(1920)">themepanel</include>
+        <include condition="!Window.IsVisible(1920) + Window.IsVisible(2609)">gamerpicturepanel</include>
+	<include condition="!Window.IsVisible(1920) + !Window.IsVisible(2609)">filebrowserlist</include>
+    </controls>
+</window>

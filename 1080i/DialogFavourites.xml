@@ -1,0 +1,155 @@
+<!-- Foundation -->
+<window type="dialog" id="134">
+	
+	<defaultcontrol always="true">450</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	
+	<!--Splash Screen-->
+	<onload>ActivateWindow(60)</onload>
+	        <include>CommonContent</include>
+        <include>CommonStage</include>
+ <include></include>
+	                    	           
+	<controls>
+
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Light</colordiffuse>
+			
+		</control>
+	
+		<include></include>
+
+		<!--Control Section-->
+		<control type="group">
+			
+			<posx>60</posx>
+			<posy>100</posy>
+			<width>1220</width>
+			<height>480</height>
+			
+			<!--Animation-->
+			<include>Common_Animation_Content_Splash</include>
+			
+			<control type="label">
+					
+				<label>explore</label>
+				<include>Common_Section_Label_Dark</include>
+				
+			</control>
+
+			<control type="image">
+					<posx>-200</posx>
+					<posy>70</posy>
+					<width>2500</width>
+					<height>750</height>
+			<texture>colors/white10%.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+
+
+
+	<control type="panel" id="450">
+
+                <description>Fav list</description>
+                        <posx>-70</posx>
+                        <posy>60</posy>
+                        <width>2000</width>
+                        <height>850</height>
+                        <onleft>450</onleft>
+                    	<onright>450</onright>
+                    	<onup>-</onup>
+                    	<ondown>9111</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="230" height="230">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>220</width>
+                                    <height>220</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="230" height="230">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>220</width>
+                                    <height>220</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                <posy>234</posy>
+                                    <width>220</width>
+                                    <height>35</height>
+	                <colordiffuse>FF000000</colordiffuse>
+                        <texture>colors/black.png</texture>
+                                </control>
+		               <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>220</width>
+                                    <height>220</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/glass.png</texture>
+			     </control>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>230</posy>
+                                    <width>200</width>
+                                    <height>30</height>
+                                    <font>DejaVuSans-Bold.ttf</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>green</textcolor>
+                                </control>
+                            </control>
+                        </focusedlayout>
+
+			</control>
+			
+		</control>
+		
+		<!--Scrollbar-->
+		<control type="group">
+			
+			<control type="scrollbar" id="9010">
+			
+				<include>Common_Window_Scrollbar_Horizontal_Dark</include>
+				<posy>700</posy>
+				
+				<include>Common_Animation_Window_Scrollbar_Fade</include>
+				
+			</control>
+			
+		</control>
+	            <include>Favourites Buttons</include>	
+	</controls>
+
+</window>

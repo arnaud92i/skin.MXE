@@ -1,0 +1,775 @@
+<includes>
+    <include name="ButtonAnimation">
+		<animation type="visible">
+                	<effect type="fade" start="0" end="100" time="250" tween="sine" easing="in" delay="250"/>
+                </animation>
+		<animation type="Hidden">
+                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="in" delay="50"/>
+                </animation>
+		<animation type="WindowOpen">
+                	<effect type="fade" start="0" end="100" time="250" tween="sine" easing="in" delay="250"/>
+                </animation>
+		<animation type="WindowClose">
+                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="in" delay="50"/>
+                </animation>
+    </include>
+    <include name="ButtonRingAnimation">
+		<animation type="WindowOpen">
+                	<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
+                </animation>
+		<animation type="WindowClose">
+                	<effect type="fade" start="80" end="100" time="250" tween="sine" easing="in" />
+			<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" delay="50"/>
+                </animation>
+    </include>
+    <include name="Loading">
+		<animation type="WindowClose">
+                	<effect type="rotate"center="auto" start="720" end="0" time="1500"/>
+                </animation>
+		<animation type="WindowOpen">
+                	<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
+                </animation>
+		<animation type="WindowClose">
+                	<effect type="fade" start="80" end="100" time="250" tween="sine" easing="in" />
+		<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" delay="0"/>
+                </animation>
+    </include>
+
+
+
+-------- Home Buttons -----
+    <include name="home buttons">
+        <control type="group" >
+	    <posx>10</posx>
+            <posy>-10</posy>
+            <description>Home Buttons</description>
+            <control type="image">
+                <description>a Button</description>
+                <posx>105</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/a.png</texture>
+		<include>ButtonAnimation</include>
+                 <visible>!Window.IsVisible(favourites)+!Player.HasMedia</visible>
+            </control>
+	    <control type="label">
+                <description>Select Label</description>
+                <posx>150</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Select</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+                 <visible>!Window.IsVisible(favourites)+!Player.HasMedia</visible>
+            </control>
+	    <control type="label">
+                <description>Hub Label</description>
+                <posx>290</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Hub</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                <include>ButtonAnimation</include>
+                 <visible>Control.HasFocus(525)+!Window.IsVisible(favourites)+!Player.HasMedia</visible>
+            </control>
+
+	    <control type="image">
+                <description>x Button</description>
+                <posx>245</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/x.png</texture>
+		<include>ButtonAnimation</include>
+               <visible>Control.HasFocus(525)+!Window.IsVisible(favourites)+!Player.HasVideo</visible>
+            </control>
+	    <control type="label">
+                <description>Eject Label</description>
+                <posx>290</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Eject</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                <include>ButtonAnimation</include>
+                <visible>Control.HasFocus(501)+Container(501).HasFocus(1)</visible>
+            </control>
+	    <control type="image">
+                <description>y Button</description>
+                <posx>245</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/y.png</texture>
+		<include>ButtonAnimation</include>
+                <visible>Control.HasFocus(501)+Container(501).HasFocus(1)</visible>
+            </control>
+	    <control type="image">
+                <description> B Button</description>
+                <posx>245</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/b.png</texture>
+		<include>ButtonAnimation</include>
+	       <visible>!Player.HasVideo+Control.HasFocus(525)</visible>
+            </control>
+
+
+                <control type="image">
+    		<description>Loading</description>
+                    <posx>860</posx>
+                    <posy>470</posy>
+                    <width>120</width>
+                    <height>120</height>
+                    <texture>buffer/buffer_progress.png</texture>
+		  <include>Loading</include>
+		  <aspectratio>keep</aspectratio>	
+            </control>
+        </control>
+    </include>
+
+-------- a and b Buttons -----
+    <include name="a and b">
+        <control type="group" >
+	    <posx>20</posx>
+            <posy>-10</posy>
+            <description>Home Buttons</description>
+            <control type="image">
+                <description> a Button</description>
+                <posx>105</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/a.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Select Label</description>
+                <posx>150</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Select</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> B Button</description>
+                <posx>245</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/b.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Back Label</description>
+                <posx>290</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Back</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<visible condition="true"></visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> Help Button</description>
+                <posx>350</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/help.</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Help Label</description>
+                <posx>395</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>...</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<visible condition="true"></visible>
+                <include>ButtonAnimation</include>
+            </control>
+        </control>
+    </include>
+
+---------  LoginScreen ----------
+    <include name="LoginScreen Buttons">
+        <control type="group" >
+	    <posx>250</posx>
+            <posy>-50</posy>
+            <description>Home Buttons</description>
+            <control type="image">
+                <description>y Button</description>
+                <posx>230</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/y.png</texture>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(29)</visible>
+            </control>
+	    <control type="label">
+                <description>Edit profile</description>
+                <posx>275</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Edit profile</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(29)</visible>
+               <visible condition="true"></visible>
+            </control>
+            <control type="image">
+                <description>a Button</description>
+                <posx>105</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/a.png</texture>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(29)</visible>
+            </control>
+	    <control type="label">
+                <description>Edit profile</description>
+                <posx>150</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Sign in</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(29)</visible>
+            </control>
+            </control>
+    </include>
+---------  Favourites ----------
+    <include name="Favourites Buttons">
+        <control type="group" >
+	    <posx>0</posx>
+            <posy>-50</posy>
+            <description>Home Buttons</description>
+            <control type="image">
+                <description>y Button</description>
+                <posx>350</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/y.png</texture>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(134)</visible>
+            </control>
+	    <control type="label">
+                <description>Edit</description>
+                <posx>395</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Edit</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(134)</visible>
+               <visible condition="true"></visible>
+            </control>
+            <control type="image">
+                <description>a Button</description>
+                <posx>105</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/a.png</texture>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(134)</visible>
+            </control>
+	    <control type="label">
+                <description>Select Label</description>
+                <posx>150</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Select</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(134)</visible>
+            </control>
+	    <control type="image">
+                <description> B Button</description>
+                <posx>240</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/b.png</texture>
+		<include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(134)</visible>
+            </control>
+	    <control type="label">
+                <description>Back Label</description>
+                <posx>285</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Back</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                <include>ButtonAnimation</include>
+                 <visible>Window.IsVisible(134)</visible>
+            </control>
+            </control>
+    </include>
+---------Snap------------
+    <include name="Snap Buttons">
+        <control type="group" >
+	    <posx>-350</posx>
+            <posy>-10</posy>
+	    <control type="image">
+                <description>x Button</description>
+                <posx>445</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/x.png</texture>
+		<include>ButtonAnimation</include>
+               <visible>Control.HasFocus(525)+!Window.IsVisible(favourites)+!Player.HasAudio+Player.HasVideo</visible>
+            </control>
+	    <control type="image">
+                <description> Snap Button</description>
+                <posx>650</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/snap.png</texture>
+		<include>ButtonAnimation</include>
+                 <visible>Player.HasVideo+Control.HasFocus(525)</visible>
+            </control>
+	    <control type="label">
+                <description>Snap Label</description>
+                <posx>690</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Go Fullscreen</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                 <visible>Player.HasVideo+Control.HasFocus(525)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Stop Label</description>
+                <posx>290</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Stop Song</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                 <visible>Player.HasAudio+Control.HasFocus(525)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Stop Label</description>
+                <posx>490</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Stop Video</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                 <visible>Player.HasVideo+Control.HasFocus(525)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+        </control>
+    </include>
+------------ Hub_Games -----
+    <include name="Hub_Games Buttons">
+        <control type="group" >
+	    <posx>-50</posx>
+            <posy>-10</posy>
+            <description>Home Buttons</description>
+            <control type="image">
+                <description> a Button</description>
+                <posx>105</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/a.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Select Label</description>
+                <posx>150</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Select</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> B Button</description>
+                <posx>245</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/b.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Back Label</description>
+                <posx>290</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Back</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<visible condition="true"></visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description>x Button</description>
+                <posx>360</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/x.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Setting's Label</description>
+                <posx>405</posx>
+                <posy>1014</posy>
+                <width>1080</width>
+                <height>10</height>
+                <label>Setting's</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> y Button</description>
+                <posx>525</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/y.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Info Label</description>
+                <posx>570</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>Game Info</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	      <visible>stringcompare(Container.FolderName,Advanced Launcher)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Info Label</description>
+                <posx>570</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>App's Info</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	      <visible>Container.Content(addons)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+        </control>
+    </include>
+------------ Hub_Movies -----
+    <include name="Hub_Movies Buttons">
+        <control type="group" >
+	    <posx>-50</posx>
+            <posy>-10</posy>
+            <description>Home Buttons</description>
+            <control type="image">
+                <description> a Button</description>
+                <posx>105</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/a.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Select Label</description>
+                <posx>150</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Select</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> B Button</description>
+                <posx>245</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/b.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Back Label</description>
+                <posx>290</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Back</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<visible condition="true"></visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description>x Button</description>
+                <posx>360</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/x.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Setting's Label</description>
+                <posx>405</posx>
+                <posy>1014</posy>
+                <width>1080</width>
+                <height>10</height>
+                <label>Setting's</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> y Button</description>
+                <posx>525</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/y.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Info Label</description>
+                <posx>570</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>Movie's Info</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	      <visible>Container.Content(movies) | Container.Content(Sets)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Info Label</description>
+                <posx>570</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>TvShow&Episodes Info</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	      <visible>Container.Content(tvshows) | Container.Content(episodes) | Container.Content(Sets)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Video Label</description>
+                <posx>570</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>Video's Info</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	       <visible>!Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(movies) + !Container.Content(addons)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+        </control>
+    </include>
+------------ Hub_Music -----
+    <include name="Hub_Music Buttons">
+        <control type="group" >
+	    <posx>-50</posx>
+            <posy>-10</posy>
+            <description>Home Buttons</description>
+            <control type="image">
+                <description> a Button</description>
+                <posx>105</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/a.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Select Label</description>
+                <posx>150</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Select</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> B Button</description>
+                <posx>245</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/b.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Back Label</description>
+                <posx>290</posx>
+                <posy>1014</posy>
+                <width>180</width>
+                <height>10</height>
+                <label>Back</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+		<visible condition="true"></visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description>x Button</description>
+                <posx>360</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/x.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Setting's Label</description>
+                <posx>405</posx>
+                <posy>1014</posy>
+                <width>1080</width>
+                <height>10</height>
+                <label>Setting's</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="image">
+                <description> y Button</description>
+                <posx>525</posx>
+                <posy>995</posy>
+                <width>45</width>
+                <height>45</height>
+                <aspect>keep</aspect>
+                <texture>buttons/y.png</texture>
+		<include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Info Label</description>
+                <posx>570</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>Concert Info</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	       <visible>Container.Content(MusicVideos)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Info Label</description>
+                <posx>570</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>Album&Song's Info</label>
+                <font>font12_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	       <visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Genres)</visible>
+                <include>ButtonAnimation</include>
+            </control>
+        </control>
+    </include>
+    </includes>
+</window>

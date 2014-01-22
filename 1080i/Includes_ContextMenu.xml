@@ -1,0 +1,359 @@
+
+<includes>
+    <include name="ContextMenuBackgroundVars">
+        <posx>0</posx>
+        <texture>-</texture>
+        <aspectratio aligny="center">stretch</aspectratio>
+        <visible>false</visible>
+    </include>
+    
+    <include name="ContextMenuGroupListVars">
+        <posx>0</posx>
+        <posy>0</posy>
+        <itemgap>0</itemgap>
+        <scrolltime>0</scrolltime>
+    </include>
+    
+    <include name="ContextMenuButtonVars">
+        <height>60</height>
+        <align>center</align>
+        <font>Font-Condensed-S32</font>
+        <focusedcolor>black</focusedcolor>
+        <textoffsetx>20</textoffsetx>
+    </include>
+    
+    <include name="ContextMenuSearchSmallWidth">
+        <width>300</width>
+    </include>
+    
+    <include name="ContextMenuSearchMediumWidth">
+        <width>360</width>
+    </include>
+    
+    <include name="ContextMenuSearchLargeWidth">
+        <width>460</width>
+    </include>
+    
+    <include name="ContextCoordinates">
+        <coordinates>
+            <posx>0</posx>
+            <posy>0</posy>
+            <origin x="0" y="0">true</origin>
+        </coordinates>
+    </include>
+
+    <include name="ContextMenuDefault">
+        <control type="group">
+            <posx>565</posx>
+            <posy>296</posy>
+            <control type="image">
+                <description>shadow image</description>
+                <posx>5</posx>
+                <posy>650</posy>
+                <height>60</height>
+                <width>442</width>
+                <texture></texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image" id="999">
+                <description>background image</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <height>600</height>
+                <width>470</width>
+                <texture>colors/grey85%.png</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="grouplist" id="996">
+                <description>grouplist for context buttons</description>
+                <posx>19</posx>
+                <posy>47</posy>
+                <width>404</width>
+                <itemgap>0</itemgap>
+                <height min="399" max="399">auto</height>
+            </control>
+            <control type="group">
+                <control type="image">
+                    <posx>15</posx>
+                    <posy>530</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <aspect>keep</aspect>
+                    <texture>buttons/a.png</texture>
+                </control>
+                <control type="label">
+                    <posx>94</posx>
+                    <posy>500</posy>
+                    <width>300</width>
+                    <height>100</height>
+                    <label>Now you have Controls[CR]for extra options.</label>
+                    <font>ForumBrowser-DejaVuSans.ttf</font>
+                    <textcolor>green</textcolor>
+                    <shadowcolor>22000000</shadowcolor>
+                </control>
+            </control>
+        </control>
+        <control type="button" id="1000">
+            <description>button template</description>
+            <width>404</width>
+            <height>57</height>
+            <font>Font-Condensed-S34</font>
+            <align>left</align>
+            <textcolor>white</textcolor>
+            <focusedcolor>DDFFFFFF</focusedcolor>
+            <disabledcolor>white</disabledcolor>
+            <textoffsetx>25</textoffsetx>
+            <scroll>false</scroll>
+            <texturefocus>colors/patter.png</texturefocus>
+        </control>
+    </include>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <include name="ContextMenuHome">
+        <control type="group">
+            <posx>-100</posx>
+            <posy>-50</posy>
+            <control type="image">
+                <description>shadow image</description>
+                <posx>5</posx>
+                <posy>650</posy>
+                <height>60</height>
+                <width>442</width>
+                <texture></texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image" id="999">
+                <description>background image</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <height>600</height>
+                <width>470</width>
+                <texture>colors/grey85%.png</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="grouplist" id="996">
+                <description>grouplist for context buttons</description>
+                <posx>19</posx>
+                <posy>47</posy>
+                <width>404</width>
+                <itemgap>0</itemgap>
+                <height min="399" max="399">auto</height>
+            </control>
+            <control type="group">
+                <control type="image">
+                    <posx>15</posx>
+                    <posy>530</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <aspect>keep</aspect>
+                    <texture>buttons/a.png</texture>
+                </control>
+                <control type="label">
+                    <posx>94</posx>
+                    <posy>500</posy>
+                    <width>300</width>
+                    <height>100</height>
+                    <label>Now you have Controls[CR]for extra options.</label>
+                    <font>ForumBrowser-DejaVuSans.ttf</font>
+                    <textcolor>green</textcolor>
+                    <shadowcolor>22000000</shadowcolor>
+                </control>
+            </control>
+        </control>
+        <control type="button" id="1000">
+            <description>button template</description>
+            <width>404</width>
+            <height>57</height>
+            <font>Font-Condensed-S34</font>
+            <align>left</align>
+            <textcolor>white</textcolor>
+            <focusedcolor>DDFFFFFF</focusedcolor>
+            <disabledcolor>white</disabledcolor>
+            <textoffsetx>25</textoffsetx>
+            <scroll>false</scroll>
+            <texturefocus>colors/patter.png</texturefocus>
+        </control>
+    </include>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <include name="ContextMenuPVRChannelManager">
+        <control type="image" id="999">
+            <description>background image</description>
+            <width>380</width>
+            <height>660</height>
+            <include>ContextMenuBackgroundVars</include>
+        </control>
+        <control type="grouplist" id="996">
+            <description>grouplist for context buttons</description>
+            <width>380</width>
+            <height min="0" max="660">auto</height>
+            <include>ContextMenuGroupListVars</include>
+        </control>
+        <control type="button" id="1000">
+            <description>button template</description>
+            <width>380</width>
+            <textcolor>FF585858</textcolor>
+            <texturenofocus border="90,3,90,3">colors/back.png</texturenofocus>
+            <texturefocus border="45,2,45,2">colors/patter.png</texturefocus>
+            <include>ContextMenuButtonVars</include>
+        </control>
+    </include>
+    
+    <include name="ContextMenuFileManager">
+        <control type="image" id="999">
+            <description>background image</description>
+            <width>380</width>
+            <height>600</height>
+            <include>ContextMenuBackgroundVars</include>
+        </control>
+        <control type="grouplist" id="996">
+            <description>grouplist for context buttons</description>
+            <width>380</width>
+            <itemgap>-5</itemgap>
+            <height min="0" max="600">auto</height>
+            <include>ContextMenuGroupListVars</include>
+        </control>
+        <control type="button" id="1000">
+            <description>button template</description>
+            <width>380</width>
+            <textcolor>77white</textcolor>
+            <texturenofocus border="90,3,90,3">colors/back.png</texturenofocus>
+            <texturefocus border="45,2,45,2">colors/patter.png</texturefocus>
+            <include>ContextMenuButtonVars</include>
+        </control>
+    </include>
+    
+    <include name="ContextMenuAddonInfo">
+        <control type="image" id="999">
+            <description>background image</description>
+            <width>436</width>
+            <height>0</height>
+            <include>ContextMenuBackgroundVars</include>
+        </control>
+        <control type="grouplist" id="996">
+            <description>grouplist for context buttons</description>
+            <posy>-26</posy>
+            <width>436</width>
+            <height min="0" max="251">auto</height>
+            <align>top</align>
+            <itemgap>-1</itemgap>
+            <include>ContextMenuGroupListVars</include>
+        </control>
+        <control type="button" id="1000">
+            <description>button template</description>
+            <width>436</width>
+            <height>51</height>
+            <textoffsetx>20</textoffsetx>
+            <align>left</align>
+            <font>Font-Condensed-S30</font>
+            <textcolor>99FFFFFF</textcolor>
+            <focusedcolor>eewhite</focusedcolor>
+            <disabledcolor>44FFFFFF</disabledcolor>
+            <shadowcolor>33000000</shadowcolor>
+            <texturenofocus border="90,3,90,3">colors/patter.png</texturenofocus>
+            <texturefocus border="150,3,150,3">colors/patter.png</texturefocus>
+        </control>
+    </include>
+
+
+    <include name="">
+        <control type="image" id="999">
+            <description>background image</description>
+            <visible>true</visible>
+        </control>
+        <control type="grouplist" id="996">
+            <description>grouplist for context buttons</description>
+            <visible>true</visible>
+        </control>
+        <control type="button" id="1000">
+            <description>button template</description>
+            <visible>true</visible>
+        </control>    
+
+
+            <control type="image">
+                <posx>0</posx>
+                <posy>-210</posy>
+                <width>330</width>
+                <height>500</height>
+                <aspectratio>stretch</aspectratio>
+                <texture>colors/patter.png</texture>
+                <visible></visible>
+
+            </control>
+
+
+
+
+        <control type="grouplist" id="2000">
+            <description>Custom group list</description>
+            <posx>10</posx>
+            <posy>-200</posy>
+            <width>350</width>
+            <height>385</height>
+            <itemgap>0</itemgap>
+            <orientation>vertical</orientation>
+            <scrolltime>0</scrolltime>
+            <control type="button" id="2001">
+                <width>350</width>
+                <height>100</height>
+                <texturefocus>buttons/select-fo.png</texturefocus>
+                <texturenofocus>buttons/select-nf.png</texturenofocus>
+                <label>Move left</label>
+                <onclick>SendClick(1001)</onclick>
+            </control>
+            <control type="button" id="2002">
+                <width>350</width>
+                <height>100</height>
+                <texturefocus>buttons/xx-fo.png</texturefocus>
+                <texturenofocus>buttons/x-nf.png</texturenofocus>
+                <label>Move right</label>
+                <onclick>SendClick(1002)</onclick>
+            </control>
+            <control type="button" id="2003">
+                <width>350</width>
+                <height>100</height>
+                <texturefocus>buttons/cancel-fo.png</texturefocus>
+                <texturenofocus>buttons/cancel-nf.png</texturenofocus>
+                <label>Delete</label>
+                <onclick>SendClick(1003)</onclick>
+            </control>
+            <control type="button" id="2004">
+                <width>350</width>
+                <height>100</height>
+                <texturefocus>buttons/sing-fo.png</texturefocus>
+                <texturenofocus>buttons/sing-nf.png</texturenofocus>
+                <label>Edit title</label>
+                <onclick>SendClick(1004)</onclick>
+            </control>
+        </control>
+    </include>
+</includes>

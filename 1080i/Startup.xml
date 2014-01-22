@@ -1,0 +1,25 @@
+<window id="2999">
+    <defaultcontrol always="true">10</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+
+    <onload>PlayMedia(special://skin/system/0100010/boot.mp4,0,)</onload>
+    <controls>
+<include>Common_Busy</include>
+
+        <control type="button" id="10">
+
+            <onfocus>ReplaceWindow(Home)</onfocus>
+<onfocus condition="IsEmpty(Skin.String(GamerPicture))">Skin.SetString(GamerPicture,special://skin/system/D400040/gamertag/pictures/Master user.png)</onfocus>
+<onfocus condition="IsEmpty(Skin.String(GamerColor))">Skin.SetString(GamerColor,special://skin/system/D400040/colors/13.png)</onfocus>
+<onfocus condition="IsEmpty(Skin.String(GamerRep))">Skin.SetString(GamerRep,special://skin/system/D400040/rating/gamercard_rep_0.png)</onfocus>
+<onfocus condition="IsEmpty(Skin.String(Theme))">Skin.SetString(Theme,special://skin/system/0200020/default.png)</onfocus>
+
+
+        </control>
+    </controls>
+
+    <onunload>RunScript(special://skin/system/0300030/xbox.gamertag.py)</onunload>
+<onunload>RunScript(special://skin/system/0300030/bing.py)</onunload> 
+<onload>special://skin/system/D400040/gamertag/pictures/$INFO[System.ProfileName].png</onload>
+    <onunload Condition="!System.InternetState">Notification(Hi[CR]$INFO[System.ProfileName] ,Singed In,00:00,special://skin/system/D400040/gamertag/pictures/$INFO[System.ProfileName].png)</onunload>
+</window>

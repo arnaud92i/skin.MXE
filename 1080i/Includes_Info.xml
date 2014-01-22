@@ -1,0 +1,627 @@
+<includes>
+
+    <include name="Common-Loading">
+        <control type="group">
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="200" tween="sine" easing="inout"/>
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="zoom" start="100" end="200" center="960,540" easing="out" tween="sine" time="300" />
+                <effect type="fade" start="100" end="0" time="250" easing="out" tween="cubic" />
+            </animation>
+            <control type="image">
+                <description>Loading Back</description>
+                <include>FullScreenDimensions</include>
+                <texture>windows/startup/loading-shadow.png</texture>
+            </control>
+            <control type="image">
+                <description>Loading Back</description>
+                <posx>849</posx>
+                <posy>429</posy>
+                <width>222</width>
+                <height>222</height><aspectratio>keep</aspectratio>
+                <texture>windows/startup/loading-colors/back.png</texture>
+                <animation type="Conditional" pulse="true" condition="true">
+                    <effect type="fade" center="auto" start="0" end="100" time="750" tween="sine" easing="in" delay="2250" />
+                </animation>
+            </control>
+            <control type="image">
+                <description>Loading</description>
+                <posx>849</posx>
+                <posy>429</posy>
+                <width>222</width>
+                <height>222</height><aspectratio>keep</aspectratio>
+                <texture>windows/startup/loading.png</texture>
+                <animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="true">Conditional</animation>
+            </control>  
+        </control>
+    </include>
+
+    <include name="Common-Clock">
+        <control type="group">
+            <animation type="WindowOpen" condition="Window.IsActive(loginscreen) | [Window.IsActive(startup) + !Window.Previous(loginscreen)] | Window.Previous(fullscreenvideo) | [Window.Previous(visualisation) + Skin.HasSetting(OSDMusicAlt.Enabled)]" reversible="false">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose" condition="Window.Next(fullscreenvideo) | [Window.Next(visualisation) + Skin.HasSetting(OSDMusicAlt.Enabled)]" reversible="false">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+            </animation>
+            <control type="image">
+                <description>Loading Back</description>
+                <posx>173r</posx>
+                <posy>130r</posy>
+                <width>100</width>
+                <height>100</height><aspectratio>keep</aspectratio>
+                <texture>overlays/scan/loading-colors/back.png</texture>
+                <animation type="Conditional" pulse="true" condition="true">
+                    <effect type="fade" center="auto" start="0" end="100" time="750" tween="sine" easing="in" delay="2250" />
+                </animation>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(musicscan) | Window.IsActive(videoscan) | Window.IsActive(busydialog) | !IsEmpty(Window(Videos).Property(DialogDownloadProgress.IsAlive))</visible>
+            </control>
+            <control type="image">
+                <description>Loading</description>
+                <posx>173r</posx>
+                <posy>130r</posy>
+                <width>100</width>
+                <height>100</height><aspectratio>keep</aspectratio>
+                <texture>overlays/scan/loading.png</texture>
+                <animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="true">Conditional</animation>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(musicscan) | Window.IsActive(videoscan) | Window.IsActive(busydialog) | !IsEmpty(Window(Videos).Property(DialogDownloadProgress.IsAlive))</visible>
+            </control>
+            <control type="image">
+                <description>Loading Small Back</description>
+                <posx>173r</posx>
+                <posy>130r</posy>
+                <width>100</width>
+                <height>100</height><aspectratio>keep</aspectratio>
+                <texture>overlays/scan/loading-small-colors/back.png</texture>
+                <animation type="Conditional" pulse="true" condition="true">
+                    <effect type="fade" center="auto" start="0" end="100" time="750" tween="sine" easing="in" delay="2250" />
+                </animation>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(musicscan) | Window.IsActive(videoscan) | Window.IsActive(busydialog) | !IsEmpty(Window(Videos).Property(DialogDownloadProgress.IsAlive))</visible>
+            </control>
+            <control type="image">
+                <description>Loading Small</description>
+                <posx>173r</posx>
+                <posy>130r</posy>
+                <width>100</width>
+                <height>100</height><aspectratio>keep</aspectratio>
+                <texture>overlays/scan/loading-small.png</texture>
+                <animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="true">Conditional</animation>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(musicscan) | Window.IsActive(videoscan) | Window.IsActive(busydialog) | !IsEmpty(Window(Videos).Property(DialogDownloadProgress.IsAlive))</visible>
+            </control>
+            <control type="group">
+                <animation effect="slide" end="-65" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
+                <animation effect="slide" end="-65" time="300" tween="sine" easing="inout" condition="Player.HasVideo | [Player.HasAudio + IsEmpty(Window(videos).property(TvTunesIsAlive))]">Conditional</animation>
+                <animation effect="slide" end="-85" time="300" tween="sine" easing="inout" condition="Window.IsActive(musicscan) | Window.IsActive(videoscan) | Window.IsActive(busydialog) | !IsEmpty(Window(Videos).Property(DialogDownloadProgress.IsAlive))">Conditional</animation>
+                <include>visiblehidefadeinfo</include>
+                <visible>!Window.IsVisible(infodialog) | [Window.IsVisible(infodialog) + IsEmpty(Window(home).property(info))]</visible>
+               </control>
+
+
+
+                <control type="group" id="666">
+                    <posx>185</posx>
+                    <posy>68</posy>
+		    <control type="multiimage">
+                         <posx>0</posx>
+                        <posy>0</posy>
+                        <width>70</width>
+                        <height>70</height>
+                        <imagepath>special://skin/system/D400040/gamertag/icons/</imagepath>
+		<timeperimage>1200</timeperimage>
+		<fadetime>200</fadetime>
+		<pauseatend>10000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+                     <visible>!Player.HasMedia+Control.HasFocus(4)</visible>
+        </control>
+		   </control>
+
+
+
+--home---
+                <control type="group" id="650">
+                    <posx>400</posx>
+                    <posy>-0</posy>
+
+                <control type="label">
+                    <description>Clock label</description>
+                    <posx>260r</posx>
+                    <posy>930</posy>
+                    <width>300</width>
+                    <height>150</height>
+                    <label>[B]$INFO[System.Time][/B]</label>
+                    <font>Font-Condensed-S50</font>
+                    <textcolor>bbwhite</textcolor>
+                    <shadowcolor>22000000</shadowcolor>
+                    <align>left</align>
+                    <scroll>false</scroll>
+                     <visible></visible>
+                </control>
+		<control type="label">
+                   <description>label.date </description>		
+		<posx>425r</posx>
+                  <posy>950</posy>
+		<width>300</width>
+		<height>100</height>
+		<label></label>
+		<align>left</align>
+		<textcolor>eewhite</textcolor>
+		<font>font24_title</font>
+                     <visible>!Player.HasMedia+Control.HasFocus(525)</visible>
+                </control>
+                <control type="label">
+                    <description>Temp label</description>
+                    <posx>155r</posx>
+                    <posy>925</posy>
+                    <width>200</width>
+                    <height>100</height>
+                    <label></label>
+                    <font>font24_title</font>
+                    <textcolor>green</textcolor>
+                    <align>right</align>
+                    <scroll>false</scroll>
+                    <visible>Weather.IsFetched</visible>
+                     <visible>!Player.HasMedia+Control.HasFocus(525)</visible>
+                </control>
+        </control>
+		    <control type="multiimage">
+                         <include></include>
+                         <posx>1740</posx>
+                        <posy>65</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <imagepath>xbox.logo/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+                     <visible>!Player.HasMedia+Control.HasFocus(525)</visible>
+        </control>
+
+---games---
+                <control type="group" id="650">
+                    <posx>400</posx>
+                    <posy>-890</posy>
+
+ </control>
+		    <control type="multiimage">
+                         <include></include>
+                         <posx>1740</posx>
+                        <posy>65</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <imagepath>xbox.logo/Games/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+                      <visible>Control.HasFocus(325)</visible>
+        </control>
+---tv---
+                <control type="group" id="650">
+                    <posx>400</posx>
+                    <posy>-890</posy>
+
+                <control type="label">
+                    <description>movie label</description>
+                    <posx>350r</posx>
+                    <posy>878</posy>
+                    <width>300</width>
+                    <height>150</height>
+                    <label fallback="No Info">$INFO[Window(Home).Property(Movies.Count)]</label>
+                    <font>font13_title</font>
+                    <textcolor>eewhite</textcolor>
+                    <shadowcolor>22000000</shadowcolor>
+                    <align>left</align>
+                    <scroll>false</scroll>
+                     <visible>Control.HasFocus(425)</visible>
+                </control>
+                <control type="image">
+                    <posx>425r</posx>
+                    <posy>942</posy>
+                <width>30</width>
+                <height>25</height>
+                <texture>icon/movie.png</texture>
+                     <visible>Control.HasFocus(425)</visible>
+                </control>
+		<control type="label">
+                   <description>label.tv </description>		
+		<posx>350r</posx>
+                  <posy>927</posy>
+		<width>300</width>
+		<height>100</height>
+		 <label fallback="No Info">$INFO[Window.Property(TVShows.Count)]</label>
+		<align>left</align>
+		<textcolor>eewhite</textcolor>
+		<font>font13_title</font>
+                     <visible>Control.HasFocus(425)</visible>
+                </control>
+                <control type="image">
+                    <posx>425r</posx>
+                    <posy>966</posy>
+                <width>30</width>
+                <height>25</height>
+                <texture>icon/livetv.png</texture>
+                     <visible>Control.HasFocus(425)</visible>
+                </control>
+                <control type="label">
+                    <description>castom label</description>
+                    <posx>350r</posx>
+                    <posy>952</posy>
+                    <width>200</width>
+                    <height>100</height>
+                    <label fallback="No Info"></label>
+                    <font>font13_title</font>
+                    <textcolor>green</textcolor>
+                    <align>left</align>
+                    <scroll>false</scroll>
+                    <visible></visible>
+                     <visible>Control.HasFocus(425)</visible>
+                </control>
+                <control type="image">
+                    <posx>425r</posx>
+                    <posy>990</posy>
+                <width>30</width>
+                <height>20</height>
+                <texture>icon/parties.</texture>
+                     <visible>Control.HasFocus(425)</visible>
+                </control>
+        </control>
+		    <control type="multiimage">
+                         <include></include>
+                         <posx>1750</posx>
+                        <posy>80</posy>
+                        <width>65</width>
+                        <height>65</height>
+                        <imagepath>overlays/nowplaying/video/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+                     <visible>Control.HasFocus(425)</visible>
+        </control>
+---music---
+                <control type="group" id="650">
+                    <posx>400</posx>
+                    <posy>-890</posy>
+
+                <control type="label">
+                    <description>songs label</description>
+                    <posx>350r</posx>
+                    <posy>878</posy>
+                    <width>300</width>
+                    <height>150</height>
+                    <label fallback="No Info">$INFO[Window.Property(Music.SongsCount)]</label>
+                    <font>font13_title</font>
+                    <textcolor>eewhite</textcolor>
+                    <shadowcolor>22000000</shadowcolor>
+                    <align>left</align>
+                    <scroll>false</scroll>
+                     <visible>Control.HasFocus(625)</visible>
+                </control>
+                <control type="image">
+                    <posx>425r</posx>
+                    <posy>942</posy>
+                <width>30</width>
+                <height>25</height>
+                <texture>icon/music.png</texture>
+                     <visible>Control.HasFocus(625)</visible>
+                </control>
+		<control type="label">
+                   <description>label.album</description>		
+		<posx>350r</posx>
+                  <posy>927</posy>
+		<width>300</width>
+		<height>100</height>
+		 <label fallback="No Info">$INFO[Window.Property(Music.AlbumsCount)]</label>
+		<align>left</align>
+		<textcolor>eewhite</textcolor>
+		<font>font13_title</font>
+                     <visible>Control.HasFocus(625)</visible>
+                </control>
+                <control type="image">
+                    <posx>425r</posx>
+                    <posy>966</posy>
+                <width>30</width>
+                <height>25</height>
+                <texture>icon/album.png</texture>
+                     <visible>Control.HasFocus(625)</visible>
+                </control>
+                <control type="label">
+                    <description>castom label</description>
+                    <posx>350r</posx>
+                    <posy>952</posy>
+                    <width>200</width>
+                    <height>100</height>
+                    <label fallback="No Info"></label>
+                    <font>font13_title</font>
+                    <textcolor>green</textcolor>
+                    <align>left</align>
+                    <scroll>false</scroll>
+                    <visible></visible>
+                     <visible>Control.HasFocus(625)</visible>
+                </control>
+                <control type="image">
+                    <posx>425r</posx>
+                    <posy>990</posy>
+                <width>30</width>
+                <height>20</height>
+                <texture>icon/parties.</texture>
+                     <visible>!Player.HasMedia+Control.HasFocus(625)</visible>
+                </control>
+        </control>
+		    <control type="multiimage">
+                         <include></include>
+                         <posx>1750</posx>
+                        <posy>80</posy>
+                        <width>65</width>
+                        <height>65</height>
+                        <imagepath>overlays/nowplaying/volume/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+                     <visible>Control.HasFocus(625)</visible>
+        </control>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <control type="image">
+                <description>Downloading</description>
+                <posx>174r</posx>
+                <posy>950</posy>
+                <width>100</width>
+                <height>100</height>
+                <aspect>keep</aspect>
+                <texture>overlays/scan/download.png</texture>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(musicscan) | Window.IsActive(videoscan) | !IsEmpty(Window(Videos).Property(DialogDownloadProgress.IsAlive))</visible>
+            </control>
+            <control type="image">
+                <description>Busy</description>
+                <posx>174r</posx>
+                <posy>950</posy>
+                <width>100</width>
+                <height>100</height>
+                <aspect>keep</aspect>
+                <texture>overlays/scan/busbuttons/y.png</texture>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(busydialog)</visible>
+            </control>
+            <control type="image">
+                <description>Mute</description>
+                <posx>80r</posx>
+                <posy>970</posy>
+                <width>60</width>
+                <height>60</height>
+                <aspect>keep</aspect>
+                <texture>overlays/volume/muted-info.png</texture>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(mutebug)+Control.HasFocus(525)</visible>
+                <animation effect="slide" end="-65" time="300" tween="sine" easing="inout" condition="Player.HasVideo | [Player.HasAudio + IsEmpty(Window(videos).property(TvTunesIsAlive))]">Conditional</animation>
+                <animation effect="slide" end="-85" time="300" tween="sine" easing="inout" condition="Window.IsActive(musicscan) | Window.IsActive(videoscan) | Window.IsActive(busydialog) | !IsEmpty(Window(Videos).Property(DialogDownloadProgress.IsAlive))">Conditional</animation>
+            </control>
+        </control>
+    </include>
+
+    <!-- Options Button -->
+    <include name="Common-Options">
+        <control type="group">
+            <description>Options Buttons</description>
+            <include>Animation_OptionsButton</include>
+            <posx>0</posx>
+            <posy>0</posy>
+            <animation effect="slide" start="0" end="-204" time="0" condition="Skin.HasSetting(HideShutdownButton)">Conditional</animation>
+            <control type="button" id="9010">
+                <description>Options Button</description>
+                <width>50</width>
+                <height>50</height>
+                <onleft>50</onleft>
+                <onright>50</onright>
+                <onup>50</onup>
+                <ondown>150</ondown>
+                <texturefocus></texturefocus>
+                <texturenofocus></texturenofocus>
+                <onfocus>SetFocus(9111)</onfocus>
+                <include>homebuttonsanim3</include>
+                <visible allowhiddenfocus="true">!Skin.HasSetting(HideOptionsButton) + !Window.IsVisible(movieinformation) + !Window.IsVisible(addoninformation) + !Window.IsVisible(musicinformation) + !Window.IsVisible(playercontrols) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(progressdialog) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(numericinput) + !Window.IsVisible(filebrowser) + !Window.IsVisible(networksetup) + !Window.IsVisible(mediasource) + !Window.IsVisible(ProfileSettings) + !Window.IsVisible(LockSettings) + !Window.IsVisible(contentsettings) + !Window.IsVisible(songinformation) + !Window.IsVisible(addonsettings) + !Window.IsVisible(textviewer) + !Window.IsVisible(selectdialog) + !Window.IsVisible(okdialog) + !Window.IsVisible(filestackingdialog) + !Window.IsVisible(1122) + !Window.IsVisible(smartplaylisteditor) + !Window.IsVisible(pvrgroupmanager) + !Window.IsVisible(pvrtimersetting) + !Window.IsVisible(pvrguidesearch) + !Window.IsVisible(pvrchannelmanager) + !Window.IsVisible(pvrguideinfo) + !Window.IsVisible(pvrrecordinginfo)</visible>    				
+            </control>
+            <control type="label">
+                <description>Options Label</description>
+                <width>180</width>
+                <height>100</height>
+                <label></label>
+                <font>Font-Condensed-S34-B</font>
+                <textcolor>eewhite</textcolor>
+                <shadowcolor>22000000</shadowcolor>
+                <include>homebuttonsanim4</include>
+                <visible>!Skin.HasSetting(HideOptionsButton) + !Window.IsVisible(movieinformation) + !Window.IsVisible(addoninformation) + !Window.IsVisible(musicinformation) + !Window.IsVisible(playercontrols) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(progressdialog) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(numericinput) + !Window.IsVisible(filebrowser) + !Window.IsVisible(networksetup) + !Window.IsVisible(mediasource) + !Window.IsVisible(ProfileSettings) + !Window.IsVisible(LockSettings) + !Window.IsVisible(contentsettings) + !Window.IsVisible(songinformation) + !Window.IsVisible(addonsettings) + !Window.IsVisible(textviewer) + !Window.IsVisible(selectdialog) + !Window.IsVisible(okdialog) + !Window.IsVisible(filestackingdialog) + !Window.IsVisible(1122) + !Window.IsVisible(smartplaylisteditor) + !Window.IsVisible(pvrgroupmanager) + !Window.IsVisible(pvrtimersetting) + !Window.IsVisible(pvrguidesearch) + !Window.IsVisible(pvrchannelmanager) + !Window.IsVisible(pvrguideinfo) + !Window.IsVisible(pvrrecordinginfo)</visible>
+            </control>
+        </control>
+    </include>
+
+    <variable name="NowPlayingSubTitle">
+        <value condition="Player.HasVideo + !Pvr.IsPlayingTv">$INFO[Player.FinishTime,$LOCALIZE[41371] ,]</value>
+        <value condition="Player.HasVideo + Pvr.IsPlayingTv">$INFO[VideoPlayer.NextTitle,$LOCALIZE[19031]: ,]$INFO[VideoPlayer.NextStartTime, (,)]</value>
+        <value condition="Player.HasAudio + !Pvr.IsPlayingRadio">$INFO[MusicPlayer.Artist]</value>
+        <value condition="Player.HasAudio + Pvr.IsPlayingRadio">$INFO[MusicPlayer.ChannelName]</value>
+    </variable>
+    
+    <include name="Common-NowPlaying">
+        <control type="group">
+            <posx>1675</posx>
+            <posy>45</posy>
+            <include>BannerListInfoAnimation</include>
+            <visible>Player.HasMedia + IsEmpty(Window(videos).property(TvTunesIsAlive)) + !Window.IsActive(visualisation)</visible>
+            <animation effect="slide" end="-76" time="300" tween="sine" easing="inout" condition="Window.IsActive(busydialog)">Conditional</animation>
+            <animation type="Conditional" condition="Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog) | Window.IsActive(volumebar)">
+                <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" />
+                <effect type="zoom" start="100" end="50" center="1745,100" tween="sine" easing="inout" time="300" />
+            </animation>
+            <control type="group">
+                <control type="label">
+                    <description>Title label</description>
+                    <posx>-255</posx>
+                    <posy>5</posy>
+                    <width>771</width>
+                    <height>120</height>
+                    <label>$INFO[MusicPlayer.Title]</label>                 
+                    <font>Font-Condensed-S26-B</font>
+                    <textcolor>green</textcolor>
+                    <scroll>false</scroll>
+                    <align>left</align>
+                     <visible>!Control.HasFocus(9999)+Control.HasFocus(525)</visible>
+                </control>
+                <control type="label" id="934">
+                    <description>Artist label</description>
+                    <posx>-255</posx>
+                    <posy>-25</posy>
+                    <width>771</width>
+                    <height>120</height>
+                    <label>$VAR[NowPlayingSubTitle]</label>
+                    <font>Font-Condensed-S31-B</font>
+                    <textcolor>orange</textcolor>
+                    <scroll>false</scroll>
+                    <align>left</align>
+                     <visible>!Control.HasFocus(9999)+Control.HasFocus(525)+Player.HasAudio</visible>
+                </control>
+
+    			<control type="image">
+    			    <description>Now Playing - Paused</description>
+    			    <posx>60</posx>
+    			    <posy>20</posy>
+    			    <width>60</width>
+    			    <height>60</height>
+    			    <texture>overlays/nowplaying/pause.png</texture>
+    			    <visible>Player.Paused</visible>
+    			</control>
+    			<control type="multiimage">
+    			    <description>ring</description>
+                         <include></include>
+                         <posx>49.80</posx>
+                        <posy>10</posy>
+                        <width>80</width>
+                        <height>80</height>
+			    <imagepath>ring/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>6000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+                         <visible>Player.HasMedia+!Control.HasFocus(9999)</visible>
+    			    <visible>Control.HasFocus(525)</visible>
+    			</control>
+    			<control type="multiimage">
+    			    <description>Now Playing - Music</description>
+                         <include></include>
+                         <posx>60</posx>
+                        <posy>20</posy>
+                        <width>60</width>
+                        <height>60</height>
+			    <imagepath>overlays/nowplaying/volume/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+    			    <visible>!Player.Paused+!Control.HasFocus(9999)+Control.HasFocus(525)+Player.HasAudio</visible>
+    			</control>
+    			<control type="multiimage">
+    			    <description>Now Playing - video</description>
+                         <include></include>
+                         <posx>60</posx>
+                        <posy>20</posy>
+                        <width>60</width>
+                        <height>60</height>
+			    <imagepath>overlays/nowplaying/video/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+    			    <visible>!Player.Paused+!Control.HasFocus(9999)+Control.HasFocus(525)+Player.HasVideo</visible>
+    			</control>
+    			<control type="image">
+    			    <posx>0</posx>
+    			    <posy>25</posy>
+    			    <width>100</width>
+    			    <height>100</height>
+    			    <texture>dialogs/extendedprogress/loading-colors/back.png</texture>
+    			</control>
+    			<control type="progress" id="933">
+    			    <texturebg>-</texturebg>
+    				<lefttexture>-</lefttexture>
+    				<midtexture>-</midtexture>
+    				<righttexture>-</righttexture>
+    				<info>Player.Progress</info>
+    				<visible>false</visible>
+    			</control>
+    			<control type="image">
+    			    <posx>0</posx>
+    			    <posy>25</posy>
+    			    <width>100</width>
+    			    <height>100</height>
+    			    <texture>$INFO[Control.GetLabel(933),overlays/nowplaying/progress/.png]</texture>
+    			    <visible>!IsEmpty(Player.Duration)</visible>
+    			</control>
+    			<control type="image">
+    			    <description>Loading indicator</description>
+    			    <posx>0</posx>
+    			    <posy>25</posy>
+    			    <width>100</width>
+    			    <height>100</height>
+    			    <texture>dialogs/search/loading.png</texture>
+    			    <animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="!Player.Paused">Conditional</animation>
+    			    <visible>IsEmpty(Player.Duration)</visible>
+    			</control>
+            </control>
+        </control>
+    </include>
+    
+    <include name="Common-Home-Info">
+        <include>Common-Clock</include>
+        <include>Common-NowPlaying</include>
+    </include>
+    
+    <include name="Common-Info">
+        <include>Common-ShutdownLabel</include>
+        <include condition="!Skin.HasSetting(KioskMode)">Common-Options</include>
+        <include>Common-Clock</include>
+        <include>Common-NowPlaying</include>
+    </include>
+    
+    <include name="Common-Info-NoOptions">
+        <include>Common-ShutdownLabel</include>
+        <include>Common-Clock</include>
+        <include>Common-NowPlaying</include>
+    </include>
+
+</includes>

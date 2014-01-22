@@ -1,0 +1,48 @@
+<window id="104">
+	<zorder>100</zorder>
+	<controls>
+	<control type="group">
+			<posy>950</posy>
+			<control type="image">
+				<posx>1170r</posx>
+				<posy>10</posy>
+				<width>500</width>
+				<height>100</height>
+				<texture>overlays/notification/bar.png</texture>
+				<animation effect="zoom" start="50,100" end="100,100" time="0" tween="sine" easing="in"  center="auto" condition="true">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="40,100" time="0" tween="sine" easing="out"  center="auto" delay="50" condition="true">WindowClose</animation>
+			</control>
+                           <control type="image">
+                                   <posx>1145r</posx>
+                                   <posy>42</posy>
+                                   <width>50</width>
+                                   <height>50</height>
+                                  <texture>$INFO[Player.Volume,overlays/volume/progress/,.png]</texture>
+			</control>
+                           <control type="image">
+                                  <posx>1145r</posx>
+                                  <posy>42</posy>
+                                  <width>50</width>
+                                  <height>50</height>
+                                  <texture>overlays/volume/progress/0.0 dB.png</texture>
+                                  <visible>!Window.IsActive(mutebug)</visible>
+			</control>
+			<control type="progress" id="1">
+				<description>progress control</description>
+				<posx>1080r</posx>
+				<posy>60</posy>
+				<width>350</width>
+				<height>15</height>
+				<reveal>true</reveal>
+				<info>Player.Volume</info>
+				<texturebg>icon/volume_background.png</texturebg>
+				<lefttexture>-</lefttexture>
+				<midtexture>icon/volume_middle.png</midtexture>
+				<righttexture>-</righttexture>
+				<overlaytexture>-</overlaytexture>
+				<animation effect="zoom" start="50,100" end="100,100" time="0" tween="sine" easing="in"  center="auto" condition="true">WindowOpen</animation>
+				<animation effect="zoom" start="100,100" end="40,100" time="0" tween="sine" easing="out"  center="auto" delay="50" condition="true">WindowClose</animation>
+				</control>
+	                   </control>		
+	       </controls>
+ </window>
