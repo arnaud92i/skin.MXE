@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.MXE" version="1.0.2" name="skin.MXE" provider-name="senna99">
+<addon id="skin.MXE-senna" version="1.0.2" name="skin.MXE-senna" provider-name="senna99">
 	<requires>
 	</requires>
 	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1.00" debugging="false">
@@ -7,8 +7,8 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-        <source>https://github.com/senna99/skin.MXE</source>
+        <source>https://github.com/senna99/skin.MXE-senna</source>
 		<minversion app="xbmc">28000</minversion>
-		<summary lang="en">skin.MXE/ by senna99</summary>
+		<summary lang="en">skin.MXE-senna/ by senna99</summary>
 	</extension>
 </addon>
