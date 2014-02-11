@@ -18,7 +18,7 @@ __GamerAvatarFolder__ = __dataPath__ + "/avatars/"
 __GamerPictureFolder__ = __dataPath__ + "/pictures/"
 __GameIconFolder__ = __dataPath__ + "/icons/"
 
-__XbmcCurrentUser__ = xbmc.getInfoLabel( '$INFO[Skin.string(Friend1)]' )
+__XbmcCurrentUser__ = xbmc.getInfoLabel( '$INFO[Skin.string(Friend6)]' )
 __XboxGamertag__ = __XbmcCurrentUser__.replace(" ","%20")
 
 	
