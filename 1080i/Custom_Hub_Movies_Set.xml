@@ -28,8 +28,8 @@
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
 	<!-- Backgrounds -->
@@ -84,7 +84,7 @@
                                     <width>430</width>
                                     <height>600</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="450" height="379">
@@ -94,7 +94,7 @@
                                     <width>430</width>
                                     <height>600</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="image">
                                     <posx>0</posx>
@@ -131,7 +131,21 @@
 						<item id="1">
 							<thumb>$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))]</thumb>
 							
-                                                                     <onclick>ActivateWindow(2003)</onclick>
+							<include>Common_TraktTV_ClearProperties</include>
+							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.1.Title)],58)</onclick>
+							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.1.MPAA)],58)</onclick>
+							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.1.Plot)],58)</onclick>
+							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.1.Tagline)],58)</onclick>
+							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.1.Year)],58)</onclick>
+							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.1.Genre)],58)</onclick>
+							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.1.Runtime)],58)</onclick>
+							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.1.Rating)],58)</onclick>
+							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))],58)</onclick>
+							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.1.Art(fanart))],58)</onclick>
+							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.1.Play)],58)</onclick>
+							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.1.ID)],58)</onclick>
+							<onclick>SetProperty(Type,movie,58)</onclick>
+							<onclick>ActivateWindow(58)</onclick>
 						</item>	
                             </content>
                   </control>
@@ -207,7 +221,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -229,7 +243,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -317,7 +331,7 @@
                                     <width>455</width>
                                     <height>400</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="430" height="379">
@@ -327,7 +341,7 @@
                                     <width>455</width>
                                     <height>400</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="label">
                                     <posx>10</posx>
@@ -377,7 +391,7 @@
                         </control>
 ----------------------------------------------------------
                     <control type="panel" id="4">
-                        <posx>798</posx>
+                        <posx>796</posx>
                         <posy>435</posy>
                         <width>1200</width>
                         <height>300</height>
@@ -391,10 +405,10 @@
                                 <control type="image">
                                     <posx>24</posx>
                                     <posy>24</posy>
-                                    <width>220</width>
+                                    <width>455</width>
                                     <height>195</height>
                                <aspectratio>scale</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -405,10 +419,10 @@
                                 <control type="image">
                                     <posx>24</posx>
                                     <posy>24</posy>
-                                    <width>220</width>
+                                    <width>455</width>
                                     <height>195</height>
                                <aspectratio>scale</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="label">
                                     <posx>20</posx>
@@ -426,7 +440,7 @@
                      <control type="image">
                         	<posx>10</posx>
                	        	<posy>10</posy>
-        	        	<width>245</width>
+        	        	<width>480</width>
         	        	<height>223</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
@@ -456,26 +470,7 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 						
-						<item id="2">
-							<thumb>$INFO[Window(Home).Property(TrendingShows.3.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingShows.3.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingShows.3.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingShows.3.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingShows.3.Studio)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingShows.3.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingShows.3.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingShows.3.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingShows.3.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingShows.3.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingShows.3.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Country,$INFO[Window(Home).Property(TrendingShows.3.Country)],58)</onclick>
-							<onclick>SetProperty(NextTime,$INFO[Window(Home).Property(TrendingShows.3.ShortTime)] $INFO[Window(Home).Property(TrendingShows.3.NextDate)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingShows.3.ID)],58)</onclick>
-							<onclick>SetProperty(Type,tvshow,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>
+
                         </content>
                     </control>
 -----------------------------------------------------------
@@ -548,12 +543,7 @@
 									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
 									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
 								</item>													
-								<item id="3">
-									<description>Search</description>
-									<label>Search By Category «</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(68,return)</onclick>
-								</item>							
+						
 
                         </content>
                     </control>
@@ -653,16 +643,11 @@
 								</item>
 								<item id="2">
 									<description>Recently Added</description>
-									<label>Recently added</label>
+									<label>My Movies</label>
 									<thumb>hub/hub_recentlyadded_small.png</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-								</item>													
-								<item id="3">
-									<description>Search</description>
-									<label>Search By Category «</label>
-									<thumb>hub/search.png</thumb>
 									<onclick>ActivateWindow(68,return)</onclick>
-								</item>							
+								</item>													
+						
 
                         </content>
                     </control>
@@ -695,7 +680,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -717,7 +702,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -836,7 +821,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -858,7 +843,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -994,7 +979,7 @@
                                     <width>295</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -1016,7 +1001,7 @@
                                     <width>295</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -1156,6 +1141,25 @@
                                     <aspectratio>stretch</aspectratio>
                                     <texture>colors/grey85%.png</texture>
                                 </control>
+                                    <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>150</width>
+                                    <height>195</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>170</posx>
+                                    <posy>70</posy>
+                                    <width>300</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
                             </control>
                         </itemlayout>
                         <focusedlayout width="215" height="205">
@@ -1178,6 +1182,25 @@
                                     <aspectratio>stretch</aspectratio>
                                     <texture>colors/grey85%.png</texture>
                                 </control>
+                                    <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>150</width>
+                                    <height>195</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>170</posx>
+                                    <posy>70</posy>
+                                    <width>300</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
                         <control type="image">
                         	<posx>-13</posx>
                	        	<posy>38</posy>
@@ -1193,21 +1216,21 @@
 
 								<item id="1">
 									<description>Titles</description>
-									<label>Titles</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+									<label>Tv Shows[CR]       A-Z...</label>
+									<thumb>icon/Tv Shows.png</thumb>
+									<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.tvonline.cc/?description&amp;iconimage=C%3a%2fUsers%2fDBox%2fAppData%2fRoaming%2fXBMC%2faddons%2fplugin.video.tvonline.cc%2fart%2fA-Z.png&amp;list&amp;mode=8&amp;name=A-Z&amp;url=url&quot;)</onclick>
 								</item>
 								<item id="2">
 									<description>Recently Added</description>
-									<label>Recently added</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+									<label>Browse[CR]   by Genre...</label>
+									<thumb>demo/tv shows thumb.jpg</thumb>
+									<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.xbmctorrent/yify/genres&quot;)</onclick>
 								</item>													
 								<item id="3">
 									<description>Search</description>
-									<label>Search By Category «</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(68,return)</onclick>
+									<label>IMDB 250[CR]   Movies...</label>
+									<thumb>demo/IMDB Top 250.png</thumb>
+									<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.xbmctorrent/yify/browse/rating/1080p/1?limit=20&amp;order=desc&quot;)</onclick>
 								</item>							
 
                         </content>
@@ -1273,7 +1296,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -1295,7 +1318,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -1390,7 +1413,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -1412,7 +1435,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -1548,7 +1571,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -1570,7 +1593,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -1677,62 +1700,64 @@
 
 ----------------------------------------------------------
 	<control type="panel" id="13">
-                        <posx>-150</posx>
-                        <posy>0</posy>
+                        <posx>-50</posx>
+                        <posy>30</posy>
                         <width>600</width>
-                        <height>820</height>
+                        <height>620</height>
                         <onleft>11</onleft>
                     	<onright>12</onright>
                     	<onup>625</onup>
                     	<ondown></ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
+                        <itemlayout width="500" height="204">
                             <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>450</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>colors/grey85%.png</texture>
+                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>400</width>
+                                    <height>600</height>
+                                   <aspectratio>stretch</aspectratio>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="205">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
-					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>450</width>
-                                    <height>195</height>
+                        <focusedlayout width="500" height="193">
+                            <control type="group">
+                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
+				<animation effect="Zoom" end="100" time="200" center="auto"condition="true">Focus</animation>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>400</width>
+                                    <height>600</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture>colors/grey85%.png</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>585</posy>
+                                    <width>400</width>
+                                    <height>35</height>
+                                      <texture>panel/blend.png</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>24</posx>
+                                    <posy>585</posy>
+                                    <width>260</width>
+                                    <height>35</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>green</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+				    <scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
                                 </control>
                         <control type="image">
-                        	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>475</width>
-        	        	<height>220</height>
+                        	<posx>5</posx>
+               	        	<posy>5</posy>
+        	        	<width>430</width>
+        	        	<height>620</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
 		        <texture border="40">icon/tile-fo.png</texture>
@@ -1740,25 +1765,25 @@
                             </control>
                         </focusedlayout>
                         <content>
-
-								<item id="1">
-									<description>Titles</description>
-									<label>Titles</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-								</item>
-								<item id="2">
-									<description>Recently Added</description>
-									<label>Recently added</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-								</item>													
-								<item id="3">
-									<description>Search</description>
-									<label>Search By Category «</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(68,return)</onclick>
-								</item>							
+			<item id="1">
+							<thumb>$INFO[Window(Home).Property(TrendingShows.12.Art(poster))]</thumb>
+							<include>Common_TraktTV_ClearProperties</include>
+							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingShows.12.Title)],58)</onclick>
+							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingShows.12.MPAA)],58)</onclick>
+							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingShows.12.Plot)],58)</onclick>
+							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingShows.12.Studio)],58)</onclick>
+							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingShows.12.Year)],58)</onclick>
+							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingShows.12.Genre)],58)</onclick>
+							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingShows.12.Runtime)],58)</onclick>
+							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingShows.12.Rating)],58)</onclick>
+							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingShows.12.Art(poster))],58)</onclick>
+							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingShows.12.Art(fanart))],58)</onclick>
+							<onclick>SetProperty(Country,$INFO[Window(Home).Property(TrendingShows.12.Country)],58)</onclick>
+							<onclick>SetProperty(NextTime,$INFO[Window(Home).Property(TrendingShows.12.ShortTime)] $INFO[Window(Home).Property(TrendingShows.12.NextDate)],58)</onclick>
+							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingShows.12.ID)],58)</onclick>
+							<onclick>SetProperty(Type,tvshow,58)</onclick>
+							<onclick>ActivateWindow(58)</onclick>
+						</item>								
 
                         </content>
                     </control>
@@ -1813,7 +1838,7 @@
                                     <width>295</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -1835,7 +1860,7 @@
                                     <width>295</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
 
                                 <control type="textbox">
@@ -2016,7 +2041,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
@@ -2038,7 +2063,7 @@
                                     <width>250</width>
                                     <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
                                     <posx>10</posx>
@@ -2144,62 +2169,64 @@
                     </control>
 ----------------------------------------------------------
 	<control type="panel" id="16">
-                        <posx>1700</posx>
-                        <posy>0</posy>
+                        <posx>1800</posx>
+                        <posy>30</posy>
                         <width>600</width>
-                        <height>820</height>
+                        <height>620</height>
                         <onleft>15</onleft>
                     	<onright>17</onright>
                     	<onup>625</onup>
                     	<ondown></ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
+                        <itemlayout width="500" height="204">
                             <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>450</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>colors/grey85%.png</texture>
+                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>400</width>
+                                    <height>600</height>
+                                   <aspectratio>stretch</aspectratio>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="205">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
-					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>450</width>
-                                    <height>195</height>
+                        <focusedlayout width="500" height="193">
+                            <control type="group">
+                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
+				<animation effect="Zoom" end="100" time="200" center="auto"condition="true">Focus</animation>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>400</width>
+                                    <height>600</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture>colors/grey85%.png</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>585</posy>
+                                    <width>400</width>
+                                    <height>35</height>
+                                      <texture>panel/blend.png</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>24</posx>
+                                    <posy>585</posy>
+                                    <width>260</width>
+                                    <height>35</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>green</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+				    <scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
                                 </control>
                         <control type="image">
-                        	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>475</width>
-        	        	<height>220</height>
+                        	<posx>5</posx>
+               	        	<posy>5</posy>
+        	        	<width>430</width>
+        	        	<height>620</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
 		        <texture border="40">icon/tile-fo.png</texture>
@@ -2207,25 +2234,24 @@
                             </control>
                         </focusedlayout>
                         <content>
-
-								<item id="1">
-									<description>Titles</description>
-									<label>Titles</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-								</item>
-								<item id="2">
-									<description>Recently Added</description>
-									<label>Recently added</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-								</item>													
-								<item id="3">
-									<description>Search</description>
-									<label>Search By Category «</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(68,return)</onclick>
-								</item>							
+			<item id="1">
+							<thumb>$INFO[Window(Home).Property(TrendingMovies.16.Art(poster))]</thumb>
+							<include>Common_TraktTV_ClearProperties</include>
+							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.16.Title)],58)</onclick>
+							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.16.MPAA)],58)</onclick>
+							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.16.Plot)],58)</onclick>
+							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.16.Tagline)],58)</onclick>
+							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.16.Year)],58)</onclick>
+							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.16.Genre)],58)</onclick>
+							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.16.Runtime)],58)</onclick>
+							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.16.Rating)],58)</onclick>
+							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.16.Art(poster))],58)</onclick>
+							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.16.Art(fanart))],58)</onclick>
+							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.16.Play)],58)</onclick>
+							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.16.ID)],58)</onclick>
+							<onclick>SetProperty(Type,movie,58)</onclick>
+							<onclick>ActivateWindow(58)</onclick>
+						</item>						
 
                         </content>
                     </control>

@@ -111,7 +111,7 @@
 
 
     <include name="pattercolors">
-	<itemlayout width="290" height="225">
+	<itemlayout width="290" height="224">
                         <control type="image">
 				<posx>24</posx>
 				<posy>24</posy>
@@ -129,7 +129,7 @@
                 </control>
 
         </itemlayout>
-        <focusedlayout width="290" height="290">
+        <focusedlayout width="290" height="224">
         	<control type="group">
 			<animation type="Focus">
                         <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
@@ -173,10 +173,10 @@
                 </control>
 
                         <control type="image">
-                        	<posx>11</posx>
-               	        	<posy>15</posy>
-        	        	<width>245</width>
-        	        	<height>245</height>
+                        	<posx>9</posx>
+               	        	<posy>10</posy>
+        	        	<width>240</width>
+        	        	<height>240</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
 		        	<texture>icon/tile-fo.png</texture>

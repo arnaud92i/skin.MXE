@@ -5,11 +5,11 @@
 	<controls>
              <include>CommonContent</include>
         <include>CommonStage</include>
-                                    <include></include>
+                                    <include>LoginScreen Buttons</include>
 			<control type="image">
 				<description>Panel</description>
 				<include>FullscreenDimensions</include>
-				<texture>panel/console settings.png</texture>
+				<texture>panel/console settings.</texture>
 			</control>
 		<include>-</include>
 	<control type="label">

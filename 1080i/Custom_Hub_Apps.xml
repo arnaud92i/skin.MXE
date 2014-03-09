@@ -1,6 +1,7 @@
 <window id="67">
     <defaultcontrol always="true">40</defaultcontrol>
-   <allowoverlay>yes</allowoverlay>
+   <allowoverlay>no</allowoverlay>
+
     <controls>
 	<include>CommonContent</include> 
 	<include>CommonStage</include>
@@ -8,24 +9,24 @@
             <include>a and b</include>
 	<control type="image">
 			<include>FullscreenDimensions</include>
-			<texture>-</texture>
+			<texture>colors/pure blue.</texture>
 			<aspectratio>stretch</aspectratio>
 	</control>
                         <control type="label">
                             <posx>90</posx>
-                            <posy>200</posy>
+                            <posy>170</posy>
                             <width>746</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
-                            <label>Apps + </label>
+                            <label>Apps + Store</label>
                             <font>Font-Condensed-S50</font>
                             <visible></visible>
                         </control>
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
 	<!-- Backgrounds -->
@@ -36,58 +37,161 @@
         <control type="grouplist" id="40">
             <posx>-210</posx>
             <posy>180</posy>
-            <width>2320</width>
+            <width>2500</width>
             <height>780</height>
             <scrolltime tween="cubic" easing="inout">700</scrolltime>
             <orientation>horizontal</orientation>
-            <itemgap>-400</itemgap>
+            <itemgap>-650</itemgap>
 
 
 
-            <!--Apps-->
-            <control type="group" id="700">
-                <width>2320</width>
+            <!--Movies-->
+            <control type="group" id="600">
+                <width>2300</width>
                 <height>780</height>
-                <control type="button" id="725">
-                    <onright>Control.Move(20,1)</onright>
+                <control type="button" id="525">
                     <onleft></onleft>
-                    <onright>825</onright>
-                    <onright></onright>
-                    <onclick>SetFocus(10)</onclick>
-                    <ondown>6022</ondown>
+                    <onleft></onleft>
+                    <onright>Control.Move(20,1)</onright>
+                    <onright>425</onright>
+                    <onclick>SetFocus(1)</onclick>
+                    <ondown>1</ondown>
                 </control>
-                <control type="group" id="750">
-                    <posx>310</posx>
-                    <posy>150</posy>
-		<animation type="visible">
-                	<effect type="fade" start="0" end="100" time="250" tween="sine" easing="in" delay="250"/>
-                </animation>
-		<animation type="Hidden">
-                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="in" delay="50"/>
-                </animation>
-		<animation type="WindowOpen">
-                	<effect type="fade" start="0" end="100" time="250" tween="sine" easing="in" delay="250"/>
-                </animation>
-		<animation type="WindowClose">
-                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="in" delay="50"/>
-                </animation>
+                <control type="group" id="650">
+                    <posx>250</posx>
+                    <posy>70</posy>
+-----------------------------------------------------------------
+                        <control type="panel" id="1">
+                            <posx>70	</posx>
+                            <posy>50</posy>
+                            <width>430</width>
+                             <height>600</height>
+                            <onup>525</onup>
+                           <ondown></ondown>
+                             <onright>2</onright>
+                            <onclick>-</onclick>
+                            <viewtype label="List">List</viewtype>
+                            <scrolltime tween="cubic" easing="out">800</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>1</preloaditems>
+                            <itemlayout width="450" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>430</width>
+                                    <height>600</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="450" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>430</width>
+                                    <height>600</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>520</posy>
+                                    <width>430</width>
+                                    <height>80</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>panel/blend.png</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>10</posx>
+                                    <posy>15</posy>
+                                    <width>340</width>
+                                    <height>35</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>green</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+			<scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
+                        <control type="image">
+                        	<posx>-13</posx>
+               	        	<posy>-13</posy>
+        	        	<width>455</width>
+        	        	<height>625</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+                            </focusedlayout>
+                            <content>
+						<item id="1">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.1.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.1.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.1.Title)]</label>
+						</item>	
+                            </content>
+                  </control>
+---------------------------------------------------
+                                <control type="label">
+                        <posx>50</posx>
+                        <posy>-10</posy>
+                                    <width>400</width>
+                                    <height>35</height>
+                                    <label>-</label>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+				    <scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
 
-                    <control type="panel" id="F">
-                        <posx>1350</posx>
-                        <posy>-50</posy>
-                        <width>350</width>
-                        <height>680</height>
-                        <onright>9</onright>
-                        <onup></onup>
-                        <onleft>15</onleft>
-                        <scrolltime>100</scrolltime>
+                                <control type="label">
+                        <posx>800</posx>
+                        <posy>-10</posy>
+                                    <width>400</width>
+                                    <height>35</height>
+                                    <label>FEATURED APPS</label>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+				    <scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
+
+                                <control type="label">
+                        <posx>1600</posx>
+                        <posy>-10</posy>
+                                    <width>400</width>
+                                    <height>35</height>
+                                    <label>NEW APPS</label>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+				    <scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
+------------------------------------------------------------
+
+	<control type="panel" id="2">
+                        <posx>400</posx>
+                        <posy>2</posy>
+                        <width>500</width>
+                        <height>820</height>
+                        <onleft>1</onleft>
+                    	<onright>3</onright>
+                    	<onup>525</onup>
+                    	<ondown></ondown>
                         <viewtype label="Square">wrap</viewtype>
                          <scrolltime tween="cubic" easing="out">600</scrolltime>
                         <orientation>horizontal</orientation>
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="215" height="204">
+                        <itemlayout width="215" height="305">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -97,14 +201,171 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
+                                    <width>250</width>
+                                    <height>295</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="215" height="215">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>250</width>
+                                    <height>295</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>290</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>green</textcolor>
+                                </control>
+                        <control type="image">
+                        	<posx>-13</posx>
+               	        	<posy>38</posy>
+        	        	<width>276</width>
+        	        	<height>321</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+                            </control>
+                        </focusedlayout>
+                        <content>
+						<item id="1">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.2.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.2.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.2.Title)]</label>
+						</item>
+						
+						<item id="2">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.3.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.3.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.3.Title)]</label>
+						</item>											
+                        </content>
+                    </control>
+
+
+----------------------------------------------------
+                        <control type="panel" id="3">
+                            <posx>820</posx>
+                            <posy>50</posy>
+                                    <width>510</width>
+                                    <height>600</height>
+                            <onup>525</onup>
+                           <ondown>-</ondown>
+                             <onright>5</onright>
+                            <onleft>2</onleft>
+                            <onclick>-</onclick>
+                            <viewtype label="List">List</viewtype>
+                            <scrolltime tween="cubic" easing="out">800</scrolltime>
+                            <orientation>horizontal</orientation>
+                            <preloaditems>1</preloaditems>
+                            <itemlayout width="510" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>455</width>
+                                    <height>600</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="430" height="379">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>455</width>
+                                    <height>600</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>10</posx>
+                                    <posy>300</posy>
+                                    <width>340</width>
+                                    <height>35</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>green</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+			<scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
+                        <control type="image">
+                        	<posx>-13</posx>
+               	        	<posy>-13</posy>
+        	        	<width>480</width>
+        	        	<height>625</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+                            </focusedlayout>
+                            <content>
+						<item id="1">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.4.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.4.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.4.Title)]</label>
+						</item>
+                            </content>
+                        </control>
+----------------------------------------------------------
+
+-----------------------------------------------------------
+	<control type="panel" id="C">
+                        <posx>1240</posx>
+                        <posy>0</posy>
+                        <width>500</width>
+                        <height>820</height>
+                        <onleft>3</onleft>
+                    	<onright>2</onright>
+                    	<onup>525</onup>
+                    	<ondown>3</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <preloaditems>4</preloaditems>
+                       <defaultcontrol>1</defaultcontrol>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="215" height="205">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+
+                               <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
                                     <width>220</width>
-                                    <height>190</height>
+                                    <height>195</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/patter.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="215">
+                        <focusedlayout width="215" height="205">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
@@ -116,32 +377,32 @@
                     			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
                         		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
                 		</animation>
-                                <control type="image">
+                               <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
                                     <width>220</width>
-                                    <height>190</height>
+                                    <height>195</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/patter.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </focusedlayout>
                         <content>
-                            <item id="0">
-                                <label>-</label>
-                            	<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-                            	<onclick>-</onclick>
-                            </item>
-                            <item id="1">
-                                <label>-</label>
-                                <thumb>$INFO[Skin.String(GamerColor)]</thumb>
-                                <onclick>-</onclick>
-                            </item>
-			    <item id="2">
-				<label>-</label>
-				<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-				<onclick>-</onclick>
-				</item>
+
+								<item id="1">
+									<description>Titles</description>
+									<label>Titles</label>
+									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
+									<onclick>ActivateWindow(programs,addons,return)</onclick>
+								</item>
+								<item id="2">
+									<description>Recently Added</description>
+									<label>Recently added</label>
+									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
+									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+								</item>													
+							
+
                         </content>
                     </control>
 
@@ -149,42 +410,38 @@
 
 
 
-
-
-
-
-                    <control type="panel" id="10">
-                        <posx>1350</posx>
-                        <posy>-50</posy>
-                        <width>350</width>
-                        <height>680</height>
-                        <onright>12</onright>
-                        <onup>725</onup>
-                        <onleft>16</onleft>
-                        <scrolltime>100</scrolltime>
+	<control type="panel" id="5">
+                        <posx>1240</posx>
+                        <posy>0</posy>
+                        <width>500</width>
+                        <height>820</height>
+                        <onleft>3</onleft>
+                    	<onright>6</onright>
+                    	<onup>525</onup>
+                    	<ondown></ondown>
                         <viewtype label="Square">wrap</viewtype>
                          <scrolltime tween="cubic" easing="out">600</scrolltime>
                         <orientation>horizontal</orientation>
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="215" height="204">
+                        <itemlayout width="215" height="205">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
                     			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
                         		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
                 		</animation>
-                                <control type="image">
-                                    <posx>80</posx>
+                               <control type="image">
+                                    <posx>50</posx>
                                     <posy>95</posy>
-                                    <width>70</width>
-                                    <height>70</height>
+                                    <width>100</width>
+                                    <height>100</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
-                                    <posx>30</posx>
+                                    <posx>10</posx>
                                     <posy>200</posy>
                                     <width>200</width>
                                     <height>25</height>
@@ -194,28 +451,28 @@
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="215">
+                        <focusedlayout width="215" height="205">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
                     			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
 					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
                 		</animation>
-				<posx>110</posx>
+				<posx>105</posx>
 				<animation type="WindowOpen" reversible="false">
                     			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
                         		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
                 		</animation>
-                                <control type="image">
-                                    <posx>80</posx>
+                               <control type="image">
+                                    <posx>50</posx>
                                     <posy>95</posy>
-                                    <width>70</width>
-                                    <height>70</height>
+                                    <width>100</width>
+                                    <height>100</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
-                                    <posx>30</posx>
+                                    <posx>10</posx>
                                     <posy>200</posy>
                                     <width>200</width>
                                     <height>25</height>
@@ -226,8 +483,8 @@
                         <control type="image">
                         	<posx>-15</posx>
                	        	<posy>30</posy>
-        	        	<width>255</width>
-        	        	<height>225</height>
+        	        	<width>253</width>
+        	        	<height>230</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
 		        	<texture border="40">icon/tile-fo.png</texture>
@@ -235,643 +492,237 @@
                             </control>
                         </focusedlayout>
                         <content>
-                            <item id="0">
-                                <label>App</label>
-                            	<icon>icon/game3.png</icon>
-                            	<onclick>ActivateWindow(programs,addons,return)</onclick>
-                            </item>
-                            <item id="1">
-                                <label>Pictures</label>
-                                <icon>icon/foto.png</icon>
-                                 <onclick>ActivateWindow(Pictures,root,return)</onclick>                              
-                            </item>
-			    <item id="2">
-                                <label>Store App</label>
-                                <icon>icon/shop.png</icon>
-                                <onclick>ActivateWindow(AddonBrowser,root,return)</onclick>
-                            </item>
+
+								<item id="1">
+									<description>Titles</description>
+									<label>My Apps</label>
+									<thumb>hub/hub_movietitles_small.png</thumb>
+									<onclick>ActivateWindow(programs,addons,return)</onclick>
+								</item>
+								<item id="2">
+									<description>Recently Added</description>
+									<label>Store</label>
+									<thumb>hub/hub_recentlyadded_small.png</thumb>
+									<onclick>ActivateWindow(AddonBrowser,root,return)</onclick>
+								</item>																				
+
                         </content>
                     </control>
-
-
-                    <control type="panel" id="11">
-                        <posx>500</posx>
-                        <posy>-24</posy>
-                        <width>331</width>
-                        <height>620</height>
-                        <onleft>19</onleft>
-                        <onright>10</onright>
-                        <onup>725</onup>
-                        <ondown></ondown>
-                        <scrolltime>0</scrolltime>
-                        <itemlayout width="280" height="204">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>220</width>
-                                    <height>190</height>
-                                    <aspectratio>scale</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>bbwhite</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="280" height="193">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-				<animation effect="Zoom" end="105" time="200" center="auto"condition="true">Focus</animation>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>220</width>
-                                    <height>190</height>
-                                    <aspectratio>scale</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>190</posy>
-                                    <width>220</width>
-                                    <height>35</height>
-	                <colordiffuse>FF000000</colordiffuse>
-                        <texture>colors/black.png</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>bbwhite</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-				<control type="image">
-                                    <posx>11</posx>
-                                    <posy>11</posy>
-                                    <width>295</width>
-                                    <height>210</height>
-                                    <texture border="40"></texture>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                                <item id="3">
-                                    <onclick>RunPlugin(plugin://plugin.program.webbrowser/?mode=showSite&amp;showPopups=no&amp;stopPlayback=yes&amp;url=http%3a%2f%2fwww.superrepo.org/tag/games)</onclick>
-                                    <icon>fallback/games.png</icon>
-                                    <label>Games</label>
-                                    <property name="Path"></property>
-                                </item>
-                                <item id="4">
-                                    <onclick>RunPlugin(plugin://plugin.program.webbrowser/?mode=showSite&amp;showPopups=no&amp;stopPlayback=yes&amp;url=http%3a%2f%2fwww.superrepo.org/tag/audio)</onclick>
-                                    <icon>fallback/music.png</icon>
-                                    <label>Audio</label>
-                                    <property name="Path"></property>
-                                </item>
-                                <item id="5">
-                                    <onclick>RunPlugin(plugin://plugin.program.webbrowser/?mode=showSite&amp;showPopups=no&amp;stopPlayback=yes&amp;url=http%3a%2f%2fwww.superrepo.org/tag/video)</onclick>
-                                    <icon>fallback/movis.png</icon>
-                                    <label>Video</label>
-                                    <property name="Path"></property>
-                                </item>
-                        </content>
-                    </control>
-
-
-
-                    <control type="panel" id="16">
-                        <posx>800</posx>
-                        <posy>-24</posy>
-                        <width>700</width>
-                        <height>615</height>
-                        <onleft>11</onleft>
-                        <onright>10</onright>
-                        <onup>725</onup>
-                        <ondown>116</ondown>
-                        <scrolltime>0</scrolltime>
-            <orientation></orientation>
-                        <itemlayout width="265" height="320">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-                                <control type="image">
-				    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height> 
-                                    <texture>fallback/music.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label></label>
-                                    <font>font13_title</font>
-                                    <textcolor>bbwhite</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="265" height="320">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-				<animation effect="Zoom" end="105" time="200" center="auto"condition="true">Focus</animation>
-                                <control type="image">
-				    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height>
-                                     <texture>fallback/music.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label></label>
-                                    <font>font13_title</font>
-                                    <textcolor>bbwhite</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-				<control type="image">
-                                    <posx>100</posx>
-                                    <posy>100</posy>
-                                    <width>80</width>
-                                    <height>80</height>
-                                    <texture>icon/.png</texture>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <item id="1">
-								<onclick>RunAddon($INFO[Window(home).Property(RandomAddon.1.Path)])</onclick>
-								<thumb>$INFO[Window(home).Property(RandomAddon.1.Thumb)]</thumb>
-								<label>$INFO[Window(home).Property(RandomAddon.1.Title)]</label>
-								<label2>$INFO[Window.Property(RandomAddon.1.Summary)]</label2>
-                            </item>
-                                <item id="2">
-								<onclick>RunAddon($INFO[Window(home).Property(RandomAddon.2.Path)])</onclick>
-								<thumb>$INFO[Window(home).Property(RandomAddon.2.Thumb)]</thumb>
-								<label>$INFO[Window(home).Property(RandomAddon.2.Title)]</label>
-								<label2>$INFO[Window(home).Property(RandomAddon.2.Summary)]</label2>
-                                </item>
-                        </content>
-                    </control>
-
-                    <control type="panel" id="116">
-                        <posx>800</posx>
-                        <posy>290</posy>
-                        <width>700</width>
-                        <height>615</height>
-                        <onleft>11</onleft>
-                        <onright>10</onright>
-                        <onup>16</onup>
-                        <ondown>16</ondown>
-                        <scrolltime>0</scrolltime>
-            <orientation>vertical</orientation>
-                        <itemlayout width="265" height="320">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-                                <control type="image">
-				    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height> 
-                                    <texture>fallback/music.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label></label>
-                                    <font>font13_title</font>
-                                    <textcolor>bbwhite</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="265" height="320">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-				<animation effect="Zoom" end="105" time="200" center="auto"condition="true">Focus</animation>
-                                <control type="image">
-				    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height>
-                                     <texture>fallback/music.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>250</width>
-                                    <height>280</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label></label>
-                                    <font>font13_title</font>
-                                    <textcolor>bbwhite</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-				<control type="image">
-                                    <posx>100</posx>
-                                    <posy>100</posy>
-                                    <width>80</width>
-                                    <height>80</height>
-                                    <texture>icon/.png</texture>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <item id="1">
-								<onclick>RunAddon($INFO[Window(home).Property(RandomAddon.3.Path)])</onclick>
-								<thumb>$INFO[Window(home).Property(RandomAddon.3.Thumb)]</thumb>
-								<label>$INFO[Window(home).Property(RandomAddon.3.Title)]</label>
-								<label2>$INFO[Window(home).Property(RandomAddon.3.Summary)]</label2>
-                            </item>
-                                <item id="2">
-								<onclick>RunAddon($INFO[Window(home).Property(RandomAddon.4.Path)])</onclick>
-								<thumb>$INFO[Window(home).Property(RandomAddon.4.Thumb)]</thumb>
-								<label>$INFO[Window(home).Property(RandomAddon.4.Title)]</label>
-								<label2>$INFO[Window(home).Property(RandomAddon.4.Summary)]</label2>
-                                </item>
-                        </content>
-                    </control>
-
-                                <control type="label">
-                        <posx>1075</posx>
-                        <posy>600</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label>FEATURED</label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-
-
-
-
-
-                    <control type="panel" id="19">
-                        <posx>-15</posx>
-                        <posy>-24</posy>
+----------------------------------------------------------------------
+	<control type="panel" id="6">
+                        <posx>1500</posx>
+                        <posy>2</posy>
                         <width>500</width>
-                        <height>700</height>
-                        <onleft></onleft>
-                        <onright>11</onright>
-                        <onup>725</onup>
-                        <scrolltime>0</scrolltime>
-                        <itemlayout width="500" height="600">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-                                <control type="image">
-		            <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>500</width>
-                                    <height>600</height>
-                                    <texture>colors/grey65%.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>500</width>
-                                    <height>600</height>
-                                       <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>340</width>
-                                    <height>35</height>
-                                    <label></label>
-                                    <font>font13_title</font>
-                                    <textcolor>bbwhite</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="500" height="600">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-				<animation effect="Zoom" end="107" time="200" center="auto"condition="true">Focus</animation>
-                                <control type="image">
-			<posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>500</width>
-                                    <height>600</height>
-                                    <texture>colors/grey65%.png</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>500</width>
-                                    <height>600</height>
-                                     <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>180</posy>
-                                    <width>340</width>
-                                    <height>35</height>
-                                    <label></label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-			<scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-				<control type="image">
-                                    <posx>11</posx>
-                                    <posy>11</posy>
-                                    <width>376</width>
-                                    <height>208</height>
-                                    <texture border="40"></texture>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-				<item id="3">
-                                    <onclick>RunPlugin(plugin://plugin.program.webbrowser/?mode=showSite&amp;showPopups=no&amp;stopPlayback=yes&amp;url=http%3a%2f%2fwww.superrepo.org)</onclick>
-                                    <icon fallback="">fallback/shop.png</icon>
-                                    <label>In Store</label>
-                                    <property name="Path"></property>
-                                </item>
-                        </content>
-                    </control>
-                 </control>
-                </control>
-
-
-
-
-
-
-
-
-
-
-
-
-            <!--My Collection-->
-            <control type="group" id="600">
-                <width>2320</width>
-                <height>780</height>
-                <control type="button" id="825">
-                    <onleft>Control.Move(20,-1)</onleft>
-                    <onleft>725</onleft>
-                    <onright></onright>
-                    <onclick>SetFocus(19)</onclick>
-                    <ondown>45</ondown>
-                </control>
-                <control type="group" id="650">
-                    <posx>310</posx>
-                    <posy>150</posy>
-		<animation type="visible">
-                	<effect type="fade" start="0" end="100" time="250" tween="sine" easing="in" delay="250"/>
-                </animation>
-		<animation type="Hidden">
-                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="in" delay="50"/>
-                </animation>
-		<animation type="WindowOpen">
-                	<effect type="fade" start="0" end="100" time="250" tween="sine" easing="in" delay="250"/>
-                </animation>
-		<animation type="WindowClose">
-                	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="in" delay="50"/>
-                </animation>
-                    <control type="panel" id="45">
-                        <posx>-15</posx>
-                        <posy>-24</posy>
-                        <width>600</width>
-                        <height>620</height>
-                        <onleft></onleft>
-                        <onright>46</onright>
-                        <onup>825</onup>
-                        <ondown></ondown>
-                        <scrolltime>0</scrolltime>
-                        <itemlayout width="500" height="204">
-                            <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>500</width>
-                                    <height>600</height>
-                                   <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/music.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="500" height="193">
-                            <control type="group">
-                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
-				<animation effect="Zoom" end="100" time="200" center="auto"condition="true">Focus</animation>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>500</width>
-                                    <height>600</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/music.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>585</posy>
-                                    <width>500</width>
-                                    <height>35</height>
-	                <colordiffuse>FF000000</colordiffuse>
-                        <texture>colors/black.png</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>585</posy>
-                                    <width>260</width>
-                                    <height>35</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>green</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-				<control type="image">
-                                    <posx>11</posx>
-                                    <posy>11</posy>
-                                    <width>295</width>
-                                    <height>210</height>
-                                    <texture border="40"></texture>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-			<item id="1">
-                                <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.1.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.1.Fanart)]</icon>
-                                <label>$INFO[Window(home).Property(LatestAlbum.1.Title)]</label>
-			</item>
-                        </content>
-                    </control>
-
-
-                    <control type="panel" id="46">
-                        <posx>550</posx>
-                        <posy>-24</posy>
-                        <width>750</width>
-                        <height>500</height>
-                        <onleft>45</onleft>
-                    	<onright></onright>
-                    	<onup>825</onup>
+                        <height>820</height>
+                        <onleft>5</onleft>
+                    	<onright>7</onright>
+                    	<onup>525</onup>
                     	<ondown></ondown>
                         <viewtype label="Square">wrap</viewtype>
                          <scrolltime tween="cubic" easing="out">600</scrolltime>
                         <orientation>horizontal</orientation>
                         <preloaditems>4</preloaditems>
-                         <defaultcontrol>9</defaultcontrol>
+                       <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="220" height="205">
+                        <itemlayout width="215" height="305">
                             <control type="group">
-                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
                                 <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>210</width>
-                                    <height>195</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>250</width>
+                                    <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="demo/kinect central.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="220" height="205">
-                            <control type="group">
-                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
-				<animation effect="Zoom" end="100" time="200" center="auto"condition="true">Focus</animation>
+                        <focusedlayout width="215" height="215">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
                                 <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>210</width>
-                                    <height>195</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>250</width>
+                                    <height>295</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="demo/kinect central.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
                                 </control>
-                                <control type="image">
-                                    <posx>24</posx>
-                                    <posy>185</posy>
-                                    <width>210</width>
-                                    <height>35</height>
-	                <colordiffuse>FF000000</colordiffuse>
-                        <texture>colors/black.png</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>24</posx>
-                                    <posy>190</posy>
-                                    <width>205</width>
-                                    <height>35</height>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>290</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
                                     <textcolor>green</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
                                 </control>
+                        <control type="image">
+                        	<posx>-13</posx>
+               	        	<posy>38</posy>
+        	        	<width>276</width>
+        	        	<height>321</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
                             </control>
                         </focusedlayout>
                         <content>
-                            <item id="0">
-                                <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.1.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.1.Fanart)]</icon>
-                                <label>$INFO[Window(home).Property(LatestAlbum.1.Title)]</label>
-                            </item>
-                                <item id="1">
-                                <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.2.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.2.Fanart)]</icon>
-                                <label>$INFO[Window(home).Property(LatestAlbum.2.Title)]</label>
-                                </item>
-                                <item id="2">
-                                <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.3.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.3.Fanart)]</icon>
-                                <label>$INFO[Window(home).Property(LatestAlbum.3.Title)]</label>
-                                </item>
-                                <item id="3">
-                                <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.4.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.4.Fanart)]</icon>
-                                <label>$INFO[Window(home).Property(LatestAlbum.4.Title)]</label>
-                                </item>
+						<item id="1">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.7.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.7.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.7.Title)]</label>
+						</item>
+						
+						<item id="2">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.8.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.8.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.8.Title)]</label>
+						</item>											
                         </content>
                     </control>
-               </control>
-            </control>
-         </control>
+              </control>
+          </control>
+
+----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------
+            <!--Tv Show-->
+            <control type="group" id="400">
+                <width>2500</width>
+                <height>780</height>
+                <control type="button" id="425">
+                    <onleft>Control.Move(20,-1)</onleft>
+                    <onright>Control.Move(20,1)</onright>
+                    <onleft>525</onleft>
+                    <onright>625</onright>
+                    <onright></onright>
+                    <onclick>SetFocus(7)</onclick>
+                    <onup>ActivateWindow()</onup>
+                    <ondown>7</ondown>
+                </control>
+                <control type="group" id="450">
+                    <posx>830</posx>
+                    <posy>70</posy>
+
+------------------------------------------------------------
+
+	<control type="panel" id="7">
+                        <posx>-470</posx>
+                        <posy>2</posy>
+                        <width>1000</width>
+                        <height>820</height>
+                        <onleft>6</onleft>
+                    	<onright>8</onright>
+                    	<onup>425</onup>
+                    	<ondown></ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <preloaditems>4</preloaditems>
+                       <defaultcontrol>1</defaultcontrol>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="260" height="305">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>250</width>
+                                    <height>295</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="260" height="215">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>250</width>
+                                    <height>295</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture fallback="fallback/movis.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>290</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>green</textcolor>
+                                </control>
+                        <control type="image">
+                        	<posx>-13</posx>
+               	        	<posy>38</posy>
+        	        	<width>276</width>
+        	        	<height>321</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+                            </control>
+                        </focusedlayout>
+                        <content>
+						<item id="1">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.9.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.9.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.9.Title)]</label>
+						</item>
+						
+						<item id="2">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.10.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.10.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.10.Title)]</label>
+						</item>	
+						<item id="3">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.11.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.11.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.11.Title)]</label>
+						</item>	
+						<item id="4">
+						<onclick>RunAddon($INFO[Window(Home).Property(RandomAddon.12.Path)])</onclick>
+						<thumb>$INFO[Window(Home).Property(RandomAddon.12.Thumb)]</thumb>
+						<label>$INFO[Window(Home).Property(RandomAddon.12.Title)]</label>
+						</item>									
+                        </content>
+                    </control>
+
+ </control>
+ </control>
+</control>
+
 
 
 
@@ -904,7 +755,7 @@
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
             <posx>110</posx>
-            <posy>250</posy>
+            <posy>270</posy>
             <width>1720</width>
             <height>60</height>
             <orientation>horizontal</orientation>
@@ -912,13 +763,13 @@
             <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
             <control type="label">
                 <include>HubLabel</include>
-                <label>Apps</label>
+                <label></label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(2)">Conditional</animation>
                 <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
             </control>
             <control type="label">
                 <include>HubLabel</include>
-                <label>My Collection</label>
+                <label></label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(4)">Conditional</animation>
                 <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
             </control>
@@ -951,7 +802,7 @@
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
             <posx>110</posx>
-            <posy>250</posy>
+            <posy>270</posy>
             <width>1720</width>
             <height>60</height>
             <orientation>horizontal</orientation>
@@ -959,13 +810,13 @@
             <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
             <control type="label">
                 <include>HubLabel2</include>
-                <label>Apps</label>
+                <label></label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
             </control>
             <control type="label">
                 <include>HubLabel2</include>
-                <label>My Collection</label>
+                <label></label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
             </control>

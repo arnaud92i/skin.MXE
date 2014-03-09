@@ -1,0 +1,360 @@
+<window type="dialog" id="222">
+
+    <controls>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>colors/black.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+   	<control type="multiimage">
+                  <include>FullscreenDimensions</include>
+		<aspectratio align="center">stretch</aspectratio>
+		<imagepath background="true">plugin://plugin.image.artistmultifanart/?name=$INFO[MusicPlayer.Title]</imagepath>
+		<timeperimage>10000</timeperimage>
+		<fadetime>700</fadetime>
+		<pauseatend>0</pauseatend>
+		<randomize>true</randomize>
+		<loop>yes</loop>
+		<animation type="visible">
+                        <effect type="fade" start="0" end="100" time="250" tween="sine" easing="in" />
+			<effect type="zoom" start="103" end="100" time="250" tween="cubic"center="auto" easing="in" />
+                </animation>
+		<animation type="hidden">
+                        <effect type="fade" start="100" end="0" time="250" tween="sine" easing="in" />
+			<effect type="zoom" start="100" end="103" time="250" tween="cubic"center="auto" easing="out" />
+                </animation>
+	</control>
+                        <control type="label">
+                            <posx>100</posx>
+                            <posy>95</posy>
+                            <width>746</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>Xbox Music</label>
+                            <font>Font-Condensed-S50</font>
+                            <visible></visible>
+                        </control>
+		    <control type="multiimage">
+                         <include></include>
+                         <posx>1740</posx>
+                        <posy>65</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <imagepath>xbox.logo/</imagepath>
+		<timeperimage>80</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>yes</loop>
+        </control>
+
+
+
+        <control type="group">
+            <posy>890</posy>
+            <include>NowPlayingFullscreen</include>
+            <visible>!Window.IsActive(osdvideosettings) + !Window.IsActive(osdaudiosettings) + !Window.IsActive(videobookmarks) + !Window.IsActive(script-XBMC-Subtitles-main.xml)</visible>
+
+
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>250</height>
+                <texture>osd/fullscreen/osd-back-slider.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>MusicPlayer.Content(Movies) | MusicPlayer.Content(Episodes)</visible>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>250</height>
+                <texture>osd/fullscreen/osd-back-slider.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>!MusicPlayer.Content(Movies) + !MusicPlayer.Content(Episodes)</visible>
+            </control>
+            <control type="group">
+                <posx>1600</posx>
+                <posy>81</posy>
+                <animation effect="slide" end="0,87" time="0" condition="!MusicPlayer.Content(Movies) + !MusicPlayer.Content(Episodes)">Conditional</animation>
+                <control type="group">
+                    <animation effect="slide" end="118" time="0" condition="IsEmpty(MusicPlayer.Rating)">Conditional</animation>
+                    <control type="image">
+                        <width>86</width>
+                        <height>62</height>
+                        <aspect>keepaspect</aspect>
+                        <texture>flags/video/hd.png</texture>
+                        <visible>!IsEmpty(MusicPlayer.VideoResolution) + IntegerGreaterThan(MusicPlayer.VideoResolution,719)</visible>
+                    </control>
+                    <control type="image">
+                        <width>86</width>
+                        <height>62</height>
+                        <aspect>keepaspect</aspect>
+                        <texture>flags/video/sd.png</texture>
+                        <visible>!IsEmpty(MusicPlayer.VideoResolution) + !IntegerGreaterThan(MusicPlayer.VideoResolution,719)</visible>
+                    </control>
+                </control>
+                <control type="group">
+                    <visible>!IsEmpty(MusicPlayer.Rating)</visible>
+                    <control type="image">
+                        <posx>60</posx>
+                        <posy>-23</posy>
+                        <width>105</width>
+                        <height>105</height>
+                        <aspect>keepaspect</aspect>
+                        <texture>flags/ratings/custom/</texture>
+                    </control>
+                    <control type="label">
+                        <posx>192</posx>
+                        <posy>7</posy>
+                        <width>250</width>
+                        <height>44</height>
+                        <label>$INFO[MusicPlayer.Rating]</label>
+                        <textcolor>bbwhite</textcolor>
+                        <font>Font-Condensed-S36-B</font>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <scroll>false</scroll>
+                    </control>
+                </control>
+                <control type="label">
+                    <posx>192</posx>
+                    <posy>40</posy>
+                    <width>250</width>
+                    <height>44</height>
+                    <label>$INFO[Player.Time,, / ]$INFO[Player.Duration]</label>
+                    <textcolor>bbwhite</textcolor>
+                    <font>font13_title</font>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <visible>MusicPlayer.Content(Movies)</visible>
+                <control type="image">
+                    <posx>110</posx>
+                    <posy>61</posy>
+                    <width>174</width>
+                    <height>241</height>
+                    <texture>osd/fullscreen/cover-shadow.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+
+
+
+
+
+
+
+
+
+
+                <control type="image">
+                    <posx>100</posx>
+                    <posy>-300</posy>
+                    <width>350</width>
+                    <height>370</height>
+                    <texture>$INFO[MusicPlayer.Cover]</texture>
+                    <aspectratio>stretch</aspectratio>
+                <animation type="Conditional" condition="true" loop="true" reversible="false">
+                    <effect type="fade" start="0" end="100" time="300" />
+                    <effect type="fade" start="100" end="0" delay="10000" time="300" />
+                    <effect type="slide" end="0" time="50300" />
+                </animation>
+                </control>
+                <control type="label">
+                    <posx>290</posx>
+                    <posy>90</posy>
+                    <width>1300</width>
+                    <height>56</height>
+                    <label>$INFO[MusicPlayer.Title]</label>
+                    <textcolor>bbwhite</textcolor>
+                    <font>Font-Condensed-S50-B</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+
+
+
+
+
+
+
+                <control type="label">
+                    <posx>290</posx>
+                    <posy>140</posy>
+                    <width>1200</width>
+                    <height>44</height>
+                    <label>$INFO[MusicPlayer.Genre,, • ]$INFO[MusicPlayer.Year]</label>
+                    <textcolor>88FFFFFF</textcolor>
+                    <font>Font-Condensed-S36</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+                <control type="textbox">
+                    <posx>290</posx>
+                    <posy>190</posy>
+                    <width>1502</width>
+                    <height>90</height>
+                    <label>$INFO[MusicPlayer.Plot]</label>
+                    <textcolor>aawhite</textcolor>
+                    <font>Font-Condensed-S32</font>
+                    <align>justify</align>
+                    <autoscroll delay="11500" time="5000" repeat="7500" />
+                </control>
+            </control>
+
+
+
+
+
+
+
+
+		<!--Progress Bar-->
+		<control type="progress" id="12">
+					
+		<description>My first progress control</description>
+			<posx>130</posx>
+			<posy>160</posy>
+			<width>1450</width>
+			<height>8</height>
+			<texturebg border="2">colors/grey.png</texturebg>
+			<lefttexture>-</lefttexture>
+			<midtexture border="2">colors/white.png</midtexture>
+			<righttexture>-</righttexture>
+			<info>MusicPlayer.ProgressCache</info>
+						
+	</control>
+
+
+
+            <control type="group">
+                <visible>MusicPlayer.Content(Episodes)</visible>
+                <control type="image">
+                    <posx>110</posx>
+                    <posy>61</posy>
+                    <width>397</width>
+                    <height>241</height>
+                    <texture border="30">osd/fullscreen/cover-shadow.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <posx>130</posx>
+                    <posy>81</posy>
+                    <width>357</width>
+                    <height>201</height>
+                    <texture>$INFO[MusicPlayer.Cover]</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+                <control type="label">
+                    <posx>510</posx>
+                    <posy>81</posy>
+                    <width>1080</width>
+                    <height>56</height>
+                    <label>$INFO[MusicPlayer.Episode,,. ]$INFO[MusicPlayer.Title]</label>
+                    <textcolor>bbwhite</textcolor>
+                    <font>Font-Condensed-S50-B</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <posx>510</posx>
+                    <posy>140</posy>
+                    <width>980</width>
+                    <height>44</height>
+                    <label>$INFO[MusicPlayer.TVShowTitle]$INFO[MusicPlayer.Season, • $LOCALIZE[20373] ,]</label>
+                    <textcolor>88FFFFFF</textcolor>
+                    <font>Font-Condensed-S36</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+                <control type="textbox">
+                    <posx>510</posx>
+                    <posy>190</posy>
+                    <width>1282</width>
+                    <height>90</height>
+                    <label>$INFO[MusicPlayer.Plot]</label>
+                    <textcolor>aawhite</textcolor>
+                    <font>Font-Condensed-S32</font>
+                    <align>justify</align>
+                    <autoscroll delay="11500" time="5000" repeat="7500" />
+                </control>
+            </control>
+            <control type="group">
+                <visible>Player.HasAudio</visible>
+                <posy>-180</posy>
+                <control type="image">
+                    <posx>110</posx>
+                    <posy>61</posy>
+                    <width>243</width>
+                    <height>154</height>
+                    <texture border="30">osd/fullscreen/cover-shadow.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <posx>130</posx>
+                    <posy>81</posy>
+                    <width>203</width>
+                    <height>203</height>
+                    <texture>$INFO[MusicPlayer.Cover]</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="label">
+                    <posx>356</posx>
+                    <posy>75</posy>
+                    <width>1234</width>
+                    <height>56</height>
+                    <label>$INFO[MusicPlayer.Artist]</label>
+                    <textcolor>white</textcolor>
+                    <font>Font-Condensed-S50-B</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <posx>356</posx>
+                    <posy>140</posy>
+                    <width>1134</width>
+                    <height>44</height>
+                    <label>$INFO[MusicPlayer.Title]</label>
+                    <textcolor>88FFFFFF</textcolor>
+                    <font>font28_title</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <posx>356</posx>
+                    <posy>190</posy>
+                    <width>1134</width>
+                    <height>44</height>
+                    <label>$INFO[MusicPlayer.Time]</label>
+                    <textcolor>88FFFFFF</textcolor>
+                    <font>font24_title</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <posx>440</posx>
+                    <posy>190</posy>
+                    <width>1134</width>
+                    <height>44</height>
+                    <label>/$INFO[Player.Duration]</label>
+                    <textcolor>88FFFFFF</textcolor>
+                    <font>font24_title</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

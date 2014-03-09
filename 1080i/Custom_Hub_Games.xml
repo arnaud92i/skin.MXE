@@ -4,6 +4,7 @@
     <controls>
 	<include>CommonContent</include> 
 	<include>CommonStage</include>
+	<include>HomeProfileInfo</include>
             <include>a and b</include>
 	<control type="image">
 			<include>FullscreenDimensions</include>
@@ -11,20 +12,20 @@
 			<aspectratio>stretch</aspectratio>
 	</control>
                         <control type="label">
-                            <posx>110</posx>
-                            <posy>110</posy>
+                            <posx>90</posx>
+                            <posy>170</posy>
                             <width>746</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
-                            <label>Game + Library</label>
+                            <label>Games + </label>
                             <font>Font-Condensed-S50</font>
                             <visible></visible>
                         </control>
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
 	<!-- Backgrounds -->
@@ -43,7 +44,7 @@
 
 
 
-            <!--Games-->
+            <!--Movies-->
             <control type="group" id="600">
                 <width>2300</width>
                 <height>780</height>
@@ -56,15 +57,15 @@
                     <ondown>9000</ondown>
                 </control>
                 <control type="group" id="650">
-                    <posx>840</posx>
+                    <posx>950</posx>
                     <posy>100</posy>
 		<animation type="WindowOpen">
-                        <effect type="zoom"  end="90" time="0" tween="sine" easing="inout" center="auto" />
+                        <effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
                		<effect type="slide" start="0,75" end="0,0" time="350" tween="cubic" easing="out" />
                 </animation>
 	        <animation type="WindowClose">
-			<effect type="zoom"  end="80" time="0" tween="sine" easing="inout" center="auto" />
+			<effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
                 	<effect type="slide" start="0,0" end="0,75" time="300" tween="sine" easing="out" />
                 </animation>
@@ -73,7 +74,7 @@
                 </animation>
 	<control type="panel" id="9000">
                 <description>Fav list</description>
-                        <posx>100</posx>
+                        <posx>228</posx>
                         <posy></posy>
                         <width>750</width>
                         <height>820</height>
@@ -85,7 +86,7 @@
                          <scrolltime tween="cubic" easing="out">600</scrolltime>
                         <orientation>horizontal</orientation>
                         <preloaditems>4</preloaditems>
-<defaultcontrol>1</defaultcontrol>
+<defaultcontrol>9</defaultcontrol>
                         <focusposition>0</focusposition>
                         <itemlayout width="215" height="215">
                             <control type="group">
@@ -103,19 +104,20 @@
                                     <texture>colors/patter.png</texture>
                                 </control>
                                 <control type="image">
-                                    <posx>70</posx>
-                                    <posy>95</posy>
-                                    <width>70</width>
-                                    <height>70</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>$INFO[ListItem.Icon]</texture>
                                 </control>
+
                                 <control type="textbox">
                                     <posx>10</posx>
                                     <posy>200</posy>
-                                    <width>250</width>
-                                    <height>35</height>
-                                    <font>font13_title</font>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textcolor>white</textcolor>
                                 </control>
@@ -142,10 +144,10 @@
                                     <texture>colors/patter.png</texture>
                                 </control>
                                 <control type="image">
-                                    <posx>70</posx>
-                                    <posy>95</posy>
-                                    <width>70</width>
-                                    <height>70</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -161,9 +163,9 @@
                                 <control type="textbox">
                                     <posx>10</posx>
                                     <posy>200</posy>
-                                    <width>250</width>
-                                    <height>35</height>
-                                    <font>font13_title</font>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textcolor>white</textcolor>
                                 </control>
@@ -174,41 +176,83 @@
 								<item id="1">
 									<description>Titles</description>
 									<label>Titles</label>
-									<thumb>icon/game3.png</thumb>
+									<thumb>hub/hub_movietitles_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 								</item>
 								<item id="2">
 									<description>Recently Added</description>
 									<label>Recently added</label>
-									<thumb>icon/game3.png</thumb>
+									<thumb>hub/hub_recentlyadded_small.png</thumb>
 									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
 								</item>													
 								<item id="3">
-									<description>Popular</description>
-									<label>Popular</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Actors</description>
+									<label>Actors</label>
+									<thumb>hub/hub_actors_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieActors,return)</onclick>
 								</item>							
 								<item id="4">
-									<description>Add Game's</description>
-									<label>Add Game's</label>
-									<thumb>icom/game2.png</thumb>
+									<description>Directors</description>
+									<label>Directors</label>
+									<thumb>hub/hub_directors_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieDirectors,return)</onclick>
 								</item>							
 								<item id="5">
-									<description>Most Watched</description>
-									<label>Most Watched</label>
-									<thumb>icon/game3.png</thumb>
-									<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.steam/?mode=1&amp;name=Newest%20Videos&amp;url&quot;)</onclick>
+									<description>Genres</description>
+									<label>Genres</label>
+									<thumb>hub/hub_genres_small.png</thumb>
+									<onclick>ActivateWindow(Videos,MovieGenres,return)</onclick>
 								</item>								
 								<item id="6">
-									<description>Search</description>
-									<label>Search</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Years</description>
+									<label>Years</label>
+									<thumb>hub/hub_years_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieYears,return)</onclick>
 								</item>
 								
+								<item id="7">
+									<description>Studios</description>
+									<label>Studios</label>
+									<thumb>hub/hub_studios_small.png</thumb>
+									<onclick>ActivateWindow(Videos,MovieStudios,return)</onclick>
+								</item>								
+								<item id="8">
+									<description>Countries</description>
+									<label>Countries</label>
+									<thumb>hub/hub_countries_small.png</thumb>
+									<onclick>ActivateWindow(Videos,MovieCountries,return)</onclick>
+								</item>								
+								<item id="9">
+									<description>Sets</description>
+									<label>Sets</label>
+									<thumb>hub/hub_sets_small.png</thumb>
+									<onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
+								</item>
+								<item id="10">
+									<description>Tags</description>
+									<label>Tags</label>
+									<thumb>hub/hub_tags_small.png</thumb>
+									<onclick>ActivateWindow(Videos,MovieTags,return)</onclick>
+								</item>
 								
+								<item id="11">
+									<description>Playlists</description>
+									<label>Playlists</label>
+									<thumb>hub/hub_playlists_small.png</thumb>
+									<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+								</item>								
+								<item id="12">
+									<description>Addons</description>
+									<label>Addons</label>
+									<thumb>hub/hub_addons_small.png</thumb>
+									<onclick>ActivateWindow(Videos,addons://sources/video/,return)</onclick>
+								</item>								
+								<item id="13">
+									<description>Files</description>
+									<label>Files</label>
+									<thumb>hub/hub_files_small.png</thumb>
+									<onclick>ActivateWindow(Videos,Files,return)</onclick>
+								</item>
                         </content>
                     </control>
                         <control type="image">
@@ -241,13 +285,13 @@
                         <posx></posx>
                         <posy>48</posy>
 			<animation type="Conditional" condition="ControlGroup(502).HasFocus">
-                        <effect type="zoom" start="100" end="101" delay="0" time="250" tween="cubic" easing="inout" center="500,600" />
+                        <effect type="zoom" start="100" end="105" delay="0" time="250" tween="cubic" easing="inout" center="500,600" />
                     </animation>
 
                         <control type="wraplist" id="5022">
-                            <posx>-635</posx>
+                            <posx>-630</posx>
                             <posy></posy>
-                                    <width>700</width>
+                                    <width>950</width>
                                     <height>625</height>
                             <onup>525</onup>
                            <ondown>9000</ondown>
@@ -257,31 +301,31 @@
                             <scrolltime tween="cubic" easing="out">800</scrolltime>
                             <orientation>horizontal</orientation>
                             <preloaditems>1</preloaditems>
-                            <itemlayout width="700" height="379">
+                            <itemlayout width="950" height="379">
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>0</posy>
-                                    <width>700</width>
+                                    <width>950</width>
                                     <height>626</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/games.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="950" height="379">
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>0</posy>
-                                    <width>700</width>
+                                    <width>950</width>
                                     <height>626</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/games.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </focusedlayout>
                             <content>
 							<item id="1">
                                                                          <property name="NavItem">item1.png</property>
 								<onclick>$INFO[Window(home).Property(RandomMovie.1.Play)]</onclick>
-								<thumb>$INFO[plugin.program.advanced.launcher.Property(Randomthumb.1.(thumb))]</thumb>
+								<thumb>$INFO[Window(home).property(LatestMovie.1.Fanart)]</thumb>
 								<label>$INFO[Window(home).Property(RandomMovie.1.Title)]</label>
 								<label2>$INFO[Window(home).Property(RandomMovie.1.Year)]</label2>
 								<visible>!Player.HasVideo</visible>
@@ -328,7 +372,7 @@
 
 
 
-            <!--Genres-->
+            <!--Tv Show-->
             <control type="group" id="400">
                 <width>2300</width>
                 <height>780</height>
@@ -342,15 +386,15 @@
                     <ondown>9001</ondown>
                 </control>
                 <control type="group" id="450">
-                    <posx>820</posx>
+                    <posx>935</posx>
                     <posy>100</posy>
 		<animation type="WindowOpen">
-                        <effect type="zoom"  end="90" time="0" tween="sine" easing="inout" center="auto" />
+                        <effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
                		<effect type="slide" start="0,75" end="0,0" time="350" tween="cubic" easing="out" />
                 </animation>
 	        <animation type="WindowClose">
-			<effect type="zoom"  end="80" time="0" tween="sine" easing="inout" center="auto" />
+			<effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
                 	<effect type="slide" start="0,0" end="0,75" time="300" tween="sine" easing="out" />
                 </animation>
@@ -359,7 +403,7 @@
                 </animation>
 	<control type="panel" id="9001">
                 <description>Fav list</description>
-                        <posx>100</posx>
+                        <posx>250</posx>
                         <posy></posy>
                         <width>1000</width>
                         <height>820</height>
@@ -371,7 +415,7 @@
                          <scrolltime tween="cubic" easing="out">600</scrolltime>
                         <orientation>horizontal</orientation>
                         <preloaditems>4</preloaditems>
-<defaultcontrol>1</defaultcontrol>
+<defaultcontrol>9</defaultcontrol>
                         <focusposition>0</focusposition>
                         <itemlayout width="215" height="215">
                             <control type="group">
@@ -389,19 +433,20 @@
                                     <texture>colors/patter.png</texture>
                                 </control>
                                 <control type="image">
-                                    <posx>70</posx>
-                                    <posy>95</posy>
-                                    <width>70</width>
-                                    <height>70</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>$INFO[ListItem.Icon]</texture>
                                 </control>
+
                                 <control type="textbox">
                                     <posx>10</posx>
                                     <posy>200</posy>
                                     <width>200</width>
-                                    <height>35</height>
-                                    <font>font13_title</font>
+                                    <height>25</height>
+                                    <font>font12_title</font>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textcolor>white</textcolor>
                                 </control>
@@ -428,10 +473,10 @@
                                     <texture>colors/patter.png</texture>
                                 </control>
                                 <control type="image">
-                                    <posx>70</posx>
-                                    <posy>95</posy>
-                                    <width>70</width>
-                                    <height>70</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>100</width>
+                                    <height>100</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -448,8 +493,8 @@
                                     <posx>10</posx>
                                     <posy>200</posy>
                                     <width>200</width>
-                                    <height>35</height>
-                                    <font>font13_title</font>
+                                    <height>25</height>
+                                    <font>font12_title</font>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textcolor>white</textcolor>
                                 </control>
@@ -458,58 +503,58 @@
                         <content>
 
 								<item id="1">
-									<description>Action</description>
-									<label>Action</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Titles</description>
+									<label>Titles</label>
+									<thumb>hub/hub_movietitles_small.png</thumb>
 									<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
 								</item>
 								<item id="2">
-									<description>Adventure</description>
-									<label>Adventure</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Recently Added</description>
+									<label>Recently added</label>
+									<thumb>hub/hub_recentlyadded_small.png</thumb>
 									<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 								</item>													
 								<item id="3">
-									<description>Strategy</description>
-									<label>Strategy</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Actors</description>
+									<label>Actors</label>
+									<thumb>hub/hub_actors_small.png</thumb>
 									<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 								</item>							
 								<item id="4">
-									<description>Rpg</description>
-									<label>Rpg</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Genres</description>
+									<label>Genres</label>
+									<thumb>hub/hub_genres_small.png</thumb>
 									<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 								</item>							
 								<item id="5">
-									<description>Indie</description>
-									<label>Indie</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Years</description>
+									<label>Years</label>
+									<thumb>hub/hub_years_small.png</thumb>
 									<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 								</item>								
 								<item id="6">
-									<description>Simulation</description>
-									<label>Simulation</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Studios</description>
+									<label>Studios</label>
+									<thumb>hub/hub_studios_small.png</thumb>
 									<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 								</item>
 								
 								<item id="7">
-									<description>Racing</description>
-									<label>Racing</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Playlists</description>
+									<label>Playlists</label>
+									<thumb>hub/hub_playlists_small.png</thumb>
 									<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
 								</item>								
 								<item id="8">
-									<description>Sports</description>
-									<label>Sports</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Addons</description>
+									<label>Addons</label>
+									<thumb>hub/hub_addons_small.png</thumb>
 									<onclick>ActivateWindow(Videos,addons://sources/video/,return)</onclick>
 								</item>								
 								<item id="9">
-									<description>Casual</description>
-									<label>Casual</label>
-									<thumb>icon/game3.png</thumb>
+									<description>Files</description>
+									<label>Files</label>
+									<thumb>hub/hub_files_small.png</thumb>
 									<onclick>ActivateWindow(Videos,Files,return)</onclick>
 								</item>								
 
@@ -521,13 +566,13 @@
                         <posx>-635</posx>
                         <posy>50</posy>
 			<animation type="Conditional" condition="ControlGroup(503).HasFocus">
-                        <effect type="zoom" start="100" end="101" delay="0" time="250" tween="cubic" easing="inout" center="500,600" />
+                        <effect type="zoom" start="100" end="105" delay="0" time="250" tween="cubic" easing="inout" center="500,600" />
                     </animation>
 
                         <control type="wraplist" id="2022">
                             <posx></posx>
                             <posy></posy>
-                                    <width>700</width>
+                                    <width>950</width>
                                     <height>625</height>
                             <onup>425</onup>
                            <ondown>9001</ondown>
@@ -537,31 +582,31 @@
                             <scrolltime tween="cubic" easing="out">800</scrolltime>
                             <orientation>horizontal</orientation>
                             <preloaditems>1</preloaditems>
-                            <itemlayout width="700" height="379">
+                            <itemlayout width="950" height="379">
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>0</posy>
-                                    <width>700</width>
+                                    <width>950</width>
                                     <height>625</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/games.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </itemlayout>
                             <focusedlayout width="950" height="379">
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>0</posy>
-                                    <width>700</width>
+                                    <width>950</width>
                                     <height>625</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture fallback="fallback/games.png">$INFO[ListItem.Icon]</texture>
+                                    <texture fallback="wraplist/M.W.3.jpg">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </focusedlayout>
                             <content>
 							<item id="1">
                                                                          <property name="NavItem">item1.png</property>
 								<onclick>$INFO[Window(home).Property(RandomEpisode.1.Play)]</onclick>
-								<thumb></thumb>
+								<thumb>$INFO[Window(home).Property(RandomEpisode.1.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window(home).Property(RandomEpisode.1.EpisodeNo)] $INFO[Window(home).Property(RandomEpisode.1.Title)]</label>
 								<label2>$INFO[Window(home).Property(RandomEpisode.1.TVshowTitle)]</label2>
 							<visible></visible>
@@ -629,7 +674,7 @@
                 <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
-            <posx>128</posx>
+            <posx>105</posx>
             <posy>250</posy>
             <width>1720</width>
             <height>60</height>
@@ -637,13 +682,13 @@
             <itemgap>80</itemgap>
             <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
             <control type="label">
-                <include>HubLabel2</include>
+                <include>HomeLabel</include>
                 <label>Games</label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(2)">Conditional</animation>
                 <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
             </control>
             <control type="label">
-                <include>HubLabel2</include>
+                <include>HomeLabel</include>
                 <label>Genres</label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="Container(20).HasFocus(4)">Conditional</animation>
                 <animation effect="fade" start="100" end="30" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
@@ -676,7 +721,7 @@
                 <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
-            <posx>128</posx>
+            <posx>105</posx>
             <posy>250</posy>
             <width>1720</width>
             <height>60</height>
@@ -684,13 +729,13 @@
             <itemgap>65</itemgap>
             <visible>!Window.IsActive(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
             <control type="label">
-                <include>HubLabel2</include>
+                <include>HomeLabel2</include>
                 <label>Games</label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(2)">Conditional</animation>
             </control>
             <control type="label">
-                <include>HubLabel2</include>
+                <include>HomeLabel2</include>
                 <label>Genres</label>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" condition="!Container(20).HasFocus(4)">Conditional</animation>

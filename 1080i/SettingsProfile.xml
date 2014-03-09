@@ -7,7 +7,7 @@
 			<control type="image">
 				<description>Panel</description>
 				<include>FullscreenDimensions</include>
-				<texture>panel/console settings.png</texture>
+				<texture>panel/console settings.</texture>
 			</control>		
 		<include>NXE.XboxLive.GamerCard</include>
 		<include>-</include>	
@@ -78,7 +78,7 @@
 						<posy>250</posy>
 						<width>100</width>
 						<height>100</height>
-				<texture fallback="Master user.png">$INFO[Skin.String(XBoxLive.Gamer.Picture)]</texture>
+				<texture fallback="Master user.png">special://skin/system/D400040/gamertag/pictures/$INFO[System.ProfileName].png</texture>
 					</control>					
 					<!-- control.label -->
 					<control type="label">
@@ -125,7 +125,7 @@
 						<posy>250</posy>
 						<width>100</width>
 						<height>100</height>
-					<texture fallback="Master user.png">$INFO[Skin.String(XBoxLive.Gamer.Picture)]</texture>
+					<texture fallback="Master user.png">special://skin/system/D400040/gamertag/pictures/$INFO[System.ProfileName].png</texture>
 					</control>					
 					<!-- control.label -->
 					<control type="label">

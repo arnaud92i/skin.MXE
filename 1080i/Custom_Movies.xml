@@ -1,9 +1,10 @@
-<window id="70">
+<window id="72">
     <defaultcontrol always="true">40</defaultcontrol>
    <allowoverlay>yes</allowoverlay>
     <controls>
 	<include>CommonContent</include> 
 	<include>CommonStage</include>
+	<include>HomeProfileInfo</include>
             <include>a and b</include>
 	<control type="image">
 			<include>FullscreenDimensions</include>
@@ -11,20 +12,20 @@
 			<aspectratio>stretch</aspectratio>
 	</control>
                         <control type="label">
-                            <posx>100</posx>
-                            <posy>100</posy>
+                            <posx>90</posx>
+                            <posy>170</posy>
                             <width>746</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
-                            <label>Video&Library</label>
-                            <font>Font-Condensed-S50-B</font>
+                            <label>Movies </label>
+                            <font>Font-Condensed-S50</font>
                             <visible></visible>
                         </control>
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
 	<!-- Backgrounds -->
@@ -56,15 +57,15 @@
                     <ondown>9000</ondown>
                 </control>
                 <control type="group" id="650">
-                    <posx>870</posx>
+                    <posx>950</posx>
                     <posy>100</posy>
 		<animation type="WindowOpen">
-                        <effect type="zoom"  end="90" time="0" tween="sine" easing="inout" center="auto" />
+                        <effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
                		<effect type="slide" start="0,75" end="0,0" time="350" tween="cubic" easing="out" />
                 </animation>
 	        <animation type="WindowClose">
-			<effect type="zoom"  end="80" time="0" tween="sine" easing="inout" center="auto" />
+			<effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
                 	<effect type="slide" start="0,0" end="0,75" time="300" tween="sine" easing="out" />
                 </animation>
@@ -385,15 +386,15 @@
                     <ondown>9001</ondown>
                 </control>
                 <control type="group" id="450">
-                    <posx>870</posx>
+                    <posx>935</posx>
                     <posy>100</posy>
 		<animation type="WindowOpen">
-                        <effect type="zoom"  end="90" time="0" tween="sine" easing="inout" center="auto" />
+                        <effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
                		<effect type="slide" start="0,75" end="0,0" time="350" tween="cubic" easing="out" />
                 </animation>
 	        <animation type="WindowClose">
-			<effect type="zoom"  end="80" time="0" tween="sine" easing="inout" center="auto" />
+			<effect type="zoom"  end="100" time="0" tween="sine" easing="inout" center="auto" />
                 	<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
                 	<effect type="slide" start="0,0" end="0,75" time="300" tween="sine" easing="out" />
                 </animation>
@@ -673,7 +674,7 @@
                 <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
-            <posx>150</posx>
+            <posx>105</posx>
             <posy>250</posy>
             <width>1720</width>
             <height>60</height>
@@ -720,7 +721,7 @@
                 <effect type="fade" start="100" end="0" tween="sine" easing="inout" time="200" />
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
-            <posx>150</posx>
+            <posx>105</posx>
             <posy>250</posy>
             <width>1720</width>
             <height>60</height>

@@ -105,7 +105,7 @@
 
                 <control type="group" id="666">
                     <posx>185</posx>
-                    <posy>68</posy>
+                    <posy>58</posy>
 		    <control type="multiimage">
                          <posx>0</posx>
                         <posy>0</posy>

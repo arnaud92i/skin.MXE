@@ -359,6 +359,12 @@
 						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
 						<icon>icon/foto.png</icon>
 					</item>
+					<item id="6">
+						<label>PicturesSettings</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
+						<icon>icon/foto.png</icon>
+					</item>
 				</content>
 			</control>
 		</control>

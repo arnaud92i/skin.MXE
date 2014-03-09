@@ -188,7 +188,7 @@
                                 <control type="textbox">
                                     <posx>25</posx>
                                     <posy>250</posy>
-                                    <width>190</width>
+                                    <width>650</width>
                                     <height>500</height>
                                     <font>Font-Condensed-S40</font>
                                     <label>$INFO[Skin.String(XboxLive.Gamer.RecentlyPlayed.Title.1)]</label>

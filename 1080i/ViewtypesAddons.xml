@@ -6,7 +6,7 @@
     <include name="Viewtype-AddonList">
 <include>CommonStage</include>
         <control type="group">
-		<posx>-140</posx>
+		<posx></posx>
             <visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
             <include>a and b</include>
 	</control>
@@ -16,7 +16,7 @@
                             <width>746</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
-                            <label>Xbmc marketplace</label>
+                            <label>Xbmc store</label>
                             <font>Font-Condensed-S50</font>
                             <visible></visible>
                         </control>
@@ -24,8 +24,8 @@
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
             <control type="panel" id="50">
@@ -39,31 +39,31 @@
                         <ondown>-</ondown>
                         <scrolltime>300</scrolltime>
 			<orientation>horizontal</orientation>
-                        <itemlayout width="252" height="289">
+                        <itemlayout width="465" height="289">
                             <control type="group">
-				<posx>-16</posx>
-<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
+			<posx></posx>
+                                <animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
                                 <control type="image">
                                     <posx>24</posx>
                                     <posy>24</posy>
-                                    <width>240</width>
-                                    <height>250</height>
-                                    <texture border="1">colors/patter.png</texture>
+                                    <width>450</width>
+                                    <height>200</height>
+                                    <texture border="1">colors/grey85% - Copy.png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>24</posx>
                                     <posy>24</posy>
-                                    <width>240</width>
-                                    <height>210</height>
+                                    <width>150</width>
+                                    <height>200</height>
                                     <texture border="1">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="label">
-                                    <posx>24</posx>
-                                    <posy>230</posy>
+                                    <posx>170</posx>
+                                    <posy>40</posy>
                                     <width>300</width>
                                     <height>60</height>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font-Condensed-S20-B</font>
+                                    <font>font13_title</font>
                                     <textcolor>white</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
@@ -71,50 +71,45 @@
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="252" height="289">
+                        <focusedlayout width="465" height="289">
                             <control type="group">
-				<posx>-16</posx>
+				<posx></posx>
                                 <control type="group">
                                 <control type="image">
                                     <posx>24</posx>
                                     <posy>24</posy>
-                                    <width>240</width>
-                                    <height>250</height>
-                                    <texture border="1">colors/patter.png</texture>
+                                    <width>450</width>
+                                    <height>200</height>
+                                    <texture border="1">colors/grey85% - Copy.png</texture>
                                 </control>
                                     <control type="image">
                                     <posx>24</posx>
                                     <posy>24</posy>
-                                    <width>240</width>
-                                    <height>210</height>
+                                    <width>150</width>
+                                    <height>200</height>
                                     <texture border="1">$INFO[ListItem.Icon]</texture>
                                 </control>
-                                    <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>240</width>
-                                    <height>250</height>
-                                    <texture border="1">icon/glass.png</texture>
-                                </control>
-                                    <control type="image">
-                                    <posx>34</posx>
-                                    <posy>285</posy>
-                                    <width>220</width>
-                                    <height>5</height>
-                                    <texture border="1">colors/white.png</texture>
-                                </control>
                                 <control type="label">
-                                    <posx>24</posx>
-                                    <posy>230</posy>
+                                    <posx>170</posx>
+                                    <posy>40</posy>
                                     <width>300</width>
                                     <height>60</height>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>Font-Condensed-S20-B</font>
+                                    <font>font13_title</font>
                                     <textcolor>white</textcolor>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <textoffsetx>20</textoffsetx>
                                 </control>
+                        <control type="image">
+                        	<posx>10</posx>
+               	        	<posy>10</posy>
+        	        	<width>480</width>
+        	        	<height>230</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
                                 </control>
                             </control>
                         </focusedlayout>

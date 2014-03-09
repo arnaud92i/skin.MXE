@@ -4,7 +4,7 @@
 	<defaultcontrol always="true">450</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
-	<!--Splash Screen-->
+
 	<onload>ActivateWindow(60)</onload>
 	        <include>CommonContent</include>
         <include>CommonStage</include>
@@ -149,6 +149,7 @@
 			</control>
 			
 		</control>
+	<onload>XBMC.RunScript(script.favourites)</onload>
 	            <include>Favourites Buttons</include>	
 	</controls>
 

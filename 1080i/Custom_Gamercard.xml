@@ -117,6 +117,12 @@
 				<font>Font-Condensed-S34-B</font>
 				<textcolor>grey</textcolor>
 			</control>
+
+
+
+
+
+
 			<control type="list" id="550">
 				<posx>100</posx>
 				<posy>137</posy>

@@ -35,10 +35,10 @@
 	<include name="Common_Busy">
 		<control type="image">			
 			<description>Busy animation</description>
-			<posx>870</posx>
-			<posy>450</posy>
-			<width>120</width>
-			<height>120</height>
+			<posx>910</posx>
+			<posy>490</posy>
+			<width>100</width>
+			<height>100</height>
 			<texture>buffer/buffer_progress.png</texture>
 			<aspectratio>keep</aspectratio>			
 		<animation type="WindowClose">
@@ -83,15 +83,15 @@
     <include name="HubLabel">
 	<width min="0" max="500">auto</width>
         <height>350</height>
-        <font>font13_title</font>
+        <font>Font-Condensed-S34-B</font>
         <textcolor>white</textcolor>
         <align>left</align>
         <aligny>top</aligny>
     </include>
     <include name="HubLabel2">
-	<width min="0" max="700">auto</width>
+	<width min="0" max="500">auto</width>
         <height>350</height>
-        <font>font13_title</font>
+        <font>Font-Condensed-S34-B</font>
         <textcolor>white</textcolor>
         <align>left</align>
         <aligny>top</aligny>

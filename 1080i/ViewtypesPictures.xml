@@ -29,21 +29,11 @@
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
-	<control type="label">
-                 <posx>1760</posx>
-                 <posy>205</posy>
-                 <width>500</width>
-                 <height>0</height>
-                 <label>$INFO[Container(50).Position] & $INFO[Container(50).NumItems]</label>
-                 <font>Font-Condensed-S25-B</font>
-                 <textcolor>eewhite</textcolor>
-                 <align></align>
-		 <visible>!Window.IsActive(1122)</visible>
-        </control>
+
 	
         <control type="group">
             <include>a and b,x</include>

@@ -1,0 +1,349 @@
+<window type="dialog" id="58">
+    <defaultcontrol always="true">9333</defaultcontrol>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+    <allowoverlay>no</allowoverlay>
+	<controls>
+
+        <include>CommonStage</include>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>colors/black.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control> 
+
+	
+        <!-- Advanced Launcher Game Info -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out" />
+                <effect type="zoom" start="335,125,1440,810" end="0,0,1920,1080" time="400" delay="300" tween="cubic" easing="out" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+                <effect type="zoom" start="0,0,1920,1080" end="335,125,1440,810" time="300" tween="cubic" easing="out" />
+            </animation>
+
+
+            <!-- Title Label -->            
+            <control type="label">
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                <posx>50</posx>
+                <posy>240</posy>
+                <width>1684</width>
+                <label>$INFO[Window.Property(Title)]</label>
+                <font>Font-Condensed-S40-B</font>
+                <textcolor>white</textcolor>
+                <align>-</align>
+                <scroll>false</scroll>
+            </control>
+    
+           <control type="grouplist">
+                <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                <animation type="Conditional" condition="Control.HasFocus(1110)">
+                    <effect type="slide" start="0" end="510" time="400" delay="0" tween="sine" easing="inout" />
+                </animation>
+                <posx>50</posx>
+                <posy>200</posy>
+                <width>600</width>
+                <orientation>horizontal</orientation>
+                <itemgap>20</itemgap>
+
+
+                <!-- Info Label -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1684</width>
+                    <label>Tv Show Info:</label>
+                    <font>Font-Condensed-S38</font>
+                    <textcolor>white</textcolor>
+                    <align></align>
+                    <scroll>false</scroll>
+                    <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9334) | Control.HasFocus(1110)">Conditional</animation>
+
+                </control>
+
+                <!-- Info Label -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1684</width>
+                    <label>Movie Info:</label>
+                    <font>Font-Condensed-S38</font>
+                    <textcolor>white</textcolor>
+                    <align></align>
+                    <scroll>false</scroll>
+                    <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9334) | Control.HasFocus(1110)">Conditional</animation>
+
+                </control>
+                </control>
+		<control type="image">
+                  <posx>1300</posx>
+                   <posy>300</posy>
+                  <width>550</width>
+                 <height>350</height>
+                 <align>-</align>
+		<aspectratio>stretch</aspectratio>
+                  <texture>$INFO[Window.Property(Fanart)]</texture>
+                  </control>
+		<control type="image">
+                  <posx>50</posx>
+                   <posy>300</posy>
+                  <width>480</width>
+                 <height>650</height>
+                 <align>-</align>
+		<aspectratio>stretch</aspectratio>
+                  <texture>$INFO[Window.Property(Poster)]</texture>
+                  </control>
+                <!-- Info -->
+                <control type="grouplist">
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+                    <posx>590</posx>
+                    <posy>330</posy>
+                    <width>1050</width>
+                    <height>700</height>
+                    <orientation>vertical</orientation>
+                    <control type="group">
+                        <width>950</width>
+                        <height>30</height>
+                        <!-- Year -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                            <font>font12_title</font>
+                            <align>left</align>
+                            <label>Year: [COLOR=red]$INFO[Window.Property(Year)][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <width>950</width>
+                        <height>30</height>
+                        <!-- Genre -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                             <font>font12_title</font>
+                            <align>left</align>
+                            <label>Genre: [COLOR=red]$INFO[Window.Property(Genre)][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <width>950</width>
+                        <height>30</height>
+                        <visible>!IsEmpty(ListItem.Year)</visible>
+                        <!-- Year -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                            <font>font12_title</font>
+                            <align>left</align>
+                            <label>$LOCALIZE[562]: [COLOR=red]$INFO[Window.Property(NextTime)][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <width>950</width>
+                        <height>30</height>
+                        <visible>!IsEmpty(ListItem.Genre)</visible>
+                        <!-- Genre -->
+                        <control type="label">
+                            <posx>8</posx>
+                            <posy>0</posy>
+                            <width>950</width>
+                             <font>font12_title</font>
+                            <align>left</align>
+                            <label>$LOCALIZE[515]: [COLOR=red]$INFO[Window.Property(Country)][/COLOR]</label>
+                            <textcolor>darkgrey2</textcolor>
+                            <scroll>false</scroll>
+                        </control>
+                    </control>
+                </control>           
+                <!-- Plot -->
+                <control type="group">
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
+                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
+                    <posx>600</posx>
+                    <posy>460</posy>
+                    <width>420</width>
+                    <height>600</height>
+                    <control type="textbox">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>420</width>
+                        <height>500</height>
+                        <label>$INFO[Window.Property(Plot)]</label>
+                        <textcolor>white</textcolor>
+                        <align>justify</align>
+                        <align></align>
+                        <font>font13_title</font>
+                        <scroll>false</scroll>
+                        <scrollout>false</scrollout>
+                        <autoscroll time="1500" delay="10000" repeat="10000" />
+                    </control>
+                    </control>
+		<control type="label">
+					<description>Rating Title</description>
+					<posx>220</posx>
+					<posy>250</posy>
+					<width>150</width>
+					<height>25</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<textcolor>blue</textcolor>
+					<label></label>
+				</control>
+				<control type="group">
+					<posx>593</posx>
+					<posy>290</posy>
+					<control type="image">
+						<description>Rating value</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>150</width>
+						<height>40</height>
+						<aspectratio>-</aspectratio>
+                                                      <texture background="true">$INFO[Window.Property(Rating),trakt.tv/rating,.png]</texture>
+					</control>
+				</control>
+				<control type="grouplist" id="9000">
+					<posx>210</posx>
+					<posy>660</posy>
+					<width>1030</width>
+					<height>40</height>
+					<itemgap>2</itemgap>
+					<align>center</align>
+					<orientation>horizontal</orientation>
+					<onleft>9000</onleft>
+                                             <onclick>Dialog.Close(all,true)</onclick>
+					<onright>9000</onright>
+					<onup>50</onup>
+					<ondown>49</ondown>
+					<control type="button" id="5">
+						<description>Cast/Review</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+                                                       <onclick>Dialog.Close(all,true)</onclick>
+						<label></label>
+					</control>
+					<control type="button" id="6">
+						<description>Refresh</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label></label>
+					</control>
+					<control type="button" id="10">
+						<description>Get Thumb</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label></label>
+					</control>
+					<control type="button" id="12">
+						<description>Get Fanart</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label></label>
+					</control>
+				</control>
+
+
+        <control type="panel" id="9333">
+                        <posx>1070</posx>
+                        <posy>200</posy>
+                        <width>500</width>
+                        <height>620</height>
+			<onright>5</onright>
+			<onleft>5</onleft>
+                        <onup>-</onup>
+                        <ondown>-</ondown>
+                        <scrolltime>500</scrolltime>
+<visible>!Control.IsVisible(50)</visible>
+			<animation type="Focus">
+                                    </animation>
+                        <itemlayout width="280" height="50">
+                                    <control type="label">
+                                        <posx>24</posx>
+                                        <posy>100</posy>
+                                        <width>382</width>
+                                        <height>60</height>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font-Condensed-S37</font>
+                                        <textcolor>white</textcolor>
+                                        <align>left</align>
+                                        <aligny>center</aligny>
+                                        <textoffsetx>20</textoffsetx>
+                                    </control>
+				<control type="image">
+                                    <posx>-15</posx>
+                                    <posy>105</posy>
+                                    <width>60</width>
+                                    <height>60</height>
+                                    <texture background="true">$INFO[ListItem.Icon]</texture>
+                                   <colordiffuse>white</colordiffuse>
+                                </control>
+                        </itemlayout>
+                        <focusedlayout width="280" height="100">
+                                    <control type="label">
+                                        <posx>24</posx>
+                                        <posy>100</posy>
+                                        <width>382</width>
+                                        <height>60</height>
+                                        <label>$INFO[ListItem.Label]</label>
+                                        <font>Font-Condensed-S37</font>
+                                        <textcolor>green</textcolor>
+                                        <align>left</align>
+                                        <aligny>center</aligny>
+                                        <textoffsetx>20</textoffsetx>
+                                    </control>
+				<control type="image">
+                                    <posx>-15</posx>
+                                    <posy>105</posy>
+                                    <width>60</width>
+                                    <height>60</height>
+                                    <texture background="true">$INFO[ListItem.Icon]</texture>
+                                   <colordiffuse>white</colordiffuse>
+                                </control>
+                        </focusedlayout>
+                        <content>
+                            <item id="0">
+                            <label>View Cast</label>
+                            <icon>hub/hub_actors_small.png</icon>
+                            <onclick>setfocus()</onclick>
+                           <onclick>SendClick()</onclick>
+                        </item>
+                        <item id="1">
+                            <label>Search</label>
+                            <icon>hub/search.png</icon>
+                           <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.xbmctorrent/yify/search&quot;)</onclick>
+<onclick>dialog.close(all,true)</onclick>
+                        </item>
+                        <item id="2">
+                            <label>Search 2</label>
+                            <icon>hub/search.png</icon>
+                            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.xbmctorrent/btdigg&quot;)</onclick>
+<onclick>dialog.close(all,true)</onclick>
+                        </item>
+                        <item id="3">
+                            <label>Trailer</label>
+                            <icon>hub/hub_studios_small.png</icon>
+                            <onclick>$INFO[Window.Property(Trailer)]</onclick>
+                        </item>
+                        </content>
+                    </control>
+                       <include></include>           
+        </control>                        
+        <include>FadeBackgroundMovieInfo</include>
+    </controls>
+</window>

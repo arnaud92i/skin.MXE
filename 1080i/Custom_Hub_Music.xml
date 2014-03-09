@@ -24,8 +24,8 @@
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
 	<!-- Backgrounds -->
@@ -749,22 +749,22 @@
                         <content>
                             <item id="0">
                                 <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.1.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.1.Fanart)]</icon>
+                                <icon>$INFO[Window(home).Property(LatestAlbum.1.Thumb)]</icon>
                                 <label>$INFO[Window(home).Property(LatestAlbum.1.Title)]</label>
                             </item>
                                 <item id="1">
                                 <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.2.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.2.Fanart)]</icon>
+                                <icon>$INFO[Window(home).Property(LatestAlbum.2.Thumb)]</icon>
                                 <label>$INFO[Window(home).Property(LatestAlbum.2.Title)]</label>
                                 </item>
                                 <item id="2">
                                 <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.3.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.3.Fanart)]</icon>
+                                <icon>$INFO[Window(home).Property(LatestAlbum.3.Thumb)]</icon>
                                 <label>$INFO[Window(home).Property(LatestAlbum.3.Title)]</label>
                                 </item>
                                 <item id="3">
                                 <onclick>PlayMedia($INFO[Window(home).Property(LatestAlbum.4.Path)])</onclick>
-                                <icon>$INFO[Window(home).Property(LatestAlbum.4.Fanart)]</icon>
+                                <icon>$INFO[Window(home).Property(LatestAlbum.4.Thumb)]</icon>
                                 <label>$INFO[Window(home).Property(LatestAlbum.4.Title)]</label>
                                 </item>
                         </content>

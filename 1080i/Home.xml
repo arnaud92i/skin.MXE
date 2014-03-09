@@ -7,8 +7,6 @@
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=PremiereShows)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=AiringShows)</onload>
 
-
-
 <onload condition="Container(20).HasFocus(1)">Control.Move(20,1)</onload>
 <onload condition="Container(20).HasFocus(4)">Control.Move(20,-1)</onload>
 <onload condition="Container(20).HasFocus(5)">Control.Move(20,-2)</onload>
@@ -20,6 +18,8 @@
 <onunload condition="Container(20).HasFocus(5)">Control.Move(20,-2)</onunload>
 <onunload condition="Container(20).HasFocus(6)">Control.Move(20,-3)</onunload>
 <onunload condition="Container(20).HasFocus(7)">Control.Move(20,-4)</onunload>
+
+
 
     	<onload>Weather.Refresh</onload>
 	<onload>XBMC.RunScript(script.favourites)</onload>

@@ -1,6 +1,7 @@
 <window id="1090">
-    <defaultcontrol always="true">88</defaultcontrol>
+    <defaultcontrol always="true">550</defaultcontrol>
    <allowoverlay>yes</allowoverlay>
+<onunload>RunScript(special://skin/system/0300030/xbox.gamertag.py)</onunload>
     <controls>
 	<include>CommonContent</include> 
 	<include>CommonStage</include>
@@ -35,38 +36,23 @@
 		    <control type="image">
                          <posx>1750</posx>
                         <posy>85</posy>
-                        <width>55</width>
-                        <height>55</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture>icon/xbox.png</texture>
         </control>
 
-		    <control type="image">
-                         <posx>140</posx>
-                        <posy>350</posy>
-                        <width>350</width>
-                        <height>60</height>
-                        <texture>colors/white.png</texture>
-        </control>
-                                <control type="textbox">
-                                    <posx>150</posx>
-                                    <posy>360</posy>
-                                    <width>200</width>
-                                    <height>35</height>
-                                    <font>font12_title</font>
-                                    <label>Search by gamertag</label>
-                                    <textcolor>darkgrey</textcolor>
-                                </control>
+
 
             <control type="button" id="88">
                 <description>-</description>
-                        <onleft>9000</onleft>
-                    	<onright>9000</onright>
-                    	<onup>9000</onup>
+                        <onleft></onleft>
+                    	<onright></onright>
+                    	<onup></onup>
                 <height>60</height>
                 <align>left</align>
                 <aligny>top</aligny>
                 <font></font>
-                <onclick>Skin.Setstring(name)</onclick>
+                <onclick>9001</onclick>
                 <textwidth>352</textwidth>
                 <textoffsetx>20</textoffsetx>
                 <textoffsety>4</textoffsety>
@@ -78,17 +64,7 @@
                 <texturenofocus>-</texturenofocus>
 
             </control>
-					<control type="image">
-						<posx>115</posx>
-						<posy>325</posy>
-						<width>400</width>
-						<height>110</height>
-						<texture border="40">icon/tile-fo.png</texture>
-		        	<align>center</align>
-		        	<aligny>center</aligny>
-						<aspectratio>stretch</aspectratio>
-                <visible>Control.HasFocus(88)</visible>
-					</control>
+
 
 
 
@@ -135,7 +111,85 @@
                         <aspectratio align="center">stretch</aspectratio>
                     </control>
 
+			<control type="list" id="550">
+				<posx>-30</posx>
+				<posy>50</posy>
+				<width>685</width>
+				<height>700</height>
+                        <onleft></onleft>
+                    	<onright>9001</onright>
+                    	<onup>550</onup>
+                    <ondown>550</ondown>
+				<focuspostion>1</focuspostion>
+				<orientation>vertical</orientation>
+				<scrolltime>100</scrolltime>
 
+				<itemlayout width="807" height="65">
+
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>700</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>Font-Condensed-S34-B</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="807" height="65">
+					<control type="image">
+						<posx>-8</posx>
+						<posy>-12</posy>
+						<width>250</width>
+						<height>90</height>
+						<texture border="40">icon/tile-fo.png</texture>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+						<aspectratio>stretch</aspectratio>
+<visible>!Control.Hasfocus(9001) + !Control.Hasfocus(9001)</visible>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>700</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>Font-Condensed-S34-B</font>
+						<textcolor>black</textcolor>
+						<align>left</align>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>Add Friends</label>
+						<onclick>setfocus(9000)</onclick>  
+						<include>GuideDialogClose</include>
+					</item>
+					<item id="2">
+						<label>My Profile</label>
+						<onclick>-</onclick>
+						<include>GuideDialogClose</include>
+					</item>
+					<item id="3">
+						<label>Friends Avatar</label>
+						<onclick>ActivateWindow(1919)</onclick>
+						<include>GuideDialogClose</include>
+					</item>
+					<item id="4">
+                                                      <description>GamerColor</description>
+						<label>Messages</label>
+						<onclick>-</onclick>
+						<include>GuideDialogClose</include>
+                                                      <visible></visible>
+					</item>
+					<item id="5">
+						<label>Achievements</label>
+						<onclick>-</onclick>
+						<include>GuideDialogClose</include>
+					</item>
+				</content>
+			</control>
 
 
 
@@ -143,19 +197,20 @@
 
 
 	<control type="panel" id="9000">
+        <visible>!Control.Hasfocus(9001)</visible>
                 <description>Fav list</description>
                         <posx>400</posx>
                         <posy></posy>
                         <width>1500</width>
                         <height>1000</height>
-                        <onleft>9000</onleft>
-                    	<onright>9000</onright>
-                    	<onup>88</onup>
-                    <ondown>88</ondown>
+                        <onleft>550</onleft>
+                    	<onright>550</onright>
+                    	<onup>9000</onup>
+                    <ondown>9000</ondown>
                         <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                         <scrolltime tween="cubic" easing="out">800</scrolltime>
                         <orientation>vertical</orientation>
-                        <preloaditems>4</preloaditems>
+                        <preloaditems>1</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
                         <itemlayout width="650" height="250">
@@ -247,135 +302,431 @@
                                     <label>$INFO[ListItem.Label]</label>
                                     <textcolor>darkgrey</textcolor>
                                 </control>
+			<control type="image">
+                                    <posx>-17</posx>
+                                    <posy>32</posy>
+                                    <width>205</width>
+                                    <height>205</height>
+				<texture border="40">icon/tile-fo.png</texture>
+		        	         <align>center</align>
+		        	         <aligny>center</aligny>
+				<aspectratio>stretch</aspectratio>
+				</control>
                             </control>
                         </focusedlayout>
                         <content>
                             <item id="1">
                               <onclick>Skin.Setstring(Friend1)</onclick>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend.py)</onclick>
                                 <label>$INFO[Skin.string(Friend1)]</label>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend1)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend1)].png</icon>
                             </item>
                             <item id="2">
                                 <onclick>Skin.Setstring(Friend2)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend2.py)</onclick>
                                 <label>$INFO[Skin.string(Friend2)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend2)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend2)].png</icon>
                             </item>
 			    <item id="3">
                                 <onclick>Skin.Setstring(Friend3)</onclick>
                                 <label>$INFO[Skin.string(Friend3)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend3.py)</onclick>
 				<label2>Layer1.png</label2>
-                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend3)].png</icon>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend3)].png</icon>
 
                             </item>
 			    <item id="4">
                                 <onclick>Skin.Setstring(Friend4)</onclick>
                                 <label>$INFO[Skin.string(Friend4)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend4.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend4)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend4)].png</icon>
                             </item>	
                             <item id="5">
                                 <onclick>Skin.Setstring(Friend5)</onclick>
                                 <label>$INFO[Skin.string(Friend5)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend5.py)</onclick>
 				<label2>Layer1.png</label2>
-                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend5)].png</icon>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend5)].png</icon>
                             </item>
                             <item id="6">
                                 <onclick>Skin.Setstring(Friend6)</onclick>
                                 <label>$INFO[Skin.string(Friend6)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend6.py)</onclick>
 				<label2>Layer1.png</label2>
-                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend6)].png</icon>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend6)].png</icon>
                             </item>
 			    <item id="7">
                                 <label>$INFO[Skin.string(Friend7)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend7.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend7)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend7)].png</icon>
                                 <onclick>Skin.Setstring(Friend7)</onclick>
                             </item>
 			    <item id="8">
                                 <label>$INFO[Skin.string(Friend8)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend8.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend8)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend8)].png</icon>
                                 <onclick>Skin.Setstring(Friend8)</onclick>
                             </item>
 			    <item id="9">
                                 <label>$INFO[Skin.string(Friend9)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend9.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend9)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend9)].png</icon>
                                 <onclick>Skin.Setstring(Friend9)</onclick>
                             </item>	
                             <item id="10">
                               <onclick>Skin.Setstring(Friend10)</onclick>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend10.py)</onclick>
                                 <label>$INFO[Skin.string(Friend10)]</label>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend10)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend10)].png</icon>
                             </item>
                             <item id="11">
                                 <label>$INFO[Skin.string(Friend11)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend11.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend11)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend11)].png</icon>
                                 <onclick>Skin.Setstring(Friend11)</onclick>
                             </item>
 			    <item id="12">
                                 <label>$INFO[Skin.string(Friend12)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend12.py)</onclick>
 				<label2>Layer1.png</label2>
-                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend12)].png</icon>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend12)].png</icon>
                                 <onclick>Skin.Setstring(Friend12)</onclick>
                             </item>
 			    <item id="13">
                                 <label>$INFO[Skin.string(Friend13)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend13.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend13)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend13)].png</icon>
                                 <onclick>Skin.Setstring(Friend13)</onclick>
                             </item>	
                             <item id="14">
                                 <label>$INFO[Skin.string(Friend14)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend14.py)</onclick>
 				<label2>Layer1.png</label2>
-                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend14)].png</icon>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend14)].png</icon>
                                 <onclick>Skin.Setstring(Friend14)</onclick>
                             </item>
                             <item id="15">
                                 <label>$INFO[Skin.string(Friend15)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend15.py)</onclick>
 				<label2>Layer1.png</label2>
-                               <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend15)].png</icon>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend15)].png</icon>
                                 <onclick>Skin.Setstring(Friend15)</onclick>
                             </item>
 			    <item id="16">
                                 <label>$INFO[Skin.string(Friend16)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend16.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend16)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend16)].png</icon>
                                 <onclick>Skin.Setstring(Friend16)</onclick>
                             </item>
 			    <item id="17">
                                 <label>$INFO[Skin.string(Friend17)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend17.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend17)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend17)].png</icon>
                                 <onclick>Skin.Setstring(Friend17)</onclick>
                             </item>
 			    <item id="18">
                                 <label>$INFO[Skin.string(Friend18)]</label>
-                               <onclick>RunScript(special://skin/system/0300030/bing.py)</onclick>
+                               <onclick>RunScript(special://skin/system/0300030/Friend18.py)</onclick>
 				<label2>Layer1.png</label2>
-                                <icon>special://skin/system/D400040/Friend/avatars/$INFO[Skin.string(Friend18)].png</icon>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend18)].png</icon>
                                 <onclick>Skin.Setstring(Friend18)</onclick>
+                            </item>	
+			    <item id="19">
+                                <label>$INFO[Skin.string(Friend19)]</label>
+                               <onclick>RunScript(special://skin/system/0300030/Friend19.py)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend19)].png</icon>
+                                <onclick>Skin.Setstring(Friend19)</onclick>
+                            </item>							
+		</content>
+	</control>
+
+
+
+
+
+
+
+	<control type="panel" id="9001">
+        <visible>!Control.Hasfocus(9000)</visible>
+                <description>Fav list</description>
+                        <posx>400</posx>
+                        <posy></posy>
+                        <width>1500</width>
+                        <height>1500</height>
+                        <onleft>550</onleft>
+                    	<onright>550</onright>
+                    	<onup>9001</onup>
+                    <ondown>9001</ondown>
+                        <viewtype label="Square">list</viewtype>
+                         <scrolltime tween="cubic" easing="out">800</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>1</preloaditems>
+                       <defaultcontrol>1</defaultcontrol>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="650" height="250">
+                            <control type="group">
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>170</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>colors/pure blue.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>35</posx>
+                                    <posy>85</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+			<control type="image">
+				<posx>200</posx>
+				<posy>210</posy>
+				<width>350</width>
+				<height>6</height>
+				<texture>osd/media-guide/line.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>darkgrey</colordiffuse>
+			</control>
+                                <control type="textbox">
+                                    <posx>200</posx>
+                                    <posy>50</posy>
+                                    <width>200</width>
+                                    <height>35</height>
+                                    <font>font24_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>darkgrey</textcolor>
+                                </control>
+			<control type="textbox">
+				<posx>200</posx>
+				<posy>100</posy>
+				<width>600</width>
+				<height>400</height>
+				<font>font24_title</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="650" height="250">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>170</height>
+                                    <aspectratio>stretch</aspectratio>
+                                       <texture>colors/black.png</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>35</posx>
+                                    <posy>85</posy>
+                                    <width>100</width>
+                                    <height>100</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+			<control type="image">
+				<posx>200</posx>
+				<posy>210</posy>
+				<width>350</width>
+				<height>6</height>
+				<texture>osd/media-guide/line.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>darkgrey</colordiffuse>
+			</control>
+                                <control type="textbox">
+                                    <posx>200</posx>
+                                    <posy>50</posy>
+                                    <width>200</width>
+                                    <height>35</height>
+                                    <font>font24_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>darkgrey</textcolor>
+                                </control>
+			<control type="textbox">
+				<posx>200</posx>
+				<posy>100</posy>
+				<width>600</width>
+				<height>400</height>
+				<font>font24_title</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="image">
+                                    <posx>-17</posx>
+                                    <posy>32</posy>
+                                    <width>205</width>
+                                    <height>205</height>
+				<texture border="40">icon/tile-fo.png</texture>
+		        	         <align>center</align>
+		        	         <aligny>center</aligny>
+				<aspectratio>stretch</aspectratio>
+				</control>
+                            </control>
+                        </focusedlayout>
+                        <content>
+                            <item id="1">
+                               <onclick>ActivateWindow(1080)</onclick>
+                                <label>$INFO[Skin.string(Friend1)]</label>
+				<label2>$INFO[Skin.String(Friend1.RecentlyPlayed.PercentComplete.1)]</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend1)].png</icon>
+ <onclick>RunScript(special://skin/system/0300030/Friend.py)</onclick>
+                            </item>
+                            <item id="2">
+
+                               <onclick>ActivateWindow(1080)</onclick>
+                                <label>$INFO[Skin.string(Friend2)]</label>
+				<label2>ggggggggggg</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend2)].png</icon>
+                            </item>
+			    <item id="3">
+
+                                <label>$INFO[Skin.string(Friend3)]</label>
+                               <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend3)].png</icon>
+
+                            </item>
+			    <item id="4">
+                               <onclick>ActivateWindow(1080)</onclick>
+                                <label>$INFO[Skin.string(Friend4)]</label>
+
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend4)].png</icon>
+                            </item>	
+                            <item id="5">
+                                <onclick>ActivateWindow(1080)</onclick>
+                                <label>$INFO[Skin.string(Friend5)]</label>
+
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend5)].png</icon>
+                            </item>
+                            <item id="6">
+                                <onclick>ActivateWindow(1080)</onclick>
+                                <label>$INFO[Skin.string(Friend6)]</label>
+
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend6)].png</icon>
+                            </item>
+			    <item id="7">
+                                <label>$INFO[Skin.string(Friend7)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend7)].png</icon>
+
+                            </item>
+			    <item id="8">
+                                <label>$INFO[Skin.string(Friend8)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend8)].png</icon>
+
+                            </item>
+			    <item id="9">
+                                <label>$INFO[Skin.string(Friend9)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend9)].png</icon>
+
+                            </item>	
+                            <item id="10">
+ <onclick>ActivateWindow(1080)</onclick>
+                                <label>$INFO[Skin.string(Friend10)]</label>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend10)].png</icon>
+                            </item>
+                            <item id="11">
+                                <label>$INFO[Skin.string(Friend11)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend11)].png</icon>
+
+                            </item>
+			    <item id="12">
+                                <label>$INFO[Skin.string(Friend12)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend12)].png</icon>
+
+                            </item>
+			    <item id="13">
+                                <label>$INFO[Skin.string(Friend13)]</label>
+                              <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend13)].png</icon>
+
+                            </item>	
+                            <item id="14">
+                                <label>$INFO[Skin.string(Friend14)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend14)].png</icon>
+
+                            </item>
+                            <item id="15">
+                                <label>$INFO[Skin.string(Friend15)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                               <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend15)].png</icon>
+
+                            </item>
+			    <item id="16">
+                                <label>$INFO[Skin.string(Friend16)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend16)].png</icon>
+
+                            </item>
+			    <item id="17">
+                                <label>$INFO[Skin.string(Friend17)]</label>
+                                <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend17)].png</icon>
+
+                            </item>
+			    <item id="18">
+                                <label>$INFO[Skin.string(Friend18)]</label>
+                             <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend18)].png</icon>
+
+                            </item>	
+			    <item id="19">
+                                <label>$INFO[Skin.string(Friend19)]</label>
+                               <onclick>ActivateWindow(1080)</onclick>
+				<label2>Layer1.png</label2>
+                                <icon>special://skin/system/D400040/Friend/pictures/$INFO[Skin.string(Friend19)].png</icon>
+
                             </item>							
 		</content>
 	</control>

@@ -18,8 +18,8 @@ __GamerAvatarFolder__ = __dataPath__ + "/avatars/"
 __GamerPictureFolder__ = __dataPath__ + "/pictures/"
 __GameIconFolder__ = __dataPath__ + "/icons/"
 
-__XbmcCurrentUser__ = xbmc.getInfoLabel( '$INFO[Skin.string(Friend8)]' )
-__XboxGamertag__ = __XbmcCurrentUser__.replace(" ","%20")
+__XbmcFriend8__ = xbmc.getInfoLabel( '$INFO[Skin.string(Friend8)]' )
+__XboxGamertag__ = __XbmcFriend8__.replace(" ","%20")
 
 	
 def xebi(td):
@@ -70,8 +70,8 @@ def GetGTNFO():
 	log('GAMERCARD HTML: data loaded to memory; will begin querying')
 
 	# process gamer's avatar data
-	downloadImage( "http://avatar.xboxlive.com/avatar/" + __XboxGamertag__ + "/avatarpic-l.png", xbmc.translatePath( __GamerAvatarFolder__ ), __XbmcCurrentUser__ + '.png' )
-	xebi( 'XBMC.Skin.SetString(XboxLive.Gamer.Avatar,' + __GamerAvatarFolder__ + __XbmcFriend__ + '.png)' )
+	downloadImage( "http://avatar.xboxlive.com/avatar/" + __XboxGamertag__ + "/avatar-body.png", xbmc.translatePath( __GamerAvatarFolder__ ), __XbmcFriend8__ + '.png' )
+
 	
 	# get the info
 	soupStrainer  = SoupStrainer( "body" )
@@ -83,8 +83,8 @@ def GetGTNFO():
 	#xebi( 'XBMC.Skin.SetString(XboxLive.Gamer.Motto,' + beautifulSoup.find( "div", { "id" : "Motto" } ).text
 	#xebi( 'XBMC.Skin.SetString(XboxLive.Gamer.Name,' + beautifulSoup.find( "div", { "id" : "Name" } ).text
 	#xebi( 'XBMC.Skin.SetString(XboxLive.Gamer.Bio,' + beautifulSoup.find( "div", { "id" : "Bio" } ).text
-	xebi( 'XBMC.Skin.SetString(XboxLive.Gamer.Picture,' + __GamerPictureFolder__ + __XbmcCurrentUser__ + '.png)' )
-	downloadImage( beautifulSoup.find( "img", { "id" : "Gamerpic" } )[ "src" ],  xbmc.translatePath( __GamerPictureFolder__ ), __XbmcCurrentUser__ + '.png' )
+	xebi( 'XBMC.Skin.SetString(XboxLive.Gamer.Picture,' + __GamerPictureFolder__ + __XbmcFriend8__ + '.png)' )
+	downloadImage( beautifulSoup.find( "img", { "id" : "Gamerpic" } )[ "src" ],  xbmc.translatePath( __GamerPictureFolder__ ), __XbmcFriend8__ + '.png' )
 	
 	# find all list elements of the html, which is where the recently played games data is stored
 	list_gamesPlayed = beautifulSoup.findAll ( "li" )
@@ -126,7 +126,7 @@ def main():
 	# if internet connection is available, let us get the GamerCard info
 	#if online == 1:
 	nfo = GetGTNFO()
-	xebi('XBMC.Notification(' + __XbmcCurrentUser__ + ' Signed ,in to Xbox Live)')
+	xebi('XBMC.Notification(' + __XbmcFriend8__ + ' Signed ,in to Xbox Live)')
 
 if __name__ == '__main__':
 	main()
