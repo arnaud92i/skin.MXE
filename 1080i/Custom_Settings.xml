@@ -8,16 +8,25 @@
     <onload condition="IsEmpty(Skin.String(stage.style))">Skin.SetString(stage.style,$LOCALIZE[571])</onload>
     <controls>
         <include>CommonSettingsItems</include>
+
+            <!-- Panel -->
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>colors/grey85%.png</texture>
+            </control>
+
+
+
         <!-- Top Label -->
-        <control type="label">
-            <posx>100</posx>
-            <posy>60</posy>
+                        <control type="label">
+                            <posx>115</posx>
+                            <posy>110</posy>
             <width>1000</width>
             <height>65</height>
-            <font>Font-Condensed-S60</font>
+            <font>Font-Condensed-S50</font>
             <textcolor>white</textcolor>
-            <shadowcolor>55000000</shadowcolor>
-            <label>Setup</label>
+            <shadowcolor></shadowcolor>
+            <label>Setup Box</label>
             <animation type="WindowOpen">
                 <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="200" />
                 <effect type="zoom" start="100,120,1000,1" end="100,60,1000,65" tween="sine" easing="out" time="200" />
@@ -31,11 +40,15 @@
         <control type="group">
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
-            <!-- Panel -->
-            <control type="image">
-                <include>FullscreenDimensions</include>
-                <texture>panel/console setting2.png</texture>
-            </control>
+
+            <!-- SpinCtrl Focus 2-->
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
             
             <!-- SpinCtrl Focus -->
             <control type="image">
@@ -43,7 +56,7 @@
                 <posy>170</posy>
                 <width>1210</width>
                 <height>91</height>
-                <texture>focus/images/category-focus.png</texture>
+                <texture>focus/images/LOP.png</texture>
                 <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="2000" pulse="true" reversible="false" condition="true">Conditional</animation>
                 <animation effect="fade" end="100" tween="sine" easing="inout" time="200">Visible</animation>
                 <animation effect="fade" end="0" tween="sine" easing="inout" time="200">Hidden</animation>

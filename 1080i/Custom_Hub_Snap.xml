@@ -1,0 +1,140 @@
+<window type="dialog" id="1116">
+    <defaultcontrol always="true">1</defaultcontrol>
+ 	<allowoverlay>yes</allowoverlay>
+
+    <controls>
+	<control type="group">
+
+	<posy>0</posy>
+		<control type="image">
+					<posx>1360</posx>
+					<posy>0</posy>
+					<width>570</width>
+					<height>1200</height>
+			<texture>colors/grey65%.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
+
+<!--blades Animation-->
+
+			<!-- Detail Info Label -->
+			<control type="textbox">
+				<posx>1420</posx>
+				<posy>130</posy>
+				<width>600</width>
+				<height>400</height>
+				<font>Font-Condensed-S45</font>
+                                    <label>Snap an app</label>
+				<textcolor>white</textcolor>
+                                <visible>Control.HasFocus(1)</visible>
+			</control>
+			<control type="panel" id="1">
+				<posx>1380</posx>
+				<posy>190</posy>
+				<width>580</width>
+				<height>1500</height>
+				<onleft>ActivateWindow(0,1)</onleft>
+				<onright>8001</onright>
+				<onup>222</onup>
+				<ondown>8000</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="600" height="140">
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>120</width>
+						<height>120</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>180</posx>
+						<posy>100</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="600" height="140">
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>120</width>
+						<height>120</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>180</posx>
+						<posy>100</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+                        <control type="image">
+                        	<posx>21</posx>
+               	        	<posy>15</posy>
+        	        	<width>500</width>
+        	        	<height>160</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Music</label>
+						<onclick>ActivateWindow(,return)</onclick>
+                             				<onclick>dialog.close(1)</onclick>
+						<icon>fallback/music.png</icon>
+					</item>	
+					<item id="1">
+						<label>TV</label>
+						<onclick>ActivateWindow(,return)</onclick>
+						<icon>fallback/movis.png</icon>
+					</item>
+					<item id="2">
+						<label>Internet Explorer</label>
+						<onclick>-</onclick>
+						<icon>demo/ie.png</icon>
+					</item>
+				</content>
+			</control>
+
+			
+
+
+<!--end of now playing controls-->
+
+			<control type="label">
+				<posx>1200</posx>
+				<posy>950</posy>
+				<width>700</width>
+				<height>70</height>
+				<info>System.Time</info>
+				<align>right</align>
+				<font>font13_title</font>
+				<textcolor>white</textcolor>
+			</control>
+</control>
+    </controls>
+</window>

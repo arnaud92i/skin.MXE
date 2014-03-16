@@ -46,9 +46,9 @@
             <control type="image">
                 <description>a Button</description>
                 <posx>105</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/a.png</texture>
 		<include>ButtonAnimation</include>
@@ -73,7 +73,7 @@
                 <posy>1014</posy>
                 <width>180</width>
                 <height>10</height>
-                <label>Hub</label>
+                <label>Menu</label>
                 <font>font13_title</font>
                 <textcolor>white</textcolor>
                 <shadowcolor>CC6F6F6F</shadowcolor>
@@ -84,9 +84,9 @@
 	    <control type="image">
                 <description>x Button</description>
                 <posx>245</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/x.png</texture>
 		<include>ButtonAnimation</include>
@@ -108,9 +108,9 @@
 	    <control type="image">
                 <description>y Button</description>
                 <posx>245</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/y.png</texture>
 		<include>ButtonAnimation</include>
@@ -119,11 +119,11 @@
 	    <control type="image">
                 <description> B Button</description>
                 <posx>245</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
-                <texture>buttons/b.png</texture>
+                <texture>buttons/menu.png</texture>
 		<include>ButtonAnimation</include>
 	       <visible>!Player.HasVideo+Control.HasFocus(525)</visible>
             </control>
@@ -131,7 +131,7 @@
 
                 <control type="image">
     		<description>Loading</description>
-                    <posx>870</posx>
+                    <posx>900</posx>
                     <posy>490</posy>
                     <width>100</width>
                     <height>100</height>
@@ -151,9 +151,9 @@
             <control type="image">
                 <description> a Button</description>
                 <posx>105</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/a.png</texture>
 		<include>ButtonAnimation</include>
@@ -173,9 +173,9 @@
 	    <control type="image">
                 <description> B Button</description>
                 <posx>245</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/b.png</texture>
 		<include>ButtonAnimation</include>
@@ -196,9 +196,9 @@
 	    <control type="image">
                 <description> Help Button</description>
                 <posx>350</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/help.</texture>
 		<include>ButtonAnimation</include>
@@ -228,9 +228,9 @@
             <control type="image">
                 <description>y Button</description>
                 <posx>230</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/y.png</texture>
 		<include>ButtonAnimation</include>
@@ -253,9 +253,9 @@
             <control type="image">
                 <description>a Button</description>
                 <posx>105</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/a.png</texture>
 		<include>ButtonAnimation</include>
@@ -285,9 +285,9 @@
             <control type="image">
                 <description>y Button</description>
                 <posx>350</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/y.png</texture>
 		<include>ButtonAnimation</include>
@@ -310,9 +310,9 @@
             <control type="image">
                 <description>a Button</description>
                 <posx>105</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/a.png</texture>
 		<include>ButtonAnimation</include>
@@ -334,9 +334,9 @@
 	    <control type="image">
                 <description> B Button</description>
                 <posx>240</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/b.png</texture>
 		<include>ButtonAnimation</include>
@@ -365,9 +365,9 @@
 	    <control type="image">
                 <description>x Button</description>
                 <posx>445</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/x.png</texture>
 		<include>ButtonAnimation</include>
@@ -376,9 +376,9 @@
 	    <control type="image">
                 <description> Snap Button</description>
                 <posx>650</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/snap.png</texture>
 		<include>ButtonAnimation</include>
@@ -434,9 +434,9 @@
             <control type="image">
                 <description> a Button</description>
                 <posx>105</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/a.png</texture>
 		<include>ButtonAnimation</include>
@@ -456,9 +456,9 @@
 	    <control type="image">
                 <description> B Button</description>
                 <posx>245</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/b.png</texture>
 		<include>ButtonAnimation</include>
@@ -479,9 +479,9 @@
 	    <control type="image">
                 <description>x Button</description>
                 <posx>360</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/x.png</texture>
 		<include>ButtonAnimation</include>
@@ -501,9 +501,9 @@
 	    <control type="image">
                 <description> y Button</description>
                 <posx>525</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/y.png</texture>
 		<include>ButtonAnimation</include>
@@ -545,9 +545,9 @@
             <control type="image">
                 <description> a Button</description>
                 <posx>105</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/a.png</texture>
 		<include>ButtonAnimation</include>
@@ -567,9 +567,9 @@
 	    <control type="image">
                 <description> B Button</description>
                 <posx>245</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/b.png</texture>
 		<include>ButtonAnimation</include>
@@ -590,9 +590,9 @@
 	    <control type="image">
                 <description>x Button</description>
                 <posx>360</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/x.png</texture>
 		<include>ButtonAnimation</include>
@@ -612,9 +612,9 @@
 	    <control type="image">
                 <description> y Button</description>
                 <posx>525</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/y.png</texture>
 		<include>ButtonAnimation</include>
@@ -669,9 +669,9 @@
             <control type="image">
                 <description> a Button</description>
                 <posx>105</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/a.png</texture>
 		<include>ButtonAnimation</include>
@@ -691,9 +691,9 @@
 	    <control type="image">
                 <description> B Button</description>
                 <posx>245</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/b.png</texture>
 		<include>ButtonAnimation</include>
@@ -714,9 +714,9 @@
 	    <control type="image">
                 <description>x Button</description>
                 <posx>360</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/x.png</texture>
 		<include>ButtonAnimation</include>
@@ -736,12 +736,24 @@
 	    <control type="image">
                 <description> y Button</description>
                 <posx>525</posx>
-                <posy>995</posy>
-                <width>45</width>
-                <height>45</height>
+                <posy>993</posy>
+                <width>47</width>
+                <height>47</height>
                 <aspect>keep</aspect>
                 <texture>buttons/y.png</texture>
 		<include>ButtonAnimation</include>
+                <visible>!Player.HasMedia</visible>
+            </control>
+	    <control type="image">
+                <description> up Button</description>
+                <posx>525</posx>
+                <posy>993</posy>
+                <width>40</width>
+                <height>40</height>
+                <aspect>keep</aspect>
+                <texture>buttons/up.png</texture>
+		<include>ButtonAnimation</include>
+                <visible>Player.HasMedia</visible>
             </control>
 	    <control type="label">
                 <description>Info Label</description>
@@ -767,6 +779,21 @@
                 <textcolor>white</textcolor>
                 <shadowcolor>CC6F6F6F</shadowcolor>
 	       <visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Genres)</visible>
+                 <visible>!Player.HasMedia</visible>
+                <include>ButtonAnimation</include>
+            </control>
+	    <control type="label">
+                <description>Info Label</description>
+                <posx>575</posx>
+                <posy>1014</posy>
+                <width>300</width>
+                <height>10</height>
+                <label>Artwork</label>
+                <font>font13_title</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>CC6F6F6F</shadowcolor>
+	       <visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Genres)</visible>
+                 <visible>Player.HasMedia</visible>
                 <include>ButtonAnimation</include>
             </control>
         </control>

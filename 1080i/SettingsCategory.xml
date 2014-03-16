@@ -6,13 +6,19 @@
 
         <include>CommonSettingsItems</include>
                                   <include>CommonStage</include>
+            <!-- Panel -->
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>colors/grey85%.png</texture>
+            </control>
+
         <!-- Top Label -->
-        <control type="label">
-            <posx>100</posx>
-            <posy>70</posy>
+                        <control type="label">
+                            <posx>115</posx>
+                            <posy>110</posy>
             <width>1000</width>
             <height>65</height>
-            <font>Font-Condensed-S50-B</font>
+            <font>Font-Condensed-S50</font>
             <textcolor>white</textcolor>
             <shadowcolor></shadowcolor>
             <label>$INFO[Control.GetLabel(2)]</label>
@@ -30,21 +36,16 @@
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
 
-            <!-- Panel -->
-            <control type="image">
-                <include>FullscreenDimensions</include>
-                <texture>panel/console settings.png</texture>
-            </control>
+
             
             <!-- SpinCtrl Focus -->
-					<control type="image">
-						<posx>1750</posx>
-						<posy>85</posy>
-						<width>55</width>
-						<height>55</height>
-						<texture>icon/xbox.png</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
             
             <control type="label">
                 <description>Category</description>
@@ -55,7 +56,7 @@
                 <align>left</align>
                 <font>Font-Condensed-S37-B</font>
                 <label>$LOCALIZE[42130]</label>
-                <textcolor>darkgrey</textcolor>
+                <textcolor>white</textcolor>
                 <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="200" condition="ControlGroup(5).HasFocus" reversible="false">Conditional</animation>
                 <animation effect="fade" start="60" end="100" tween="sine" easing="inout" time="200" condition="!ControlGroup(5).HasFocus" reversible="false">Conditional</animation>
             </control>
@@ -129,8 +130,8 @@
                 <aligny></aligny>
                  <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
-                <textcolor>grey</textcolor>
-                <focusedcolor>darkgrey</focusedcolor>
+                <textcolor>white</textcolor>
+                <focusedcolor>orange</focusedcolor>
                 <disabledcolor>red</disabledcolor>
                 <font>Font-Condensed-S30-B</font>
                 <textoffsetx>35</textoffsetx>
@@ -143,8 +144,8 @@
                 <aligny>center</aligny>
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
-                <textcolor>grey</textcolor>
-                <focusedcolor>darkgrey</focusedcolor>
+                <textcolor>white</textcolor>
+                <focusedcolor>orange</focusedcolor>
                 <disabledcolor>red</disabledcolor>
                 <font>Font-Condensed-S30-B</font>
                 <textoffsetx>35</textoffsetx>
@@ -157,8 +158,8 @@
                 <aligny>center</aligny>
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
-                <textcolor>grey</textcolor>
-                <focusedcolor>darkgrey</focusedcolor>
+                <textcolor>white</textcolor>
+                <focusedcolor>orange</focusedcolor>
                 <disabledcolor>red</disabledcolor>
                 <font>Font-Condensed-S30-B</font>
                 <textoffsetx>35</textoffsetx>

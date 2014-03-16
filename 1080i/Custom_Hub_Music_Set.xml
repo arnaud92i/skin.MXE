@@ -14,12 +14,12 @@
 	</control>
                         <control type="label">
                             <posx>90</posx>
-                            <posy>170</posy>
+                            <posy>145</posy>
                             <width>746</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
                             <label>Music +</label>
-                            <font>Font-Condensed-S50</font>
+                            <font>Font-Condensed-S45</font>
                             <visible></visible>
                         </control>
 		    <control type="image">
@@ -47,7 +47,7 @@
 
             <!--Movies-->
             <control type="group" id="600">
-                <width>2300</width>
+                <width>2000</width>
                 <height>780</height>
                 <control type="button" id="525">
                     <onleft></onleft>
@@ -59,52 +59,44 @@
                 </control>
                 <control type="group" id="650">
                     <posx>250</posx>
-                    <posy>70</posy>
+                    <posy>0</posy>
 -----------------------------------------------------------------
                         <control type="panel" id="1">
                             <posx>70	</posx>
-                            <posy>50</posy>
-                            <width>430</width>
+                            <posy>60</posy>
+                            <width>460</width>
                              <height>600</height>
                             <onup>525</onup>
-                           <ondown>4</ondown>
-                             <onright>2</onright>
+                           <ondown>2</ondown>
+                             <onright>4</onright>
                             <onclick>-</onclick>
                             <viewtype label="List">List</viewtype>
                             <scrolltime tween="cubic" easing="out">800</scrolltime>
                             <orientation>horizontal</orientation>
                             <preloaditems>1</preloaditems>
-                            <itemlayout width="450" height="379">
+                            <itemlayout width="510" height="379">
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>0</posy>
-                                    <width>430</width>
-                                    <height>400</height>
+                                    <width>445</width>
+                                    <height>435</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </itemlayout>
-                            <focusedlayout width="450" height="379">
+                            <focusedlayout width="430" height="379">
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>0</posy>
-                                    <width>430</width>
-                                    <height>400</height>
+                                    <width>445</width>
+                                    <height>435</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>320</posy>
-                                    <width>430</width>
-                                    <height>80</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>panel/blend.png</texture>
-                                </control>
                                 <control type="label">
                                     <posx>10</posx>
-                                    <posy>335</posy>
-                                    <width>340</width>
+                                    <posy>300</posy>
+                                    <width>335</width>
                                     <height>35</height>
                                     <label>$INFO[ListItem.Label]</label>
                                     <font>font13_title</font>
@@ -117,11 +109,11 @@
                         <control type="image">
                         	<posx>-13</posx>
                	        	<posy>-13</posy>
-        	        	<width>455</width>
-        	        	<height>430</height>
+        	        	<width>475</width>
+        	        	<height>460</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </focusedlayout>
                             <content>
@@ -141,7 +133,7 @@
 ---------------------------------------------------
                                 <control type="label">
                         <posx>50</posx>
-                        <posy>-10</posy>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>-</label>
@@ -155,7 +147,7 @@
 
                                 <control type="label">
                         <posx>500</posx>
-                        <posy>-10</posy>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>FEATURED MUSIC</label>
@@ -169,7 +161,7 @@
 
                                 <control type="label">
                         <posx>900</posx>
-                        <posy>-10</posy>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>NEW MUSIC</label>
@@ -183,74 +175,62 @@
 ------------------------------------------------------------
 
 	<control type="panel" id="2">
-                        <posx>410</posx>
-                        <posy>2</posy>
-                        <width>500</width>
-                        <height>820</height>
-                        <onleft>1</onleft>
-                    	<onright>3</onright>
-                    	<onup>525</onup>
+                        <posx>50</posx>
+                        <posy>480</posy>
+                        <width>580</width>
+                        <height>250</height>
+                        <onleft></onleft>
+                    	<onright>4</onright>
+                    	<onup>1</onup>
                     	<ondown></ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="308">
+                        <scrolltime>0</scrolltime>
+                       <orientation>horizontal</orientation>
+                        <itemlayout width="225" height="194">
                             <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>295</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
+                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
+                <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>215</width>
+				<height>215</height> 
+			<texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
+			<aspectratio>stretch</aspectratio>
+                </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="308">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
-					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>295</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>290</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
+                        <focusedlayout width="225" height="194">
+                            <control type="group">
+                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
+				<animation effect="Zoom" end="100" time="200" center="auto"condition="true">Focus</animation>
+                <control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>215</width>
+				<height>215</height> 
+			<texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
+			<aspectratio>stretch</aspectratio>
+                </control>
+                                <control type="label">
+                                    <posx>20</posx>
+                                    <posy>190</posy>
+                                    <width>340</width>
+                                    <height>35</height>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <textcolor>green</textcolor>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+			<scroll>false</scroll>
+                                    <textoffsetx>20</textoffsetx>
                                 </control>
                         <control type="image">
-                        	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>320</width>
-        	        	<height>321</height>
+                        	<posx>5</posx>
+               	        	<posy>6</posy>
+        	        	<width>247</width>
+        	        	<height>248</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
@@ -264,9 +244,7 @@
                                     <property name="region">$INFO[Window(Home).Property(NearEvents.2.Region)]</property>
                                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[Window(Home).Property(NearEvents.2.Headliner)],return)</onclick>
                                     <onclick>Dialog.Close(1139)</onclick>
-
-                                 </item>
-						
+                                 </item>					
 	                        <item id="2">
                                     <label>$INFO[Window(Home).Property(NearEvents.3.Artists)]</label>
                                     <label2>$INFO[Window(Home).Property(NearEvents.3.Date)]</label2>
@@ -276,7 +254,6 @@
                                     <property name="region">$INFO[Window(Home).Property(NearEvents.3.Region)]</property>
                                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$ESCINFO[Window(Home).Property(NearEvents.3.Headliner)],return)</onclick>
                                     <onclick>Dialog.Close(1139)</onclick>
-
                                  </item>											
                         </content>
                     </control>
@@ -284,11 +261,11 @@
 
 ----------------------------------------------------
                         <control type="panel" id="3">
-                            <posx>750</posx>
-                            <posy>0</posy>
+                            <posx>800</posx>
+                            <posy>9</posy>
                         <width>800</width>
                         <height>820</height>
-                        <onleft>2</onleft>
+                        <onleft>4</onleft>
                     	<onright>5</onright>
                     	<onup>525</onup>
                     	<ondown></ondown>
@@ -298,7 +275,7 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="310" height="308">
+                        <itemlayout width="335" height="335">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -308,14 +285,14 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>295</width>
-                                    <height>295</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="310" height="308">
+                        <focusedlayout width="335" height="335">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
@@ -330,8 +307,8 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>295</width>
-                                    <height>295</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -347,11 +324,11 @@
                         <control type="image">
                         	<posx>-13</posx>
                	        	<posy>38</posy>
-        	        	<width>320</width>
-        	        	<height>321</height>
+        	        	<width>347</width>
+        	        	<height>347</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
@@ -407,60 +384,74 @@
                     </control>
 ----------------------------------------------------------
                     <control type="panel" id="4">
-                        <posx>45</posx>
-                        <posy>435</posy>
-                        <width>1200</width>
-                        <height>300</height>
-                        <onleft></onleft>
-                        <onright>2</onright>
-                        <onup>1</onup>
+                        <posx>410</posx>
+                        <posy>9</posy>
+                        <width>800</width>
+                        <height>820</height>
+                        <onleft>1</onleft>
+                        <onright>3</onright>
+                        <onup>525</onup>
                         <scrolltime>0</scrolltime>
-                        <itemlayout width="222" height="194">
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <preloaditems>4</preloaditems>
+                       <defaultcontrol>1</defaultcontrol>
+                        <focusposition>0</focusposition>
+                        <itemlayout width="335" height="335">
                             <control type="group">
-                                <animation effect="fade" end="90" time="200" condition="true">Conditional</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
                                 <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>210</width>
-                                    <height>195</height>
-                               <aspectratio>scale</aspectratio>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>325</width>
+                                    <height>325</height>
+                                    <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="222" height="194">
-                            <control type="group">
-                                <animation effect="fade" end="100" time="200" condition="true">Conditional</animation>
-				<animation effect="Zoom" end="100" time="200" center="auto"condition="true">Focus</animation>
+                        <focusedlayout width="335" height="335">
+			 <control type="group">
+				<posx>110</posx>
+				<animation type="Focus" reversible="false">
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
+                		</animation>
+				<posx>110</posx>
+				<animation type="WindowOpen" reversible="false">
+                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
+                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
+                		</animation>
                                 <control type="image">
-                                    <posx>24</posx>
-                                    <posy>24</posy>
-                                    <width>210</width>
-                                    <height>195</height>
-                               <aspectratio>scale</aspectratio>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>325</width>
+                                    <height>325</height>
+                                    <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
-                                <control type="label">
-                                    <posx>20</posx>
-                                    <posy>185</posy>
-                                    <width>340</width>
-                                    <height>35</height>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>290</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
                                     <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
                                     <textcolor>green</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-			<scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
                                 </control>
-                     <control type="image">
-                        	<posx>10</posx>
-               	        	<posy>10</posy>
-        	        	<width>245</width>
-        	        	<height>223</height>
+                        <control type="image">
+                        	<posx>-13</posx>
+               	        	<posy>38</posy>
+        	        	<width>347</width>
+        	        	<height>347</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
@@ -493,60 +484,16 @@
                     </control>
 -----------------------------------------------------------
 	<control type="panel" id="C">
-                        <posx>1440</posx>
-                        <posy>0</posy>
+                        <posx>1600</posx>
+                        <posy>35</posy>
                         <width>500</width>
                         <height>820</height>
                         <onleft>3</onleft>
                     	<onright>2</onright>
                     	<onup>525</onup>
                     	<ondown>3</ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
-                            <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>220</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/patter.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="215" height="205">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
-					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>220</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/patter.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </focusedlayout>
+                        <scrolltime>100</scrolltime>
+                        <include>pattercolors</include>
                         <content>
 
 								<item id="1">
@@ -560,7 +507,13 @@
 									<label>Recently added</label>
 									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
 									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-								</item>													
+								</item>
+								<item id="3">
+									<description>Recently Added</description>
+									<label>Recently added</label>
+									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
+									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+								</item>														
 							
 
                         </content>
@@ -571,99 +524,35 @@
 
 
 	<control type="panel" id="5">
-                        <posx>1440</posx>
-                        <posy>0</posy>
+                        <posx>1600</posx>
+                        <posy>35</posy>
                         <width>500</width>
                         <height>820</height>
                         <onleft>3</onleft>
                     	<onright>8</onright>
                     	<onup>525</onup>
                     	<ondown></ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
-                            <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>50</posx>
-                                    <posy>95</posy>
-                                    <width>100</width>
-                                    <height>100</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>200</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textcolor>white</textcolor>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="215" height="205">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
-					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>105</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>50</posx>
-                                    <posy>95</posy>
-                                    <width>100</width>
-                                    <height>100</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>200</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textcolor>white</textcolor>
-                                </control>
-                        <control type="image">
-                        	<posx>-15</posx>
-               	        	<posy>30</posy>
-        	        	<width>253</width>
-        	        	<height>230</height>
-		        	<align>center</align>
-		        	<aligny>center</aligny>
-		        	<texture border="40">icon/tile-fo.png</texture>
-                        	</control>
-                            </control>
-                        </focusedlayout>
+                       <scrolltime>100</scrolltime>
+                        <include>patterboxcontrol</include>
                         <content>
 
 								<item id="1">
 									<description>Titles</description>
-									<label>MusicLibrary</label>
+                                                                                  <label>Music's[CR]  Library</label>
 									<thumb>icon/music.png</thumb>
 									<onclick>ActivateWindow(MusicLibrary,root,return)</onclick>
 								</item>
 								<item id="2">
 									<description>Recently Added</description>
-									<label>Music Titles</label>
-									<thumb>hub/search.</thumb>
-									<onclick>ActivateWindow(63)</onclick>
+									<label>Collection</label>
+									<thumb>icon/Preferences.png</thumb>
+									<onclick>ActivateWindow(10502,&quot;musicdb://3/&quot;)</onclick>
+								</item>
+								<item id="3">
+									<description>Search</description>
+									<label>Search</label>
+									<thumb>icon/search.png</thumb>
+									<onclick>RunScript(&quot;script.globalsearch&quot;)</onclick>
 								</item>													
 						
 
@@ -692,16 +581,16 @@
                 </control>
                 <control type="group" id="450">
                     <posx>850</posx>
-                    <posy>70</posy>
+                    <posy>0</posy>
 
 ------------------------------------------------------------
 
 	<control type="panel" id="7">
-                        <posx>1000</posx>
-                        <posy>2</posy>
+                        <posx>1100</posx>
+                        <posy>9</posy>
                         <width>500</width>
                         <height>820</height>
-                        <onleft>8</onleft>
+                        <onleft>9</onleft>
                     	<onright></onright>
                     	<onup>425</onup>
                     	<ondown></ondown>
@@ -711,7 +600,7 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="215" height="305">
+                        <itemlayout width="215" height="335">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -722,13 +611,13 @@
                                     <posx>0</posx>
                                     <posy>49</posy>
                                     <width>250</width>
-                                    <height>295</height>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="215">
+                        <focusedlayout width="215" height="335">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
@@ -744,7 +633,7 @@
                                     <posx>0</posx>
                                     <posy>49</posy>
                                     <width>250</width>
-                                    <height>295</height>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -759,12 +648,12 @@
                                 </control>
                         <control type="image">
                         	<posx>-13</posx>
-               	        	<posy>38</posy>
+               	        	<posy>36</posy>
         	        	<width>276</width>
-        	        	<height>321</height>
+        	        	<height>349</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
@@ -788,8 +677,8 @@
 ---------------------------------------------------
                                 <control type="label">
                         <posx>-50</posx>
-                        <posy>-10</posy>
-                                    <width>400</width>
+                        <posy>20</posy>
+                                    <width>380</width>
                                     <height>35</height>
                                     <label>FEATURED MUSIC</label>
                                     <font>font13_title</font>
@@ -801,8 +690,8 @@
                                 </control>
 
                                 <control type="label">
-                        <posx>600</posx>
-                        <posy>-10</posy>
+                        <posx>750</posx>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>POPULAR MUSIC</label>
@@ -816,7 +705,7 @@
 
                                 <control type="label">
                         <posx>1100</posx>
-                        <posy>-10</posy>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>-</label>
@@ -831,7 +720,7 @@
 ----------------------------------------------------
 	<control type="panel" id="8">
                         <posx>-150</posx>
-                        <posy>2</posy>
+                        <posy>9</posy>
                         <width>900</width>
                         <height>820</height>
                         <onleft>5</onleft>
@@ -844,7 +733,7 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="310" height="305">
+                        <itemlayout width="335" height="335">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -854,14 +743,14 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>295</width>
-                                    <height>295</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="310" height="215">
+                        <focusedlayout width="335" height="335">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
@@ -876,8 +765,8 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>295</width>
-                                    <height>295</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -892,12 +781,12 @@
                                 </control>
                         <control type="image">
                         	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>320</width>
-        	        	<height>320</height>
+               	        	<posy>36</posy>
+        	        	<width>349</width>
+        	        	<height>349</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
@@ -933,10 +822,10 @@
 
 ----------------------------------------------------------
 	<control type="panel" id="9">
-                        <posx>620</posx>
-                        <posy>50</posy>
+                        <posx>720</posx>
+                        <posy>60</posy>
                             <width>430</width>
-                             <height>600</height>
+                             <height>670</height>
                             <onup>425</onup>
                            <ondown></ondown>
                         <onleft>8</onleft>
@@ -951,7 +840,7 @@
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <width>430</width>
-                                    <height>600</height>
+                                    <height>660</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -961,15 +850,15 @@
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <width>430</width>
-                                    <height>600</height>
+                                    <height>660</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="image">
                                     <posx>0</posx>
-                                    <posy>520</posy>
+                                    <posy>560</posy>
                                     <width>430</width>
-                                    <height>80</height>
+                                    <height>100</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>panel/blend.png</texture>
                                 </control>
@@ -990,10 +879,10 @@
                         	<posx>-13</posx>
                	        	<posy>-13</posy>
         	        	<width>455</width>
-        	        	<height>625</height>
+        	        	<height>685</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </focusedlayout>
                             <content>

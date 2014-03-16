@@ -5,63 +5,272 @@
 		<include>CommonContent</include>
                   <include>CommonStage</include>
                 <include>FadeBackground</include>
+
+
 		<control type="image">
 					<posx>0</posx>
-					<posy>100</posy>
-					<width>1920</width>
-					<height>850</height>
-			<texture>colors/black.png</texture>
+					<posy>0</posy>
+					<width>1000</width>
+					<height>1200</height>
+			<texture>colors/pure blue.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
+		<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1000</width>
+					<height>1200</height>
+			<texture>panel/stage.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+					<posx>1000</posx>
+					<posy>0</posy>
+					<width>520</width>
+					<height>1200</height>
+			<texture>colors/white.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+					<posx>1530</posx>
+					<posy>0</posy>
+					<width>520</width>
+					<height>1200</height>
+			<texture>colors/silver.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+			<control type="image">
+					<posx>110</posx>
+					<posy>100</posy>
+					<width>700</width>
+					<height>800</height>
+					<texture fallback="unknown-user">$INFO[Skin.String(GamerPicture)]</texture>
+					<texture diffuse="windows/logon/profile_mask.png" />
+					<aspectratio>stretch</aspectratio>
+					<visible>!Window.IsActive(126)</visible>
+                        </control>
 
+
+--------------------------------------------------------------------------------------------
+
+
+                    <control type="group" id="200">
+                        <description>Spotlight (random items)</description>
+                        <posx>100</posx>
+                        <posy>600</posy>
+			<animation type="Conditional" condition="ControlGroup(200).HasFocus">
+                        <effect type="zoom" start="100" end="100" delay="0" time="250" tween="cubic" easing="inout" center="500,600" />
+                    </animation>
+
+
+                        <control type="panel" id="11">
+                            <posx></posx>
+                            <posy>-71</posy>
+                            <width>1000</width>
+                            <height>660</height>
+                            <onup></onup>
+                           <ondown>9</ondown>
+                             <onright>19</onright>
+                            <viewtype label="List">List</viewtype>
+                            <scrolltime tween="cubic" easing="out">800</scrolltime>
+                            <orientation>vertical</orientation>
+                            <preloaditems>1</preloaditems>
+                            <animation type="Conditional" condition="ControlGroup(506).HasFocus">
+                            	<effect type="fade" start="100" end="100" time="300" tween="cubic" easing="inout" />
+                            	<effect type="zoom" start="100" end="100,100" time="200" tween="cubic" easing="inout" center="auto" />
+                            </animation>
+                            <itemlayout width="300" height="700">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>590</width>
+                                    <height>595</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="textbox">
+                                    <posx>650</posx>
+                                    <posy>10</posy>
+                                    <width>190</width>
+                                    <height>500</height>
+                                    <font>font24_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>green</textcolor>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="300" height="700">
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>590</width>
+                                    <height>595</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="textbox">
+                                    <posx>650</posx>
+                                    <posy>10</posy>
+                                    <width>190</width>
+                                    <height>500</height>
+                                    <font>font24_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>green</textcolor>
+                                </control>
 					<control type="image">
-						<posx>350</posx>
-						<posy>150</posy>
-						<width>2</width>
-						<height>600</height>
+						<posx>615</posx>
+						<posy>-10</posy>
+						<width>250</width>
+						<height>90</height>
+						<texture border="20">icon/tile-fo.png</texture>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+						<aspectratio>stretch</aspectratio>
+					</control>
+                            </focusedlayout>
+                            <content>
+				<item id="0">
+                                    <onclick>ActivateWindow(profiles)</onclick>
+                                    <icon>wraplist/Friendly1.</icon>
+                                    <label>-</label>
+                                </item>
+                            </content>
+                        </control>
+					<control type="image">
+						<posx>1000</posx>
+						<posy>-25</posy>
+						<width>4</width>
+						<height>570</height>
 						<texture>osd/media-guide/line.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>white</colordiffuse>
 					</control>
+
+
+
+------row --------------------
+                                <control type="textbox">
+                                    <posx>25</posx>
+                                    <posy>230</posy>
+                                    <width>650</width>
+                                    <height>500</height>
+                                    <font>Font-Condensed-S40</font>
+                                    <label>$INFO[Skin.String(XboxLive.Gamer.RecentlyPlayed.Title.1)]</label>
+                                    <textcolor>green</textcolor>
+                                </control>
 					<control type="image">
-						<posx>980</posx>
-						<posy>150</posy>
-						<width>2</width>
-						<height>600</height>
+						<posx>25</posx>
+						<posy>305</posy>
+						<width>820</width>
+						<height>4</height>
 						<texture>osd/media-guide/line.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>white</colordiffuse>
 					</control>
+
+----row 1----------
+                                <control type="image">
+                                    <posx>700</posx>
+                                    <posy>240</posy>
+                                    <width>40</width>
+                                    <height>40</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>icon/g.png</texture>
+                                </control>
+                                <control type="textbox">
+                                    <posx>750</posx>
+                                    <posy>237</posy>
+                                    <width>190</width>
+                                    <height>500</height>
+                                    <font>Font-Condensed-S29</font>
+                                    <label fallback="No Info">$INFO[Skin.String(XboxLive.Gamer.Score,,$LOCALIZE[41823]]</label>
+                                    <textcolor>orange</textcolor>
+                                </control>
+                                <control type="textbox">
+                                    <posx>25</posx>
+                                    <posy>320</posy>
+                                    <width>190</width>
+                                    <height>500</height>
+                                    <font>Font-Condensed-S29-B</font>
+                                    <label>Friends</label>
+                                    <textcolor>green</textcolor>
+                                </control>
+                                <control type="textbox">
+                                    <posx>45</posx>
+                                    <posy>360</posy>
+                                    <width>190</width>
+                                    <height>500</height>
+                                    <font>Font-Condensed-S29</font>
+                                    <label fallback="No Info">No Info</label>
+                                    <textcolor>orange</textcolor>
+                                </control>
+                                <control type="textbox">
+                                    <posx>700</posx>
+                                    <posy>320</posy>
+                                    <width>190</width>
+                                    <height>500</height>
+                                    <font>Font-Condensed-S29-B</font>
+                                    <label>Reputation</label>
+                                    <textcolor>green</textcolor>
+                                </control>
+                                <control type="textbox">
+                                    <posx>720</posx>
+                                    <posy>360</posy>
+                                    <width>190</width>
+                                    <height>500</height>
+                                    <font>Font-Condensed-S29</font>
+                                    <label>Good player</label>
+                                    <textcolor>orange</textcolor>
+                                </control>
+--------row 2-------
+		    <control type="multiimage">
+                         <include></include>
+                         <posx>380</posx>
+                        <posy>315</posy>
+                        <width>180</width>
+                        <height>180</height>
+                        <imagepath>rating/New folder/</imagepath>
+		<timeperimage>200</timeperimage>
+		<fadetime></fadetime>
+		<pauseatend>4000</pauseatend>
+		<randomize></randomize>
+		<loop>no</loop>
+        </control>
+   </control>
+----------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 		<control type="group">
 			<visible>Control.Hasfocus(550)</visible>
 
+
 			<control type="image">
-					<posx>500</posx>
-					<posy>160</posy>
-					<width>140</width>
-					<height>139</height>
-					<texture fallback="unknown-user">$INFO[Skin.String(GamerPicture)]</texture>
-					<texture diffuse="windows/logon/profile_mask.png" />
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<visible>!Window.IsActive(126)</visible>
-                        </control>
-			<control type="image">
-					<posx>980</posx>
-					<posy>150</posy>
+					<posx>1220</posx>
+					<posy>748</posy>
 					<width>135</width>
-					<height>35</height>
+					<height>40</height>
 					<texture>$INFO[Skin.String(GamerRep)]</texture>
 					<aspectratio>stretch</aspectratio>
 					<visible>!Window.IsActive(126)</visible>
+ <visible>Container(550).HasFocus(7)</visible>
                         </control>
 			<control type="image">
-					<posx>500</posx>
-					<posy>350</posy>
-					<width>40</width>
-					<height>40</height>
+					<posx>1305</posx>
+					<posy>295</posy>
+					<width>60</width>
+					<height>60</height>
 					<texture>$INFO[Skin.String(GamerColor)]</texture>
+					<visible>!Window.IsActive(126)</visible>
+                        </control>
+			<control type="image">
+					<posx>1305</posx>
+					<posy>295</posy>
+					<width>60</width>
+					<height>60</height>
+					<texture>colors/triangle.png</texture>
 					<visible>!Window.IsActive(126)</visible>
                         </control>
 			<control type="image">
@@ -124,8 +333,8 @@
 
 
 			<control type="list" id="550">
-				<posx>100</posx>
-				<posy>137</posy>
+				<posx>1100</posx>
+				<posy>200</posy>
 				<width>685</width>
 				<height>700</height>
 				<onup>-</onup>
@@ -134,87 +343,93 @@
 				<orientation>vertical</orientation>
 				<scrolltime>100</scrolltime>
 				<visible>!Window.IsActive(126)</visible>
-				<itemlayout width="807" height="65">
-
+				<itemlayout width="807" height="90">
 					<control type="label">
 						<posx>20</posx>
-						<posy>0</posy>
+						<posy>25</posy>
 						<width>700</width>
 						<height>62</height>
 						<info>ListItem.Label</info>
-						<font>Font-Condensed-S34-B</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
+						<font>font13_title</font>
+						<textcolor>darkgrey2</textcolor>
+						<align></align>
+					</control>
+					<control type="image">
+						<posx>10</posx>
+						<posy>87</posy>
+						<width>250</width>
+						<height>4</height>
+						<texture>osd/media-guide/line.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>darkgrey2</colordiffuse>
 					</control>
 				</itemlayout>
-				<focusedlayout width="807" height="65">
+				<focusedlayout width="807" height="90">
+					<control type="label">
+						<posx>20</posx>
+						<posy>25</posy>
+						<width>700</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>darkgrey2</textcolor>
+						<align></align>
+					</control>
+					<control type="image">
+						<posx>10</posx>
+						<posy>87</posy>
+						<width>250</width>
+						<height>4</height>
+						<texture>osd/media-guide/line.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>darkgrey2</colordiffuse>
+					</control>
 					<control type="image">
 						<posx>-8</posx>
 						<posy>-12</posy>
-						<width>250</width>
-						<height>90</height>
+						<width>290</width>
+						<height>113</height>
 						<texture border="40">icon/tile-fo.png</texture>
-		        	<align>center</align>
-		        	<aligny>center</aligny>
+		        	                           <align>center</align>
+		        	                           <aligny>center</aligny>
 						<aspectratio>stretch</aspectratio>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>700</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>Font-Condensed-S34-B</font>
-						<textcolor>green</textcolor>
-						<align>left</align>
+                                                      <colordiffuse>darkgrey2</colordiffuse>
 					</control>
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>GamerRep</label>
-						<onclick>ActivateWindow(1123,return)</onclick>  
+						<label>Appear offline</label>
+						<onclick>ActivateWindow(,return)</onclick>  
 						<include>GuideDialogClose</include>
 					</item>
 					<item id="2">
-						<label>Gamer Picture</label>
-						<onclick>Skin.SetImage(GamerPicture,$INFO[Skin.String(GamerPictures)]/)</onclick>
+						<label>Choose color</label>
+						<onclick>Skin.SetImage(GamerColor,$INFO[Skin.String(GamerColor)]/)</onclick>
 						<include>GuideDialogClose</include>
 					</item>
 					<item id="3">
-						<label>Gamer Zone</label>
-						<onclick>Skin.SetString(Gamer Zone)</onclick>
+						<label>Set gamerpic</label>
+						<onclick>Skin.SetImage(GamerPicture,$INFO[Skin.String(GamerPictures)]/)</onclick>
 						<include>GuideDialogClose</include>
 					</item>
 					<item id="4">
-                                                      <description>GamerColor</description>
-						<label>GamerColor</label>
-						<onclick>Skin.SetImage(GamerColor,$INFO[Skin.String(GamerColor)]/)</onclick>
+						<label>Set gamertag</label>
+						<onclick>ActivateWindow(profiles,return)</onclick>
 						<include>GuideDialogClose</include>
-                                                      <visible></visible>
 					</item>
 					<item id="5">
-						<label>Motto</label>
-						<onclick>Skin.SetString(Motto)</onclick>
+						<label>Customize avatar</label>
+						<onclick>ActivateWindow(,return)</onclick>
 						<include>GuideDialogClose</include>
 					</item>
 					<item id="6">
-						<label>Name</label>
-						<onclick>Skin.SetString(Name)</onclick>
+						<label>Privacy settings</label>
+						<onclick>ActivateWindow(,return)</onclick>
 						<include>GuideDialogClose</include>
 					</item>
 					<item id="7">
-						<label>Location</label>
-						<onclick>Skin.SetString(Location)</onclick>
-						<include>GuideDialogClose</include>
-					</item>
-					<item id="8">
-						<label>Bio</label>
-						<onclick>Skin.SetString(Bio)</onclick>
-						<include>GuideDialogClose</include>
-					</item>
-					<item id="9">
-						<label>Theme</label>
-						<onclick>Skin.SetImage(Theme,$INFO[Skin.String(Theme)]/)</onclick>
+						<label>Set reputation</label>
+						<onclick>ActivateWindow(1123,return)</onclick>
 						<include>GuideDialogClose</include>
 					</item>
 				</content>

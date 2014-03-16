@@ -88,21 +88,34 @@
 				</control>
 				<control type="label">
 					<posx>570</posx>
-					<posy>840</posy>
+					<posy>850</posy>
 					<width>2000</width>
-					<font>font13_title</font>
+					<font>font24_title</font>
 					<align>left</align>
 					<onup>32</onup>
 					<ondown>49</ondown>
-					<textcolor>black</textcolor>
+					<textcolor>darkgrey</textcolor>
 					<label>You can search for games. Type what your looking for.</label>
 					<visible>IsEmpty(Control.GetLabel(310))</visible>
 					<animation effect="fade" time="1000" start="0" end="100" tween="sine" easing="in">Window.IsActive(keyboard)</animation>
 				</control>
 
+
+----------------------------------------------------------------
+                                <control type="image">
+                                    <posx>115</posx>
+                                    <posy>900</posy>
+                                    <width>1710</width>
+                                    <height>70</height>
+                                    <aspectratio>stretch</aspectratio>
+                                    <texture>panel/blend.png</texture>
+                                    <visible>Control.Hasfocus(3)</visible>
+                                </control>
+
+
 			<control type="list" id="3">
-				<posx>300</posx>
-				<posy>715</posy>
+				<posx>115</posx>
+				<posy>850</posy>
 				<width>4000</width>
 				<height>200</height>
 				<onleft></onleft>
@@ -114,7 +127,7 @@
 				<scrolltime>0</scrolltime>
 				<animation effect="slide" time="250" start="0,-80" end="0,0" delay="350" easing="in">WindowOpen</animation>
 				<animation effect="slide" time="250" start="0,0" end="0,-80"  easing="out">WindowClose</animation>
-				<itemlayout width="45" height="100">
+				<itemlayout width="55" height="100">
 					<control type="label">
 						<posx>100</posx>
 						<posy>60</posy>
@@ -126,7 +139,7 @@
 						<align>right</align>
 					</control>
 				</itemlayout>
-				<focusedlayout width="45" height="100">
+				<focusedlayout width="55" height="100">
 					<control type="label">
 						<posx>100</posx>
 						<posy>75</posy>
@@ -548,13 +561,13 @@
 						<control type="button" id="32">
 								<textcolor>white</textcolor>
 								<description>:space: button</description>
-								<posx>3290</posx>
+								<posx>3180</posx>
 								<onleft>90</onleft>
 								<onright>300</onright>
 								<onup>74</onup>
 								<ondown>2</ondown>
 								<font>Font-Condensed-S34</font>
-								<label>_</label>
+								<label> _</label>
 						</control>
 						<control type="button" id="300">
 								<textcolor>green</textcolor>

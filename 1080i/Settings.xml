@@ -86,7 +86,7 @@
 				<posy>259</posy>
 				<width>600</width>
 				<height>400</height>
-				<font>Font-Condensed-S29</font>
+				<font>font13_title</font>
 				<textcolor>white</textcolor>
 				<info>Container(8000).ListItem.Label2</info>
   <visible>Control.HasFocus(8000)</visible>
@@ -97,7 +97,7 @@
 				<posy>259</posy>
 				<width>600</width>
 				<height>400</height>
-				<font>Font-Condensed-S29</font>
+				<font>font13_title</font>
 				<textcolor>white</textcolor>
 				<info>Container(8001).ListItem.Label2</info>
 <visible>Control.HasFocus(8001)</visible>
@@ -109,7 +109,7 @@
 				<posx>450</posx>
 				<posy>250</posy>
 				<width>650</width>
-				<height>650</height>
+				<height>670</height>
 				<onleft>8000</onleft>
 				<onright>8001</onright>
 				<onup>8001</onup>
@@ -119,13 +119,13 @@
                         <orientation>vertical</orientation>
                         <preloaditems>4</preloaditems>
                         <focusposition>0</focusposition>
-				<itemlayout width="210" height="210">
+				<itemlayout width="210" height="213">
                         <control type="image">
 				<posx>24</posx>
 				<posy>24</posy>
 				<width>200</width>
 				<height>200</height>                    				                                                                              
-                                    <texture>colors/patter.png</texture>        
+                                    <texture>colors/grey85%.png</texture>        
                         </control>
 					<control type="image">
 						<posx>85</posx>
@@ -147,13 +147,13 @@
 						<align>left</align>
 					</control>
 				</itemlayout>
-				<focusedlayout width="210" height="210">
+				<focusedlayout width="210" height="213">
                         <control type="image">
 				<posx>24</posx>
 				<posy>24</posy>
 				<width>200</width>
 				<height>200</height>                    				                                                                              
-                                    <texture>colors/patter.png</texture>        
+                                    <texture>colors/grey85% - Copy.png</texture>        
                         </control>
 					<control type="image">
 						<posx>85</posx>
@@ -186,62 +186,177 @@
 				</focusedlayout>
 				<content>
 					<item id="0">
-						<label>Console Settings</label>
-						<label2>Welcome to a new generation[CR]of games and entertainment.</label2>
-						<onclick>ActivateWindow(appearancesettings,return)</onclick>
+						<label>User Guide</label>
+						<label2>Experience world-class multiplayer gaming on any Xbox with Xbox Live Gold.
+
+And with Xbox One, take advantage of smarter matchmaking that pairs you with the most worthy opponents. Completely reengineered for a new generation of gaming, Smart Match uses advanced algorithms to pair players based on skill, language, and now reputation. That means you play people that are most like you. And best of all, you no longer have to wait in lobbies while a match is found. Feel free to play a game, watch TV, or listen to music while we find your perfect match. Then you can jump in instantly.
+
+Learn more about gaming on Xbox One </label2>
+						<onclick>RunScript(special://skin/system/0300030/XBMC-User-Guide.py)</onclick>
 						<thumb>-</thumb>
-						<icon>icon/console.png</icon>
+						<icon>icon/User Guide.png</icon>
 					</item>	
 					<item id="1">
 						<label>Initial Setup</label>
-						<label2>Start the original system setup.[CR]you can't run setup if[CR]console saftey is on</label2>
+						<label2>A factory reset, also known as master reset, is a software restore of an electronic device to its original system state by erasing all of the information stored on the device in an attempt to restore the device’s software to its original manufacturer settings. Doing so will erase all of the data, settings, and applications that were previously on the device.</label2>
 						<onclick>ActivateWindow(1111,return)</onclick>
 						<icon>icon/Emoji_26A0_33.png</icon>
 					</item>
 					<item id="2">
 						<label>VideosSettings</label>
-						<label2>Settings console including.[CR]Library,Playback,File,Subtitles,DVDs</label2>
+						<label2>This section covers topics and guides covering playing videos, the video library, video management, scanning content in, playing video content off the internet, and more. The Video Library allows the organization of your video content by information such as genre, title, year, actors and directors, smart playlists, advanced search and filtering, custom sections, etc. XBMC will search the internet and download rich metadata for your videos, such as cover art, summaries, and cast credits. </label2>
 						<onclick>ActivateWindow(VideosSettings,return)</onclick>
 						<icon>icon/video.png</icon>
 					</item>
 					<item id="3">
 						<label>LiveTv</label>
-						<label2>Settings console including.[CR]LiveTv on/off,Epg,Recording.</label2>
+						<label2>Settings for Live TV and PRV features are found here. Change fullscreen info, manage EPG data settings, etc. Live TV settings also are set in the individual PVR add-on settings that you enabled during PVR setup.This section covers topics and guides on how to watch TV content in XBMC, including Live TV/PVR/DVR functions, internet content, and more.PVR - The main PVR/DVR and Live TV feature set in XBMC.
+
+</label2>
 						<onclick>ActivateWindow(PVRSettings,return)</onclick>
 						<icon>icon/livetv.png</icon>
 					</item>
 					<item id="4">
 						<label>MusicSettings</label>
-						<label2>Settings console including.[CR]</label2>
+						<label2>This section covers topics and guides on playing audio, the music library, library management, ripping and scanning music in, playing music content off of the internet, and more. The Music Library allows the organization of your music collection by information stored in your music file ID tag, like title, artist, album, genre and popularity. </label2>
 						<onclick>ActivateWindow(MusicSettings,return)</onclick>
 						<icon>icon/music.png</icon>
 					</item>
 					<item id="5">
 						<label>PicturesSettings</label>
-						<label2>Settings console including.[CR]</label2>
+						<label2>Pictures is an easy way to view your pictures. It allows you to view them as a slideshow with nice transition effects and even allows you to listen to your music while viewing your slideshow.   </label2>
 						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
 						<icon>icon/foto.png</icon>
 					</item>
 					<item id="6">
 						<label>WeatherSettings</label>
-						<label2>Settings console including.[CR]</label2>
+						<label2>Select which weather add-on to use, and a short cut to that add-on's configuration. Weather display options are found under Appearance and sometimes under the individual skin options, depending on the skin you use. </label2>
 						<onclick>ActivateWindow(WeatherSettings,return)</onclick>
 						<icon>icon/weather.png</icon>
 					</item>
 					<item id="7">
-						<label>AddonBrowser</label>
-						<label2>Settings console including.[CR]</label2>
+						<label>Addons</label>
+						<label2>Add-ons are packages that add features and functions not normally included with XBMC. Add-ons are developed by people on Team XBMC and third-parties. XBMC has a growing list of community driven add-ons for online content like YouTube, Hulu, Grooveshark, Pandora Radio, as well as skins (themes) and more available from a common official repository, while still enabling third-party developers to also host their own unofficial repositories for add-ons that any user can choose to add themselves if they like. </label2>
 						<onclick>ActivateWindow(AddonBrowser,root,return)</onclick>
 						<icon>icon/shop.png</icon>
 					</item>
 					<item id="8">
 						<label>NetworkSettings</label>
-						<label2>Settings console including.[CR]</label2>
+						<label2>Network services settings are found here. Setup control of XBMC via UPnP and HTTP, configure file sharing, enable zeroconf, configure AirPlay, etc. </label2>
 						<onclick>ActivateWindow(ServiceSettings,return)</onclick>
 						<icon>icon/signal.png</icon>
 					</item>
 				</content>
 			</control>
+--------------------------------------------------------------------
+			<control type="panel" id="FFF">
+				<posx>70</posx>
+				<posy>325</posy>
+				<width>350</width>
+				<height>1000</height>
+				<onleft></onleft>
+				<onright>8001</onright>
+				<onup>222</onup>
+				<ondown>8000</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="259" height="80">
+
+					<control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>310</width>
+				<height>70</height> 
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="259" height="80">
+
+					<control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>310</width>
+				<height>70</height> 
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+                        <control type="image">
+                        	<posx>7</posx>
+               	        	<posy>6</posy>
+        	        	<width>340</width>
+        	        	<height>105</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+                                                        <label>-</label>
+						<onclick>ActivateWindow(appearancesettings,return)</onclick>
+						<icon>$INFO[Skin.String(GamerColor)]</icon>
+					</item>	
+					<item id="1">
+                                                        <label>-</label>
+						<onclick>ActivateWindow(1111,return)</onclick>
+						<icon>$INFO[Skin.String(GamerColor)]</icon>
+					</item>
+					<item id="2">
+                                                        <label>-</label>
+						<onclick>ActivateWindow(VideosSettings,return)</onclick>
+						<icon>$INFO[Skin.String(GamerColor)]</icon>
+					</item>
+					<item id="3">
+                                                        <label>-</label>
+						<onclick>ActivateWindow(PVRSettings,return)</onclick>
+						<icon>$INFO[Skin.String(GamerColor)]</icon>
+					</item>
+					<item id="4">
+                                                        <label>-</label>
+						<onclick>ActivateWindow(MusicSettings,return)</onclick>
+						<icon>$INFO[Skin.String(GamerColor)]</icon>
+					</item>
+					<item id="5">
+                                                        <label>-</label>
+						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
+						<icon>$INFO[Skin.String(GamerColor)]</icon>
+					</item>
+					<item id="6">
+                                                        <label>-</label>
+						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
+						<icon>$INFO[Skin.String(GamerColor)]</icon>
+					</item>
+				</content>
+			</control>
+
+
+--------------------------------------------
 			<control type="panel" id="8000">
 				<posx>70</posx>
 				<posy>325</posy>
@@ -262,7 +377,7 @@
 				<posy>24</posy>
 				<width>310</width>
 				<height>70</height>                    				                                                                              
-                                    <texture>colors/patter.png</texture>        
+                                    <texture>colors/patter.</texture>        
                         </control>
 					<control type="image">
 						<posx>40</posx>
@@ -290,7 +405,7 @@
 				<posy>24</posy>
 				<width>310</width>
 				<height>70</height>                    				                                                                              
-                                    <texture>colors/patter.png</texture>        
+                                    <texture>colors/patter.</texture>        
                         </control>
 					<control type="image">
 						<posx>40</posx>
@@ -323,47 +438,47 @@
 				</focusedlayout>
 				<content>
 					<item id="0">
-						<label>Console Settings</label>
-						<label2>Welcome to a new generation[CR]of games and entertainment.</label2>
+						<label>Settings GUI</label>
+						<label2>Settings for the GUI are found here. Change the current skin, set language and region, change file listing options, set up a screen saver, etc. </label2>
 						<onclick>ActivateWindow(appearancesettings,return)</onclick>
 						<thumb>-</thumb>
 						<icon>icon/console.png</icon>
 					</item>	
 					<item id="1">
-						<label>Initial Setup</label>
-						<label2>Start the original system setup.[CR]you can't run setup if[CR]console saftey is on</label2>
-						<onclick>ActivateWindow(1111,return)</onclick>
-						<icon>icon/Emoji_26A0_33.png</icon>
+						<label>Turn off Console</label>
+						<label2>Turning off the console will also turn off[CR]all controllers</label2>
+						<onclick>ActivateWindow(111,return)</onclick>
+						<icon>icon/Turn off.png</icon>
 					</item>
 					<item id="2">
-						<label>VideosSettings</label>
-						<label2>Settings console including.[CR]Library,Playback,File,Subtitles,DVDs</label2>
-						<onclick>ActivateWindow(VideosSettings,return)</onclick>
-						<icon>icon/video.png</icon>
+						<label>RSS Editor</label>
+						<label2>XBMC can display an RSS feed on the home screen of the default skin/interface (Confluence), as well as any other skin that supports RSS feeds. By default, the RSS news feed is taken from http://xbmc.org, but the feed can be changed to almost any RSS feed. </label2>
+						<onclick>RunScript(&quot;script.rss.editor&quot;)</onclick>
+						<icon>icon/RSS.png</icon>
 					</item>
 					<item id="3">
-						<label>LiveTv</label>
-						<label2>Settings console including.[CR]LiveTv on/off,Epg,Recording.</label2>
-						<onclick>ActivateWindow(PVRSettings,return)</onclick>
-						<icon>icon/livetv.png</icon>
+						<label>Remote Controls</label>
+						<label2>In XBMC the primary environment was designed for the living room (10-foot interface) and controlling it only with a remote control. While XBMC does support mouse, keyboard, and even touch controls, the main method of controlling XBMC is designed around is the typical remote. This further enhances the appliance feel of the XBMC and fits next to (or replaces) the other remotes that are likely to be in your entertainment room. </label2>
+						<onclick>RunScript(&quot;script.keymap&quot;)</onclick>
+						<icon>icon/Remote.png</icon>
 					</item>
 					<item id="4">
-						<label>MusicSettings</label>
+						<label>Update Addons</label>
 						<label2>Settings console including.[CR]</label2>
-						<onclick>ActivateWindow(MusicSettings,return)</onclick>
-						<icon>icon/music.png</icon>
+						<onclick>UpdateLocalAddons</onclick>
+						<icon>icon/Update.png</icon>
 					</item>
 					<item id="5">
-						<label>PicturesSettings</label>
+						<label>Reload Skin</label>
 						<label2>Settings console including.[CR]</label2>
-						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
-						<icon>icon/foto.png</icon>
+						<onclick>ReloadSkin</onclick>
+						<icon>icon/reload.png</icon>
 					</item>
 					<item id="6">
-						<label>PicturesSettings</label>
-						<label2>Settings console including.[CR]</label2>
-						<onclick>ActivateWindow(PicturesSettings,return)</onclick>
-						<icon>icon/foto.png</icon>
+						<label>SystemSettings</label>
+						<label2>System settings are found here. Setup and calibrate displays/video output, configure audio output, setup remote controls, set power saving options, enable debugging, setup master lock. </label2>
+						<onclick>activatewindow(SystemSettings)</onclick>
+						<icon>icon/Settings.png</icon>
 					</item>
 				</content>
 			</control>

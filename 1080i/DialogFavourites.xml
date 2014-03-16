@@ -104,22 +104,6 @@
                                     <aspectratio>stretch</aspectratio>
                                     <texture>$INFO[ListItem.Icon]</texture>
                                 </control>
-                                <control type="image">
-                                    <posx>0</posx>
-                                <posy>234</posy>
-                                    <width>220</width>
-                                    <height>35</height>
-	                <colordiffuse>FF000000</colordiffuse>
-                        <texture>colors/black.png</texture>
-                                </control>
-		               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>220</width>
-                                    <height>220</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>icon/glass.png</texture>
-			     </control>
                                 <control type="textbox">
                                     <posx>10</posx>
                                     <posy>230</posy>
@@ -129,6 +113,29 @@
                                     <label>$INFO[ListItem.Label]</label>
                                     <textcolor>green</textcolor>
                                 </control>
+                        <control type="image">
+                        	<posx>-15</posx>
+               	        	<posy>30</posy>
+        	        	<width>250</width>
+        	        	<height>250</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        	<texture border="40">icon/tile-black.png</texture>
+                        	</control>
+                    <control type="textbox">
+                        <posx>20</posx>
+                        <posy>185</posy>
+                        <width>180</width>
+                        <height>59</height>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>white</textcolor>
+                        <align>justify</align>
+                        <align></align>
+                        <font>font13_title</font>
+                        <scroll>false</scroll>
+                        <scrollout>false</scrollout>
+                        <autoscroll time="1500" delay="500" repeat="1000" />
+                    </control>
                             </control>
                         </focusedlayout>
 

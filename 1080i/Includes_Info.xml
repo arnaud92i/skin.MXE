@@ -487,32 +487,8 @@
                 <effect type="zoom" start="100" end="50" center="1745,100" tween="sine" easing="inout" time="300" />
             </animation>
             <control type="group">
-                <control type="label">
-                    <description>Title label</description>
-                    <posx>-255</posx>
-                    <posy>5</posy>
-                    <width>771</width>
-                    <height>120</height>
-                    <label>$INFO[MusicPlayer.Title]</label>                 
-                    <font>Font-Condensed-S26-B</font>
-                    <textcolor>green</textcolor>
-                    <scroll>false</scroll>
-                    <align>left</align>
-                     <visible>!Control.HasFocus(9999)+Control.HasFocus(525)</visible>
-                </control>
-                <control type="label" id="934">
-                    <description>Artist label</description>
-                    <posx>-255</posx>
-                    <posy>-25</posy>
-                    <width>771</width>
-                    <height>120</height>
-                    <label>$VAR[NowPlayingSubTitle]</label>
-                    <font>Font-Condensed-S31-B</font>
-                    <textcolor>orange</textcolor>
-                    <scroll>false</scroll>
-                    <align>left</align>
-                     <visible>!Control.HasFocus(9999)+Control.HasFocus(525)+Player.HasAudio</visible>
-                </control>
+
+
 
     			<control type="image">
     			    <description>Now Playing - Paused</description>

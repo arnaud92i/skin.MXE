@@ -32,6 +32,16 @@
                             <font>Font-Condensed-S50</font>
                             <visible></visible>
                         </control>
+			<control type="image">
+					<posx>20</posx>
+					<posy>140</posy>
+					<width>700</width>
+					<height>800</height>
+					<texture fallback="unknown-user">$INFO[Skin.String(GamerPicture)]</texture>
+					<texture diffuse="windows/logon/profile_mask.png" />
+					<aspectratio>stretch</aspectratio>
+					<visible>!Window.IsActive(126)</visible>
+                        </control>
 	<!-- Backgrounds -->
             <include>HomeControlList</include>
 

@@ -1,16 +1,12 @@
 <window id="65">
     <defaultcontrol always="true">40</defaultcontrol>
    <allowoverlay>no</allowoverlay>
-<onunload>RunScript(special://skin/system/0300030/xbox.gamertag.py)</onunload>
-
 
     <controls>
 	<include>CommonContent</include> 
 	<include>CommonStage</include>
 	<include>HomeProfileInfo</include>
             <include>a and b</include>
-
-
 	<control type="image">
 			<include>FullscreenDimensions</include>
 			<texture>colors/pure blue.</texture>
@@ -18,12 +14,12 @@
 	</control>
                         <control type="label">
                             <posx>90</posx>
-                            <posy>170</posy>
+                            <posy>145</posy>
                             <width>746</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
                             <label>Games + Apps</label>
-                            <font>Font-Condensed-S50</font>
+                            <font>Font-Condensed-S45</font>
                             <visible></visible>
                         </control>
 		    <control type="image">
@@ -39,7 +35,7 @@
                 <align>left</align>
                 <aligny>top</aligny>
                 <font></font>
-                <onfocus>PlayMedia(special://skin/system/0100010/studio_2.mp4,1,)</onfocus>
+                <onfocus>PlayMedia(special://skin/system/0100010/Intro.mp4,1,)</onfocus>
                 <textwidth>352</textwidth>
                 <textoffsetx>20</textoffsetx>
                 <textoffsety>4</textoffsety>
@@ -51,7 +47,6 @@
                 <texturenofocus>-</texturenofocus>
                 <visible>!Player.HasMedia</visible>
             </control>
-
 	<!-- Backgrounds -->
             <include>HomeControlList</include>
 
@@ -82,13 +77,13 @@
                 </control>
                 <control type="group" id="650">
                     <posx>250</posx>
-                    <posy>70</posy>
+                    <posy>0</posy>
 -----------------------------------------------------------------
                         <control type="panel" id="1">
                             <posx>70	</posx>
-                            <posy>50</posy>
+                            <posy>60</posy>
                             <width>430</width>
-                             <height>605</height>
+                             <height>670</height>
                             <onup>525</onup>
                            <ondown></ondown>
                              <onright>2</onright>
@@ -102,7 +97,7 @@
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <width>430</width>
-                                    <height>605</height>
+                                    <height>660</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -112,17 +107,9 @@
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <width>430</width>
-                                    <height>605</height>
+                                    <height>660</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>520</posy>
-                                    <width>430</width>
-                                    <height>80</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture>panel/blend.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>10</posx>
@@ -141,24 +128,24 @@
                         	<posx>-13</posx>
                	        	<posy>-13</posy>
         	        	<width>455</width>
-        	        	<height>630</height>
+        	        	<height>685</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </focusedlayout>
                             <content>
 						<item id="1">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))]</thumb>
-							
-                                                                     <onclick>ActivateWindow(2003)</onclick>
-						</item>	
+							<thumb>http://compass.xboxlive.com/assets/cd/33/cd33e4ec-5406-40d4-8129-b92504e877d3.jpg?n=Forza%205.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
+						</item>
                             </content>
                   </control>
 ---------------------------------------------------
                                 <control type="label">
                         <posx>50</posx>
-                        <posy>-10</posy>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>-</label>
@@ -171,8 +158,8 @@
                                 </control>
 
                                 <control type="label">
-                        <posx>500</posx>
-                        <posy>-10</posy>
+                        <posx>400</posx>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>FEATURED GAMES</label>
@@ -185,11 +172,11 @@
                                 </control>
 
                                 <control type="label">
-                        <posx>900</posx>
-                        <posy>-10</posy>
+                        <posx>1600</posx>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
-                                    <label>NEW GAMES</label>
+                                    <label>-</label>
                                     <font>font13_title</font>
                                     <textcolor>white</textcolor>
                                     <align>left</align>
@@ -201,8 +188,8 @@
 
 	<control type="panel" id="2">
                         <posx>400</posx>
-                        <posy>2</posy>
-                        <width>655</width>
+                        <posy>10</posy>
+                        <width>670</width>
                         <height>820</height>
                         <onleft>1</onleft>
                     	<onright>3</onright>
@@ -214,7 +201,7 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="215" height="308">
+                        <itemlayout width="215" height="335">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -224,14 +211,14 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>655</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
+                                    <width>650</width>
+                                    <height>325</height>
+                                    <aspectratio>scale</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="308">
+                        <focusedlayout width="215" height="335">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
@@ -246,9 +233,9 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>655</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
+                                    <width>650</width>
+                                    <height>325</height>
+                                    <aspectratio>scale</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="textbox">
@@ -262,294 +249,64 @@
                                 </control>
                         <control type="image">
                         	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>570</width>
-        	        	<height>321</height>
+               	        	<posy>36</posy>
+        	        	<width>585</width>
+        	        	<height>353</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
                         <content>
 						<item id="1">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.2.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.2.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.2.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.2.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.2.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.2.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.2.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.2.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.2.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.2.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.2.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.2.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.2.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
+							<thumb>http://compass.xboxlive.com/assets/4a/8c/4a8cc02a-ed1a-432f-9fbd-42de90a4525e.jpg?n=Ryse.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
 						</item>
 						
 						<item id="2">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.3.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.3.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.3.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.3.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.3.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.3.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.3.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.3.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.3.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.3.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.3.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.3.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.3.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
+							<thumb>http://compass.xboxlive.com/assets/95/1e/951e1851-a32b-4738-903a-ed58839cb0bc.jpg?n=KinectSportsRivals.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
 						</item>											
                         </content>
                     </control>
-
-
-
-
-
 ------------------- videowindow ------------------------------------------------------------
-                        <control type="videowindow">           
-                             <posx>510</posx>
-                             <posy>310</posy>
-                                    <width>545</width>
-                                    <height>400</height> 
-                                    <aspectratio>scale</aspectratio> 
-                                </control>
+
+
                                 <control type="image">
                                     <posx>510</posx>
-                                    <posy>655</posy>
-                                    <width>550</width>
-                                    <height>50</height>
+                                    <posy>390</posy>
+                                    <width>560</width>
+                                    <height>330</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>colors/black.png</texture>
                                      <visible>Player.HasVideo</visible>
                                 </control>
+                        <control type="videowindow">           
+                             <posx>525</posx>
+                             <posy>370</posy>
+                                    <width>530</width>
+                                    <height>370</height> 
+                                    <aspectratio>scale</aspectratio> 
+                                </control>
 
------------------------------------------------------------------------------------------
-                        <control type="panel" id="3">
-                            <posx>1070</posx>
-                            <posy>52</posy>
-                                    <width>510</width>
-                                    <height>850</height>
-                            <onup>525</onup>
-                           <ondown>4</ondown>
-                             <onright>5</onright>
-                            <onleft>2</onleft>
-                            <onclick>-</onclick>
-                            <viewtype label="List">List</viewtype>
-                            <scrolltime tween="cubic" easing="out">800</scrolltime>
-                            <orientation>horizontal</orientation>
-                            <preloaditems>1</preloaditems>
-                            <itemlayout width="410" height="204">
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>0</posy>
-                                    <width>400</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout width="410" height="204">
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>0</posy>
-                                    <width>400</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>10</posx>
-                                    <posy>300</posy>
-                                    <width>340</width>
-                                    <height>35</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>green</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-			<scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-                        <control type="image">
-                        	<posx>-13</posx>
-               	        	<posy>-13</posy>
-        	        	<width>430</width>
-        	        	<height>220</height>
-		        	<align>center</align>
-		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
-                        	</control>
-                            </focusedlayout>
-                            <content>
-						<item id="1">
-							<thumb>$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingShows.1.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingShows.1.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingShows.1.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingShows.1.Studio)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingShows.1.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingShows.1.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingShows.1.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingShows.1.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingShows.1.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingShows.1.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Country,$INFO[Window(Home).Property(TrendingShows.1.Country)],58)</onclick>
-							<onclick>SetProperty(NextTime,$INFO[Window(Home).Property(TrendingShows.1.ShortTime)] $INFO[Window(Home).Property(TrendingShows.1.NextDate)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingShows.1.ID)],58)</onclick>
-							<onclick>SetProperty(Type,tvshow,58)</onclick>
-							<onclick>ActivateWindow(58,return)</onclick>
-						</item>
-						<item id="2">
-							<thumb>$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingShows.1.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingShows.1.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingShows.1.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingShows.1.Studio)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingShows.1.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingShows.1.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingShows.1.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingShows.1.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingShows.1.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingShows.1.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Country,$INFO[Window(Home).Property(TrendingShows.1.Country)],58)</onclick>
-							<onclick>SetProperty(NextTime,$INFO[Window(Home).Property(TrendingShows.1.ShortTime)] $INFO[Window(Home).Property(TrendingShows.1.NextDate)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingShows.1.ID)],58)</onclick>
-							<onclick>SetProperty(Type,tvshow,58)</onclick>
-							<onclick>ActivateWindow(58,return)</onclick>
-						</item>
-						<item id="3">
-							<thumb>$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingShows.1.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingShows.1.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingShows.1.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingShows.1.Studio)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingShows.1.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingShows.1.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingShows.1.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingShows.1.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingShows.1.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingShows.1.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Country,$INFO[Window(Home).Property(TrendingShows.1.Country)],58)</onclick>
-							<onclick>SetProperty(NextTime,$INFO[Window(Home).Property(TrendingShows.1.ShortTime)] $INFO[Window(Home).Property(TrendingShows.1.NextDate)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingShows.1.ID)],58)</onclick>
-							<onclick>SetProperty(Type,tvshow,58)</onclick>
-							<onclick>ActivateWindow(58,return)</onclick>
-						</item>
-                            </content>
-                        </control>
-----------------------------------------------------------
 
------------------------------------------------------------
-	<control type="panel" id="C">
-                        <posx>1420</posx>
-                        <posy>2</posy>
-                        <width>500</width>
+
+
+
+
+
+
+---------------------------------------------------------------------------------------
+	<control type="panel" id="3">
+                        <posx>980</posx>
+                        <posy>9</posy>
+                        <width>600</width>
                         <height>820</height>
-                        <onleft>3</onleft>
-                    	<onright>2</onright>
-                    	<onup>525</onup>
-                    	<ondown>3</ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
-                            <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>220</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/patter.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="215" height="205">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
-					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                               <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>220</width>
-                                    <height>195</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/patter.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-
-								<item id="1">
-									<description>Titles</description>
-									<label>Titles</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-								</item>
-								<item id="2">
-									<description>Recently Added</description>
-									<label>Recently added</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-								</item>	
-								<item id="3">
-									<description>Recently Added</description>
-									<label>@</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-								</item>													
-							
-
-                        </content>
-                    </control>
-
-
-
-
-
-	<control type="panel" id="5">
-                        <posx>1420</posx>
-                        <posy>2</posy>
-                        <width>500</width>
-                        <height>820</height>
-                        <onleft>3</onleft>
-                    	<onright>7</onright>
+                        <onleft>2</onleft>
+                    	<onright>5</onright>
                     	<onup>525</onup>
                     	<ondown></ondown>
                         <viewtype label="Square">wrap</viewtype>
@@ -558,7 +315,7 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
+                        <itemlayout width="215" height="225">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -566,69 +323,165 @@
                         		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
                 		</animation>
                                <control type="image">
-                                    <posx>50</posx>
-                                    <posy>95</posy>
-                                    <width>100</width>
-                                    <height>100</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>450</width>
+                                    <height>210</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
+                                    <texture>colors/grey85%.png</texture>
                                 </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>200</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
+                                    <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>210</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>170</posx>
+                                    <posy>70</posy>
+                                    <width>300</width>
+                                    <height>60</height>
                                     <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
                                     <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="205">
+                        <focusedlayout width="215" height="225">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
                     			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
 					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
                 		</animation>
-				<posx>105</posx>
+				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
                     			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
                         		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
                 		</animation>
                                <control type="image">
-                                    <posx>50</posx>
-                                    <posy>95</posy>
-                                    <width>100</width>
-                                    <height>100</height>
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>450</width>
+                                    <height>210</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture>$INFO[ListItem.Icon]</texture>
+                                    <texture>colors/grey85%.png</texture>
                                 </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>200</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
+                                    <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>210</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>170</posx>
+                                    <posy>70</posy>
+                                    <width>300</width>
+                                    <height>60</height>
                                     <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
                                     <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
                                 </control>
                         <control type="image">
-                        	<posx>-15</posx>
-               	        	<posy>30</posy>
-        	        	<width>253</width>
-        	        	<height>230</height>
+                        	<posx>-13</posx>
+               	        	<posy>38</posy>
+        	        	<width>475</width>
+        	        	<height>241</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        	<texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
                         <content>
 
-			<item id="1">
-                                <label>Game's Library</label>
-                                <icon>icon/game.png</icon>
+								<item id="1">
+									<description>Titles</description>
+									<label> Games[CR]       A-Z...</label>
+									<thumb>http://compass.xboxlive.com/assets/bd/83/bd835a75-d7be-4134-b7c7-b9730f8b3dde.jpg?n=DeadRising3_hubhero.jpg</thumb>
+									<onclick>-</onclick>
+								</item>
+								<item id="2">
+									<description>Recently Added</description>
+									<label>Browse[CR]   by Genre...</label>
+									<thumb>http://compass.xboxlive.com/assets/46/c1/46c18c83-6312-4e78-9085-aac362cdf42e.jpg?n=HaloXboxOne-200x190.jpg</thumb>
+									<onclick>-</onclick>
+								</item>													
+								<item id="3">
+									<description>Search</description>
+									<label>Top @@@[CR]   Games...</label>
+									<thumb>http://compass.xboxlive.com/assets/07/1c/071c4e77-273e-45e2-84fd-2a0006eb582a.png?n=KillerInstinct200x190.png</thumb>
+									<onclick>-</onclick>
+								</item>							
+
+                        </content>
+                    </control>
+
+
+
+
+
+
+
+-----------------------------------------------------------
+                    <control type="panel" id="A">
+                        <posx>1550</posx>
+                        <posy>35</posy>
+                        <width>350</width>
+                        <height>1000</height>
+                        <onright>4</onright>
+                        <onleft>2</onleft>
+                        <onup>525</onup>
+                        <scrolltime>100</scrolltime>
+                        <include>pattercolors</include>
+                        <content>
+				<item id="1">
+					<label>-</label>
+					<onclick>-</onclick>
+                                             <icon>$INFO[Skin.String(GamerColor)]</icon>
+				</item>
+                            <item id="2">
+                                <label>-</label>
+                                <icon>$INFO[Skin.String(GamerColor)]</icon>
+                                <onclick>-</onclick>
+                            </item>
+                            <item id="3">
+                                <label>-</label>
+                                <icon>$INFO[Skin.String(GamerColor)]</icon>
+                                <onclick>-</onclick>
+                            </item>
+                        </content>
+                    </control>
+
+
+
+
+
+
+
+                    <control type="panel" id="5">
+                        <posx>1550</posx>
+                        <posy>35</posy>
+                        <width>350</width>
+                        <height>1000</height>
+                        <onleft>3</onleft>
+                    	<onright>7</onright>
+                    	<onup>525</onup>
+                    	<ondown></ondown>
+                        <scrolltime>100</scrolltime>
+                        <include>patterboxcontrol</include>
+                        <content>
+								<item id="1">
+                                <label>Game's[CR]  Library</label>
+                            	<icon>icon/game.png</icon>
                                 <onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeTVShowTile1.Type),4) + !stringcompare(Skin.String(HomeTVShowTile1.Type),5) + !stringcompare(Skin.String(HomeTVShowTile1.Type),6) + !stringcompare(Skin.String(HomeTVShowTile1.Type),7)">RunAddon($INFO[Skin.String(HomeTVShowTile1.Path)])</onclick>
                                 <onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeTVShowTile1.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeTVShowTile1.Path)],return)</onclick>
                                 <onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeTVShowTile1.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeTVShowTile1.Path)],return)</onclick>
@@ -640,18 +493,18 @@
                                 <onclick condition="IsEmpty(Skin.String(HomeTVShowTile1.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
                                 <onclick condition="IsEmpty(Skin.String(HomeTVShowTile1.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
                                 <onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
-                                </item>
-			<item id="2">
+                            </item>
+								<item id="2">
                                 <label>Achievements</label>
                                 <icon>icon/hub_top100_small.png</icon>
                                 <onclick>setfocus(77)</onclick>
                                 <onclick>ActivateWindow(1080)</onclick>
                             </item>
-			<item id="3">
-                                <label>Achievements</label>
-                                <icon>icon/hub_top100_small.png</icon>
+								<item id="3">
+                                <label>Search</label>
+                                <icon>icon/search.png</icon>
                                 <onclick>ActivateWindow(64)</onclick>
-                            </item>																				
+                            </item>
                         </content>
                     </control>
             <control type="button" id="77">
@@ -674,13 +527,14 @@
             </control>
               </control>
           </control>
+
 ----------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------
             <!--Tv Show-->
             <control type="group" id="400">
-                <width>2500</width>
+                <width>2700</width>
                 <height>780</height>
                 <control type="button" id="425">
                     <onleft>Control.Move(20,-1)</onleft>
@@ -694,17 +548,17 @@
                 </control>
                 <control type="group" id="450">
                     <posx>830</posx>
-                    <posy>70</posy>
+                    <posy>0</posy>
 
 ------------------------------------------------------------
 
 	<control type="panel" id="7">
-                        <posx>-530</posx>
-                        <posy>2</posy>
-                        <width>1100</width>
-                        <height>705</height>
+                        <posx>-510</posx>
+                        <posy>9</posy>
+                        <width>900</width>
+                        <height>820</height>
                         <onleft>5</onleft>
-                    	<onright>9</onright>
+                    	<onright>8</onright>
                     	<onup>425</onup>
                     	<ondown></ondown>
                         <viewtype label="Square">wrap</viewtype>
@@ -713,7 +567,7 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="215" height="305">
+                        <itemlayout width="335" height="335">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -723,14 +577,14 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>1080</width>
-                                    <height>605</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="215">
+                        <focusedlayout width="335" height="335">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
@@ -745,8 +599,8 @@
                                 <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>1080</width>
-                                    <height>605</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -762,44 +616,35 @@
                         <control type="image">
                         	<posx>-13</posx>
                	        	<posy>38</posy>
-        	        	<width>1015</width>
-        	        	<height>625</height>
+        	        	<width>347</width>
+        	        	<height>347</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
                         <content>
 						<item id="1">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.6.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.6.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.6.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.6.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.6.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.6.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.6.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.6.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.6.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.6.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.6.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.6.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.6.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
+							<thumb>http://compass.xboxlive.com/assets/97/16/9716a7e4-62ed-403b-a2de-19aa9e34445a.jpg?n=Quantum%20Break.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
 						</item>
-																	
+						
+						<item id="2">
+							<thumb>http://compass.xboxlive.com/assets/f9/60/f9606a94-2318-4b8a-87b1-a387cfe96661.jpg?n=SunsetOverdrive.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
+						</item>											
                         </content>
                     </control>
 ---------------------------------------------------
                                 <control type="label">
-                        <posx>-400</posx>
-                        <posy>-10</posy>
+                        <posx>-50</posx>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
-                                    <label>FEATURED GAMES</label>
+                                    <label>-</label>
                                     <font>font13_title</font>
                                     <textcolor>white</textcolor>
                                     <align>left</align>
@@ -809,8 +654,8 @@
                                 </control>
 
                                 <control type="label">
-                        <posx>600</posx>
-                        <posy>-10</posy>
+                        <posx>300</posx>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>POPULAR GAMES</label>
@@ -823,8 +668,8 @@
                                 </control>
 
                                 <control type="label">
-                        <posx>1100</posx>
-                        <posy>-10</posy>
+                        <posx>1000</posx>
+                        <posy>20</posy>
                                     <width>400</width>
                                     <height>35</height>
                                     <label>TOP GAMES</label>
@@ -839,13 +684,56 @@
 ----------------------------------------------------
 
 
-----------------------------------------------------------
-	<control type="panel" id="9">
-                        <posx>500</posx>
-                        <posy>0</posy>
-                        <width>600</width>
-                        <height>820</height>
+                    <control type="panel" id="8">
+                        <posx>-20</posx>
+                        <posy>35</posy>
+                        <width>350</width>
+                        <height>1000</height>
+                        <onright>9</onright>
                         <onleft>7</onleft>
+                        <onup>425</onup>
+                        <scrolltime>100</scrolltime>
+                        <include>pattercolors</include>
+                        <content>
+				<item id="1">
+					<label>-</label>
+					<onclick>-</onclick>
+                                             <icon>http://compass.xbox.com/assets/d5/8e/d58e5784-1358-4337-8c53-a4ba0d5b7533.jpg?n=Badge_AlienIsolation_200x190_02.jpg</icon>
+				</item>
+                            <item id="2">
+                                <label>-</label>
+                                <icon>http://compass.xbox.com/assets/62/88/6288ed78-3ef8-4c40-9ae6-f43053a7e208.jpg?n=NBA2K14_wLogo_fordotcom_200x190.jpg</icon>
+                                <onclick>-</onclick>
+                            </item>
+                            <item id="3">
+                                <label>-</label>
+                                <icon>http://compass.xboxlive.com/assets/70/11/70117226-0512-41f5-a985-8c505d66e57b.jpg?n=Thief190x200.jpg</icon>
+                                <onclick>-</onclick>
+                            </item>
+                        </content>
+                    </control>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+	<control type="panel" id="9">
+                        <posx>170</posx>
+                        <posy>9</posy>
+                        <width>900</width>
+                        <height>820</height>
+                        <onleft>8</onleft>
                     	<onright>10</onright>
                     	<onup>425</onup>
                     	<ondown></ondown>
@@ -855,117 +743,98 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
+                        <itemlayout width="335" height="335">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
                     			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
                         		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
                 		</animation>
-                               <control type="image">
+                                <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>450</width>
-                                    <height>195</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture>colors/grey85%.png</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="205">
+                        <focusedlayout width="335" height="335">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
-                    			 <effect type="zoom" start="100" end="100,100" delay="0" time="250" tween="cubic" easing="inout" center="100,100" />
-					<effect type="fade" start="90" end="100" time="300" tween="sine" easing="out" />
+                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
+					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
                 		</animation>
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
                     			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
                         		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
                 		</animation>
-                               <control type="image">
+                                <control type="image">
                                     <posx>0</posx>
                                     <posy>49</posy>
-                                    <width>450</width>
-                                    <height>195</height>
+                                    <width>325</width>
+                                    <height>325</height>
                                     <aspectratio>stretch</aspectratio>
-                                    <texture>colors/grey85%.png</texture>
+                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="textbox">
+                                    <posx>10</posx>
+                                    <posy>290</posy>
+                                    <width>200</width>
+                                    <height>25</height>
+                                    <font>font12_title</font>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textcolor>green</textcolor>
                                 </control>
                         <control type="image">
                         	<posx>-13</posx>
                	        	<posy>38</posy>
-        	        	<width>475</width>
-        	        	<height>220</height>
+        	        	<width>347</width>
+        	        	<height>347</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
                         <content>
-
-								<item id="1">
-									<description>Titles</description>
-									<label>Titles</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-								</item>
-								<item id="2">
-									<description>Recently Added</description>
-									<label>Recently added</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-								</item>													
-								<item id="3">
-									<description>Search</description>
-									<label>Search By Category «</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(68,return)</onclick>
-								</item>							
-
+						<item id="1">
+							<thumb>http://compass.xboxlive.com/assets/c7/b9/c7b96d97-d1f7-4ffe-9d52-a29298383e3f.jpg?n=COD_Ghosts.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
+						</item>
+						
+						<item id="2">
+							<thumb>http://compass.xbox.com/assets/82/4f/824f4a41-19ab-4af9-8c35-b36e5e3dbea0.jpg?n=hero-titanfall-200x190.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
+						</item>
+						
+						<item id="3">
+							<thumb>http://compass.xboxlive.com/assets/00/c8/00c8c0fe-b56c-4796-8554-10247ca34e24.jpg?n=Battlefield%204.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
+						</item>
+						
+						<item id="4">
+							<thumb>http://compass.xboxlive.com/assets/96/c9/96c98139-1798-452b-903c-abe4e327740d.jpg?n=FIFA14_hubhero_v2.jpg</thumb>
+                                                               <onclick>-</onclick>
+	                                                      <label>-</label>
+						</item>										
                         </content>
                     </control>
------------------------------------------------------------
 
-
-
-
-
-
- </control>
- </control>
-
-
-----------------------------------------------------------------------------------------------------
--------------------------------------------------------------------
-
--------------------------------------------------------------------------------------------------------
-            <!--FFFFFFFFFFFFF-->
-            <control type="group" id="500">
-                <width>2300</width>
-                <height>780</height>
-                <control type="button" id="625">
-                    <onleft>Control.Move(20,-1)</onleft>
-                    <onright>Control.Move(20,1)</onright>
-                    <onleft>425</onleft>
-                    <onright>825</onright>
-                    <onright></onright>
-                    <onclick>SetFocus(11)</onclick>
-                    <onup>ActivateWindow()</onup>
-                    <ondown>11</ondown>
-                </control>
-                <control type="group" id="450">
-                    <posx>720</posx>
-                    <posy>70</posy>
-----------------------------------------------------------------------
+----------------------------------------------------------
 	<control type="panel" id="10">
-                        <posx>-730</posx>
-                        <posy>2</posy>
-                        <width>500</width>
+                        <posx>880</posx>
+                        <posy>9</posy>
+                        <width>600</width>
                         <height>820</height>
                         <onleft>9</onleft>
-                    	<onright>11</onright>
+                    	<onright></onright>
                     	<onup>425</onup>
                     	<ondown></ondown>
                         <viewtype label="Square">wrap</viewtype>
@@ -974,438 +843,7 @@
                         <preloaditems>4</preloaditems>
                        <defaultcontrol>1</defaultcontrol>
                         <focusposition>0</focusposition>
-                        <itemlayout width="260" height="305">
-                            <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>250</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="260" height="215">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
-					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>250</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>290</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textcolor>green</textcolor>
-                                </control>
-                        <control type="image">
-                        	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>276</width>
-        	        	<height>321</height>
-		        	<align>center</align>
-		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
-                        	</control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-						<item id="1">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.8.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.8.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.8.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.8.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.8.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.8.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.8.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.8.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.8.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.8.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.8.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.8.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.8.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>
-						
-						<item id="2">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.9.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.9.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.9.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.9.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.9.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.9.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.9.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.9.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.9.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.9.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.9.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.9.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.9.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>	
-										
-                        </content>
-                    </control>
-------------------------------------------------------------
-
-	<control type="panel" id="11">
-                        <posx>-470</posx>
-                        <posy>2</posy>
-                        <width>500</width>
-                        <height>820</height>
-                        <onleft>10</onleft>
-                    	<onright>13</onright>
-                    	<onup>625</onup>
-                    	<ondown></ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="305">
-                            <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>250</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="215" height="215">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
-					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>250</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>290</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textcolor>green</textcolor>
-                                </control>
-                        <control type="image">
-                        	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>276</width>
-        	        	<height>321</height>
-		        	<align>center</align>
-		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
-                        	</control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-						<item id="1">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.10.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.10.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.10.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.10.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.10.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.10.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.10.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.10.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.10.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.10.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.10.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.10.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.10.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>
-						
-						<item id="2">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.11.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.11.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.11.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.11.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.11.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.11.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.11.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.11.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.11.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.11.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.11.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.11.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.11.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>											
-                        </content>
-                    </control>
-
----------------------------------------------------
-                                <control type="label">
-                        <posx>-50</posx>
-                        <posy>-10</posy>
-                                    <width>400</width>
-                                    <height>35</height>
-                                    <label>-</label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-
-                                <control type="label">
-                        <posx>500</posx>
-                        <posy>-10</posy>
-                                    <width>500</width>
-                                    <height>35</height>
-                                    <label>GAMES RECOMMENDED FOR YOU</label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-
-                                <control type="label">
-                        <posx>900</posx>
-                        <posy>-10</posy>
-                                    <width>400</width>
-                                    <height>35</height>
-                                    <label></label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-				    <scroll>false</scroll>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-----------------------------------------------------
-	<control type="panel" id="12">
-                        <posx>400</posx>
-                        <posy>2</posy>
-                        <width>900</width>
-                        <height>820</height>
-                        <onleft>13</onleft>
-                    	<onright>14</onright>
-                    	<onup>625</onup>
-                    	<ondown></ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="260" height="305">
-                            <control type="group">
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>250</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="260" height="215">
-			 <control type="group">
-				<posx>110</posx>
-				<animation type="Focus" reversible="false">
-                    			<effect type="zoom" start="100" end="100" time="150" tween="sine" easing="in" center="auto" />
-					<effect type="fade" start="100" end="100" time="300" tween="sine" easing="out" />
-                		</animation>
-				<posx>110</posx>
-				<animation type="WindowOpen" reversible="false">
-                    			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="out" />
-                        		<effect type="slide" start="1500" end="0" time="550" tween="sine" easing="in" />
-                		</animation>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>49</posy>
-                                    <width>250</width>
-                                    <height>295</height>
-                                    <aspectratio>stretch</aspectratio>
-                                    <texture fallback="colors/grey85%.png">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="textbox">
-                                    <posx>10</posx>
-                                    <posy>290</posy>
-                                    <width>200</width>
-                                    <height>25</height>
-                                    <font>font12_title</font>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textcolor>green</textcolor>
-                                </control>
-                        <control type="image">
-                        	<posx>-13</posx>
-               	        	<posy>38</posy>
-        	        	<width>276</width>
-        	        	<height>321</height>
-		        	<align>center</align>
-		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
-                        	</control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-						<item id="1">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.16.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.16.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.16.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.16.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.16.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.16.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.16.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.16.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.16.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.16.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.16.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.16.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.16.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>
-						
-						<item id="2">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.17.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.17.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.17.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.17.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.17.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.17.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.17.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.17.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.17.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.17.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.17.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.17.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.17.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>
-						
-						<item id="3">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.18.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.18.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.18.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.18.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.18.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.18.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.18.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.18.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.18.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.18.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.18.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.18.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.18.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>
-						
-						<item id="4">
-							<thumb>$INFO[Window(Home).Property(TrendingMovies.19.Art(poster))]</thumb>
-							
-							<include>Common_TraktTV_ClearProperties</include>
-							<onclick>SetProperty(Title,$INFO[Window(Home).Property(TrendingMovies.19.Title)],58)</onclick>
-							<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(TrendingMovies.19.MPAA)],58)</onclick>
-							<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(TrendingMovies.19.Plot)],58)</onclick>
-							<onclick>SetProperty(Tagline,$INFO[Window(Home).Property(TrendingMovies.19.Tagline)],58)</onclick>
-							<onclick>SetProperty(Year,$INFO[Window(Home).Property(TrendingMovies.19.Year)],58)</onclick>
-							<onclick>SetProperty(Genre,$INFO[Window(Home).Property(TrendingMovies.19.Genre)],58)</onclick>
-							<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(TrendingMovies.19.Runtime)],58)</onclick>
-							<onclick>SetProperty(Rating,$INFO[Window(Home).Property(TrendingMovies.19.Rating)],58)</onclick>
-							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.19.Art(poster))],58)</onclick>
-							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.19.Art(fanart))],58)</onclick>
-							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.19.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.19.ID)],58)</onclick>
-							<onclick>SetProperty(Type,movie,58)</onclick>
-							<onclick>ActivateWindow(58)</onclick>
-						</item>										
-                        </content>
-                    </control>
-
-----------------------------------------------------------
-	<control type="panel" id="13">
-                        <posx>-150</posx>
-                        <posy>0</posy>
-                        <width>600</width>
-                        <height>820</height>
-                        <onleft>11</onleft>
-                    	<onright>12</onright>
-                    	<onup>625</onup>
-                    	<ondown></ondown>
-                        <viewtype label="Square">wrap</viewtype>
-                         <scrolltime tween="cubic" easing="out">600</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>4</preloaditems>
-                       <defaultcontrol>1</defaultcontrol>
-                        <focusposition>0</focusposition>
-                        <itemlayout width="215" height="205">
+                        <itemlayout width="215" height="225">
                             <control type="group">
 				<posx>110</posx>
 				<animation type="WindowOpen" reversible="false">
@@ -1416,13 +854,32 @@
                                     <posx>0</posx>
                                     <posy>49</posy>
                                     <width>450</width>
-                                    <height>195</height>
+                                    <height>210</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>colors/grey85%.png</texture>
                                 </control>
+                                    <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>210</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>170</posx>
+                                    <posy>70</posy>
+                                    <width>300</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
+                                </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="215" height="205">
+                        <focusedlayout width="215" height="225">
 			 <control type="group">
 				<posx>110</posx>
 				<animation type="Focus" reversible="false">
@@ -1438,18 +895,37 @@
                                     <posx>0</posx>
                                     <posy>49</posy>
                                     <width>450</width>
-                                    <height>195</height>
+                                    <height>210</height>
                                     <aspectratio>stretch</aspectratio>
                                     <texture>colors/grey85%.png</texture>
+                                </control>
+                                    <control type="image">
+                                    <posx>0</posx>
+                                    <posy>49</posy>
+                                    <width>170</width>
+                                    <height>210</height>
+                                    <texture border="1">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>170</posx>
+                                    <posy>70</posy>
+                                    <width>300</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <font>font13_title</font>
+                                    <textcolor>white</textcolor>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textoffsetx>20</textoffsetx>
                                 </control>
                         <control type="image">
                         	<posx>-13</posx>
                	        	<posy>38</posy>
         	        	<width>475</width>
-        	        	<height>220</height>
+        	        	<height>241</height>
 		        	<align>center</align>
 		        	<aligny>center</aligny>
-		        <texture border="40">icon/tile-fo.png</texture>
+		        <texture border="40">icon/tile-black.png</texture>
                         	</control>
                             </control>
                         </focusedlayout>
@@ -1457,33 +933,28 @@
 
 								<item id="1">
 									<description>Titles</description>
-									<label>Titles</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+									<label>-</label>
+									<thumb>http://compass.xbox.com/assets/d6/4b/d64b8efa-ba6b-4352-b55b-cfddb39f1aa5.jpg?n=tile-madden-25-200x190.jpg</thumb>
+									<onclick>-</onclick>
 								</item>
 								<item id="2">
 									<description>Recently Added</description>
-									<label>Recently added</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+									<label>-</label>
+									<thumb>http://compass.xboxlive.com/assets/45/f5/45f5535b-d772-411c-a9b5-22edc82d34c3.jpg?n=200x190.jpg</thumb>
+									<onclick>-</onclick>
 								</item>													
 								<item id="3">
 									<description>Search</description>
-									<label>Search By Category «</label>
-									<thumb>$INFO[Skin.String(GamerColor)]</thumb>
-									<onclick>ActivateWindow(68,return)</onclick>
+									<label>-</label>
+									<thumb>http://compass.xboxlive.com/assets/30/53/3053f496-96e0-4e33-aec5-18db7a2dedf4.jpg?n=AssassinsCreedIVBF_Keyart_200x190.jpg</thumb>
+									<onclick>-</onclick>
 								</item>							
 
                         </content>
                     </control>
-                   </control>
-                   </control>
-
-                   </control>
-
-
-
-
+ </control>
+ </control>
+</control>
 
 
 

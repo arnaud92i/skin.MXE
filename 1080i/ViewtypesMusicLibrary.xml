@@ -30,7 +30,29 @@
                         <texture>icon/xbox.png</texture>
         </control>
 
-	
+
+	            <control type="button" id="87">
+                <description>-</description>
+                <height>60</height>
+                <align>left</align>
+                <aligny>top</aligny>
+                <font></font>
+                <onfocus>ActivateWindow(222)</onfocus>
+                <textwidth>352</textwidth>
+                <textoffsetx>20</textoffsetx>
+                <textoffsety>4</textoffsety>
+                <textcolor>grey</textcolor>
+                <focusedcolor>darkgrey</focusedcolor>
+                <disabledcolor>-</disabledcolor>
+                <shadowcolor>-</shadowcolor>
+                <texturefocus></texturefocus>
+                <texturenofocus>-</texturenofocus>
+                 <visible>Player.HasMedia</visible>
+            </control>
+
+
+
+
         <control type="group">
             <include>a and b,x,y</include>
             <control type="list" id="50">
@@ -41,8 +63,9 @@
                         <height>1000</height>
                         <onleft>50</onleft>
                     	<onright>50</onright>
-                    	<onup>-</onup>
-                    	<ondown>9111</ondown>
+                       <onclick></onclick>
+                    	<onup>setfocus(87)</onup>
+                    	<ondown>-</ondown>
                         <viewtype label="List">List</viewtype>
                         <scrolltime tween="cubic" easing="out">500</scrolltime>
                         <orientation>horizontal</orientation>
@@ -126,7 +149,6 @@
                                     <font>font13_title</font>
                                     <label>$INFO[ListItem.Label][CR]$INFO[ListItem.Studio][CR]</label>
                                     <textcolor>darkgray</textcolor>
-				    <onclick>ActivateWindow(1122)</onclick>
                                 </control>
                             </control>
                         </itemlayout>
@@ -221,7 +243,6 @@
                                     <font>font13_title</font>
                                     <label>$INFO[ListItem.Label][CR]$INFO[ListItem.Studio][CR]</label>
                                     <textcolor>white</textcolor>
-				    <onclick>ActivateWindow(1122)</onclick>
                                 </control>
                             </control>
                         </focusedlayout>

@@ -2,6 +2,8 @@
     <defaultcontrol always="true">10</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
 <onunload>RunScript(special://skin/system/0300030/xbox.gamertag.py)</onunload>
+<onunload>RunScript(special://skin/system/0300030/bing.py)</onunload>
+<onunload>RunScript(special://skin/system/0300030/Games.)</onunload>
     <onload>PlayMedia(special://skin/system/0100010/boot.mp4,0,)</onload>
 
     <controls>

@@ -1,8 +1,7 @@
 <window id="0">
-	
-	<defaultcontrol always="true">525</defaultcontrol>
+<defaultcontrol always="true">525</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
- <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
+          <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=PremiereShows)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=AiringShows)</onload>
@@ -27,7 +26,7 @@
     <controls>
 		<control type="image">
 			<include>FullscreenDimensions</include>
-			<texture>colors/silver.</texture>
+			<texture>debuggrid720.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 	<!-- Backgrounds -->
@@ -69,7 +68,7 @@
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
             <posx>110</posx>
-            <posy>150</posy>
+            <posy>135</posy>
             <width>1720</width>
             <height>60</height>
             <orientation>horizontal</orientation>
@@ -143,7 +142,7 @@
                 <effect type="zoom" start="100,150,1720,60" end="100,209,1720,1" tween="sine" easing="out" time="200" />
             </animation>
             <posx>110</posx>
-            <posy>150</posy>
+            <posy>135</posy>
             <width>1720</width>
             <height>60</height>
             <orientation>horizontal</orientation>

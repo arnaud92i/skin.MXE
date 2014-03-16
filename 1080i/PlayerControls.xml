@@ -1,908 +1,539 @@
-<window type="dialog" id="114">
+<!--window type="dialog" id="114">
     <defaultcontrol always="true">1</defaultcontrol>
-    <zorder>2</zorder>
+ 	<allowoverlay>yes</allowoverlay>
+
 
     <controls>
-
 	<control type="group">
 	<posy>0</posy>
+		<control type="image">
+					<posx>685</posx>
+					<posy>70</posy>
+					<width>550</width>
+					<height>595</height>
+			<texture>colors/grey65%.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+					<posx>685</posx>
+					<posy>670</posy>
+					<width>550</width>
+					<height>350</height>
+			<texture>$INFO[Skin.String(GamerColor)]</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		    <control type="image">
+                         <posx>1750</posx>
+                        <posy>85</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>icon/xbox.png</texture>
+        </control>
 	<control type="image">
-		<posx>900</posx>
-		<posy>197</posy>
+		<posx>1130</posx>
+		<posy>100</posy>
 		<width>70</width>
 		<height>70</height>
 		<aspectratio>scale</aspectratio>
 		 <texture fallback="Master user.png">$INFO[Skin.String(XBoxLive.Gamer.Picture)]</texture>
 	</control>
 <!--blades Animation-->
-    		<control type="fixedlist" id="1">
-                        <posx>4</posx>
-                        <posy>0</posy>
-                        <width>1920</width>
-                        <height>1080</height>
-                        <onleft>-</onleft>
-                        <onright>-</onright>
-                        <onup>2</onup>
-                        <ondown>2</ondown>
-			<onup>Control.Move(2,-1)</onup>
-                        <ondown>Control.Move(2,1)</ondown>
-			<orientation>horizontal</orientation>
-			<focusposition>4</focusposition>
-			<preloaditems>0</preloaditems>
-                        <scrolltime>150</scrolltime>
-                        <itemlayout width="82" height="500">
-                                <control type="image">
-                                    <posx>189</posx>
-                                    <posy>272</posy>
-                                    <width>80</width>
-                                    <height>493</height>
-                                    <texture background="true">$INFO[ListItem.Icon]</texture>
-                                </control>
-                                <control type="label">
-                                    <posx>220</posx>
-                                    <posy>260</posy>
-                                    <width>600</width>
-                                    <height>60</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <angle>-90</angle>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
-                        </itemlayout>
-                        <focusedlayout width="880" height="500">
-				<control type="image">
-                                    <posx>189</posx>
-                                    <posy>272</posy>
-                                    <width>80</width>
-                                    <height>493</height>
-                                    <texture background="true">$INFO[ListItem.Icon]</texture>
-                                </control>
-                        </focusedlayout>
-                        <content>
-                            <item id="-2">
-                                <label>Market Place</label>
-                                <icon fallback="osd/media-guide/blade.png">$INFO[Skin.String(GamerColor)]</icon>
-                                <onclick>ActivateWindow()</onclick>
-				<onclick>dialog.close(all,true)</onclick>
-                            </item>
-                            <item id="-1">
-                                <label>Games</label>
-                                <icon fallback="osd/media-guide/blade.png">$INFO[Skin.String(GamerColor)]</icon>
-                                <onclick>ActivateWindow()</onclick>
-				<onclick>dialog.close(all,true)</onclick>
-                            </item>
-                            <item id="0">
-                                <label>$INFO[System.ProfileName]</label>
-                                <icon fallback="osd/media-guide/blade.png">$INFO[Skin.String(GamerColor)]</icon>
-                                <onclick>ActivateWindow(Home)</onclick>
-				<onclick>dialog.close(all,true)</onclick>
-                            </item>
-                            <item id="1">
-                                <label>Media</label>
-                                <icon fallback="osd/media-guide/blade.png">$INFO[Skin.String(GamerColor)]</icon>
-                                <onclick>ActivateWindow(Videos,root,return)</onclick>
-				<onclick>dialog.close(all,true)</onclick>
-                            </item>
-                            <item id="2">
-                                <label>Settings</label>
-                                <icon fallback="osd/media-guide/blade.png">$INFO[Skin.String(GamerColor)]</icon>
-                                <onclick>ActivateWindow(2609)</onclick>
-				<onclick>dialog.close(all,true)</onclick>
-                            </item>
-                        </content>
-                    </control>
-<!--end of the blades Animation-->
-		    
-<!--center white panel-->
-		<control type="image">
-                         <posx>0</posx>
-                         <posy>0</posy>
-                         <width>1920</width>
-                         <height>1080</height>
-                         <texture>osd/media-guide/center.png</texture>
-                </control>
-<!--end of center panel-->
 
-<!--Home List-->
-			<control type="list" id="2">
-				<posx>594</posx>
-				<posy>272</posy>
-				<width>807</width>
-				<height>500</height>
-				<onleft>1</onleft>
-				<onright>1</onright>
-				<onleft>Control.Move(1,-1)</onleft>
-				<onright>Control.Move(1,1)</onright>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<focuspostion>1</focuspostion>
-				<orientation>vertical</orientation>
-				<scrolltime>100</scrolltime>
-				<visible>Container(1).HasFocus(0)</visible>
-				<animation type="visible">
-                        		<effect type="fade" start="0" end="100" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<animation type="hidden">
-                        		<effect type="fade" start="100" end="0" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<itemlayout width="807" height="65">
+			<!-- Detail Info Label -->
+			<control type="textbox">
+				<posx>740</posx>
+				<posy>130</posy>
+				<width>600</width>
+				<height>400</height>
+				<font>font13_title</font>
+                                    <label>HOME</label>
+				<textcolor>white</textcolor>
+                                <visible>Control.HasFocus(1)</visible>
+			</control>
+			<control type="panel" id="1">
+      <visible>!Window.IsVisible(70)+!Window.IsVisible(MusicLibrary)+!Window.IsVisible(73)</visible>
+				<posx>670</posx>
+				<posy>170</posy>
+				<width>580</width>
+				<height>1500</height>
+				<onleft></onleft>
+				<onright>8001</onright>
+				<onup>222</onup>
+				<ondown>8000</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="600" height="80">
 					<control type="image">
-						<posx>4</posx>
-						<posy>65</posy>
-						<width>807</width>
-						<height>1</height>
-						<texture>osd/media-guide/line.</texture>
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
 						<aspectratio>stretch</aspectratio>
-						<colordiffuse>darkgrey</colordiffuse>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
 					</control>
 					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>800</width>
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
 						<height>62</height>
 						<info>ListItem.Label</info>
 						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
+						<textcolor>white</textcolor>
 						<align>left</align>
-					</control>
-					<control type="label">
-						<posx>200</posx>
-						<posy>0</posy>
-						<width>700</width>
-						<height>62</height>
-						<info>ListItem.Label2</info>
-						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
-						<align>left</align>
-					</control>
-					<control type="image">
-						<posx>730</posx>
-						<posy>7</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
-						<colordiffuse>darkgrey</colordiffuse>
 					</control>
 				</itemlayout>
-				<focusedlayout width="807" height="65">
+				<focusedlayout width="600" height="80">
 					<control type="image">
-						<posx>6</posx>
-						<posy>0</posy>
-						<width>801</width>
-						<height>60</height>
-						<texture>colors/patter.png</texture>
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
 						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
 					</control>
 					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>700</width>
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
 						<height>62</height>
 						<info>ListItem.Label</info>
 						<font>font13_title</font>
 						<textcolor>white</textcolor>
 						<align>left</align>
 					</control>
-					<control type="label">
-						<posx>200</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label2</info>
-						<font>font13_title</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
-					</control>
-	`				<control type="image">
-						<posx>730</posx>
-						<posy>7</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
-						<colordiffuse>white</colordiffuse>
-					</control>
+                        <control type="image">
+                        	<posx>7</posx>
+               	        	<posy>6</posy>
+        	        	<width>570</width>
+        	        	<height>105</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
 				</focusedlayout>
 				<content>
 					<item id="0">
-						<label>Home</label>
-						<thumb>icon/xbox.png</thumb>
-						<onclick>Dialog.Close(all,true)</onclick>
-						<onclick>ActivateWindow(0)</onclick>
+						<label>Settings GUI</label>
+						<label2>Settings for the GUI are found here. Change the current skin, set language and region, change file listing options, set up a screen saver, etc. </label2>
+						<onclick>ActivateWindow(appearancesettings,return)</onclick>
+						<thumb>-</thumb>
+						<icon>icon/console.png</icon>
 					</item>	
 					<item id="1">
-						<label>Sign In or Out</label>
-						<label2></label2>
-						<onclick>Dialog.Close(all,true)</onclick>
-						<onclick>ActivateWindow(29)</onclick>
-						<thumb>icon/xbox.png</thumb>
-						<visible></visible>
-					</item>
-					<item id="2">
-						<label>Favourites</label>
-						<label2></label2>
-						<onclick>Dialog.Close(all,true)</onclick>
-						<onclick>ActivateWindow(134)</onclick>
-						<thumb>icon/pin.png</thumb>
-						<visible></visible>
-
-					</item>
-					<item id="3">
-						<label>Bing</label>
-						<label2> </label2>
-						<onclick>Dialog.Close(all,true)</onclick>
-						<onclick>RunScript(script.globalsearch)</onclick>
-						<thumb>icon/smallbing.png</thumb>
-						<visible></visible>
-
-					</item>
-					<item id="4">
-						<label>-</label>
-						<label2>-</label2>
-						<onclick>ActivateWindow()</onclick>
-						<thumb>icon/weather.png</thumb>
-						<visible></visible>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-
-					<item id="5">
-						<label>MyWeather</label>
-						<label2></label2>
-						<onclick>ActivateWindow(weather)</onclick>
-						<thumb>icon/weather.png</thumb>
-						<visible></visible>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="6">
-
-						<label>Open Tray</label>
-						<onclick>XBMC.EjectTray()</onclick>
-						<thumb>icon/dvd.png</thumb>
-						<visible></visible>
-						<onclick></onclick>
-					</item>
-					<item id="7">
-						<label>$INFO[System.DVDLabel]</label>
-						<onclick>PlayDVD</onclick>
-						<thumb>icon/dvd.png</thumb>
-						<visible>$INFO[System.DVDLabel]</visible>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-				</content>
-			</control>
-<!--Games List-->
-			<control type="list" id="2">
-				<posx>594</posx>
-				<posy>272</posy>
-				<width>807</width>
-				<height>500</height>
-				<onleft>1</onleft>
-				<onright>1</onright>
-				<onleft>Control.Move(1,-1)</onleft>
-				<onright>Control.Move(1,1)</onright>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime>100</scrolltime>
-				<visible>Container(1).HasFocus(-1)</visible>
-				<animation type="visible">
-                        		<effect type="fade" start="0" end="100" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<animation type="hidden">
-                        		<effect type="fade" start="100" end="0" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<itemlayout width="807" height="60">
-					<control type="image">
-						<posx>4</posx>
-						<posy>65</posy>
-						<width>807</width>
-						<height>1</height>
-						<texture>osd/media-guide/line.</texture>
-						<aspectratio>stretch</aspectratio>
-						<colordiffuse>darkgrey</colordiffuse>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
-						<align>left</align>
-					</control>
-					<control type="label">
-						<posx>200</posx>
-						<posy>0</posy>
-						<width>700</width>
-						<height>62</height>
-						<info>ListItem.Label2</info>
-						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
-						<align>left</align>
-					</control>
-					<control type="image">
-						<posx>730</posx>
-						<posy>7</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
-						<colordiffuse>darkgrey</colordiffuse>
-					</control>
-				</itemlayout>
-				<focusedlayout width="807" height="60">
-					<control type="image">
-						<posx>6</posx>
-						<posy>0</posy>
-						<width>801</width>
-						<height>60</height>
-						<texture>colors/patter.png</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>700</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
-					</control>
-					<control type="label">
-						<posx>200</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label2</info>
-						<font>font13_title</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
-					</control>
-	`				<control type="image">
-						<posx>730</posx>
-						<posy>7</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
-						<colordiffuse>white</colordiffuse>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="1">
-						<label>Friends</label>
-						<label2></label2>
-						<onclick>ActivateWindow(1919)</onclick>
-						<thumb>icon/parties.png</thumb>
-						<visible></visible>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="2">
-						<label>Party</label>
-						<label2></label2>
-						<onclick>Dialog.Close(all,true)</onclick>
-						<onclick>ActivateWindow(134)</onclick>
-						<thumb>icon/party.png</thumb>
-						<visible></visible>
-
-					</item>	
-
-					<item id="3">
-						<label>My Games</label>
-						<label2></label2>
-						<onclick>ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
-						<thumb>icon/game.png</thumb>
-						<icon></icon>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="4">
-						<label>Active Downloads</label>
-						<label2></label2>
-						<onclick>ActivateWindow(0)</onclick>
-						<thumb>icon/DefaultFile.png</thumb>
-						<icon></icon>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="5">
-						<label>Redeem Code</label>
-						<label2></label2>
-						<onclick>ActivateWindow(videossettings)</onclick>
-						<thumb>icon/ms-points.png</thumb>
-						<icon></icon>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="6">
-						<label>Log to Xboxlive</label>
-						<label2></label2>
-						<onclick>RunScript(special://skin/system/0300030/xbox.gamertag.py)</onclick>
-						<thumb>icon/console.png</thumb>
-						<icon></icon>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="7">
-						<label>Avatar Marketplace</label>
-						<label2></label2>
-						<onclick>ActivateWindow(picturessettings)</onclick>
-						<thumb>icon/customize avatar.png</thumb>
-						<icon></icon>
-						<visible></visible>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="8">
-						<label>Gamercard</label>
-                                            <thumb>icon/game2.png</thumb>
-						<onclick>ActivateWindow(2609)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="9">
-						<label>Preferences</label>
-                                            <thumb>icon/Preferences.png</thumb>
-						<onclick>ActivateWindow()</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="10">
-						<label>Account </label>
-                                            <thumb>icon/account.png</thumb>
-						<onclick>ActivateWindow(profiles)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-				</content>
-			</control>
-<!--MarketPlace List-->
-			<control type="list" id="2">
-				<posx>594</posx>
-				<posy>272</posy>
-				<width>807</width>
-				<height>500</height>
-				<onright>1</onright>
-				<onright>Control.Move(1,1)</onright>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime>100</scrolltime>
-				<visible>Container(1).HasFocus(-2)</visible>
-				<animation type="visible">
-                        		<effect type="fade" start="0" end="100" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<animation type="hidden">
-                        		<effect type="fade" start="100" end="0" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<itemlayout width="807" height="65">
-					<control type="image">
-						<posx>4</posx>
-						<posy>65</posy>
-						<width>807</width>
-						<height>1</height>
-						<texture>osd/media-guide/line.</texture>
-						<aspectratio>stretch</aspectratio>
-						<colordiffuse>darkgrey</colordiffuse>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
-						<align>left</align>
-					</control>
-				</itemlayout>
-				<focusedlayout width="807" height="65">
-					<control type="image">
-						<posx>6</posx>
-						<posy>0</posy>
-						<width>801</width>
-						<height>60</height>
-						<texture>colors/patter.png</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="0">
-						<label>-</label>
-						<label2></label2>
-						<onclick>ActivateWindow()</onclick>
-						<thumb>focus/images/appearance-small.png</thumb>
-						<icon>focus/images/appearance-big.png</icon>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="1">
-						<label></label>
-						<label2>Change Kinect sensor settings, and access the Kinect Tuner to configure your play space and diagnose audio problems.</label2>
-						<onclick>ActivateWindow()</onclick>
-						<thumb>focus/images/videos-small.png</thumb>
-						<icon>focus/images/videos-big.png</icon>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="2">
-						<label></label>
-						<label2>Move or delete saved games,          profiles, and other items on Xbox        360 storage devices.</label2>
-						<onclick>RunScript(special://skin/extras/scripts/xbox.gamertag.py)</onclick>
-						<thumb>focus/images/music-small.png</thumb>
-						<icon>focus/images/music-big.png</icon>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="3">
-						<label>- </label>
-						<label2>Connect to xbox LIVE or your home network. Set up wierless connections and test network settings.</label2>
-						<onclick>ActivateWindow()</onclick>
-						<thumb>focus/images/pictures-small.png</thumb>
-						<icon>focus/images/pictures-big.png</icon>
-						<visible></visible>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-				</content>
-			</control>
-<!--Media List-->
-			<control type="list" id="2">
-				<posx>594</posx>
-				<posy>272</posy>
-				<width>807</width>
-				<height>500</height>
-				<onleft>1</onleft>
-				<onright>1</onright>
-				<onleft>Control.Move(1,-1)</onleft>
-				<onright>Control.Move(1,1)</onright>
-				<onup>-</onup>
-				<ondown>30</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime>100</scrolltime>
-				<visible>Container(1).HasFocus(1)</visible>
-				<animation type="visible">
-                        		<effect type="fade" start="0" end="100" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<animation type="hidden">
-                        		<effect type="fade" start="100" end="0" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<itemlayout width="807" height="65">
-					<control type="image">
-						<posx>4</posx>
-						<posy>65</posy>
-						<width>807</width>
-						<height>1</height>
-						<texture>osd/media-guide/line.</texture>
-						<aspectratio>stretch</aspectratio>
-						<colordiffuse>darkgrey</colordiffuse>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
-						<align>left</align>
-					</control>
-					<control type="label">
-						<posx>200</posx>
-						<posy>0</posy>
-						<width>700</width>
-						<height>62</height>
-						<info>ListItem.Label2</info>
-						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
-						<align>left</align>
-					</control>
-					<control type="image">
-						<posx>730</posx>
-						<posy>7</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
-						<colordiffuse>darkgrey</colordiffuse>
-					</control>
-				</itemlayout>
-				<focusedlayout width="807" height="65">
-					<control type="image">
-						<posx>6</posx>
-						<posy>0</posy>
-						<width>801</width>
-						<height>60</height>
-						<texture>colors/patter.png</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>700</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
-					</control>
-					<control type="label">
-						<posx>200</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label2</info>
-						<font>font13_title</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
-					</control>
-	`				<control type="image">
-						<posx>730</posx>
-						<posy>7</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
-						<colordiffuse>white</colordiffuse>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="0">
-					<label>Video Player</label>
-						<label2></label2>
-                                                      <thumb>icon/video.png</thumb>
-						<onclick>ActivateWindow(Videos,root,return)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="1">
-						<label>Music Player</label>
-						<label2></label2>
-                                                      <thumb>icon/music.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="2">
-						<label>Picture Viewer</label>
-						<label2></label2>
-                                                      <thumb>icon/foto.png</thumb>
-						<onclick>ActivateWindow(Pictures,root,return)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="3">
-						<label>Windows Media Center</label>
-						<label2></label2>
-                                                      <thumb>icon/computer.png</thumb>
-						<onclick>ActivateWindow()</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="4">
-						<label>?</label>
-						<label2>$INFO[MusicPlayer.Title]</label2>
-                                                      <thumb>icon/.png</thumb>
-						<onclick>ActivateWindow()</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-					<item id="5">
-						<label>Select Music</label>
-						<label2></label2>
-                                                      <thumb>icon/music.png</thumb>
-						<onclick>ActivateWindow(Musicfiles,root,return)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>	
-				</content>
-			</control>
-<!--Settings List-->
-			<control type="list" id="2">
-				<posx>594</posx>
-				<posy>272</posy>
-				<width>807</width>
-				<height>500</height>
-				<onleft>1</onleft>
-				<onleft>Control.Move(1,-1)</onleft>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<focuspostion>1</focuspostion>
-				<orientation>vertical</orientation>
-				<scrolltime>100</scrolltime>
-				<visible>Container(1).HasFocus(2)</visible>
-				<animation type="visible">
-                        		<effect type="fade" start="0" end="100" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<animation type="hidden">
-                        		<effect type="fade" start="100" end="0" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<itemlayout width="807" height="65">
-					<control type="image">
-						<posx>4</posx>
-						<posy>65</posy>
-						<width>807</width>
-						<height>1</height>
-						<texture>osd/media-guide/line.</texture>
-						<aspectratio>stretch</aspectratio>
-						<colordiffuse>darkgrey</colordiffuse>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>darkgrey</textcolor>
-						<align>left</align>
-					</control>
-				</itemlayout>
-				<focusedlayout width="807" height="65">
-					<control type="image">
-						<posx>6</posx>
-						<posy>0</posy>
-						<width>801</width>
-						<height>60</height>
-						<texture>colors/patter.png</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
-					<control type="label">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>62</height>
-						<info>ListItem.Label</info>
-						<font>font13_title</font>
-						<textcolor>white</textcolor>
-						<align>left</align>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="0">
-						<label>FileManager</label>
-						<onclick>Dialog.Close(all,true)</onclick>
-						<onclick>ActivateWindow(FileManager)</onclick>
-					</item>	
-					<item id="1">
-						<label>SystemInfo</label>
-						<onclick>ActivateWindow(SystemInfo)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="2">
-						<label>? Settings</label>
-						<onclick>ActivateWindow()</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="3">
-						<label>System settings</label>
-						<onclick>ActivateWindow(4)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="4">
-						<label>- </label>
-						<onclick>ActivateWindow()</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
-					</item>
-					<item id="5">
 						<label>Turn off Console</label>
-						<onclick>ActivateWindow(111)</onclick>
-						<onclick>Dialog.Close(all,true)</onclick>
+						<label2>Turning off the console will also turn off[CR]all controllers</label2>
+						<onclick>ActivateWindow(111,return)</onclick>
+						<icon>icon/Turn off.png</icon>
+					</item>
+					<item id="2">
+						<label>RSS Editor</label>
+						<label2>XBMC can display an RSS feed on the home screen of the default skin/interface (Confluence), as well as any other skin that supports RSS feeds. By default, the RSS news feed is taken from http://xbmc.org, but the feed can be changed to almost any RSS feed. </label2>
+						<onclick>RunScript(&quot;script.rss.editor&quot;)</onclick>
+						<icon>icon/RSS.png</icon>
+					</item>
+					<item id="3">
+						<label>Remote Controls</label>
+						<label2>In XBMC the primary environment was designed for the living room (10-foot interface) and controlling it only with a remote control. While XBMC does support mouse, keyboard, and even touch controls, the main method of controlling XBMC is designed around is the typical remote. This further enhances the appliance feel of the XBMC and fits next to (or replaces) the other remotes that are likely to be in your entertainment room. </label2>
+						<onclick>RunScript(&quot;script.keymap&quot;)</onclick>
+						<icon>icon/Remote.png</icon>
+					</item>
+					<item id="4">
+						<label>Update Addons</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>UpdateLocalAddons</onclick>
+						<icon>icon/Update.png</icon>
+					</item>
+					<item id="5">
+						<label>Reload Skin</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ReloadSkin</onclick>
+						<icon>icon/reload.png</icon>
+					</item>
+					<item id="6">
+						<label>SystemSettings</label>
+						<label2>System settings are found here. Setup and calibrate displays/video output, configure audio output, setup remote controls, set power saving options, enable debugging, setup master lock. </label2>
+						<onclick>activatewindow(SystemSettings)</onclick>
+						<icon>icon/Settings.png</icon>
 					</item>
 				</content>
 			</control>
-<!--now playing controls-->
-			<control type="panel" id="30">
-                        	<posx>426</posx>
-                        	<posy>400</posy>
-                        	<width>1200</width>
-                        	<height>850</height>
-                        	<onleft>-</onleft>
-                        	<onright>-</onright>
-                        	<onup>2</onup>
-                        	<ondown>2</ondown>
-				<onup>Control.Move(2,-1)</onup>
-                        	<ondown>Control.Move(2,1)</ondown>
-				<focusposition>0</focusposition>
-				<preloaditems>2</preloaditems>
-                        	<scrolltime>0</scrolltime>
-				<visible>Container(1).HasFocus(1)</visible>
-				<animation type="visible">
-                        		<effect type="fade" start="0" end="100" time="100" tween="sine" easing="inout" />
-                		</animation>
-				<animation type="hidden">
-                        		<effect type="fade" start="100" end="0" time="100" tween="sine" easing="inout" />
-                		</animation>
-                        	<itemlayout width="93" height="50">
-                        		<control type="image">
-                       				<posx>190</posx>
-                       				<posy>272</posy>
-                       				<width>90</width>
-                       				<height>50</height>
-                       				<info>ListItem.Icon</info>
-                       			</control>
-                       		</itemlayout>
-                       		<focusedlayout width="93" height="50">
+
+			<control type="panel" id="1">
+      <visible>Window.IsVisible(70)</visible>
+				<posx>670</posx>
+				<posy>170</posy>
+				<width>580</width>
+				<height>1500</height>
+				<onleft></onleft>
+				<onright>8001</onright>
+				<onup>222</onup>
+				<ondown>8000</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="600" height="80">
 					<control type="image">
-                       				<posx>190</posx>
-                       				<posy>272</posy>
-                        			<width>90</width>
-                        			<height>50</height>
-                        			<info>ListItem.Label</info>
-                       			</control>
-                       		</focusedlayout>
-                        		<content>
-                        			<item id="0">
-                        				<label>osd/media-guide/np/play-fo.png</label>
-                        				<icon>osd/media-guide/np/play.png</icon>
-                        				<onclick>playercontrol(play)</onclick>
-							<visible>!Player.Paused</visible>
-                        			</item>
-						<item id="1">
-                        				<label>osd/media-guide/np/pause-fo.png</label>
-                        				<icon>osd/media-guide/np/pause.png</icon>
-                        				<onclick>playercontrol(play)</onclick>
-							<visible>Player.Paused</visible>
-                        			</item>
-                        			<item id="2">
-                       			 		<label>osd/media-guide/np/rr-fo.png</label>
-                        				<icon>osd/media-guide/np/rr.png</icon>
-                        				<onclick>playercontrol(previous)</onclick>
-                        			</item>
-                        			<item id="3">
-                        				<label>osd/media-guide/np/stop-fo.png</label>
-                        				<icon>osd/media-guide/np/stop.png</icon>
-                        				<onclick>playercontrol(stop)</onclick>
-                        			</item>
-                        			<item id="4">
-                        				<label>osd/media-guide/np/ff-fo.png</label>
-                        				<icon>osd/media-guide/np/ff.png</icon>
-                        				<onclick>playercontrol(next)</onclick>
-                        			</item>
-						<item id="5">
-                        				<label>osd/media-guide/np/Shuffle-fo.png</label>
-                        				<icon>osd/media-guide/np/Shuffle.png</icon>
-                        				<onclick>PlayerControl(random)</onclick>
-							<visible>!Playlist.IsRandom</visible>
-                        			</item>
-						<item id="6">
-                        				<label>osd/media-guide/np/Shuffle-on-fo.png</label>
-                        				<icon>osd/media-guide/np/Shuffle-on.png</icon>
-                        				<onclick>PlayerControl(random)</onclick>
-							<visible>Playlist.IsRandom</visible>
-                        			</item>
-						<item id="7">
-                        				<label>osd/media-guide/np/re-fo.png</label>
-                        				<icon>osd/media-guide/np/re.png</icon>
-                        				<onclick>PlayerControl(repeat)</onclick>
-							<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
-                        			</item>
-						<item id="8">
-                        				<label>osd/media-guide/np/re-on-fo.png</label>
-                        				<icon>osd/media-guide/np/re-on.png</icon>
-                        				<onclick>PlayerControl(repeat)</onclick>
-							<visible>Playlist.IsRepeatOne + !Playlist.IsRepeat</visible>
-                        			</item>
-						<item id="9">
-                        				<label>osd/media-guide/np/re-all-fo.png</label>
-                        				<icon>osd/media-guide/np/re-all.png</icon>
-                        				<onclick>PlayerControl(repeat)</onclick>
-							<visible>Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
-                        			</item>
-                        		</content>
-                        </control>
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="600" height="80">
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+                        <control type="image">
+                        	<posx>7</posx>
+               	        	<posy>6</posy>
+        	        	<width>570</width>
+        	        	<height>105</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Settings ggggg</label>
+						<label2>Settings for the GUI are found here. Change the current skin, set language and region, change file listing options, set up a screen saver, etc. </label2>
+						<onclick>ActivateWindow(10502,&quot;plugin://plugin.audio.sky.fm/&quot;)</onclick>
+						<thumb>-</thumb>
+						<icon>icon/console.png</icon>
+					</item>	
+					<item id="1">
+						<label>Turn off Console</label>
+						<label2>Turning off the console will also turn off[CR]all controllers</label2>
+						<onclick>ActivateWindow(111,return)</onclick>
+						<icon>icon/Turn off.png</icon>
+					</item>
+					<item id="2">
+						<label>RSS Editor</label>
+						<label2>XBMC can display an RSS feed on the home screen of the default skin/interface (Confluence), as well as any other skin that supports RSS feeds. By default, the RSS news feed is taken from http://xbmc.org, but the feed can be changed to almost any RSS feed. </label2>
+						<onclick>RunScript(&quot;script.rss.editor&quot;)</onclick>
+						<icon>icon/RSS.png</icon>
+					</item>
+					<item id="3">
+						<label>Remote Controls</label>
+						<label2>In XBMC the primary environment was designed for the living room (10-foot interface) and controlling it only with a remote control. While XBMC does support mouse, keyboard, and even touch controls, the main method of controlling XBMC is designed around is the typical remote. This further enhances the appliance feel of the XBMC and fits next to (or replaces) the other remotes that are likely to be in your entertainment room. </label2>
+						<onclick>RunScript(&quot;script.keymap&quot;)</onclick>
+						<icon>icon/Remote.png</icon>
+					</item>
+					<item id="4">
+						<label>Update Addons</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>UpdateLocalAddons</onclick>
+						<icon>icon/Update.png</icon>
+					</item>
+					<item id="5">
+						<label>Reload Skin</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ReloadSkin</onclick>
+						<icon>icon/reload.png</icon>
+					</item>
+					<item id="6">
+						<label>SystemSettings</label>
+						<label2>System settings are found here. Setup and calibrate displays/video output, configure audio output, setup remote controls, set power saving options, enable debugging, setup master lock. </label2>
+						<onclick>activatewindow(SystemSettings)</onclick>
+						<icon>icon/Settings.png</icon>
+					</item>
+					<item id="7">
+						<label>close</label>
+						<onclick>dialog.close(all,true)</onclick>
+						<icon>icon/Settings.png</icon>
+					</item>
+				</content>
+			</control>
+
+
+			<control type="panel" id="1">
+      <visible>Window.IsVisible(MusicLibrary)</visible>
+				<posx>670</posx>
+				<posy>170</posy>
+				<width>580</width>
+				<height>1500</height>
+				<onleft></onleft>
+				<onright>8001</onright>
+				<onup>222</onup>
+				<ondown>8000</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="600" height="80">
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="600" height="80">
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+                        <control type="image">
+                        	<posx>7</posx>
+               	        	<posy>6</posy>
+        	        	<width>570</width>
+        	        	<height>105</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Settings ggggg</label>
+						<label2>Settings for the GUI are found here. Change the current skin, set language and region, change file listing options, set up a screen saver, etc. </label2>
+						<onclick>ActivateWindow(10502,&quot;plugin://plugin.audio.sky.fm/&quot;)</onclick>
+						<thumb>-</thumb>
+						<icon>icon/console.png</icon>
+					</item>	
+					<item id="1">
+						<label>Turn off Console</label>
+						<label2>Turning off the console will also turn off[CR]all controllers</label2>
+						<onclick>ActivateWindow(111,return)</onclick>
+						<icon>icon/Turn off.png</icon>
+					</item>
+					<item id="2">
+						<label>RSS Editor</label>
+						<label2>XBMC can display an RSS feed on the home screen of the default skin/interface (Confluence), as well as any other skin that supports RSS feeds. By default, the RSS news feed is taken from http://xbmc.org, but the feed can be changed to almost any RSS feed. </label2>
+						<onclick>RunScript(&quot;script.rss.editor&quot;)</onclick>
+						<icon>icon/RSS.png</icon>
+					</item>
+					<item id="3">
+						<label>Remote Controls</label>
+						<label2>In XBMC the primary environment was designed for the living room (10-foot interface) and controlling it only with a remote control. While XBMC does support mouse, keyboard, and even touch controls, the main method of controlling XBMC is designed around is the typical remote. This further enhances the appliance feel of the XBMC and fits next to (or replaces) the other remotes that are likely to be in your entertainment room. </label2>
+						<onclick>RunScript(&quot;script.keymap&quot;)</onclick>
+						<icon>icon/Remote.png</icon>
+					</item>
+					<item id="4">
+						<label>Update Addons</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>UpdateLocalAddons</onclick>
+						<icon>icon/Update.png</icon>
+					</item>
+					<item id="5">
+						<label>Reload Skin</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ReloadSkin</onclick>
+						<icon>icon/reload.png</icon>
+					</item>
+					<item id="6">
+						<label>SystemSettings</label>
+						<label2>System settings are found here. Setup and calibrate displays/video output, configure audio output, setup remote controls, set power saving options, enable debugging, setup master lock. </label2>
+						<onclick>activatewindow(SystemSettings)</onclick>
+						<icon>icon/Settings.png</icon>
+					</item>
+					<item id="7">
+						<label>select</label>
+						<onclick>dialog.close(all,true)</onclick>
+						<icon>icon/Settings.png</icon>
+					</item>
+				</content>
+			</control>
+
+
+
+
+
+			<control type="panel" id="1">
+      <visible>Window.IsVisible(73)</visible>
+				<posx>670</posx>
+				<posy>170</posy>
+				<width>580</width>
+				<height>1500</height>
+				<onleft></onleft>
+				<onright>8001</onright>
+				<onup>222</onup>
+				<ondown>8000</ondown>
+                        <viewtype label="Square">wrap</viewtype>
+                         <scrolltime tween="cubic" easing="out">600</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>4</preloaditems>
+                        <focusposition>0</focusposition>
+				<itemlayout width="600" height="80">
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+				</itemlayout>
+				<focusedlayout width="600" height="80">
+					<control type="image">
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+                                           <colordiffuse></colordiffuse>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>25</posy>
+						<width>300</width>
+						<height>62</height>
+						<info>ListItem.Label</info>
+						<font>font13_title</font>
+						<textcolor>white</textcolor>
+						<align>left</align>
+					</control>
+                        <control type="image">
+                        	<posx>7</posx>
+               	        	<posy>6</posy>
+        	        	<width>570</width>
+        	        	<height>105</height>
+		        	<align>center</align>
+		        	<aligny>center</aligny>
+		        <texture border="40">icon/tile-fo.png</texture>
+                        	</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>Settings ggggg</label>
+						<label2>Settings for the GUI are found here. Change the current skin, set language and region, change file listing options, set up a screen saver, etc. </label2>
+						<onclick>ActivateWindow(10502,&quot;plugin://plugin.audio.sky.fm/&quot;)</onclick>
+						<thumb>-</thumb>
+						<icon>icon/console.png</icon>
+					</item>	
+					<item id="1">
+						<label>Turn off Console</label>
+						<label2>Turning off the console will also turn off[CR]all controllers</label2>
+						<onclick>ActivateWindow(111,return)</onclick>
+						<icon>icon/Turn off.png</icon>
+					</item>
+					<item id="2">
+						<label>RSS Editor</label>
+						<label2>XBMC can display an RSS feed on the home screen of the default skin/interface (Confluence), as well as any other skin that supports RSS feeds. By default, the RSS news feed is taken from http://xbmc.org, but the feed can be changed to almost any RSS feed. </label2>
+						<onclick>RunScript(&quot;script.rss.editor&quot;)</onclick>
+						<icon>icon/RSS.png</icon>
+					</item>
+					<item id="3">
+						<label>Remote Controls</label>
+						<label2>In XBMC the primary environment was designed for the living room (10-foot interface) and controlling it only with a remote control. While XBMC does support mouse, keyboard, and even touch controls, the main method of controlling XBMC is designed around is the typical remote. This further enhances the appliance feel of the XBMC and fits next to (or replaces) the other remotes that are likely to be in your entertainment room. </label2>
+						<onclick>RunScript(&quot;script.keymap&quot;)</onclick>
+						<icon>icon/Remote.png</icon>
+					</item>
+					<item id="4">
+						<label>Update Addons</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>UpdateLocalAddons</onclick>
+						<icon>icon/Update.png</icon>
+					</item>
+					<item id="5">
+						<label>Reload Skin</label>
+						<label2>Settings console including.[CR]</label2>
+						<onclick>ReloadSkin</onclick>
+						<icon>icon/reload.png</icon>
+					</item>
+					<item id="6">
+						<label>SystemSettings</label>
+						<label2>System settings are found here. Setup and calibrate displays/video output, configure audio output, setup remote controls, set power saving options, enable debugging, setup master lock. </label2>
+						<onclick>activatewindow(SystemSettings)</onclick>
+						<icon>icon/Settings.png</icon>
+					</item>
+					<item id="7">
+						<label>fffffffff</label>
+						<onclick>dialog.close(all,true)</onclick>
+						<icon>icon/Settings.png</icon>
+					</item>
+				</content>
+			</control>
+
+
 <!--end of now playing controls-->
+
 			<control type="label">
-                                    <posx>570</posx>
-                                    <posy>260</posy>
-                                    <width>700</width>
-                                    <height>60</height>
-                                    <label>$INFO[Control.GetLabel(1)]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>orange</textcolor>
-                                    <align>left</align>
-                                    <angle>-90</angle>
-                                </control>
-			<control type="label">
-				<posx>1404</posx>
-				<posy>220</posy>
+				<posx>1200</posx>
+				<posy>950</posy>
 				<width>700</width>
-				<height>60</height>
+				<height>70</height>
 				<info>System.Time</info>
 				<align>right</align>
 				<font>font13_title</font>
-				<textcolor>eewhite</textcolor>
+				<textcolor>white</textcolor>
 			</control>
 </control>
     </controls>

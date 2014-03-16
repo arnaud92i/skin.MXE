@@ -30,8 +30,8 @@
         </control>
             <control type="panel" id="50">
                         <posx>100</posx>
-                        <posy>350</posy>
-                        <width>1920</width>
+                        <posy>250</posy>
+                        <width>2000</width>
                         <height>700</height>
                         <onleft>50</onleft>
                         <onright>50</onright>
@@ -39,7 +39,7 @@
                         <ondown>-</ondown>
                         <scrolltime>300</scrolltime>
 			<orientation>horizontal</orientation>
-                        <itemlayout width="465" height="289">
+                        <itemlayout width="465" height="210">
                             <control type="group">
 			<posx></posx>
                                 <animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
@@ -57,21 +57,23 @@
                                     <height>200</height>
                                     <texture border="1">$INFO[ListItem.Icon]</texture>
                                 </control>
-                                <control type="label">
-                                    <posx>170</posx>
-                                    <posy>40</posy>
-                                    <width>300</width>
-                                    <height>60</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
+                    <control type="textbox">
+                        <posx>190</posx>
+                        <posy>40</posy>
+                        <width>250</width>
+                        <height>100</height>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>white</textcolor>
+                        <align>justify</align>
+                        <align></align>
+                        <font>font13_title</font>
+                        <scroll>false</scroll>
+                        <scrollout>false</scrollout>
+                        <autoscroll time="1500" delay="10000" repeat="10000" />
+                    </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="465" height="289">
+                        <focusedlayout width="465" height="210">
                             <control type="group">
 				<posx></posx>
                                 <control type="group">
@@ -89,18 +91,20 @@
                                     <height>200</height>
                                     <texture border="1">$INFO[ListItem.Icon]</texture>
                                 </control>
-                                <control type="label">
-                                    <posx>170</posx>
-                                    <posy>40</posy>
-                                    <width>300</width>
-                                    <height>60</height>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <font>font13_title</font>
-                                    <textcolor>white</textcolor>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <textoffsetx>20</textoffsetx>
-                                </control>
+                    <control type="textbox">
+                        <posx>190</posx>
+                        <posy>40</posy>
+                        <width>250</width>
+                        <height>100</height>
+                        <label>$INFO[ListItem.Property(Addon.Description)]</label>
+                        <textcolor>green</textcolor>
+                        <align>justify</align>
+                        <align></align>
+                        <font>font13_title</font>
+                        <scroll>false</scroll>
+                        <scrollout>false</scrollout>
+                        <autoscroll time="1500" delay="500" repeat="1000" />
+                    </control>
                         <control type="image">
                         	<posx>10</posx>
                	        	<posy>10</posy>
